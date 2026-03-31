@@ -36,9 +36,15 @@ function AnimatedNumber({ value, suffix, duration = 1.8 }: { value: number; suff
 }
 
 const HeroSection = () => (
-  <section id="inicio" className="flex min-h-[85vh] flex-col lg:grid lg:grid-cols-2">
-    {/* ── LEFT: Text ── */}
-    <div className="flex flex-col justify-center bg-[hsl(var(--warm-bg))] px-6 py-16 sm:px-10 lg:px-14 xl:px-20 lg:py-0">
+  <section
+    id="inicio"
+    className="relative min-h-[85vh] bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: `url(${heroImg})` }}
+  >
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-background/80" />
+
+    <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-center px-6 py-16 sm:px-10 lg:px-14 xl:px-20">
       <motion.p
         {...fadeUp(0.1)}
         className="mb-4 text-[11px] font-medium tracking-[0.35em] uppercase text-muted-foreground"
@@ -88,15 +94,6 @@ const HeroSection = () => (
         ))}
       </motion.div>
     </div>
-
-    {/* ── RIGHT: Image ── */}
-    <motion.div
-      {...fadeUp(0.25)}
-      className="h-[50vh] bg-cover bg-center bg-no-repeat lg:h-auto"
-      style={{ backgroundImage: `url(${heroImg})` }}
-      aria-label="Equipe fundadora da Derma Concept Academy"
-      role="img"
-    />
   </section>
 );
 
