@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { BorderBeamButton } from "./ui/border-beam-button";
 import heroImg from "@/assets/hero-derma.jpg";
 
 const stats = [
