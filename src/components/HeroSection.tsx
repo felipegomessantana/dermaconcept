@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import heroImg from "@/assets/hero-procedure.jpg";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import heroImg from "@/assets/hero-team.webp";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
 
 const fadeUp = (delay = 0) => ({
@@ -9,10 +10,30 @@ const fadeUp = (delay = 0) => ({
 });
 
 const stats = [
-  { value: "15+", label: "Anos de Experiência" },
-  { value: "47+", label: "Turmas Formadas" },
-  { value: "9", label: "Cursos Especializados" },
+  { value: 15, suffix: "+", label: "Anos de Experiência" },
+  { value: 47, suffix: "+", label: "Turmas Formadas" },
+  { value: 9, suffix: "", label: "Cursos Especializados" },
 ];
+
+function AnimatedNumber({ value, suffix, duration = 1.8 }: { value: number; suffix: string; duration?: number }) {
+  const [display, setDisplay] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+
+  useEffect(() => {
+    if (!inView) return;
+    const start = performance.now();
+    const step = (now: number) => {
+      const t = Math.min((now - start) / (duration * 1000), 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplay(Math.round(eased * value));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [inView, value, duration]);
+
+  return <span ref={ref}>{display}{suffix}</span>;
+}
 
 const HeroSection = () => (
   <section id="inicio" className="flex min-h-screen flex-col lg:flex-row">
@@ -45,11 +66,7 @@ const HeroSection = () => (
       </motion.p>
 
       <motion.div {...fadeUp(0.45)} className="mt-10">
-        <BorderBeamButton
-          as="a"
-          href="#cursos"
-          className="shadow-sm"
-        >
+        <BorderBeamButton as="a" href="#cursos" className="shadow-sm">
           Quero Saber Mais
         </BorderBeamButton>
       </motion.div>
@@ -62,7 +79,7 @@ const HeroSection = () => (
         {stats.map((s) => (
           <div key={s.label}>
             <p className="font-heading text-2xl font-extrabold text-foreground lg:text-3xl">
-              {s.value}
+              <AnimatedNumber value={s.value} suffix={s.suffix} />
             </p>
             <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
               {s.label}
@@ -79,10 +96,10 @@ const HeroSection = () => (
     >
       <img
         src={heroImg}
-        alt="Procedimento de dermatologia avançada na Derma Concept Academy"
+        alt="Equipe fundadora da Derma Concept Academy"
         className="h-full w-full object-cover"
         width={1200}
-        height={900}
+        height={800}
       />
     </motion.div>
   </section>
