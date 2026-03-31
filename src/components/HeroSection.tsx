@@ -92,7 +92,7 @@ const HeroSection = () => (
     {/* ── RIGHT: Image ── */}
     <motion.div
       {...fadeUp(0.25)}
-      className="flex h-[50vh] items-center justify-center bg-[hsl(var(--warm-bg))] lg:h-auto"
+      className="flex h-[50vh] items-center justify-center bg-[#2c2c2c] lg:h-auto"
     >
       <img
         src={heroImg}
