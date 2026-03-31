@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
+import { ContactInfoList } from "./ContactInfoList";
 import contactImg from "@/assets/contact-ambiente.jpg";
 
 const ContactSection = () => {
@@ -20,10 +20,11 @@ const ContactSection = () => {
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             Fale Conosco
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl">Entre em Contato</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl">
+            Entre em Contato com a Derma Concept Academy
+          </h2>
           <p className="text-muted-foreground mt-6 max-w-2xl mx-auto leading-relaxed">
-            Preencha o formulário abaixo e nossa equipe entrará em contato com você 
-            para esclarecer dúvidas e fornecer mais informações sobre nossos cursos.
+            Coordenação à disposição para dúvidas, agenda e inscrições.
           </p>
         </AnimatedSection>
 
@@ -67,25 +68,14 @@ const ContactSection = () => {
                   className="w-full bg-background border border-border px-4 py-3 text-foreground rounded focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                 />
               </div>
-              <BorderBeamButton type="submit" className="w-full">
+              <BorderBeamButton type="submit">
                 Enviar
               </BorderBeamButton>
             </form>
 
-            {/* Contact info */}
-            <div className="mt-12 space-y-4">
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <MapPin size={18} strokeWidth={1.5} />
-                <span className="text-sm">São Paulo, SP — Brasil</span>
-              </div>
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <Phone size={18} strokeWidth={1.5} />
-                <span className="text-sm">+55 (11) 99999-0000</span>
-              </div>
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <Mail size={18} strokeWidth={1.5} />
-                <span className="text-sm">contato@dermaconceptacademy.com.br</span>
-              </div>
+            {/* Contact info below form */}
+            <div className="mt-12">
+              <ContactInfoList />
             </div>
           </AnimatedSection>
 
