@@ -99,6 +99,8 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.8s ease-out forwards",
+        "marquee-left": "marquee-left 40s linear infinite",
+        "marquee-right": "marquee-right 40s linear infinite",
       },
     },
   },
