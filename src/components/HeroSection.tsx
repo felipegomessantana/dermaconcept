@@ -54,7 +54,7 @@ const HeroSection = () => (
 
       <motion.h1
         {...fadeUp(0.2)}
-        className="whitespace-nowrap font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem] xl:text-[4rem]"
+        className="font-heading text-2xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl sm:whitespace-nowrap lg:text-[3.4rem] xl:text-[4rem]"
       >
         APRENDA, PRATIQUE, IMPACTE.
       </motion.h1>
