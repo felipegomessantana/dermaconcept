@@ -1,16 +1,25 @@
 
 
-## Plan: Update Header Button Name & Set 12px Border Radius on All Buttons
+## Plan: Fix Hero — Show Full Image & Remove Excess Gap
 
-### Changes
+**Problem**: The image is cropped by `object-cover` and the left text column (`flex-1`) stretches too wide, creating a large gap between text and image.
 
-**1. Header CTA button — rename "Contatos" → "Contato"** (`src/components/Header.tsx`)
-- Line 251: change text from `Contatos` to `Contato`
-- Line 249: change `rounded-full` to `rounded-[12px]` on the CTA link
+### Changes to `src/components/HeroSection.tsx`
 
-**2. BorderBeamButton — change border-radius to 12px** (`src/components/ui/border-beam-button.tsx`)
-- Line 22: change `rounded-full` to `rounded-[12px]` on the outer wrapper
-- Line 35: change `rounded-full` to `rounded-[12px]` on the inner span
+1. **Switch from Flex to CSS Grid** with defined columns: `lg:grid-cols-[1fr_1fr]` — this gives equal space to both sides without `flex-1` stretching the text column excessively.
 
-This applies the 12px radius to all BorderBeamButton instances site-wide (Hero CTA, Course CTAs, Contact form submit button).
+2. **Image display**: Change from `object-cover` to `object-contain` so the full team photo is visible without cropping. Set the image container background to match the image edges (warm tone or transparent).
+
+3. **Remove excessive spacing**: Drop `min-h-screen` in favor of `min-h-[85vh]` so the section doesn't force unnecessary vertical space. Reduce left column padding slightly.
+
+4. **Mobile**: Keep vertical stack (`flex-col` on small screens) with image at `h-[50vh]` using `object-contain`.
+
+### Technical Summary
+
+```
+section: flex-col lg:grid lg:grid-cols-2 min-h-[85vh]
+  left col: justify-center, moderate padding
+  right col: flex items-center justify-center, p-0
+    img: w-full h-full object-contain (full image visible)
+```
 
