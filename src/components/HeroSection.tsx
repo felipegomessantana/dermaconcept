@@ -66,11 +66,6 @@ const HeroSection = () => (
         Dermatologia que Transforma Carreiras e Pessoas.
       </motion.p>
 
-      <motion.div {...fadeUp(0.45)} className="mt-10">
-        <BorderBeamButton as="a" href="#cursos" className="shadow-sm">
-          Quero Saber Mais
-        </BorderBeamButton>
-      </motion.div>
 
       {/* Stats */}
       <motion.div
