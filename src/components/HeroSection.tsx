@@ -38,7 +38,7 @@ function AnimatedNumber({ value, suffix, duration = 1.8 }: { value: number; suff
 const HeroSection = () => (
   <section
     id="inicio"
-    className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+    className="relative min-h-screen bg-contain bg-top bg-no-repeat bg-black sm:bg-cover sm:bg-center"
     style={{ backgroundImage: `url(${heroImg})` }}
   >
     {/* Gradient overlay — transparent top, black bottom */}
@@ -54,7 +54,7 @@ const HeroSection = () => (
 
       <motion.h1
         {...fadeUp(0.2)}
-        className="whitespace-nowrap font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem] xl:text-[4rem]"
+        className="font-heading text-2xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl sm:whitespace-nowrap lg:text-[3.4rem] xl:text-[4rem]"
       >
         APRENDA, PRATIQUE, IMPACTE.
       </motion.h1>
