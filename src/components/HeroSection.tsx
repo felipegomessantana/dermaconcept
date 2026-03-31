@@ -92,12 +92,12 @@ const HeroSection = () => (
     {/* ── RIGHT: Image ── */}
     <motion.div
       {...fadeUp(0.25)}
-      className="h-[50vh] lg:h-auto"
+      className="flex h-[50vh] items-center justify-center bg-muted lg:h-auto"
     >
       <img
         src={heroImg}
         alt="Equipe fundadora da Derma Concept Academy"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-contain object-center"
         width={1200}
         height={800}
       />
