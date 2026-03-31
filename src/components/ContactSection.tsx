@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { BorderBeamButton } from "./ui/border-beam-button";
 import contactImg from "@/assets/contact-ambiente.jpg";
 
 const ContactSection = () => {
