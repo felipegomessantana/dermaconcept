@@ -1,146 +1,122 @@
-import { useState, useRef, useEffect } from "react";
-import { Menu, X, ChevronDown, ArrowRight, Sparkles, Clock, Scissors, FlaskConical, Phone, Mail, MapPin, Users, Award, BookOpen } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/logo-derma.webp";
+
+/* ───────────── Dropdown link item ───────────── */
+
+const DropdownLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a
+    href={href}
+    className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black"
+  >
+    {children}
+  </a>
+);
+
+/* ───────────── Tab content components ───────────── */
+
+function FellowsContent() {
+  const items = [
+    "Dermatologia Estética Semanal",
+    "Dermatologia Estética Mensal",
+    "Cirurgia Dermatológica",
+  ];
+
+  return (
+    <div className="w-[280px]">
+      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+        Fellows
+      </p>
+      <div className="flex flex-col">
+        {items.map((item) => (
+          <DropdownLink key={item} href="#cursos">{item}</DropdownLink>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function WorkshopsContent() {
+  const items = [
+    "Toxina Botulínica",
+    "Preenchimento com Ácido Hialurônico + Bloqueio",
+    "Preenchimento com Ácido Hialurônico Avançado + Ultrassom de Pelo Guiado",
+    "Bioestimuladores de Colágeno",
+    "Rejuvenescimento Íntimo",
+    "Peeling Médico",
+    "IPCA",
+    "Mentoria Individual",
+  ];
+
+  return (
+    <div className="w-[520px]">
+      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+        Workshops
+      </p>
+      <div className="grid grid-cols-2 gap-x-4">
+        {items.map((item) => (
+          <DropdownLink key={item} href="#cursos">{item}</DropdownLink>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PacienteModeloContent() {
+  const esteticos = [
+    "Preenchimento com Ácido Hialurônico",
+    "Bioestimuladores de Colágeno",
+    "Toxina Botulínica",
+    "Liftera",
+    "Microagulhamento",
+    "Intradermoterapia",
+    "Peeling Químico",
+    "Fio de PDO",
+    "IPCA",
+    "Rejuvenescimento Íntimo",
+  ];
+
+  const extras = ["Dermatologia Clínica", "Dermatologia Cirúrgica"];
+
+  return (
+    <div className="w-[600px]">
+      {/* Procedimentos Estéticos */}
+      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+        Procedimentos Estéticos
+      </p>
+      <div className="grid grid-cols-2 gap-x-4">
+        {esteticos.map((item) => (
+          <DropdownLink key={item} href="#contato">{item}</DropdownLink>
+        ))}
+      </div>
+
+      {/* Seção secundária */}
+      <div className="mt-3 rounded-lg bg-gray-50 p-3">
+        <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+          Especialidades
+        </p>
+        {extras.map((item) => (
+          <a
+            key={item}
+            href="#contato"
+            className="block rounded-md px-3 py-2 text-sm font-medium text-gray-800 transition-all duration-200 hover:translate-x-1 hover:text-black"
+          >
+            {item}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 /* ───────────── Tab data ───────────── */
 
 const TABS = [
-  {
-    title: "Cursos",
-    Component: CursosContent,
-  },
-  {
-    title: "Sobre a Academia",
-    Component: SobreContent,
-  },
-  {
-    title: "Contato",
-    Component: ContatoContent,
-  },
+  { title: "Fellows", Component: FellowsContent },
+  { title: "Workshops", Component: WorkshopsContent },
+  { title: "Seja Um Paciente Modelo", Component: PacienteModeloContent },
 ].map((t, idx) => ({ ...t, id: idx + 1 }));
-
-/* ───────────── Dropdown contents ───────────── */
-
-function CursosContent() {
-  const cursos = [
-    {
-      icon: Sparkles,
-      title: "Dermatologia Estética Semanal",
-      desc: "Imersão intensiva de uma semana em procedimentos estéticos.",
-      href: "#cursos",
-    },
-    {
-      icon: Clock,
-      title: "Dermatologia Estética Mensal",
-      desc: "Formação completa ao longo de um mês em harmonização facial.",
-      href: "#cursos",
-    },
-    {
-      icon: Scissors,
-      title: "Cirurgia Dermatológica Mensal",
-      desc: "Técnicas cirúrgicas com pacientes reais e supervisão.",
-      href: "#cursos",
-    },
-    {
-      icon: FlaskConical,
-      title: "Tricologia",
-      desc: "Diagnóstico e tratamento de doenças capilares.",
-      href: "#cursos",
-    },
-  ];
-
-  return (
-    <div className="w-[520px] lg:w-[600px]">
-      <div className="grid grid-cols-2 gap-1">
-        {cursos.map((c) => (
-          <a
-            key={c.title}
-            href={c.href}
-            className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-accent"
-          >
-            <c.icon className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
-            <div>
-              <p className="text-sm font-medium text-foreground group-hover:text-brand transition-colors">
-                {c.title}
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
-                {c.desc}
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
-      <a
-        href="#cursos"
-        className="mt-3 flex items-center gap-1 border-t border-border pt-3 text-xs font-medium text-brand hover:text-foreground transition-colors"
-      >
-        <span>Ver todos os cursos</span>
-        <ArrowRight className="h-3.5 w-3.5" />
-      </a>
-    </div>
-  );
-}
-
-function SobreContent() {
-  const items = [
-    { icon: Award, title: "Nossa História", desc: "Excelência em ensino dermatológico.", href: "#sobre" },
-    { icon: Users, title: "Corpo Docente", desc: "Especialistas reconhecidos na área.", href: "#sobre" },
-    { icon: BookOpen, title: "Metodologia", desc: "Prática supervisionada com pacientes reais.", href: "#sobre" },
-  ];
-
-  return (
-    <div className="w-[380px]">
-      <div className="flex flex-col gap-1">
-        {items.map((item) => (
-          <a
-            key={item.title}
-            href={item.href}
-            className="group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-accent"
-          >
-            <item.icon className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
-            <div>
-              <p className="text-sm font-medium text-foreground group-hover:text-brand transition-colors">
-                {item.title}
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ContatoContent() {
-  const items = [
-    { icon: Phone, label: "Telefone", value: "+55 (11) 0000-0000", href: "#contato" },
-    { icon: Mail, label: "Email", value: "contato@dermaconcept.com.br", href: "#contato" },
-    { icon: MapPin, label: "Localização", value: "São Paulo, SP", href: "#contato" },
-  ];
-
-  return (
-    <div className="w-[320px]">
-      <div className="flex flex-col gap-1">
-        {items.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="group flex items-center gap-3 rounded-md p-3 transition-colors hover:bg-accent"
-          >
-            <item.icon className="h-5 w-5 shrink-0 text-brand" />
-            <div>
-              <p className="text-xs text-muted-foreground">{item.label}</p>
-              <p className="text-sm font-medium text-foreground">{item.value}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 /* ───────────── Shifting dropdown pieces ───────────── */
 
@@ -154,93 +130,57 @@ const Tab = ({
   tab: number;
   handleSetSelected: (val: number | null) => void;
   selected: number | null;
-}) => {
-  return (
-    <button
-      id={`shift-tab-${tab}`}
-      onMouseEnter={() => handleSetSelected(tab)}
-      onClick={() => handleSetSelected(tab)}
-      className={`flex items-center gap-1 rounded-full px-4 py-1.5 text-sm transition-colors ${
-        selected === tab
-          ? "bg-accent text-foreground"
-          : "text-muted-foreground hover:text-foreground"
+}) => (
+  <button
+    id={`shift-tab-${tab}`}
+    onMouseEnter={() => handleSetSelected(tab)}
+    onClick={() => handleSetSelected(tab)}
+    className={`flex items-center gap-1 px-3 py-1.5 text-sm transition-colors duration-200 ${
+      selected === tab
+        ? "text-black"
+        : "text-gray-500 hover:text-gray-800"
+    }`}
+  >
+    <span>{children}</span>
+    <ChevronDown
+      className={`h-3.5 w-3.5 transition-transform duration-200 ${
+        selected === tab ? "rotate-180" : ""
       }`}
-    >
-      <span>{children}</span>
-      <ChevronDown
-        className={`h-3.5 w-3.5 transition-transform ${
-          selected === tab ? "rotate-180" : ""
-        }`}
-      />
-    </button>
-  );
-};
+    />
+  </button>
+);
+
+const StaticLink = ({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) => (
+  <a
+    href={href}
+    className={`px-3 py-1.5 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-800 ${className}`}
+  >
+    {children}
+  </a>
+);
 
 const Nub = ({ selected }: { selected: number | null }) => {
   const [nubLeft, setNubLeft] = useState(0);
 
   useEffect(() => {
-    moveNub();
-  }, [selected]);
-
-  const moveNub = () => {
     if (selected) {
       const hoveredTab = document.getElementById(`shift-tab-${selected}`);
       const overlayContent = document.getElementById("overlay-content");
-
       if (!hoveredTab || !overlayContent) return;
 
       const tabRect = hoveredTab.getBoundingClientRect();
       const contentRect = overlayContent.getBoundingClientRect();
-
-      const tabCenter = tabRect.left + tabRect.width / 2 - contentRect.left;
-      setNubLeft(tabCenter);
+      setNubLeft(tabRect.left + tabRect.width / 2 - contentRect.left);
     }
-  };
+  }, [selected]);
 
   return (
     <motion.span
       style={{ clipPath: "polygon(0 0, 100% 0, 50% 50%, 0 100%)" }}
       animate={{ left: nubLeft }}
       transition={{ duration: 0.25, ease: "easeInOut" }}
-      className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border border-border bg-card"
+      className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border border-gray-100 bg-white"
     />
-  );
-};
-
-const Content = ({
-  selected,
-  dir,
-}: {
-  selected: number;
-  dir: "l" | "r" | null;
-}) => {
-  return (
-    <motion.div
-      id="overlay-content"
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 8 }}
-      className="absolute left-0 top-[calc(100%_+_20px)] rounded-xl border border-border bg-card p-4 shadow-xl"
-    >
-      <Bridge />
-      <Nub selected={selected} />
-      <AnimatePresence mode="wait">
-        {TABS.map((t) => {
-          return selected === t.id ? (
-            <motion.div
-              key={t.id}
-              initial={{ opacity: 0, x: dir === "l" ? 100 : dir === "r" ? -100 : 0 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: dir === "l" ? -100 : dir === "r" ? 100 : 0 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-            >
-              <t.Component />
-            </motion.div>
-          ) : undefined;
-        })}
-      </AnimatePresence>
-    </motion.div>
   );
 };
 
@@ -248,7 +188,35 @@ const Bridge = () => (
   <div className="absolute -top-[24px] left-0 right-0 h-[24px]" />
 );
 
-/* ───────────── Desktop Tabs wrapper ───────────── */
+const Content = ({ selected, dir }: { selected: number; dir: "l" | "r" | null }) => (
+  <motion.div
+    id="overlay-content"
+    initial={{ opacity: 0, y: 8 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 8 }}
+    className="absolute left-0 top-[calc(100%_+_20px)] rounded-xl border border-gray-100 bg-white p-4 shadow-2xl shadow-black/[0.08]"
+  >
+    <Bridge />
+    <Nub selected={selected} />
+    <AnimatePresence mode="wait">
+      {TABS.map((t) =>
+        selected === t.id ? (
+          <motion.div
+            key={t.id}
+            initial={{ opacity: 0, x: dir === "l" ? 100 : dir === "r" ? -100 : 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: dir === "l" ? -100 : dir === "r" ? 100 : 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+          >
+            <t.Component />
+          </motion.div>
+        ) : undefined,
+      )}
+    </AnimatePresence>
+  </motion.div>
+);
+
+/* ───────────── Desktop Nav ───────────── */
 
 const DesktopNav = () => {
   const [selected, setSelected] = useState<number | null>(null);
@@ -268,16 +236,20 @@ const DesktopNav = () => {
       onMouseLeave={() => handleSetSelected(null)}
       className="relative flex h-fit items-center gap-1"
     >
+      <StaticLink href="#inicio">Página Inicial</StaticLink>
+
       {TABS.map((t) => (
-        <Tab
-          key={t.id}
-          selected={selected}
-          handleSetSelected={handleSetSelected}
-          tab={t.id}
-        >
+        <Tab key={t.id} selected={selected} handleSetSelected={handleSetSelected} tab={t.id}>
           {t.title}
         </Tab>
       ))}
+
+      <a
+        href="#contato"
+        className="ml-2 rounded-full border border-gray-800 px-5 py-1.5 text-sm font-medium text-gray-800 transition-all duration-200 hover:bg-gray-800 hover:text-white"
+      >
+        Contatos
+      </a>
 
       <AnimatePresence>
         {selected && <Content dir={dir} selected={selected} />}
@@ -286,14 +258,14 @@ const DesktopNav = () => {
   );
 };
 
-/* ───────────── Mobile nav links ───────────── */
+/* ───────────── Mobile nav ───────────── */
 
 const mobileLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Cursos", href: "#cursos" },
-  { label: "Depoimentos", href: "#depoimentos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Página Inicial", href: "#inicio" },
+  { label: "Fellows", href: "#cursos" },
+  { label: "Workshops", href: "#cursos" },
+  { label: "Seja Um Paciente Modelo", href: "#contato" },
+  { label: "Contatos", href: "#contato" },
 ];
 
 /* ───────────── Header ───────────── */
@@ -302,42 +274,33 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
       <div className="container-narrow flex items-center justify-between px-6 py-4 lg:px-20">
         <a href="#inicio">
           <img src={logo} alt="Derma Concept Academy" className="h-10 md:h-12" />
         </a>
 
-        {/* Desktop nav — shifting dropdown */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden lg:flex items-center">
           <DesktopNav />
-          <a
-            href="#inicio"
-            className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
-          >
-            Início
-          </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground"
+          className="lg:hidden text-gray-800"
           aria-label="Menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile nav */}
       {open && (
-        <nav className="md:hidden bg-background border-t border-border px-6 py-6 flex flex-col gap-4">
+        <nav className="lg:hidden border-t border-gray-100 bg-white px-6 py-6 flex flex-col gap-4">
           {mobileLinks.map((link) => (
             <a
-              key={link.href}
+              key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm tracking-widest uppercase text-gray-500 hover:text-black transition-colors"
             >
               {link.label}
             </a>

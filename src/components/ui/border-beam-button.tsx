@@ -5,18 +5,13 @@ interface BorderBeamButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   as?: "button" | "a";
   href?: string;
-  /** Duration of one full rotation in seconds */
   duration?: number;
 }
 
-/**
- * Premium CTA button with an animated conic-gradient border beam.
- * Light-theme friendly: white interior, elegant warm beam, thin 1.5px border.
- */
 const BorderBeamButton = React.forwardRef<
-  HTMLButtonElement & HTMLAnchorElement,
+  HTMLElement,
   BorderBeamButtonProps
->(({ className, children, as = "button", href, duration = 3.5, style, ...props }, ref) => {
+>(function BorderBeamButton({ className, children, as = "button", href, duration = 3.5, style, ...props }, ref) {
   const Tag = as === "a" ? "a" : "button";
 
   return (
@@ -30,7 +25,6 @@ const BorderBeamButton = React.forwardRef<
       style={{ "--beam-speed": `${duration}s`, ...style } as React.CSSProperties}
       {...(props as any)}
     >
-      {/* Spinning conic gradient — the "beam" */}
       <span
         className="absolute inset-[-150%] animate-border-beam"
         style={{
@@ -38,7 +32,6 @@ const BorderBeamButton = React.forwardRef<
             "conic-gradient(from 0deg, transparent 0%, transparent 70%, hsl(var(--brand)) 78%, hsl(var(--primary)) 82%, transparent 90%, transparent 100%)",
         }}
       />
-      {/* Inner fill — covers the center, revealing only the 1.5px border */}
       <span className="relative z-10 flex items-center justify-center gap-2 rounded-full bg-card px-8 py-3.5 text-sm tracking-widest uppercase text-foreground transition-colors duration-300 group-hover:bg-accent">
         {children}
       </span>
@@ -46,7 +39,5 @@ const BorderBeamButton = React.forwardRef<
   );
 });
 
-BorderBeamButton.displayName = "BorderBeamButton";
-
 export { BorderBeamButton };
-
+export default BorderBeamButton;
