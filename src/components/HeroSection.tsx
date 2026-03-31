@@ -41,34 +41,29 @@ const HeroSection = () => (
     className="relative min-h-[85vh] bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: `url(${heroImg})` }}
   >
-    {/* Overlay */}
-    <div className="absolute inset-0 bg-background/80" />
+    {/* Gradient overlay — transparent top, black bottom */}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
 
-    <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-center px-6 py-16 sm:px-10 lg:px-14 xl:px-20">
+    <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-end px-6 pb-12 pt-16 text-center sm:px-10 lg:px-14 xl:px-20">
       <motion.p
         {...fadeUp(0.1)}
-        className="mb-4 text-[11px] font-medium tracking-[0.35em] uppercase text-muted-foreground"
+        className="mb-4 text-[11px] font-medium tracking-[0.35em] uppercase text-white/60"
       >
         Derma Concept Academy
       </motion.p>
 
       <motion.h1
         {...fadeUp(0.2)}
-        className="font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[3.4rem] xl:text-[4rem]"
+        className="whitespace-nowrap font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem] xl:text-[4rem]"
       >
-        APRENDA,
-        <br />
-        PRATIQUE,
-        <br />
-        IMPACTE.
+        APRENDA, PRATIQUE, IMPACTE.
       </motion.h1>
 
       <motion.p
         {...fadeUp(0.35)}
-        className="mt-6 max-w-md font-heading text-lg italic leading-relaxed text-muted-foreground lg:text-xl"
+        className="mt-6 font-heading text-lg italic leading-relaxed text-white/80 lg:text-xl"
       >
-        Dermatologia que Transforma
-        <br className="hidden sm:block" /> Carreiras e Pessoas.
+        Dermatologia que Transforma Carreiras e Pessoas.
       </motion.p>
 
       <motion.div {...fadeUp(0.45)} className="mt-10">
@@ -80,14 +75,14 @@ const HeroSection = () => (
       {/* Stats */}
       <motion.div
         {...fadeUp(0.55)}
-        className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8"
+        className="mt-14 grid grid-cols-3 gap-6 border-t border-white/20 pt-8"
       >
         {stats.map((s) => (
           <div key={s.label}>
-            <p className="font-heading text-2xl font-extrabold text-foreground lg:text-3xl">
+            <p className="font-heading text-2xl font-extrabold text-white lg:text-3xl">
               <AnimatedNumber value={s.value} suffix={s.suffix} />
             </p>
-            <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-muted-foreground">
+            <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-white/60">
               {s.label}
             </p>
           </div>
