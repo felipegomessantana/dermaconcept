@@ -1,25 +1,21 @@
 
 
-## Plan: Fix Hero — Show Full Image & Remove Excess Gap
-
-**Problem**: The image is cropped by `object-cover` and the left text column (`flex-1`) stretches too wide, creating a large gap between text and image.
+## Plan: Redesign Hero Overlay & Text Layout
 
 ### Changes to `src/components/HeroSection.tsx`
 
-1. **Switch from Flex to CSS Grid** with defined columns: `lg:grid-cols-[1fr_1fr]` — this gives equal space to both sides without `flex-1` stretching the text column excessively.
+1. **Overlay**: Replace the full-screen `bg-background/80` overlay with a gradient that goes from transparent at the top to black at the bottom (covering roughly the bottom half). This reveals more of the background image at the top while keeping text readable at the bottom.
+   - Use `bg-gradient-to-b from-transparent via-transparent to-black/70` or similar.
 
-2. **Image display**: Change from `object-cover` to `object-contain` so the full team photo is visible without cropping. Set the image container background to match the image edges (warm tone or transparent).
+2. **Text positioning**: Change `justify-center` to `justify-end` so all content sits at the bottom of the section. Add bottom padding (`pb-12`).
 
-3. **Remove excessive spacing**: Drop `min-h-screen` in favor of `min-h-[85vh]` so the section doesn't force unnecessary vertical space. Reduce left column padding slightly.
+3. **Center text**: Add `text-center items-center` to center all content horizontally.
 
-4. **Mobile**: Keep vertical stack (`flex-col` on small screens) with image at `h-[50vh]` using `object-contain`.
+4. **Single-line headline**: Remove the `<br />` tags from "APRENDA, PRATIQUE, IMPACTE." so it renders on one line. Use `whitespace-nowrap` if needed.
 
-### Technical Summary
+5. **Single-line subtitle**: Remove the `<br>` from "Dermatologia que Transforma Carreiras e Pessoas." so it's one line. Remove `max-w-md` constraint.
 
-```
-section: flex-col lg:grid lg:grid-cols-2 min-h-[85vh]
-  left col: justify-center, moderate padding
-  right col: flex items-center justify-center, p-0
-    img: w-full h-full object-contain (full image visible)
-```
+6. **Stats**: Center the stats row and remove `max-w-md` so it spans naturally.
+
+7. **Text colors**: Since overlay is now dark/transparent, ensure text uses `text-white` and subtitle uses `text-white/80` for visibility against the gradient.
 
