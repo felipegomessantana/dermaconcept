@@ -92,16 +92,11 @@ const HeroSection = () => (
     {/* ── RIGHT: Image ── */}
     <motion.div
       {...fadeUp(0.25)}
-      className="flex h-[50vh] items-center justify-center bg-muted lg:h-auto"
-    >
-      <img
-        src={heroImg}
-        alt="Equipe fundadora da Derma Concept Academy"
-        className="h-full w-full object-contain object-center"
-        width={1200}
-        height={800}
-      />
-    </motion.div>
+      className="h-[50vh] bg-cover bg-center bg-no-repeat lg:h-auto"
+      style={{ backgroundImage: `url(${heroImg})` }}
+      aria-label="Equipe fundadora da Derma Concept Academy"
+      role="img"
+    />
   </section>
 );
 
