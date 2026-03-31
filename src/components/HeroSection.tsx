@@ -44,7 +44,7 @@ const HeroSection = () => (
     {/* Gradient overlay — transparent top, black bottom */}
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
 
-    <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-end px-6 pb-14 pt-16 text-center sm:px-10 lg:px-14 xl:px-20">
+    <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-14 pt-24 text-center sm:px-10 lg:px-14 xl:px-20">
       <motion.p
         {...fadeUp(0.1)}
         className="mb-4 text-[11px] font-medium tracking-[0.35em] uppercase text-white/60"
