@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { BorderBeamButton } from "./ui/border-beam-button";
 import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
 import courseTricologia from "@/assets/course-tricologia.jpg";
