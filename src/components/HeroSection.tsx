@@ -38,7 +38,7 @@ function AnimatedNumber({ value, suffix, duration = 1.8 }: { value: number; suff
 const HeroSection = () => (
   <section
     id="inicio"
-    className="relative min-h-screen bg-contain bg-top bg-no-repeat bg-black sm:bg-cover sm:bg-center"
+    className="relative min-h-[100svh] bg-cover bg-top bg-no-repeat bg-black sm:bg-center"
     style={{ backgroundImage: `url(${heroImg})` }}
   >
     {/* Gradient overlay — transparent top, black bottom */}
