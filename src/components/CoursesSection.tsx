@@ -72,7 +72,10 @@ const CourseBlock = ({ course, index, total }: CourseBlockProps) => {
       {/* Image */}
       <div className={`${isReversed ? "lg:order-2" : ""} overflow-hidden rounded-2xl`}>
         <motion.div
-          style={{ y: typeof window !== "undefined" && window.innerWidth >= 1024 ? imageY : 0 }}
+          style={{
+            y: typeof window !== "undefined" && window.innerWidth >= 1024 ? imageY : 0,
+            scale: typeof window !== "undefined" && window.innerWidth >= 1024 ? imageScale : 1,
+          }}
           className="will-change-transform"
         >
           <img
