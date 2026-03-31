@@ -2,45 +2,53 @@ import AnimatedSection from "./AnimatedSection";
 import aboutImg from "@/assets/about-clinic.jpg";
 
 const AboutSection = () => (
-  <section id="sobre" className="section-padding bg-card">
-    <div className="container-narrow">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+  <section id="sobre" className="py-24 md:py-32 lg:py-40 bg-[#F8F5F1]">
+    <div className="mx-auto max-w-7xl px-6 lg:px-20">
+      <div className="grid lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-24 items-center">
+        {/* Text */}
         <AnimatedSection>
-          <div className="aspect-square overflow-hidden rounded">
+          <p className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#9b9287] mb-5">
+            Quem Somos
+          </p>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-[2.75rem] leading-tight text-[#2C2926] mb-10">
+            Sobre a Derma Concept Academy
+          </h2>
+
+          <div className="space-y-7 text-[#6b6560] leading-loose text-[15px] lg:text-base">
+            <p>
+              A Derma Concept Academy é um centro de excelência em formação médica na área de
+              dermatologia, unindo teoria de alto nível a prática intensiva em ambiente moderno e
+              seguro. Localizada em Belo Horizonte, a Academy oferece cursos exclusivos para médicos,
+              fellows avançados e imersões hands-on com tecnologias de ponta, garantindo aprendizado
+              completo e atualizado.
+            </p>
+            <p>
+              Com infraestrutura premium, consultórios equipados e turmas reduzidas, a Derma Concept
+              Academy proporciona atenção personalizada e experiências reais com pacientes modelo,
+              permitindo que cada participante desenvolva habilidades práticas sob supervisão de
+              especialistas renomados. Além de capacitar médicos, a Derma Concept Academy apoia a
+              comunidade oferecendo procedimentos estéticos a preço de custo e procedimentos cirúrgicos
+              gratuitos para pacientes modelo. A clínica também disponibiliza consultórios para locação,
+              fortalecendo o ecossistema dermatológico da região.
+            </p>
+            <p>
+              Nosso compromisso é formar profissionais altamente qualificados e contribuir para o avanço
+              da dermatologia, sempre com inovação, ética e excelência.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* Image */}
+        <AnimatedSection delay={0.2}>
+          <div className="overflow-hidden rounded-2xl shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]">
             <img
               src={aboutImg}
-              alt="Ambiente da Derma Concept Academy"
-              className="w-full h-full object-cover"
+              alt="Infraestrutura premium da Derma Concept Academy em Belo Horizonte"
+              className="w-full h-full object-cover aspect-[4/5]"
               loading="lazy"
               width={1024}
               height={1024}
             />
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.15}>
-          <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
-            Quem Somos
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
-            Sobre a Academia
-          </h2>
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
-            <p>
-              A Derma Concept Academy é um centro de excelência em educação dermatológica, 
-              dedicado a formar profissionais de alto nível na área de dermatologia estética, 
-              cirurgia dermatológica e tricologia.
-            </p>
-            <p>
-              Com mais de 15 anos de experiência, nossa missão é proporcionar um ensino prático, 
-              imersivo e de qualidade, onde o aluno aprende fazendo — com supervisão direta de 
-              especialistas renomados e atendimento a pacientes reais.
-            </p>
-            <p>
-              Nossos cursos são projetados para médicos que desejam se destacar no mercado, 
-              oferecendo uma formação completa que une teoria de ponta com prática intensiva, 
-              em um ambiente de aprendizado acolhedor e profissional.
-            </p>
           </div>
         </AnimatedSection>
       </div>
