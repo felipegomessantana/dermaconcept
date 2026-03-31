@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { BorderBeamButton } from "./ui/border-beam-button";
 import heroImg from "@/assets/hero-derma.jpg";
 
 const stats = [
@@ -22,12 +23,9 @@ const HeroSection = () => (
           <p className="text-xl md:text-2xl font-heading italic text-muted-foreground mb-10 leading-relaxed">
             Dermatologia que Transforma Carreiras e Pessoas.
           </p>
-          <a
-            href="#contato"
-            className="inline-block bg-primary text-primary-foreground px-10 py-4 text-sm tracking-widest uppercase hover:opacity-90 transition-opacity duration-300 rounded"
-          >
+          <BorderBeamButton as="a" href="#contato">
             Quero saber mais
-          </a>
+          </BorderBeamButton>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-10 border-t border-border">

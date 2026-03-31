@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { BorderBeamButton } from "./ui/border-beam-button";
 import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
 import courseTricologia from "@/assets/course-tricologia.jpg";
@@ -108,12 +109,9 @@ const CourseBlock = ({ course, index, total }: CourseBlockProps) => {
           <p className="text-muted-foreground leading-relaxed text-base lg:text-lg mb-10 max-w-lg">
             {course.description}
           </p>
-          <a
-            href="#contato"
-            className="inline-block border border-foreground/80 text-foreground px-8 py-3.5 text-sm tracking-widest uppercase hover:bg-foreground hover:text-background transition-all duration-300 rounded-sm"
-          >
+          <BorderBeamButton as="a" href="#contato">
             {course.cta}
-          </a>
+          </BorderBeamButton>
         </motion.div>
       </motion.div>
     </div>

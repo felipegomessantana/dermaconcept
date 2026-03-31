@@ -94,6 +94,10 @@ export default {
           "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0)" },
         },
+        "border-beam": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -101,6 +105,7 @@ export default {
         "fade-up": "fade-up 0.8s ease-out forwards",
         "marquee-left": "marquee-left 40s linear infinite",
         "marquee-right": "marquee-right 40s linear infinite",
+        "border-beam": "border-beam var(--beam-speed, 3.5s) linear infinite",
       },
     },
   },
