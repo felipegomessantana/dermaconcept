@@ -260,18 +260,105 @@ const DesktopNav = () => {
 
 /* ───────────── Mobile nav ───────────── */
 
-const mobileLinks = [
-  { label: "Página Inicial", href: "#inicio" },
-  { label: "Fellows", href: "#cursos" },
-  { label: "Workshops", href: "#cursos" },
-  { label: "Seja Um Paciente Modelo", href: "#contato" },
-  { label: "Contatos", href: "#contato" },
+const MobileSubmenu = ({
+  title,
+  items,
+  open,
+  onToggle,
+  onNavigate,
+}: {
+  title: string;
+  items: { label: string; href: string }[];
+  open: boolean;
+  onToggle: () => void;
+  onNavigate: () => void;
+}) => (
+  <div className="border-b border-gray-100/80 last:border-0">
+    <button
+      onClick={onToggle}
+      className="flex w-full items-center justify-between py-4 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black"
+    >
+      {title}
+      <ChevronDown
+        className={`h-4 w-4 text-gray-400 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+      />
+    </button>
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="overflow-hidden"
+        >
+          <div className="pb-4 pl-4 flex flex-col gap-1">
+            {items.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={onNavigate}
+                className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+);
+
+const mobileMenuSections = [
+  {
+    title: "Fellows",
+    items: [
+      { label: "Dermatologia Estética Semanal", href: "#cursos" },
+      { label: "Dermatologia Estética Mensal", href: "#cursos" },
+      { label: "Cirurgia Dermatológica", href: "#cursos" },
+    ],
+  },
+  {
+    title: "Workshops",
+    items: [
+      { label: "Toxina Botulínica", href: "#cursos" },
+      { label: "Preenchimento com Ácido Hialurônico + Bloqueio", href: "#cursos" },
+      { label: "Preenchimento Avançado + Ultrassom", href: "#cursos" },
+      { label: "Bioestimuladores de Colágeno", href: "#cursos" },
+      { label: "Rejuvenescimento Íntimo", href: "#cursos" },
+      { label: "Peeling Médico", href: "#cursos" },
+      { label: "IPCA", href: "#cursos" },
+      { label: "Mentoria Individual", href: "#cursos" },
+    ],
+  },
+  {
+    title: "Seja Um Paciente Modelo",
+    items: [
+      { label: "Preenchimento com Ácido Hialurônico", href: "#contato" },
+      { label: "Bioestimuladores de Colágeno", href: "#contato" },
+      { label: "Toxina Botulínica", href: "#contato" },
+      { label: "Liftera", href: "#contato" },
+      { label: "Microagulhamento", href: "#contato" },
+      { label: "Intradermoterapia", href: "#contato" },
+      { label: "Peeling Químico", href: "#contato" },
+      { label: "Fio de PDO", href: "#contato" },
+      { label: "Dermatologia Clínica", href: "#contato" },
+      { label: "Dermatologia Cirúrgica", href: "#contato" },
+    ],
+  },
 ];
 
 /* ───────────── Header ───────────── */
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
+
+  const handleClose = () => {
+    setOpen(false);
+    setOpenSubmenu(null);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
@@ -285,7 +372,7 @@ const Header = () => {
         </div>
 
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => { setOpen(!open); setOpenSubmenu(null); }}
           className="lg:hidden text-gray-800"
           aria-label="Menu"
         >
@@ -293,20 +380,51 @@ const Header = () => {
         </button>
       </div>
 
-      {open && (
-        <nav className="lg:hidden border-t border-gray-100 bg-white px-6 py-6 flex flex-col gap-4">
-          {mobileLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="text-sm tracking-widest uppercase text-gray-500 hover:text-black transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"
+          >
+            <div className="px-6 py-4">
+              {/* Página Inicial */}
+              <a
+                href="#inicio"
+                onClick={handleClose}
+                className="block border-b border-gray-100/80 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black"
+              >
+                Página Inicial
+              </a>
+
+              {/* Accordion sections */}
+              {mobileMenuSections.map((section, idx) => (
+                <MobileSubmenu
+                  key={section.title}
+                  title={section.title}
+                  items={section.items}
+                  open={openSubmenu === idx}
+                  onToggle={() => setOpenSubmenu(openSubmenu === idx ? null : idx)}
+                  onNavigate={handleClose}
+                />
+              ))}
+
+              {/* Contato CTA */}
+              <div className="mt-6 pb-2">
+                <a
+                  href="#contato"
+                  onClick={handleClose}
+                  className="block w-full rounded-xl border-2 border-gray-800 py-3 text-center text-sm font-bold uppercase tracking-[0.2em] text-gray-800 transition-all duration-200 hover:bg-gray-800 hover:text-white"
+                >
+                  Contato
+                </a>
+              </div>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
