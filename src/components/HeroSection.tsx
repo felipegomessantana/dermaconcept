@@ -38,13 +38,13 @@ function AnimatedNumber({ value, suffix, duration = 1.8 }: { value: number; suff
 const HeroSection = () => (
   <section
     id="inicio"
-    className="relative min-h-[85vh] bg-cover bg-center bg-no-repeat"
+    className="relative min-h-screen bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: `url(${heroImg})` }}
   >
     {/* Gradient overlay — transparent top, black bottom */}
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
 
-    <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-end px-6 pb-12 pt-16 text-center sm:px-10 lg:px-14 xl:px-20">
+    <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-end px-6 pb-14 pt-16 text-center sm:px-10 lg:px-14 xl:px-20">
       <motion.p
         {...fadeUp(0.1)}
         className="mb-4 text-[11px] font-medium tracking-[0.35em] uppercase text-white/60"
