@@ -19,7 +19,7 @@ const BorderBeamButton = React.forwardRef<
       ref={ref as any}
       href={as === "a" ? href : undefined}
       className={cn(
-        "border-beam-btn group relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1.5px] transition-all duration-300",
+        "border-beam-btn group relative inline-flex items-center justify-center overflow-hidden rounded-[12px] p-[1.5px] transition-all duration-300",
         className,
       )}
       style={{ "--beam-speed": `${duration}s`, ...style } as React.CSSProperties}
