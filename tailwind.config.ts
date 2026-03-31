@@ -105,6 +105,7 @@ export default {
         "fade-up": "fade-up 0.8s ease-out forwards",
         "marquee-left": "marquee-left 40s linear infinite",
         "marquee-right": "marquee-right 40s linear infinite",
+        "border-beam": "border-beam var(--beam-speed, 3.5s) linear infinite",
       },
     },
   },

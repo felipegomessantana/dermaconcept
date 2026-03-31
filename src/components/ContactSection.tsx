@@ -66,12 +66,9 @@ const ContactSection = () => {
                   className="w-full bg-background border border-border px-4 py-3 text-foreground rounded focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-primary text-primary-foreground py-4 text-sm tracking-widest uppercase hover:opacity-90 transition-opacity duration-300 rounded"
-              >
+              <BorderBeamButton type="submit" className="w-full">
                 Enviar
-              </button>
+              </BorderBeamButton>
             </form>
 
             {/* Contact info */}
