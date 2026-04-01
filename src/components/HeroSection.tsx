@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import heroImg from "@/assets/hero-team.webp";
+import heroMobileImg from "@/assets/hero-mobile.webp";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
 
 const fadeUp = (delay = 0) => ({
