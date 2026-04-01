@@ -51,7 +51,7 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
   return (
     <div
       ref={targetRef}
-      className="sticky top-0 z-0 h-screen overflow-hidden"
+      className="sticky top-0 z-0 h-[33vh] overflow-hidden max-w-7xl mx-auto"
       style={{ paddingLeft: IMG_PADDING, paddingRight: IMG_PADDING }}
     >
       <motion.div
