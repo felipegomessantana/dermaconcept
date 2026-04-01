@@ -1,21 +1,40 @@
 
 
-## Plan: Fix Hero Section Mobile Layout
+# Plano: Criar Página Inicial 2 para Validação A/B
 
-The screenshot shows two issues on mobile (390px): the headline text is clipped horizontally due to `whitespace-nowrap`, and the background image is cropped (not showing the full photo).
+## Resumo
 
-### Changes to `src/components/HeroSection.tsx`
+Criar uma segunda versão da página inicial com o hero banner e cursos anteriores (sem as animações premium recentes), acessível via submenu no header.
 
-1. **Allow text wrapping on mobile**: Remove `whitespace-nowrap` globally and add it only for larger screens (`sm:whitespace-nowrap`). This lets the headline break naturally on small screens while staying one line on desktop.
+## O que será feito
 
-2. **Reduce mobile font size**: Lower the base `text-4xl` to `text-2xl` or `text-3xl` so it fits better on 390px screens.
+### 1. Criar componentes "clássicos" (versões anteriores)
 
-3. **Show full photo on mobile**: On mobile, switch from `bg-cover` (which crops) to `bg-contain` so the full image is visible at the top. Use responsive classes: `bg-contain bg-top sm:bg-cover sm:bg-center`. Add a black background color (`bg-black`) so the area below the contained image is black rather than empty.
+- **`src/components/HeroSectionClassic.tsx`** — Hero simples sem parallax, sem animação por letra, sem contadores animados. Imagem de fundo estática com fade-in básico, headline direto, CTA simples.
+- **`src/components/CoursesSectionClassic.tsx`** — Cards de cursos sem hover premium (sem scale na imagem, sem underline animado, sem número flutuante). Layout grid limpo com `AnimatedSection` básico.
 
-4. **Adjust section height on mobile**: Keep `min-h-screen` on desktop but use a smaller min-height on mobile if needed to avoid excessive empty space.
+### 2. Criar página Index2
 
-### Technical details
+- **`src/pages/Index2.tsx`** — Mesma estrutura da Index, mas usando `HeroSectionClassic` e `CoursesSectionClassic`. Mantém About, HowItWorks, Testimonials, Contact e Footer iguais.
 
-- Line 41: Change `bg-cover bg-center` → `bg-contain bg-top bg-no-repeat bg-black sm:bg-cover sm:bg-center`
-- Line 57: Change `whitespace-nowrap ... text-4xl` → `text-2xl sm:text-4xl sm:whitespace-nowrap`
+### 3. Adicionar rota `/v2`
+
+- **`src/App.tsx`** — Nova rota `<Route path="/v2" element={<Index2 />} />`.
+
+### 4. Atualizar navegação no Header
+
+- **Desktop**: Transformar "Página Inicial" de link estático em dropdown com duas opções:
+  - "Versão Atual" → `href="/"`
+  - "Versão Clássica" → `href="/v2"`
+- **Mobile**: Transformar "Página Inicial" em um `MobileSubmenu` com os mesmos dois links.
+
+## Arquivos modificados/criados
+
+| Arquivo | Ação |
+|---------|------|
+| `src/components/HeroSectionClassic.tsx` | Criar — hero simples com fade-in |
+| `src/components/CoursesSectionClassic.tsx` | Criar — cards sem efeitos premium |
+| `src/pages/Index2.tsx` | Criar — página com componentes clássicos |
+| `src/App.tsx` | Editar — adicionar rota `/v2` |
+| `src/components/Header.tsx` | Editar — submenu "Página Inicial" |
 
