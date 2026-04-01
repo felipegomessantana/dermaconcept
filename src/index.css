@@ -82,7 +82,6 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  }
 
   .marquee-strip {
     --gap: 2rem;
