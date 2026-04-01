@@ -1,61 +1,104 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo-derma.webp";
 
-const Footer = () => (
-  <footer className="bg-foreground text-primary-foreground/70 px-6 py-16 lg:px-20">
-    <div className="container-narrow">
-      <div className="grid md:grid-cols-3 gap-12">
-        {/* Logo & tagline */}
-        <div>
-          <img src={logo} alt="Derma Concept Academy" className="h-10 brightness-200 mb-4" />
-          <p className="text-sm leading-relaxed">
-            Dermatologia que Transforma Carreiras e Pessoas.
-          </p>
-        </div>
+const footerLinks = {
+  formacao: {
+    title: "Formação",
+    items: [
+      { label: "Dermatologia Estética", href: "#cursos" },
+      { label: "Cirurgia Dermatológica", href: "#cursos" },
+      { label: "Mentoria Individual", href: "#cursos" },
+    ],
+  },
+  institucional: {
+    title: "Institucional",
+    items: [
+      { label: "Sobre a Academia", href: "#sobre" },
+      { label: "Fellows", href: "#cursos" },
+      { label: "Seja um Paciente Modelo", href: "#contato" },
+    ],
+  },
+  suporte: {
+    title: "Suporte",
+    items: [
+      { label: "Contato", href: "#contato" },
+      { label: "Política de Privacidade", href: "#" },
+      { label: "Termos de Uso", href: "#" },
+    ],
+  },
+};
 
-        {/* Links */}
-        <div>
-          <p className="text-xs tracking-[0.3em] uppercase text-primary-foreground/40 mb-4">
-            Navegação
+const Footer = () => (
+  <footer className="relative overflow-hidden bg-[#F8F5F1]">
+    {/* Main content */}
+    <div className="relative z-10 mx-auto max-w-7xl px-6 pb-40 pt-20 lg:px-16">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-10">
+        {/* Column 1 — Identity */}
+        <div className="flex flex-col gap-5">
+          <img
+            src={logo}
+            alt="Derma Concept Academy"
+            className="h-14 w-auto self-start"
+          />
+          <p className="text-sm leading-relaxed text-neutral-500">
+            A Derma Concept Academy é um centro de excelência em formação médica
+            na área de dermatologia, unindo teoria de alto nível a prática
+            intensiva.
           </p>
-          <nav className="flex flex-col gap-2">
-            {["Início", "Sobre", "Cursos", "Depoimentos", "Contato"].map((label) => (
+
+          {/* Social icons */}
+          <div className="flex items-center gap-3">
+            {[
+              { Icon: Instagram, label: "Instagram", href: "#" },
+              { Icon: MessageCircle, label: "WhatsApp", href: "#" },
+            ].map(({ Icon, label, href }) => (
               <a
                 key={label}
-                href={`#${label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
-                className="text-sm hover:text-primary-foreground transition-colors"
+                href={href}
+                aria-label={label}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-500 transition-all duration-200 hover:border-neutral-500 hover:text-neutral-800"
               >
-                {label}
+                <Icon size={16} strokeWidth={1.5} />
               </a>
             ))}
-          </nav>
-        </div>
-
-        {/* Social */}
-        <div>
-          <p className="text-xs tracking-[0.3em] uppercase text-primary-foreground/40 mb-4">
-            Redes Sociais
-          </p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-primary-foreground transition-colors" aria-label="Instagram">
-              <Instagram size={20} strokeWidth={1.5} />
-            </a>
-            <a href="#" className="hover:text-primary-foreground transition-colors" aria-label="Facebook">
-              <Facebook size={20} strokeWidth={1.5} />
-            </a>
-            <a href="#" className="hover:text-primary-foreground transition-colors" aria-label="LinkedIn">
-              <Linkedin size={20} strokeWidth={1.5} />
-            </a>
           </div>
-        </div>
-      </div>
 
-      <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center">
-        <p className="text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} Derma Concept Academy. Todos os direitos reservados.
-        </p>
+          <p className="mt-auto text-xs text-neutral-400">
+            © {new Date().getFullYear()} Derma Concept Academy.
+            <br />
+            Todos os direitos reservados.
+          </p>
+        </div>
+
+        {/* Columns 2-4 — Link groups */}
+        {Object.values(footerLinks).map((group) => (
+          <div key={group.title}>
+            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#7A7168]">
+              {group.title}
+            </p>
+            <nav className="flex flex-col gap-3">
+              {group.items.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-sm text-neutral-600 transition-colors duration-200 hover:text-neutral-900"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        ))}
       </div>
     </div>
+
+    {/* Giant watermark text — Obsidian-style bleeding effect */}
+    <span
+      aria-hidden="true"
+      className="pointer-events-none absolute -bottom-[0.15em] left-0 z-0 w-full select-none text-center font-serif text-[20vw] font-bold leading-none tracking-tight text-neutral-300/40"
+    >
+      DERMA
+    </span>
   </footer>
 );
 
