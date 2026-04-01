@@ -57,7 +57,7 @@ function AnimatedHeadline({ text }: { text: string }) {
   const words = text.split(" ");
   return (
     <motion.h1
-      className="font-heading text-3xl font-extrabold leading-[1.08] tracking-tight text-primary-foreground sm:text-4xl lg:text-[3.4rem] xl:text-[4.2rem]"
+      className="font-heading text-2xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl sm:whitespace-nowrap lg:text-[3.4rem] xl:text-[4rem]"
       style={{ perspective: 600 }}
       initial="hidden"
       animate="visible"
