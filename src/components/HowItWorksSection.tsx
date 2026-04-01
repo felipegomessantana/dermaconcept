@@ -151,7 +151,7 @@ const TextParallaxContent = ({
   children: React.ReactNode;
 }) => (
   <div>
-    <div className="relative h-[150vh]">
+    <div className="relative h-[50vh]">
       <StickyImage imgUrl={imgUrl} />
       <OverlayCopy subheading={subheading} heading={heading} />
     </div>
