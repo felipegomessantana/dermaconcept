@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { CalendarDays, Clock, CalendarClock, Users, MapPin, Sparkles } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -8,12 +8,12 @@ const fadeUp = (delay = 0) => ({
 });
 
 const infoItems = [
-  { label: "Duração", value: "6 meses" },
-  { label: "Carga horária", value: "96 horas" },
-  { label: "Frequência", value: "4h por semana" },
-  { label: "Turmas", value: "Manhã ou Tarde" },
-  { label: "Local", value: "Belo Horizonte" },
-  { label: "Diferencial", value: "Acompanhamento de resultados reais" },
+  { label: "Duração", value: "6 meses", icon: CalendarDays },
+  { label: "Carga horária", value: "96 horas", icon: Clock },
+  { label: "Frequência", value: "4h por semana", icon: CalendarClock },
+  { label: "Turmas", value: "Manhã ou Tarde", icon: Users },
+  { label: "Local", value: "Belo Horizonte", icon: MapPin },
+  { label: "Diferencial", value: "Acompanhamento de resultados reais", icon: Sparkles },
 ];
 
 const FellowSemanalHero = () => (
@@ -88,27 +88,30 @@ const FellowSemanalHero = () => (
           </p>
 
           <div className="flex flex-col gap-6">
-            {infoItems.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }}
-                className="flex items-start gap-4"
-              >
-                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#F8F5F1]">
-                  <Check size={12} strokeWidth={2.5} className="text-[#7A7168]" />
-                </span>
-                <div>
-                  <p className="text-[11px] font-medium uppercase tracking-widest text-neutral-400">
-                    {item.label}
-                  </p>
-                  <p className="mt-0.5 text-base font-medium text-[#1A1A1A]">
-                    {item.value}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            {infoItems.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }}
+                  className="flex items-start gap-4"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center">
+                    <Icon size={15} strokeWidth={1.8} className="text-[#9A8D7F]" />
+                  </span>
+                  <div>
+                    <p className="text-[11px] font-medium uppercase tracking-widest text-neutral-400">
+                      {item.label}
+                    </p>
+                    <p className="mt-0.5 text-base font-medium text-[#1A1A1A]">
+                      {item.value}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

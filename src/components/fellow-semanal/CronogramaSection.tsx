@@ -2,13 +2,78 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-const schedule = [
-  { month: "Fevereiro", topic: "Anatomia, Toxina e Bioestimuladores" },
-  { month: "Março", topic: "Ácido Hialurônico e Medicina Regenerativa" },
-  { month: "Abril", topic: "Peelings e Cicatriz de Acne" },
-  { month: "Maio", topic: "Tricologia, Fios e Corporal" },
-  { month: "Junho", topic: "Tecnologias e Ultrassom" },
-  { month: "Julho", topic: "Íntimo, Gestão e Encerramento" },
+interface Lesson {
+  tag: string;
+  description: string;
+}
+
+interface ScheduleMonth {
+  month: string;
+  topic: string;
+  lessons: Lesson[];
+}
+
+const schedule: ScheduleMonth[] = [
+  {
+    month: "Fevereiro",
+    topic: "Anatomia, Toxina e Bioestimuladores",
+    lessons: [
+      { tag: "Aula 01 - Teoria", description: "Anatomia, avaliação global da face e Toxina botulínica básica/avançada." },
+      { tag: "Aula 02 - Prática", description: "Toxina botulínica." },
+      { tag: "Aula 03 - Teoria", description: "Bioestimuladores de colágeno injetáveis." },
+      { tag: "Aula 04 - Prática", description: "Bioestimuladores de colágeno injetáveis." },
+    ],
+  },
+  {
+    month: "Março",
+    topic: "Ácido Hialurônico e Medicina Regenerativa",
+    lessons: [
+      { tag: "Aula 01 - Teoria", description: "Preenchimento com ácido hialurônico facial." },
+      { tag: "Aula 02 - Prática", description: "Preenchimento com ácido hialurônico facial." },
+      { tag: "Aula 03 - Teoria + Prática", description: "Ácido hialurônico não reticulado (Profhilo/Saypha) e Medicina Regenerativa (PDRN e Exossomas)." },
+      { tag: "Aula 04 - Prática", description: "Mix: Toxina + Bioestimuladores + Preenchimento + Regeneradores." },
+    ],
+  },
+  {
+    month: "Abril",
+    topic: "Peelings e Cicatriz de Acne",
+    lessons: [
+      { tag: "Aula 01 - Teoria", description: "Peelings médicos." },
+      { tag: "Aula 02 - Prática", description: "Peelings médicos." },
+      { tag: "Aula 03 - Teoria", description: "Tratamento de cicatriz de acne - IPCA." },
+      { tag: "Aula 04 - Prática", description: "Tratamento de cicatriz de acne - IPCA." },
+    ],
+  },
+  {
+    month: "Maio",
+    topic: "Tricologia, Fios e Corporal",
+    lessons: [
+      { tag: "Aula 01 - Teoria", description: "Tricologia." },
+      { tag: "Aula 02 - Teoria + Prática", description: "Microagulhamento, MMP, Dermapen, Emptiers e Mesoterapia." },
+      { tag: "Aula 03 - Teoria + Prática", description: "Fios PDO (liso e tração)." },
+      { tag: "Aula 04 - Teoria + Prática", description: "Tratamentos corporais (tecnologias e injetáveis)." },
+    ],
+  },
+  {
+    month: "Junho",
+    topic: "Tecnologias e Ultrassom",
+    lessons: [
+      { tag: "Aula 01 - Teoria", description: "Dermocosméticos." },
+      { tag: "Aula 02 - Prática", description: "Mix de todos os procedimentos." },
+      { tag: "Aula 03 - Teoria + Prática", description: "Tecnologias (Liftera, Laser CO2, Etherea, Mesojectgun, Jato de Plasma)." },
+      { tag: "Aula 04 - Teoria + Prática", description: "Ácido hialurônico avançado guiado por ultrassom dermatológico." },
+    ],
+  },
+  {
+    month: "Julho",
+    topic: "Íntimo, Gestão e Encerramento",
+    lessons: [
+      { tag: "Aula 01 - Teoria + Prática", description: "Rejuvenescimento íntimo (laser e injetáveis)." },
+      { tag: "Aula 02 - Teoria", description: "Gestão de consultório." },
+      { tag: "Aula 03 - Prática", description: "Mix de todos os procedimentos." },
+      { tag: "Aula 04 - Teoria", description: "Complicações de injetáveis + Entrega de certificados." },
+    ],
+  },
 ];
 
 const AccordionItem = ({
@@ -17,7 +82,7 @@ const AccordionItem = ({
   open,
   onToggle,
 }: {
-  item: (typeof schedule)[0];
+  item: ScheduleMonth;
   index: number;
   open: boolean;
   onToggle: () => void;
@@ -45,7 +110,7 @@ const AccordionItem = ({
             {item.topic}
           </span>
         </div>
-        <span className="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-neutral-200 text-neutral-400 transition-colors duration-200 group-hover:border-neutral-400">
+        <span className="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-neutral-200 text-neutral-400 transition-colors duration-200">
           {open ? <Minus size={14} /> : <Plus size={14} />}
         </span>
       </button>
@@ -59,14 +124,19 @@ const AccordionItem = ({
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="pb-8 pl-0 lg:pl-[calc(theme(spacing.8)+theme(fontSize.2xl))]">
-              <p className="max-w-xl text-sm leading-relaxed text-neutral-500 lg:text-base">
-                Neste módulo você estudará e praticará os temas de{" "}
-                <span className="font-medium text-[#1A1A1A]">
-                  {item.topic.toLowerCase()}
-                </span>
-                , com pacientes reais e supervisão direta dos preceptores.
-              </p>
+            <div className="pb-8 pl-0 lg:pl-8">
+              <div className="flex flex-col gap-4">
+                {item.lessons.map((lesson, li) => (
+                  <div key={li} className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-2">
+                    <span className="text-sm font-medium text-[#7A7168] lg:text-[15px]">
+                      {lesson.tag}:
+                    </span>
+                    <span className="text-sm leading-relaxed text-neutral-500 lg:text-[15px]">
+                      {lesson.description}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
