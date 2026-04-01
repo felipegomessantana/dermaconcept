@@ -145,8 +145,8 @@ const MobileCarousel = () => {
         className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[7.5vw] pb-4 scrollbar-hide"
         style={{ WebkitOverflowScrolling: "touch" }}
       >
-        {allTestimonials.map((t) => (
-          <MobileTestimonialCard key={t.name} {...t} />
+        {allTestimonials.map((t, i) => (
+          <MobileTestimonialCard key={t.name} {...t} index={i} />
         ))}
       </div>
 
