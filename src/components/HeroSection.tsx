@@ -105,7 +105,7 @@ const HeroSection = () => {
     <section
       ref={sectionRef}
       id="inicio"
-      className="relative min-h-[100svh] overflow-hidden bg-foreground"
+      className="relative min-h-[100svh] overflow-hidden bg-black"
     >
       {/* Parallax background image */}
       <motion.div
@@ -113,21 +113,11 @@ const HeroSection = () => {
         style={{
           backgroundImage: `url(${bgImage})`,
           y: bgY,
-          scale: 1.1,
         }}
       />
 
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/20 to-foreground" />
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
-
-      {/* Decorative grain texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-        }}
-      />
+      {/* Gradient overlay — only behind text at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
 
       {/* Content */}
       <motion.div
