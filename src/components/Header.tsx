@@ -39,14 +39,14 @@ function FellowsContent() {
 
 function WorkshopsContent() {
   const items = [
-    "Toxina Botulínica",
-    "Preenchimento com Ácido Hialurônico + Bloqueio",
-    "Preenchimento com Ácido Hialurônico Avançado + Ultrassom de Pelo Guiado",
-    "Bioestimuladores de Colágeno",
-    "Rejuvenescimento Íntimo",
-    "Peeling Médico",
-    "IPCA",
-    "Mentoria Individual",
+    { label: "Toxina Botulínica", href: "#cursos" },
+    { label: "Preenchimento com Ácido Hialurônico + Bloqueio", href: "#cursos" },
+    { label: "Preenchimento com Ácido Hialurônico Avançado + Ultrassom de Pelo Guiado", href: "#cursos" },
+    { label: "Bioestimuladores de Colágeno", href: "#cursos" },
+    { label: "Rejuvenescimento Íntimo", href: "#cursos" },
+    { label: "Peeling Médico", href: "#cursos" },
+    { label: "IPCA", href: "#cursos" },
+    { label: "Mentoria Individual", href: "/mentoria-individual" },
   ];
 
   return (
@@ -56,7 +56,7 @@ function WorkshopsContent() {
       </p>
       <div className="grid grid-cols-2 gap-x-4">
         {items.map((item) => (
-          <DropdownLink key={item} href="#cursos">{item}</DropdownLink>
+          <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
         ))}
       </div>
     </div>
@@ -355,7 +355,7 @@ const mobileMenuSections = [
       { label: "Rejuvenescimento Íntimo", href: "#cursos" },
       { label: "Peeling Médico", href: "#cursos" },
       { label: "IPCA", href: "#cursos" },
-      { label: "Mentoria Individual", href: "#cursos" },
+      { label: "Mentoria Individual", href: "/mentoria-individual" },
     ],
   },
   {
