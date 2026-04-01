@@ -7,12 +7,12 @@ import logo from "@/assets/logo-derma.webp";
 /* ───────────── Dropdown link item ───────────── */
 
 const DropdownLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black"
   >
     {children}
-  </a>
+  </Link>
 );
 
 /* ───────────── Tab content components ───────────── */
