@@ -8,6 +8,7 @@ import Index2 from "./pages/Index2.tsx";
 import Contato from "./pages/Contato.tsx";
 import FellowSemanal from "./pages/FellowSemanal.tsx";
 import MentoriaIndividual from "./pages/MentoriaIndividual.tsx";
+import QuemSomos from "./pages/QuemSomos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
