@@ -67,20 +67,31 @@ interface TestimonialCardProps {
 }
 
 /* ── Mobile card ── */
-const MobileTestimonialCard = ({ name, text, initials }: TestimonialCardProps) => (
-  <div className="flex-shrink-0 w-[85vw] max-w-[340px] snap-center rounded-2xl bg-card p-6 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)] border border-border/30">
-    <Quote size={20} className="text-primary mb-4" strokeWidth={1} />
-    <p className="text-muted-foreground leading-relaxed italic text-sm mb-6 whitespace-normal break-words">
-      "{text}"
-    </p>
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-xs font-body tracking-wider text-muted-foreground">
-        {initials}
+const MobileTestimonialCard = ({ name, text, initials, index = 0 }: TestimonialCardProps & { index?: number }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-20px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+      className="flex-shrink-0 w-[85vw] max-w-[340px] snap-center rounded-2xl bg-card p-6 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)] border border-border/30"
+    >
+      <Quote size={20} className="text-primary mb-4" strokeWidth={1} />
+      <p className="text-muted-foreground leading-relaxed italic text-sm mb-6 whitespace-normal break-words">
+        "{text}"
+      </p>
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-xs font-body tracking-wider text-muted-foreground">
+          {initials}
+        </div>
+        <p className="font-heading text-sm">{name}</p>
       </div>
-      <p className="font-heading text-sm">{name}</p>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};
 
 /* ── Desktop card ── */
 const DesktopTestimonialCard = ({ name, text, initials }: TestimonialCardProps) => (
