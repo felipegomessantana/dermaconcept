@@ -57,7 +57,7 @@ function AnimatedHeadline({ text }: { text: string }) {
   const words = text.split(" ");
   return (
     <motion.h1
-      className="font-heading text-3xl font-extrabold leading-[1.08] tracking-tight text-primary-foreground sm:text-4xl lg:text-[3.4rem] xl:text-[4.2rem]"
+      className="font-heading text-2xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-4xl sm:whitespace-nowrap lg:text-[3.4rem] xl:text-[4rem]"
       style={{ perspective: 600 }}
       initial="hidden"
       animate="visible"
@@ -105,7 +105,7 @@ const HeroSection = () => {
     <section
       ref={sectionRef}
       id="inicio"
-      className="relative min-h-[100svh] overflow-hidden bg-foreground"
+      className="relative min-h-[100svh] overflow-hidden bg-black"
     >
       {/* Parallax background image */}
       <motion.div
@@ -113,26 +113,16 @@ const HeroSection = () => {
         style={{
           backgroundImage: `url(${bgImage})`,
           y: bgY,
-          scale: 1.1,
         }}
       />
 
-      {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/20 to-foreground" />
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
-
-      {/* Decorative grain texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-        }}
-      />
+      {/* Gradient overlay — only behind text at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
 
       {/* Content */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-16 pt-24 text-center sm:px-10 lg:px-14 xl:px-20"
+        className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-14 pt-24 text-center sm:px-10 lg:px-14 xl:px-20"
       >
         {/* Overline with animated line */}
         <motion.div
@@ -143,16 +133,16 @@ const HeroSection = () => {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden sm:block h-px w-10 bg-primary-foreground/40 origin-left"
+            className="hidden sm:block h-px w-10 bg-white/40 origin-left"
           />
-          <span className="text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/60">
+          <span className="text-[11px] font-medium tracking-[0.35em] uppercase text-white/60">
             Derma Concept Academy
           </span>
           <motion.span
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden sm:block h-px w-10 bg-primary-foreground/40 origin-right"
+            className="hidden sm:block h-px w-10 bg-white/40 origin-right"
           />
         </motion.div>
 
@@ -162,7 +152,7 @@ const HeroSection = () => {
         {/* Subtitle */}
         <motion.p
           {...fadeUp(1.4)}
-          className="mt-6 max-w-lg font-heading text-lg italic leading-relaxed text-primary-foreground/70 lg:text-xl"
+          className="mt-6 font-heading text-lg italic leading-relaxed text-white/80 lg:text-xl"
         >
           Dermatologia que Transforma Carreiras e Pessoas.
         </motion.p>
@@ -171,14 +161,14 @@ const HeroSection = () => {
         {/* Stats */}
         <motion.div
           {...fadeUp(1.8)}
-          className="mt-14 w-full max-w-md grid grid-cols-3 gap-6 border-t border-primary-foreground/15 pt-8"
+          className="mt-14 grid grid-cols-3 gap-6 border-t border-white/20 pt-8"
         >
           {stats.map((s) => (
             <div key={s.label}>
-              <p className="font-heading text-2xl font-extrabold text-primary-foreground lg:text-3xl">
+              <p className="font-heading text-2xl font-extrabold text-white lg:text-3xl">
                 <AnimatedNumber value={s.value} suffix={s.suffix} />
               </p>
-              <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-primary-foreground/50">
+              <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-white/60">
                 {s.label}
               </p>
             </div>
@@ -196,9 +186,9 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="w-5 h-8 rounded-full border border-primary-foreground/30 flex items-start justify-center pt-1.5"
+          className="w-5 h-8 rounded-full border border-white/30 flex items-start justify-center pt-1.5"
         >
-          <div className="w-1 h-1.5 rounded-full bg-primary-foreground/50" />
+          <div className="w-1 h-1.5 rounded-full bg-white/50" />
         </motion.div>
       </motion.div>
     </section>
