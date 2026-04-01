@@ -264,12 +264,12 @@ const DesktopNav = () => {
         </Tab>
       ))}
 
-      <a
-        href="#contato"
+      <Link
+        to="/contato"
         className="ml-2 rounded-[12px] border border-gray-800 px-5 py-1.5 text-sm font-medium text-gray-800 transition-all duration-200 hover:bg-gray-800 hover:text-white"
       >
         Contato
-      </a>
+      </Link>
 
       <AnimatePresence>
         {selected && <Content dir={dir} selected={selected} />}
