@@ -171,12 +171,12 @@ const Tab = ({
 );
 
 const StaticLink = ({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className={`px-3 py-1.5 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-800 ${className}`}
   >
     {children}
-  </a>
+  </Link>
 );
 
 const Nub = ({ selected }: { selected: number | null }) => {
