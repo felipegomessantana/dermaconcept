@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Quote } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import AnimatedSection from "./AnimatedSection";
@@ -97,19 +97,62 @@ const DesktopTestimonialCard = ({ name, text, initials }: TestimonialCardProps) 
   </div>
 );
 
-/* ── Mobile: swipeable snap carousel ── */
+/* ── Mobile: swipeable snap carousel with dots ── */
 const MobileCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild?.clientWidth ?? 1;
+    const gap = 16;
+    const index = Math.round(el.scrollLeft / (cardWidth + gap));
+    setActiveIndex(Math.min(index, allTestimonials.length - 1));
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const scrollTo = (index: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.firstElementChild?.clientWidth ?? 1;
+    const gap = 16;
+    el.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
+  };
 
   return (
-    <div
-      ref={scrollRef}
-      className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[7.5vw] pb-4 scrollbar-hide"
-      style={{ WebkitOverflowScrolling: "touch" }}
-    >
-      {allTestimonials.map((t) => (
-        <MobileTestimonialCard key={t.name} {...t} />
-      ))}
+    <div>
+      <div
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[7.5vw] pb-4 scrollbar-hide"
+        style={{ WebkitOverflowScrolling: "touch" }}
+      >
+        {allTestimonials.map((t) => (
+          <MobileTestimonialCard key={t.name} {...t} />
+        ))}
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-5">
+        {allTestimonials.map((_, i) => (
+          <button
+            key={i}
+            aria-label={`Ir para depoimento ${i + 1}`}
+            onClick={() => scrollTo(i)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === activeIndex
+                ? "w-6 bg-primary"
+                : "w-2 bg-primary/25"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
