@@ -321,7 +321,7 @@ const MobileSubmenu = ({
                 className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </motion.div>
