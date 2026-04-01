@@ -18,9 +18,9 @@ const DropdownLink = ({ href, children }: { href: string; children: React.ReactN
 
 function FellowsContent() {
   const items = [
-    "Dermatologia Estética Semanal",
-    "Dermatologia Estética Mensal",
-    "Cirurgia Dermatológica",
+    { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
+    { label: "Dermatologia Estética Mensal", href: "#cursos" },
+    { label: "Cirurgia Dermatológica", href: "#cursos" },
   ];
 
   return (
@@ -30,7 +30,7 @@ function FellowsContent() {
       </p>
       <div className="flex flex-col">
         {items.map((item) => (
-          <DropdownLink key={item} href="#cursos">{item}</DropdownLink>
+          <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
         ))}
       </div>
     </div>
@@ -340,7 +340,7 @@ const mobileMenuSections = [
   {
     title: "Fellows",
     items: [
-      { label: "Dermatologia Estética Semanal", href: "#cursos" },
+      { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
       { label: "Dermatologia Estética Mensal", href: "#cursos" },
       { label: "Cirurgia Dermatológica", href: "#cursos" },
     ],
