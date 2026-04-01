@@ -24,7 +24,8 @@ const formats = [
 ];
 
 const MentoriaSection = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
