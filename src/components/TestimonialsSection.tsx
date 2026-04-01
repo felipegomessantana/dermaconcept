@@ -177,9 +177,17 @@ interface MarqueeRowProps {
 
 const MarqueeRow = ({ items, direction = "left" }: MarqueeRowProps) => {
   const doubled = [...items, ...items];
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div className="group relative overflow-hidden">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative overflow-hidden"
+    >
       <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
 
@@ -192,7 +200,7 @@ const MarqueeRow = ({ items, direction = "left" }: MarqueeRowProps) => {
           <DesktopTestimonialCard key={`${t.name}-${i}`} {...t} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
