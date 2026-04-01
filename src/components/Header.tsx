@@ -416,16 +416,7 @@ const Header = () => {
             className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"
           >
             <div className="px-6 py-4">
-              {/* Página Inicial */}
-              <a
-                href="#inicio"
-                onClick={handleClose}
-                className="block border-b border-gray-100/80 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black"
-              >
-                Página Inicial
-              </a>
-
-              {/* Accordion sections */}
+              {/* Accordion sections (includes Página Inicial) */}
               {mobileMenuSections.map((section, idx) => (
                 <MobileSubmenu
                   key={section.title}
