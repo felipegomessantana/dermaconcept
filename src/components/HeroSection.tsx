@@ -118,7 +118,7 @@ const HeroSection = () => {
       />
 
       {/* Multi-layer gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-transparent to-foreground/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/20 to-foreground" />
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/40 via-transparent to-transparent" />
 
       {/* Decorative grain texture */}
