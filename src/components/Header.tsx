@@ -112,7 +112,26 @@ function PacienteModeloContent() {
 
 /* ───────────── Tab data ───────────── */
 
+function PaginaInicialContent() {
+  return (
+    <div className="w-[240px]">
+      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+        Página Inicial
+      </p>
+      <div className="flex flex-col">
+        <a href="/" className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black">
+          Versão Atual
+        </a>
+        <a href="/v2" className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black">
+          Versão Clássica
+        </a>
+      </div>
+    </div>
+  );
+}
+
 const TABS = [
+  { title: "Página Inicial", Component: PaginaInicialContent },
   { title: "Fellows", Component: FellowsContent },
   { title: "Workshops", Component: WorkshopsContent },
   { title: "Seja Um Paciente Modelo", Component: PacienteModeloContent },
@@ -236,7 +255,7 @@ const DesktopNav = () => {
       onMouseLeave={() => handleSetSelected(null)}
       className="relative flex h-fit items-center gap-1"
     >
-      <StaticLink href="#inicio">Página Inicial</StaticLink>
+      {/* Página Inicial is now a tab dropdown */}
 
       {TABS.map((t) => (
         <Tab key={t.id} selected={selected} handleSetSelected={handleSetSelected} tab={t.id}>
@@ -311,6 +330,13 @@ const MobileSubmenu = ({
 );
 
 const mobileMenuSections = [
+  {
+    title: "Página Inicial",
+    items: [
+      { label: "Versão Atual", href: "/" },
+      { label: "Versão Clássica", href: "/v2" },
+    ],
+  },
   {
     title: "Fellows",
     items: [
@@ -390,16 +416,7 @@ const Header = () => {
             className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"
           >
             <div className="px-6 py-4">
-              {/* Página Inicial */}
-              <a
-                href="#inicio"
-                onClick={handleClose}
-                className="block border-b border-gray-100/80 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black"
-              >
-                Página Inicial
-              </a>
-
-              {/* Accordion sections */}
+              {/* Accordion sections (includes Página Inicial) */}
               {mobileMenuSections.map((section, idx) => (
                 <MobileSubmenu
                   key={section.title}
