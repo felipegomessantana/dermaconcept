@@ -59,6 +59,8 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
 
   // Image moves slower (parallax)
   const imageY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [-50, 50]);
+  // Zoom in as you scroll down
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   // Text moves faster
   const textY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [60, -60]);
 
@@ -67,13 +69,14 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
       className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5]"
       style={{ y: imageY }}
     >
-      <img
+      <motion.img
         src={course.image}
         alt={course.title}
         className="w-full h-full object-cover"
         loading="lazy"
         width={700}
         height={875}
+        style={{ scale: imageScale }}
       />
       <span className="absolute top-5 left-5 px-3.5 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase rounded-full bg-card/90 text-foreground backdrop-blur-sm border border-border/30">
         {course.tag}
