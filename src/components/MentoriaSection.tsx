@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Play } from "lucide-react";
 import { BorderBeamButton } from "./ui/border-beam-button";
