@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-derma.webp";
 
 /* ───────────── Dropdown link item ───────────── */
