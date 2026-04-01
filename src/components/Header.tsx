@@ -431,13 +431,13 @@ const Header = () => {
 
               {/* Contato CTA */}
               <div className="mt-6 pb-2">
-                <a
-                  href="#contato"
+                <Link
+                  to="/contato"
                   onClick={handleClose}
                   className="block w-full rounded-xl border-2 border-gray-800 py-3 text-center text-sm font-bold uppercase tracking-[0.2em] text-gray-800 transition-all duration-200 hover:bg-gray-800 hover:text-white"
                 >
                   Contato
-                </a>
+                </Link>
               </div>
             </div>
           </motion.nav>
