@@ -389,7 +389,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
       <div className="container-narrow flex items-center justify-between px-6 py-4 lg:px-20">
-        <a href="#inicio">
+        <a href="/" className="cursor-pointer">
           <img src={logo} alt="Derma Concept Academy" className="h-14 md:h-16" />
         </a>
 
