@@ -133,7 +133,7 @@ const HeroSection = () => {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden sm:block h-px w-10 bg-primary-foreground/40 origin-left"
+            className="hidden sm:block h-px w-10 bg-white/40 origin-left"
           />
           <span className="text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/60">
             Derma Concept Academy
