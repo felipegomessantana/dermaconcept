@@ -1,40 +1,26 @@
 
 
-# Plano: Criar Página Inicial 2 para Validação A/B
+# Plano: Ajustar Hero e Cursos da Versão Atual
 
-## Resumo
+## 1. HeroSection — Remover CTA e reforçar overlay
 
-Criar uma segunda versão da página inicial com o hero banner e cursos anteriores (sem as animações premium recentes), acessível via submenu no header.
+**`src/components/HeroSection.tsx`**:
+- Remover o bloco do botão "Conheça os cursos" (linhas 170-183)
+- Intensificar o gradient overlay inferior: trocar `from-foreground/30` por algo mais forte como `from-foreground/70` e `to-foreground/95` por `to-foreground` para o conteúdo (texto, stats) ter mais contraste sobre a imagem
 
-## O que será feito
+## 2. CoursesSection — Layout imagem esquerda + texto direita com BorderBeamButton
 
-### 1. Criar componentes "clássicos" (versões anteriores)
+**`src/components/CoursesSection.tsx`** — Reescrever para o layout visto no screenshot:
+- Cada curso renderizado como uma row de 2 colunas (`grid-cols-1 md:grid-cols-2`): imagem à esquerda, conteúdo à direita
+- Conteúdo inclui: contador (`01 / 04`), titulo serif, descrição, e `BorderBeamButton` como CTA com texto "ACESSE O PROGRAMA"
+- Manter `AnimatedSection` para animação de entrada por scroll
+- Cursos empilhados verticalmente (cada um ocupando a largura total), não em grid 2x2
+- Usar os mesmos dados de cursos e imagens já existentes
 
-- **`src/components/HeroSectionClassic.tsx`** — Hero simples sem parallax, sem animação por letra, sem contadores animados. Imagem de fundo estática com fade-in básico, headline direto, CTA simples.
-- **`src/components/CoursesSectionClassic.tsx`** — Cards de cursos sem hover premium (sem scale na imagem, sem underline animado, sem número flutuante). Layout grid limpo com `AnimatedSection` básico.
-
-### 2. Criar página Index2
-
-- **`src/pages/Index2.tsx`** — Mesma estrutura da Index, mas usando `HeroSectionClassic` e `CoursesSectionClassic`. Mantém About, HowItWorks, Testimonials, Contact e Footer iguais.
-
-### 3. Adicionar rota `/v2`
-
-- **`src/App.tsx`** — Nova rota `<Route path="/v2" element={<Index2 />} />`.
-
-### 4. Atualizar navegação no Header
-
-- **Desktop**: Transformar "Página Inicial" de link estático em dropdown com duas opções:
-  - "Versão Atual" → `href="/"`
-  - "Versão Clássica" → `href="/v2"`
-- **Mobile**: Transformar "Página Inicial" em um `MobileSubmenu` com os mesmos dois links.
-
-## Arquivos modificados/criados
+## Arquivos modificados
 
 | Arquivo | Ação |
 |---------|------|
-| `src/components/HeroSectionClassic.tsx` | Criar — hero simples com fade-in |
-| `src/components/CoursesSectionClassic.tsx` | Criar — cards sem efeitos premium |
-| `src/pages/Index2.tsx` | Criar — página com componentes clássicos |
-| `src/App.tsx` | Editar — adicionar rota `/v2` |
-| `src/components/Header.tsx` | Editar — submenu "Página Inicial" |
+| `src/components/HeroSection.tsx` | Remover botão CTA, intensificar overlay |
+| `src/components/CoursesSection.tsx` | Reescrever layout: imagem esquerda + texto direita + BorderBeamButton |
 
