@@ -314,9 +314,9 @@ const MobileSubmenu = ({
         >
           <div className="pb-4 pl-4 flex flex-col gap-1">
             {items.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 onClick={onNavigate}
                 className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
               >
