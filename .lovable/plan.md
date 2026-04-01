@@ -1,23 +1,23 @@
 
 
-# Plano: Restaurar Hero ao estilo anterior
+## Plan: Reduce parallax image height and constrain to container width
 
-## Mudanças em `src/components/HeroSection.tsx`
+### Problem
+The sticky background images in the "Como Funciona?" section are full-viewport height (`h-screen`) and full-width, making them feel oversized.
 
-### 1. Remover escala da imagem de fundo
-- Linha 117: remover `scale: 1.1` do style do `motion.div` da imagem
+### Changes — `src/components/HowItWorksSection.tsx`
 
-### 2. Substituir overlays por gradiente apenas inferior (preto)
-- Linha 121: trocar `from-foreground/70 via-foreground/20 to-foreground` por `from-transparent via-transparent to-black/90`
-- Linha 122: remover o overlay lateral (`bg-gradient-to-r from-foreground/40...`)
+1. **Reduce image height to ~1/3 of viewport**: Change `StickyImage` from `h-screen` to `h-[33vh]` and the parent `TextParallaxContent` relative container from `h-[150vh]` to `h-[50vh]` to maintain the parallax scroll ratio.
 
-### 3. Ajustar fundo da section
-- Linha 108: trocar `bg-foreground` por `bg-black` para consistência com a referência
+2. **Constrain width to container**: Wrap the sticky image area in a `max-w-7xl mx-auto` container so it respects the site's content width instead of spanning full-width.
 
-### 4. Ajustar cores do texto
-- Substituir `text-primary-foreground` por `text-white` e variantes (`text-white/60`, `text-white/80`, `text-white/50`, `text-white/20`) para corresponder à referência original
+3. **Adjust OverlayCopy height**: Match the overlay text container height to the new reduced image height (`h-[33vh]` instead of `h-screen`).
 
-| Arquivo | Ação |
-|---------|------|
-| `src/components/HeroSection.tsx` | Remover scale, trocar overlays por gradiente inferior preto, ajustar cores de texto |
+4. **Keep all Framer Motion logic intact**: `useScroll`, `useTransform`, scale and opacity transforms remain unchanged.
+
+### Technical details
+- `StickyImage`: `h-screen` → `h-[33vh]`, add `max-w-7xl mx-auto` wrapper
+- `OverlayCopy`: `h-screen` → `h-[33vh]`
+- `TextParallaxContent`: `h-[150vh]` → `h-[50vh]`
+- All rounded corners, dark overlay, and padding preserved
 
