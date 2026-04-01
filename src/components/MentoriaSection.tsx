@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Play } from "lucide-react";
 import { BorderBeamButton } from "./ui/border-beam-button";
@@ -24,6 +24,8 @@ const formats = [
 ];
 
 const MentoriaSection = () => {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -49,24 +51,45 @@ const MentoriaSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto aspect-[9/16] w-full max-w-[280px] overflow-hidden rounded-2xl bg-gradient-to-b from-[#3a3530] to-[#1A1A1A] shadow-lg lg:mx-0"
+            className="relative mx-auto aspect-[9/16] w-full max-w-[280px] cursor-pointer overflow-hidden rounded-2xl bg-black shadow-lg lg:mx-0"
+            onClick={() => {
+              if (videoRef.current) {
+                if (playing) {
+                  videoRef.current.pause();
+                } else {
+                  videoRef.current.play();
+                }
+                setPlaying(!playing);
+              }
+            }}
           >
-            {/* Placeholder shimmer */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/[0.02]" />
+            <video
+              ref={videoRef}
+              src="https://dermaconcept.com.br/wp-content/uploads/2025/10/SaveClip.App_AQNIAHYmeSPzW7Rx6AxWPRnG39Oxf1oYikqvQVM86WnNyAfTl4F9LRJHJmomejY0OaBfFnr5teCmI3j_t9-Q4r9ER7M_Xu9wHq3eZp0.mp4"
+              className="h-full w-full object-cover"
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
 
-            {/* Play button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-110">
-                <Play size={24} className="ml-1 text-white/90" fill="currentColor" />
+            {/* Play button overlay */}
+            {!playing && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-transform duration-300 hover:scale-110">
+                  <Play size={24} className="ml-1 text-white/90" fill="currentColor" />
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Bottom label */}
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent px-4 pb-4 pt-10">
-              <p className="text-[10px] font-medium uppercase tracking-widest text-white/60">
-                Mentoria em ação
-              </p>
-            </div>
+            {!playing && (
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent px-4 pb-4 pt-10">
+                <p className="text-[10px] font-medium uppercase tracking-widest text-white/60">
+                  Mentoria em ação
+                </p>
+              </div>
+            )}
           </motion.div>
 
           {/* Right — Content (2/3) */}
