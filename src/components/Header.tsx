@@ -355,7 +355,7 @@ const mobileMenuSections = [
       { label: "Rejuvenescimento Íntimo", href: "#cursos" },
       { label: "Peeling Médico", href: "#cursos" },
       { label: "IPCA", href: "#cursos" },
-      { label: "Mentoria Individual", href: "#cursos" },
+      { label: "Mentoria Individual", href: "/mentoria-individual" },
     ],
   },
   {
