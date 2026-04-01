@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { Quote } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import AnimatedSection from "./AnimatedSection";
 
-const topRow = [
+const allTestimonials = [
   {
     name: "Dra. Ana Carolina",
     text: "A Derma Concept Academy transformou minha carreira. O curso de Dermatologia Estética me deu a confiança e a habilidade para oferecer procedimentos de altíssima qualidade aos meus pacientes.",
@@ -27,9 +29,6 @@ const topRow = [
     text: "O curso de Cirurgia Dermatológica foi divisor de águas na minha formação. A prática com pacientes reais sob supervisão qualificada me deu uma segurança imensa.",
     initials: "RM",
   },
-];
-
-const bottomRow = [
   {
     name: "Dra. Camila Ferreira",
     text: "Fiz o curso mensal de Dermatologia Estética e foi a melhor decisão da minha carreira. A didática dos professores é excelente e a infraestrutura da academia é de primeiro mundo.",
@@ -57,16 +56,36 @@ const bottomRow = [
   },
 ];
 
+const topRow = allTestimonials.slice(0, 5);
+const bottomRow = allTestimonials.slice(5);
+
 interface TestimonialCardProps {
   name: string;
   text: string;
   initials: string;
 }
 
-const TestimonialCard = ({ name, text, initials }: TestimonialCardProps) => (
-  <div className="flex-shrink-0 w-[380px] bg-card rounded-2xl p-8 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)] border border-border/30">
-    <Quote size={22} className="text-brand mb-5" strokeWidth={1} />
-    <p className="text-muted-foreground leading-relaxed italic text-sm mb-7">
+/* ── Mobile card ── */
+const MobileTestimonialCard = ({ name, text, initials }: TestimonialCardProps) => (
+  <div className="flex-shrink-0 w-[85vw] max-w-[340px] snap-center rounded-2xl bg-card p-6 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)] border border-border/30">
+    <Quote size={20} className="text-primary mb-4" strokeWidth={1} />
+    <p className="text-muted-foreground leading-relaxed italic text-sm mb-6 whitespace-normal break-words">
+      "{text}"
+    </p>
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-xs font-body tracking-wider text-muted-foreground">
+        {initials}
+      </div>
+      <p className="font-heading text-sm">{name}</p>
+    </div>
+  </div>
+);
+
+/* ── Desktop card ── */
+const DesktopTestimonialCard = ({ name, text, initials }: TestimonialCardProps) => (
+  <div className="flex-shrink-0 w-[380px] rounded-2xl bg-card p-8 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)] border border-border/30">
+    <Quote size={22} className="text-primary mb-5" strokeWidth={1} />
+    <p className="text-muted-foreground leading-relaxed italic text-sm mb-7 whitespace-normal break-words">
       "{text}"
     </p>
     <div className="flex items-center gap-4">
@@ -78,18 +97,34 @@ const TestimonialCard = ({ name, text, initials }: TestimonialCardProps) => (
   </div>
 );
 
+/* ── Mobile: swipeable snap carousel ── */
+const MobileCarousel = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div
+      ref={scrollRef}
+      className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[7.5vw] pb-4 scrollbar-hide"
+      style={{ WebkitOverflowScrolling: "touch" }}
+    >
+      {allTestimonials.map((t) => (
+        <MobileTestimonialCard key={t.name} {...t} />
+      ))}
+    </div>
+  );
+};
+
+/* ── Desktop: infinite marquee rows ── */
 interface MarqueeRowProps {
   items: TestimonialCardProps[];
   direction?: "left" | "right";
 }
 
 const MarqueeRow = ({ items, direction = "left" }: MarqueeRowProps) => {
-  // Duplicate for seamless loop
   const doubled = [...items, ...items];
 
   return (
     <div className="group relative overflow-hidden">
-      {/* Fade edges */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
 
@@ -99,31 +134,40 @@ const MarqueeRow = ({ items, direction = "left" }: MarqueeRowProps) => {
         } group-hover:[animation-play-state:paused]`}
       >
         {doubled.map((t, i) => (
-          <TestimonialCard key={`${t.name}-${i}`} {...t} />
+          <DesktopTestimonialCard key={`${t.name}-${i}`} {...t} />
         ))}
       </div>
     </div>
   );
 };
 
-const TestimonialsSection = () => (
-  <section id="depoimentos" className="section-padding overflow-hidden">
-    <div className="container-narrow">
-      <AnimatedSection className="text-center mb-16">
-        <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
-          Experiências
-        </p>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl">
-          Depoimentos de alunos
-        </h2>
-      </AnimatedSection>
-    </div>
+/* ── Section ── */
+const TestimonialsSection = () => {
+  const isMobile = useIsMobile();
 
-    <div className="space-y-6">
-      <MarqueeRow items={topRow} direction="left" />
-      <MarqueeRow items={bottomRow} direction="right" />
-    </div>
-  </section>
-);
+  return (
+    <section id="depoimentos" className="section-padding overflow-hidden">
+      <div className="container-narrow">
+        <AnimatedSection className="text-center mb-16">
+          <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
+            Experiências
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl">
+            Depoimentos de alunos
+          </h2>
+        </AnimatedSection>
+      </div>
+
+      {isMobile ? (
+        <MobileCarousel />
+      ) : (
+        <div className="space-y-6">
+          <MarqueeRow items={topRow} direction="left" />
+          <MarqueeRow items={bottomRow} direction="right" />
+        </div>
+      )}
+    </section>
+  );
+};
 
 export default TestimonialsSection;
