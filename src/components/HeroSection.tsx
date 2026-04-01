@@ -135,7 +135,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="hidden sm:block h-px w-10 bg-white/40 origin-left"
           />
-          <span className="text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/60">
+          <span className="text-[11px] font-medium tracking-[0.35em] uppercase text-white/60">
             Derma Concept Academy
           </span>
           <motion.span
