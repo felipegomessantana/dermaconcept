@@ -59,6 +59,8 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
 
   // Image moves slower (parallax)
   const imageY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [-50, 50]);
+  // Zoom in as you scroll down
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   // Text moves faster
   const textY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [60, -60]);
 
