@@ -46,7 +46,7 @@ function WorkshopsContent() {
     "Rejuvenescimento Íntimo",
     "Peeling Médico",
     "IPCA",
-    "Mentoria Individual",
+    { label: "Mentoria Individual", href: "/mentoria-individual" },
   ];
 
   return (
