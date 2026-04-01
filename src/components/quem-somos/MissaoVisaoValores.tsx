@@ -39,7 +39,7 @@ const PillarCard = ({
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative rounded-2xl border border-border/60 bg-card p-8 md:p-10 transition-shadow duration-300 hover:shadow-lg"
+      className="group relative rounded-2xl border border-transparent bg-card p-8 md:p-10 transition-shadow duration-300 hover:shadow-md shadow-sm"
     >
       {/* Icon */}
       <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary">
