@@ -167,20 +167,6 @@ const HeroSection = () => {
           Dermatologia que Transforma Carreiras e Pessoas.
         </motion.p>
 
-        {/* CTA */}
-        <motion.div {...fadeUp(1.6)} className="mt-10">
-          <a
-            href="#cursos"
-            className="group inline-flex items-center gap-3 rounded-full border border-primary-foreground/20 bg-primary-foreground/5 px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-primary-foreground/90 backdrop-blur-sm transition-all duration-300 hover:bg-primary-foreground/15 hover:border-primary-foreground/40"
-          >
-            Conheça os cursos
-            <motion.span
-              className="inline-block transition-transform duration-300 group-hover:translate-x-1"
-            >
-              ↓
-            </motion.span>
-          </a>
-        </motion.div>
 
         {/* Stats */}
         <motion.div
