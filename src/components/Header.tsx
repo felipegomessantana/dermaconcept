@@ -18,9 +18,9 @@ const DropdownLink = ({ href, children }: { href: string; children: React.ReactN
 
 function FellowsContent() {
   const items = [
-    "Dermatologia Estética Semanal",
-    "Dermatologia Estética Mensal",
-    "Cirurgia Dermatológica",
+    { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
+    { label: "Dermatologia Estética Mensal", href: "#cursos" },
+    { label: "Cirurgia Dermatológica", href: "#cursos" },
   ];
 
   return (
