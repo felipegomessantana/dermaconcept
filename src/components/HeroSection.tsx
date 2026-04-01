@@ -165,10 +165,10 @@ const HeroSection = () => {
         >
           {stats.map((s) => (
             <div key={s.label}>
-              <p className="font-heading text-2xl font-extrabold text-primary-foreground lg:text-3xl">
+              <p className="font-heading text-2xl font-extrabold text-white lg:text-3xl">
                 <AnimatedNumber value={s.value} suffix={s.suffix} />
               </p>
-              <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-primary-foreground/50">
+              <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-white/60">
                 {s.label}
               </p>
             </div>
