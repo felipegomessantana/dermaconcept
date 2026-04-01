@@ -152,7 +152,7 @@ const HeroSection = () => {
         {/* Subtitle */}
         <motion.p
           {...fadeUp(1.4)}
-          className="mt-6 max-w-lg font-heading text-lg italic leading-relaxed text-primary-foreground/70 lg:text-xl"
+          className="mt-6 font-heading text-lg italic leading-relaxed text-white/80 lg:text-xl"
         >
           Dermatologia que Transforma Carreiras e Pessoas.
         </motion.p>
