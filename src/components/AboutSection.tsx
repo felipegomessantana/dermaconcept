@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
+import { BorderBeamButton } from "./ui/border-beam-button";
 import aboutImg from "@/assets/about-clinic.jpg";
 
 const AboutSection = () => (
