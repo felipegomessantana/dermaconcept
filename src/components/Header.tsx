@@ -255,7 +255,7 @@ const DesktopNav = () => {
       onMouseLeave={() => handleSetSelected(null)}
       className="relative flex h-fit items-center gap-1"
     >
-      <StaticLink href="#inicio">Página Inicial</StaticLink>
+      {/* Página Inicial is now a tab dropdown */}
 
       {TABS.map((t) => (
         <Tab key={t.id} selected={selected} handleSetSelected={handleSetSelected} tab={t.id}>
