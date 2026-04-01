@@ -1,26 +1,36 @@
 
 
-# Plano: Ajustar Hero e Cursos da Versão Atual
+# Plano: Adicionar efeito Text Parallax Content na seção de Cursos
 
-## 1. HeroSection — Remover CTA e reforçar overlay
+## O que será feito
 
-**`src/components/HeroSection.tsx`**:
-- Remover o bloco do botão "Conheça os cursos" (linhas 170-183)
-- Intensificar o gradient overlay inferior: trocar `from-foreground/30` por algo mais forte como `from-foreground/70` e `to-foreground/95` por `to-foreground` para o conteúdo (texto, stats) ter mais contraste sobre a imagem
+Reescrever `CoursesSection.tsx` para implementar o efeito **Text Parallax Content** — onde a imagem de cada curso fica "sticky" (fixa) enquanto o conteúdo textual rola por cima, criando um efeito de parallax por scroll. Esse é o padrão visual mostrado no screenshot.
 
-## 2. CoursesSection — Layout imagem esquerda + texto direita com BorderBeamButton
+## Como funciona o efeito
 
-**`src/components/CoursesSection.tsx`** — Reescrever para o layout visto no screenshot:
-- Cada curso renderizado como uma row de 2 colunas (`grid-cols-1 md:grid-cols-2`): imagem à esquerda, conteúdo à direita
-- Conteúdo inclui: contador (`01 / 04`), titulo serif, descrição, e `BorderBeamButton` como CTA com texto "ACESSE O PROGRAMA"
-- Manter `AnimatedSection` para animação de entrada por scroll
-- Cursos empilhados verticalmente (cada um ocupando a largura total), não em grid 2x2
-- Usar os mesmos dados de cursos e imagens já existentes
+Cada curso é uma seção full-width com:
+- **Imagem de fundo sticky** que ocupa a viewport enquanto o usuário scrolla
+- **Overlay com gradiente** para legibilidade
+- **Conteúdo textual** (tag, título, descrição, botão BorderBeam) que aparece sobre a imagem com `useScroll` + `useTransform` do framer-motion para criar movimento parallax no texto
 
-## Arquivos modificados
+A alternância visual (imagem esquerda/direita) é substituída por blocos empilhados full-bleed, cada um com sua imagem de fundo e o texto sobreposto com animação de scroll.
+
+## Implementação técnica
+
+**`src/components/CoursesSection.tsx`**:
+- Importar `useScroll`, `useTransform`, `useRef` do framer-motion
+- Criar um sub-componente `TextParallaxBlock` que:
+  - Usa `position: sticky` na imagem de fundo
+  - Aplica `useScroll` no container do bloco
+  - Transforma opacidade e posição Y do texto baseado no scroll progress
+- Manter header "Nossos Cursos" com `AnimatedSection`
+- Cada curso renderizado como um `TextParallaxBlock` com altura suficiente para o efeito (ex: `min-h-[150vh]`)
+- Conteúdo inclui: tag, contador, título serif, descrição, `BorderBeamButton`
+- Preservar os mesmos dados de cursos e imagens
+
+## Arquivo modificado
 
 | Arquivo | Ação |
 |---------|------|
-| `src/components/HeroSection.tsx` | Remover botão CTA, intensificar overlay |
-| `src/components/CoursesSection.tsx` | Reescrever layout: imagem esquerda + texto direita + BorderBeamButton |
+| `src/components/CoursesSection.tsx` | Reescrever com efeito Text Parallax Content via framer-motion |
 
