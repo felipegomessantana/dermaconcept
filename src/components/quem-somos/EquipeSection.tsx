@@ -1,5 +1,7 @@
-import { useRef } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 import teamMember1 from "@/assets/team-member-1.webp";
 import teamMember2 from "@/assets/team-member-2.webp";
@@ -18,7 +20,7 @@ const teamMembers = [
 ];
 
 const TeamCard = ({ member }: { member: (typeof teamMembers)[0] }) => (
-  <div className="flex-shrink-0 w-[280px] md:w-[320px] group">
+  <div className="group min-w-0">
     <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4">
       <img
         src={member.image}
@@ -37,7 +39,45 @@ const EquipeSection = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const headerInView = useInView(headerRef, { once: true, margin: "-60px" });
 
-  const doubled = [...teamMembers, ...teamMembers];
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "start",
+      slidesToScroll: 1,
+      breakpoints: {
+        "(min-width: 640px)": { slidesToScroll: 2 },
+        "(min-width: 1024px)": { slidesToScroll: 1 },
+      },
+    },
+    [autoplayPlugin.current]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
 
   return (
     <section className="py-24 md:py-32 lg:py-40 bg-secondary/30 overflow-hidden relative">
@@ -48,18 +88,8 @@ const EquipeSection = () => {
         preserveAspectRatio="none"
         viewBox="0 0 1440 600"
       >
-        <path
-          d="M0 300 Q360 100 720 300 T1440 300"
-          fill="none"
-          stroke="#7A7168"
-          strokeWidth="2"
-        />
-        <path
-          d="M0 350 Q360 150 720 350 T1440 350"
-          fill="none"
-          stroke="#7A7168"
-          strokeWidth="1.5"
-        />
+        <path d="M0 300 Q360 100 720 300 T1440 300" fill="none" stroke="#7A7168" strokeWidth="2" />
+        <path d="M0 350 Q360 150 720 350 T1440 350" fill="none" stroke="#7A7168" strokeWidth="1.5" />
       </svg>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
@@ -88,16 +118,34 @@ const EquipeSection = () => {
             Conheça os especialistas renomados por trás da excelência da Derma Concept Academy.
           </p>
         </motion.div>
-      </div>
 
-      {/* Marquee carousel */}
-      <div className="relative">
-        <div
-          className="flex gap-8 marquee-strip"
-          style={{ width: "max-content" }}
-        >
-          {doubled.map((member, i) => (
-            <TeamCard key={`${member.name}-${i}`} member={member} />
+        {/* Carousel */}
+        <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+          <div className="flex -ml-4 lg:-ml-6">
+            {teamMembers.map((member) => (
+              <div
+                key={member.name}
+                className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] xl:flex-[0_0_20%] pl-4 lg:pl-6 min-w-0"
+              >
+                <TeamCard member={member} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-2 mt-10">
+          {scrollSnaps.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              aria-label={`Ir para slide ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === selectedIndex
+                  ? "w-6 bg-[#7A7168]"
+                  : "w-2 bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
           ))}
         </div>
       </div>
