@@ -122,7 +122,7 @@ const HeroSection = () => {
       {/* Content */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-16 pt-24 text-center sm:px-10 lg:px-14 xl:px-20"
+        className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-14 pt-24 text-center sm:px-10 lg:px-14 xl:px-20"
       >
         {/* Overline with animated line */}
         <motion.div
