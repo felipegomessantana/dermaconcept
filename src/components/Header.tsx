@@ -30,7 +30,7 @@ function FellowsContent() {
       </p>
       <div className="flex flex-col">
         {items.map((item) => (
-          <DropdownLink key={item} href="#cursos">{item}</DropdownLink>
+          <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
         ))}
       </div>
     </div>
