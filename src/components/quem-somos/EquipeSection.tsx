@@ -125,7 +125,7 @@ const EquipeSection = () => {
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] xl:flex-[0_0_20%] pl-4 lg:pl-6 min-w-0"
+                className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] pl-4 lg:pl-6 min-w-0"
               >
                 <TeamCard member={member} />
               </div>
