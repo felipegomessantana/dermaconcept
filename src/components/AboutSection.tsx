@@ -39,11 +39,10 @@ const AboutSection = () => (
             </p>
           </div>
 
-          <Link
-            to="/quem-somos"
-            className="mt-8 inline-block rounded-md border border-[#7A7168] px-8 py-3 text-xs font-medium uppercase tracking-[0.2em] text-[#2C2926] transition-all duration-300 hover:bg-[#7A7168] hover:text-white"
-          >
-            Conheça Nossa História
+          <Link to="/quem-somos" className="mt-8 inline-block">
+            <BorderBeamButton as="a">
+              Conheça Nossa História
+            </BorderBeamButton>
           </Link>
         </AnimatedSection>
 
