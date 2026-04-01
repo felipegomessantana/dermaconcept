@@ -82,4 +82,11 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  }
+
+  .marquee-strip {
+    --gap: 2rem;
+    --duration: 30s;
+    animation: marquee var(--duration) infinite linear;
+  }
 }
