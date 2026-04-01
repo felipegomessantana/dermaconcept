@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-derma.webp";
 
 /* ───────────── Dropdown link item ───────────── */
 
 const DropdownLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black"
   >
     {children}
-  </a>
+  </Link>
 );
 
 /* ───────────── Tab content components ───────────── */
@@ -170,12 +171,12 @@ const Tab = ({
 );
 
 const StaticLink = ({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className={`px-3 py-1.5 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-800 ${className}`}
   >
     {children}
-  </a>
+  </Link>
 );
 
 const Nub = ({ selected }: { selected: number | null }) => {
@@ -263,12 +264,12 @@ const DesktopNav = () => {
         </Tab>
       ))}
 
-      <a
-        href="#contato"
+      <Link
+        to="/contato"
         className="ml-2 rounded-[12px] border border-gray-800 px-5 py-1.5 text-sm font-medium text-gray-800 transition-all duration-200 hover:bg-gray-800 hover:text-white"
       >
         Contato
-      </a>
+      </Link>
 
       <AnimatePresence>
         {selected && <Content dir={dir} selected={selected} />}
@@ -313,14 +314,14 @@ const MobileSubmenu = ({
         >
           <div className="pb-4 pl-4 flex flex-col gap-1">
             {items.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 onClick={onNavigate}
                 className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </motion.div>
@@ -389,9 +390,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
       <div className="container-narrow flex items-center justify-between px-6 py-4 lg:px-20">
-        <a href="/" className="cursor-pointer">
+        <Link to="/" className="cursor-pointer">
           <img src={logo} alt="Derma Concept Academy" className="h-14 md:h-16" />
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center">
           <DesktopNav />
@@ -430,13 +431,13 @@ const Header = () => {
 
               {/* Contato CTA */}
               <div className="mt-6 pb-2">
-                <a
-                  href="#contato"
+                <Link
+                  to="/contato"
                   onClick={handleClose}
                   className="block w-full rounded-xl border-2 border-gray-800 py-3 text-center text-sm font-bold uppercase tracking-[0.2em] text-gray-800 transition-all duration-200 hover:bg-gray-800 hover:text-white"
                 >
                   Contato
-                </a>
+                </Link>
               </div>
             </div>
           </motion.nav>
