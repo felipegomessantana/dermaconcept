@@ -51,7 +51,7 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
   return (
     <div
       ref={targetRef}
-      className="sticky top-0 z-0 h-screen overflow-hidden"
+      className="sticky top-0 z-0 h-[33vh] overflow-hidden max-w-7xl mx-auto"
       style={{ paddingLeft: IMG_PADDING, paddingRight: IMG_PADDING }}
     >
       <motion.div
@@ -92,7 +92,7 @@ const OverlayCopy = ({
     <motion.div
       ref={targetRef}
       style={{ y, opacity }}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
+      className="absolute left-0 top-0 flex h-[33vh] w-full flex-col items-center justify-center text-white"
     >
       <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/60 md:mb-4 md:text-sm">
         {subheading}
@@ -151,7 +151,7 @@ const TextParallaxContent = ({
   children: React.ReactNode;
 }) => (
   <div>
-    <div className="relative h-[150vh]">
+    <div className="relative h-[50vh]">
       <StickyImage imgUrl={imgUrl} />
       <OverlayCopy subheading={subheading} heading={heading} />
     </div>
