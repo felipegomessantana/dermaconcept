@@ -161,7 +161,7 @@ const HeroSection = () => {
         {/* Stats */}
         <motion.div
           {...fadeUp(1.8)}
-          className="mt-14 w-full max-w-md grid grid-cols-3 gap-6 border-t border-primary-foreground/15 pt-8"
+          className="mt-14 grid grid-cols-3 gap-6 border-t border-white/20 pt-8"
         >
           {stats.map((s) => (
             <div key={s.label}>
