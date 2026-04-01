@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
+import { motion, useInView } from "framer-motion";
 import { Quote } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import AnimatedSection from "./AnimatedSection";
