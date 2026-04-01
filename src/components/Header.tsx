@@ -340,7 +340,7 @@ const mobileMenuSections = [
   {
     title: "Fellows",
     items: [
-      { label: "Dermatologia Estética Semanal", href: "#cursos" },
+      { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
       { label: "Dermatologia Estética Mensal", href: "#cursos" },
       { label: "Cirurgia Dermatológica", href: "#cursos" },
     ],
