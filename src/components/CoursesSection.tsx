@@ -11,29 +11,51 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const courses = [
   {
     title: "Dermatologia Estética Semanal",
-    description:
-      "ÚNICO em BH — fellow de 6 meses com aulas teóricas baseadas em ciência e hands-on intenso. O aluno acompanha seu paciente durante todo o tratamento, realiza o procedimento e avalia o resultado. A prática semanal acelera a segurança para atendimentos particulares.",
+    description: (
+      <>
+        <p>Este fellow, <strong className="text-foreground">ÚNICO em Belo Horizonte</strong>, tem duração de 6 meses e é composto por aulas teóricas baseadas em muita ciência e um hands on intenso, com muitos pacientes e tudo acompanhado de professores referência na área e com muita experiência.</p>
+        <p>Ele ensina toda dermatologia estética, do básico ao avançado, do mais antigo (e que funciona até hoje) até as últimas novidades! Mas vai muito além: ele mostra a realidade de um consultório, da avaliação, indicação e resultado dos procedimentos que o aluno fez!</p>
+        <p>Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos! O aluno acompanha seu paciente durante todo o tratamento! Realiza o procedimento e avalia o resultado!</p>
+        <p>Além disso, a prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.</p>
+      </>
+    ),
     image: courseEstetica,
     tag: "Intensivo",
   },
   {
     title: "Dermatologia Estética Mensal",
-    description:
-      "Fellow de 6 meses, um final de semana por mês (3 dias inteiros). Do básico ao avançado, com aula teórica baseada em literatura atualizada e muito hands-on supervisionado por professores referência. Torne-se uma referência na estética e saiba como se diferenciar.",
+    description: (
+      <>
+        <p>Este fellow tem duração de 6 meses e ocorre em <strong className="text-foreground">um final de semana por mês (3 dias inteiros)</strong>.</p>
+        <p>Ele ensina toda dermatologia estética, do básico ao avançado, do mais antigo (e que funciona até hoje) até as últimas novidades! Ele mostra a realidade de um consultório, da avaliação, indicação e resultado dos procedimentos que você fez!</p>
+        <p>Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos!</p>
+        <p>Conta com aula teórica baseada em artigos científicos e literatura atualizada e muito hands on!! Tudo acompanhado por professores qualificados e que são referência na área!</p>
+        <p>O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!</p>
+      </>
+    ),
     image: heroImg,
     tag: "Completo",
   },
   {
     title: "Cirurgia Dermatológica",
-    description:
-      "ÚNICO em BH — fellow de 6 meses, um final de semana por mês (2 dias inteiros). Aulas teóricas e práticas abordando tumores e pequenas cirurgias estéticas, com hands-on supervisionado por especialistas. Domine os principais procedimentos e se destaque no mercado.",
+    description: (
+      <>
+        <p>Ensinar e formar cirurgiões dermatológicos, com aulas teóricas e práticas, abordando vários tumores e pequenas cirurgias estéticas.</p>
+        <p>Este curso é para você que deseja alavancar sua carreira e se destacar no mercado de trabalho, após dominar os principais procedimentos dentro da cirurgia dermatológica.</p>
+        <p>Hands-On supervisionado por especialistas da área de cirurgia dermatológica, colocando em prática todo conhecimento obtido nas aulas teóricas.</p>
+        <p>Esse fellow, <strong className="text-foreground">ÚNICO em Belo Horizonte</strong>, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).</p>
+      </>
+    ),
     image: courseCirurgia,
     tag: "Prático",
   },
   {
     title: "Tricologia",
-    description:
-      "Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar e mesoterapia.",
+    description: (
+      <>
+        <p>Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar e mesoterapia.</p>
+      </>
+    ),
     image: courseTricologia,
     tag: "Especialização",
   },
