@@ -123,9 +123,9 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
         <h3 className="font-serif text-3xl md:text-4xl lg:text-[2.8rem] xl:text-5xl mb-6 leading-[1.15] tracking-tight text-foreground">
           {course.title}
         </h3>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-10 max-w-md">
+        <div className="text-muted-foreground text-[13px] md:text-sm leading-relaxed mb-10 max-w-md space-y-3 [&_strong]:font-semibold">
           {course.description}
-        </p>
+        </div>
         <BorderBeamButton as="a" href="#contato">
           ACESSE O PROGRAMA
         </BorderBeamButton>
