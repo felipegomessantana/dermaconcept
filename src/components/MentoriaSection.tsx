@@ -89,10 +89,10 @@ const MentoriaSection = () => {
             <motion.h2
               {...fadeUp(0.1)}
               animate={inView ? fadeUp(0.1).animate : {}}
-              className="font-heading text-3xl font-bold leading-tight tracking-tight text-[#1A1A1A] sm:text-4xl lg:text-[2.75rem]"
+              className="font-heading text-3xl font-bold leading-tight tracking-tight text-[hsl(var(--foreground))] sm:text-4xl lg:text-[2.75rem]"
             >
-              Mentoria em Estética{" "}
-              <span className="italic font-normal">&amp; Cirurgia</span>
+              Mentoria em Dermatologia Estética{" "}
+              <span className="italic font-normal">&amp; Cirurgia Dermatológica</span>
             </motion.h2>
 
             <motion.p
