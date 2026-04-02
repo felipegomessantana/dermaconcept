@@ -9,14 +9,6 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
-const deliverables = [
-  { term: "100% personalizada", desc: "conteúdo adaptado às necessidades específicas de cada aluno." },
-  { term: "Professor dedicado", desc: "profissional altamente qualificado e experiente ao seu lado durante toda a jornada." },
-  { term: "Teoria sob demanda", desc: "aula teórica opcional, focada exatamente no que você precisa evoluir." },
-  { term: "Turmas reduzidas", desc: "no máximo 2 alunos por mentoria, garantindo atenção total." },
-  { term: "Imersão de 8 horas", desc: "dia inteiro de prática intensiva para acelerar seus resultados." },
-];
-
 const formats = [
   "1:1 online (sessões de 60-90min)",
   "Presencial na Academy (meio período ou dia inteiro)",
