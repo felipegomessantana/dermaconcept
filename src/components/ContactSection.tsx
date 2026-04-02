@@ -4,13 +4,16 @@ import { BorderBeamButton } from "./ui/border-beam-button";
 import { Phone, MessageCircle, Mail, Instagram, MapPin } from "lucide-react";
 import contactImg from "@/assets/contact-ambiente.jpg";
 
-const contactStrip = [
+const contactStripRow1 = [
   { icon: Phone, label: "Telefone Fixo", value: "(31) 3564-6953", href: "tel:+553135646953" },
   { icon: MessageCircle, label: "WhatsApp", value: "(31) 98244-9473", href: "https://wa.me/5531982449473" },
   { icon: Instagram, label: "Instagram", value: "@dermaconcept_academy", href: "https://instagram.com/dermaconcept_academy" },
   { icon: Mail, label: "E-mail", value: "contato@dermaconcept.com.br", href: "mailto:contato@dermaconcept.com.br" },
-  { icon: MapPin, label: "Endereço", value: "Av. Bernardo Monteiro, 1557 - 2º Andar - Funcionários, Belo Horizonte - MG, 30150-288", href: "https://maps.google.com/?q=Av.+Bernardo+Monteiro,+1557+-+Funcionários,+Belo+Horizonte+-+MG", wide: true },
 ];
+
+const contactAddress = {
+  icon: MapPin, label: "Endereço", value: "Av. Bernardo Monteiro, 1557 - 2º Andar - Funcionários, Belo Horizonte - MG, 30150-288", href: "https://maps.google.com/?q=Av.+Bernardo+Monteiro,+1557+-+Funcionários,+Belo+Horizonte+-+MG",
+};
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "", mensagem: "" });
@@ -37,17 +40,16 @@ const ContactSection = () => {
 
         {/* 2. Contact Strip */}
         <AnimatedSection>
-          <div className="my-10 border-y border-neutral-200 py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
-              {contactStrip.map((item) => (
+          <div className="my-10 border-y border-neutral-200 py-8 space-y-6">
+            {/* Row 1: 4 items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+              {contactStripRow1.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className={`group flex items-start gap-3 transition-colors ${
-                    (item as any).wide ? "lg:col-span-2" : ""
-                  }`}
+                  className="group flex items-start gap-3 transition-colors"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#7A7168]/10 text-[#7A7168]">
                     <item.icon size={15} strokeWidth={1.5} />
@@ -63,6 +65,25 @@ const ContactSection = () => {
                 </a>
               ))}
             </div>
+            {/* Row 2: Address centered */}
+            <a
+              href={contactAddress.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 transition-colors justify-center"
+            >
+              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#7A7168]/10 text-[#7A7168]">
+                <contactAddress.icon size={15} strokeWidth={1.5} />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400">
+                  {contactAddress.label}
+                </p>
+                <p className="mt-0.5 text-sm font-medium leading-relaxed text-neutral-800 group-hover:text-[#7A7168] transition-colors">
+                  {contactAddress.value}
+                </p>
+              </div>
+            </a>
           </div>
         </AnimatedSection>
 
@@ -121,7 +142,7 @@ const ContactSection = () => {
               />
               <BorderBeamButton
                 type="submit"
-                className="w-full bg-[#7A7168] text-white uppercase tracking-[0.2em] text-xs font-semibold py-4 rounded-xl hover:bg-[#6a6259] transition-colors"
+                className="w-full"
               >
                 Enviar Mensagem
               </BorderBeamButton>
