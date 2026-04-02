@@ -1,7 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
-import courseTricologia from "@/assets/course-tricologia.jpg";
 import heroImg from "@/assets/hero-derma.jpg";
 
 const courses = [
@@ -25,13 +24,6 @@ const courses = [
       "Curso prático e teórico com foco em técnicas cirúrgicas dermatológicas: biópsias, exéreses, retalhos, enxertos e cirurgia micrográfica de Mohs.",
     image: courseCirurgia,
     tag: "Prático",
-  },
-  {
-    title: "Tricologia",
-    description:
-      "Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar.",
-    image: courseTricologia,
-    tag: "Especialização",
   },
 ];
 
