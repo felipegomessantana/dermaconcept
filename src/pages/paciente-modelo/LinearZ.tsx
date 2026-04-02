@@ -2,7 +2,7 @@ import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "LINEAR Z – ULTRASSOM MICRO E MACROFOCADO",
+  title: (<>LINEAR Z<br /><span className="block">Ultrassom Micro e Macrofocado</span></>),
   subtitle: "Tecnologia não é tendência. É posicionamento.",
   intro: (
     <>
