@@ -430,7 +430,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"
+            className="lg:hidden overflow-y-auto max-h-[calc(100dvh-80px)] border-t border-gray-100 bg-white"
           >
             <div className="px-6 py-4">
               {/* Accordion sections (includes Página Inicial) */}
