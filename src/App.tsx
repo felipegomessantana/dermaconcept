@@ -12,6 +12,19 @@ import MentoriaIndividual from "./pages/MentoriaIndividual.tsx";
 import QuemSomos from "./pages/QuemSomos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
+import PreenchimentoAcidoHialuronico from "./pages/paciente-modelo/PreenchimentoAcidoHialuronico.tsx";
+import ToxinaBotulinica from "./pages/paciente-modelo/ToxinaBotulinica.tsx";
+import YouseLaserPrime from "./pages/paciente-modelo/YouseLaserPrime.tsx";
+import LinearZLiftera from "./pages/paciente-modelo/LinearZLiftera.tsx";
+import EthereaMX from "./pages/paciente-modelo/EthereaMX.tsx";
+import JatoDePlasma from "./pages/paciente-modelo/JatoDePlasma.tsx";
+import MesojectGun from "./pages/paciente-modelo/MesojectGun.tsx";
+import BioestimuladoresColageno from "./pages/paciente-modelo/BioestimuladoresColageno.tsx";
+import PeelingQuimico from "./pages/paciente-modelo/PeelingQuimico.tsx";
+import FiosDePDO from "./pages/paciente-modelo/FiosDePDO.tsx";
+import Intradermoterapia from "./pages/paciente-modelo/Intradermoterapia.tsx";
+import Microagulhamento from "./pages/paciente-modelo/Microagulhamento.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +41,21 @@ const App = () => (
           <Route path="/dermatologia-estetica-semanal" element={<FellowSemanal />} />
           <Route path="/mentoria-individual" element={<MentoriaIndividual />} />
           <Route path="/quem-somos" element={<QuemSomos />} />
+
+          {/* Paciente Modelo */}
+          <Route path="/paciente-modelo/preenchimento-acido-hialuronico" element={<PreenchimentoAcidoHialuronico />} />
+          <Route path="/paciente-modelo/toxina-botulinica" element={<ToxinaBotulinica />} />
+          <Route path="/paciente-modelo/youse-laser-prime" element={<YouseLaserPrime />} />
+          <Route path="/paciente-modelo/linear-z-liftera" element={<LinearZLiftera />} />
+          <Route path="/paciente-modelo/etherea-mx" element={<EthereaMX />} />
+          <Route path="/paciente-modelo/jato-de-plasma" element={<JatoDePlasma />} />
+          <Route path="/paciente-modelo/mesoject-gun" element={<MesojectGun />} />
+          <Route path="/paciente-modelo/bioestimuladores-colageno" element={<BioestimuladoresColageno />} />
+          <Route path="/paciente-modelo/peeling-quimico" element={<PeelingQuimico />} />
+          <Route path="/paciente-modelo/fios-de-pdo" element={<FiosDePDO />} />
+          <Route path="/paciente-modelo/intradermoterapia" element={<Intradermoterapia />} />
+          <Route path="/paciente-modelo/microagulhamento" element={<Microagulhamento />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
