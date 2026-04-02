@@ -142,7 +142,7 @@ const ContactSection = () => {
               />
               <BorderBeamButton
                 type="submit"
-                className="w-full bg-[#7A7168] text-white uppercase tracking-[0.2em] text-xs font-semibold py-4 rounded-xl hover:bg-[#6a6259] transition-colors"
+                className="w-full"
               >
                 Enviar Mensagem
               </BorderBeamButton>
