@@ -9,14 +9,6 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
-const deliverables = [
-  { term: "100% personalizada", desc: "conteúdo adaptado às necessidades específicas de cada aluno." },
-  { term: "Professor dedicado", desc: "profissional altamente qualificado e experiente ao seu lado durante toda a jornada." },
-  { term: "Teoria sob demanda", desc: "aula teórica opcional, focada exatamente no que você precisa evoluir." },
-  { term: "Turmas reduzidas", desc: "no máximo 2 alunos por mentoria, garantindo atenção total." },
-  { term: "Imersão de 8 horas", desc: "dia inteiro de prática intensiva para acelerar seus resultados." },
-];
-
 const formats = [
   "1:1 online (sessões de 60-90min)",
   "Presencial na Academy (meio período ou dia inteiro)",
@@ -97,40 +89,20 @@ const MentoriaSection = () => {
             <motion.h2
               {...fadeUp(0.1)}
               animate={inView ? fadeUp(0.1).animate : {}}
-              className="font-heading text-3xl font-bold leading-tight tracking-tight text-[#1A1A1A] sm:text-4xl lg:text-[2.75rem]"
+              className="font-heading text-3xl font-bold leading-tight tracking-tight text-[hsl(var(--foreground))] sm:text-4xl lg:text-[2.75rem]"
             >
-              Mentoria em Estética{" "}
-              <span className="italic font-normal">&amp; Cirurgia</span>
+              Mentoria em Dermatologia Estética{" "}
+              <span className="italic font-normal">&amp; Cirurgia Dermatológica</span>
             </motion.h2>
 
-            <motion.p
+            <motion.div
               {...fadeUp(0.2)}
               animate={inView ? fadeUp(0.2).animate : {}}
-              className="mt-5 max-w-xl text-base leading-relaxed text-neutral-500 lg:text-lg"
+              className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground lg:text-[15px] space-y-3"
             >
-              Quer aperfeiçoar suas técnicas ou aprender algo novo? A mentoria é
-              totalmente personalizada para suprir sua necessidade, com um
-              professor experiente ao seu lado — podendo incluir ou não aula
-              teórica. Duração de 8 horas, com no máximo 2 alunos.
-            </motion.p>
-
-            {/* O que entregamos */}
-            <motion.div
-              {...fadeUp(0.3)}
-              animate={inView ? fadeUp(0.3).animate : {}}
-              className="mt-10"
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7A7168]">
-                O que entregamos
-              </p>
-              <div className="mt-5 flex flex-col gap-3.5">
-                {deliverables.map((d) => (
-                  <p key={d.term} className="text-sm leading-relaxed text-neutral-500 lg:text-[15px]">
-                    <span className="font-semibold text-[#1A1A1A]">{d.term}:</span>{" "}
-                    {d.desc}
-                  </p>
-                ))}
-              </div>
+              <p>O aluno que busca aperfeiçoar suas técnicas ou aprender algo novo, esse é o curso ideal!</p>
+              <p>Totalmente personalizado para suprir a necessidade do aluno e com um professor altamente qualificado e experiente ao seu lado, podendo ter ou não aula teórica!</p>
+              <p><strong className="text-foreground">Duração de 8 horas e pode ter no máximo 2 alunos.</strong></p>
             </motion.div>
 
             {/* Formatos */}
@@ -144,7 +116,7 @@ const MentoriaSection = () => {
               </p>
               <div className="mt-4 flex flex-col gap-2">
                 {formats.map((f) => (
-                  <p key={f} className="text-sm text-neutral-500 lg:text-[15px]">{f}</p>
+                  <p key={f} className="text-sm text-muted-foreground lg:text-[15px]">{f}</p>
                 ))}
               </div>
             </motion.div>
