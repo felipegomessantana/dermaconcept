@@ -15,7 +15,8 @@ import NotFound from "./pages/NotFound.tsx";
 import PreenchimentoAcidoHialuronico from "./pages/paciente-modelo/PreenchimentoAcidoHialuronico.tsx";
 import ToxinaBotulinica from "./pages/paciente-modelo/ToxinaBotulinica.tsx";
 import YouseLaserPrime from "./pages/paciente-modelo/YouseLaserPrime.tsx";
-import LinearZLiftera from "./pages/paciente-modelo/LinearZLiftera.tsx";
+import LinearZ from "./pages/paciente-modelo/LinearZ.tsx";
+import Liftera from "./pages/paciente-modelo/Liftera.tsx";
 import EthereaMX from "./pages/paciente-modelo/EthereaMX.tsx";
 import JatoDePlasma from "./pages/paciente-modelo/JatoDePlasma.tsx";
 import MesojectGun from "./pages/paciente-modelo/MesojectGun.tsx";
@@ -46,7 +47,8 @@ const App = () => (
           <Route path="/paciente-modelo/preenchimento-acido-hialuronico" element={<PreenchimentoAcidoHialuronico />} />
           <Route path="/paciente-modelo/toxina-botulinica" element={<ToxinaBotulinica />} />
           <Route path="/paciente-modelo/youse-laser-prime" element={<YouseLaserPrime />} />
-          <Route path="/paciente-modelo/linear-z-liftera" element={<LinearZLiftera />} />
+          <Route path="/paciente-modelo/linear-z" element={<LinearZ />} />
+          <Route path="/paciente-modelo/liftera" element={<Liftera />} />
           <Route path="/paciente-modelo/etherea-mx" element={<EthereaMX />} />
           <Route path="/paciente-modelo/jato-de-plasma" element={<JatoDePlasma />} />
           <Route path="/paciente-modelo/mesoject-gun" element={<MesojectGun />} />

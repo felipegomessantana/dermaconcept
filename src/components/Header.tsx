@@ -80,7 +80,8 @@ function PacienteModeloContent() {
   const tecnologias = [
     { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
     { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
-    { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+    { label: "Linear Z", href: "/paciente-modelo/linear-z" },
+    { label: "Liftera 2", href: "/paciente-modelo/liftera" },
     { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
     { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
   ];
@@ -385,7 +386,8 @@ const mobileMenuSections = [
       { label: "— TECNOLOGIAS —", href: "" },
       { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
       { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
-      { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+      { label: "Linear Z", href: "/paciente-modelo/linear-z" },
+      { label: "Liftera 2", href: "/paciente-modelo/liftera" },
       { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
       { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
     ],
@@ -430,7 +432,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"
+            className="lg:hidden overflow-y-auto max-h-[calc(100dvh-80px)] border-t border-gray-100 bg-white"
           >
             <div className="px-6 py-4">
               {/* Accordion sections (includes Página Inicial) */}
