@@ -1,35 +1,8 @@
 import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
-import { MapPin, MessageCircle, Mail, Instagram } from "lucide-react";
+import { MapPin, MessageCircle, Mail } from "lucide-react";
 import contactImg from "@/assets/contact-ambiente.jpg";
-
-const contactItems = [
-  {
-    icon: MapPin,
-    label: "Endereço",
-    value: "Av. Bernardo Monteiro, 1557 – 2º Andar, Funcionários, BH",
-    href: "https://maps.google.com/?q=Av.+Bernardo+Monteiro,+1557+-+Funcionários,+Belo+Horizonte+-+MG",
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "(31) 98244-9473",
-    href: "https://wa.me/5531982449473",
-  },
-  {
-    icon: Mail,
-    label: "E-mail",
-    value: "contato@dermaconcept.com.br",
-    href: "mailto:contato@dermaconcept.com.br",
-  },
-  {
-    icon: Instagram,
-    label: "Instagram",
-    value: "@dermaconcept_academy",
-    href: "https://instagram.com/dermaconcept_academy",
-  },
-];
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "", mensagem: "" });
@@ -41,13 +14,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contato" className="bg-[#F8F5F1] py-24 lg:py-32">
-      <div className="mx-auto max-w-[1300px] px-6 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section id="contato" className="bg-[#FAF8F5] py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
           {/* Mobile: imagem no topo */}
           <AnimatedSection className="lg:hidden">
-            <div className="aspect-video overflow-hidden rounded-3xl shadow-2xl shadow-black/5">
+            <div className="aspect-video overflow-hidden rounded-3xl shadow-lg">
               <img
                 src={contactImg}
                 alt="Ambiente premium Derma Concept"
@@ -59,46 +32,17 @@ const ContactSection = () => {
             </div>
           </AnimatedSection>
 
-          {/* Coluna esquerda — Info + Formulário */}
-          <div className="col-span-1 lg:col-span-5">
+          {/* Coluna esquerda — Texto + Form + Contatos */}
+          <div className="flex flex-col justify-center">
             <AnimatedSection>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#7A7168]">
-                Contato
-              </p>
-              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              <h2 className="font-heading text-4xl font-bold tracking-tight text-[#1A1A1A] sm:text-5xl">
                 Fale Conosco
               </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-neutral-500 lg:text-base">
-                Agende sua avaliação ou tire suas dúvidas com nossa equipe.
+              <p className="mt-4 mb-10 text-base leading-relaxed text-neutral-500 lg:text-[17px]">
+                Agende sua avaliação ou tire suas dúvidas. Nossa equipe entrará em contato.
               </p>
 
-              {/* Contact grid */}
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {contactItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group flex items-start gap-3 transition-colors"
-                  >
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#7A7168]/10 text-[#7A7168]">
-                      <item.icon size={16} strokeWidth={1.5} />
-                    </span>
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-wider text-neutral-400">
-                        {item.label}
-                      </p>
-                      <p className="text-sm leading-relaxed text-[#1A1A1A] group-hover:text-[#7A7168] transition-colors">
-                        {item.value}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="mt-10 space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -106,7 +50,7 @@ const ContactSection = () => {
                     placeholder="Nome"
                     value={form.nome}
                     onChange={(e) => setForm({ ...form, nome: e.target.value })}
-                    className="w-full border border-neutral-200 bg-white/60 px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7A7168]/40 transition-all"
+                    className="w-full border border-neutral-200 bg-white px-5 py-3.5 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#7A7168]/30 transition-all"
                   />
                   <input
                     type="email"
@@ -114,7 +58,7 @@ const ContactSection = () => {
                     placeholder="E-mail"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full border border-neutral-200 bg-white/60 px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7A7168]/40 transition-all"
+                    className="w-full border border-neutral-200 bg-white px-5 py-3.5 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#7A7168]/30 transition-all"
                   />
                 </div>
                 <input
@@ -123,25 +67,59 @@ const ContactSection = () => {
                   placeholder="Telefone / WhatsApp"
                   value={form.telefone}
                   onChange={(e) => setForm({ ...form, telefone: e.target.value })}
-                  className="w-full border border-neutral-200 bg-white/60 px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7A7168]/40 transition-all"
+                  className="w-full border border-neutral-200 bg-white px-5 py-3.5 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#7A7168]/30 transition-all"
                 />
                 <textarea
                   placeholder="Sua mensagem"
-                  rows={3}
+                  rows={4}
                   value={form.mensagem}
                   onChange={(e) => setForm({ ...form, mensagem: e.target.value })}
-                  className="w-full border border-neutral-200 bg-white/60 px-4 py-3 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#7A7168]/40 transition-all resize-none"
+                  className="w-full border border-neutral-200 bg-white px-5 py-3.5 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#7A7168]/30 transition-all resize-none"
                 />
-                <BorderBeamButton type="submit" className="w-full bg-[#7A7168] text-white uppercase tracking-[0.2em] text-xs font-semibold hover:bg-[#6a6259]">
+                <BorderBeamButton
+                  type="submit"
+                  className="w-full bg-[#7A7168] text-white uppercase tracking-[0.2em] text-xs font-semibold py-4 rounded-xl hover:bg-[#6a6259] transition-colors"
+                >
                   Enviar Mensagem
                 </BorderBeamButton>
               </form>
+
+              {/* Contatos rápidos */}
+              <div className="mt-12 pt-8 border-t border-neutral-200">
+                <div className="flex flex-col gap-4 sm:flex-row sm:gap-8">
+                  <a
+                    href="https://wa.me/5531982449473"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2.5 text-sm text-neutral-600 hover:text-[#7A7168] transition-colors"
+                  >
+                    <MessageCircle size={16} strokeWidth={1.5} className="text-[#7A7168]" />
+                    (31) 98244-9473
+                  </a>
+                  <a
+                    href="mailto:contato@dermaconcept.com.br"
+                    className="group flex items-center gap-2.5 text-sm text-neutral-600 hover:text-[#7A7168] transition-colors"
+                  >
+                    <Mail size={16} strokeWidth={1.5} className="text-[#7A7168]" />
+                    contato@dermaconcept.com.br
+                  </a>
+                  <a
+                    href="https://maps.google.com/?q=Av.+Bernardo+Monteiro,+1557+-+Funcionários,+Belo+Horizonte+-+MG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2.5 text-sm text-neutral-600 hover:text-[#7A7168] transition-colors"
+                  >
+                    <MapPin size={16} strokeWidth={1.5} className="text-[#7A7168]" />
+                    Av. Bernardo Monteiro, 1557 – Funcionários, BH
+                  </a>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
 
-          {/* Coluna direita — Foto horizontal (desktop only) */}
-          <AnimatedSection delay={0.15} className="hidden lg:block col-span-1 lg:col-span-7">
-            <div className="aspect-video overflow-hidden rounded-3xl shadow-2xl shadow-black/5">
+          {/* Coluna direita — Foto (desktop) */}
+          <AnimatedSection delay={0.15} className="hidden lg:flex items-center">
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-lg">
               <img
                 src={contactImg}
                 alt="Ambiente premium Derma Concept"
