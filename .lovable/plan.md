@@ -1,38 +1,22 @@
 
 
-## Plan: Update Texts from DOCX Content
+## Plan: Fix Contact Strip Layout + Button Border Beam
 
-The uploaded document contains updated descriptions for the courses and mentoria. Here's how I'll apply them with proper typography and readability.
+### Problem 1: Contact Strip Cramped in One Line
+The 5 contact items are squeezed into a single row on desktop (`lg:grid-cols-6`). Split into two rows: first row with 4 items (Phone, WhatsApp, Instagram, Email), second row with Address centered below.
 
-### Content Mapping (DOCX → Components)
+**Fix in `ContactSection.tsx`:**
+- Change grid to `lg:grid-cols-4` (4 columns for first 4 items)
+- Remove `wide` / `col-span-2` from Address
+- Instead, render Address as a separate full-width item below the grid, centered, with the same icon+label+value styling
 
-| DOCX Section | Target Component | Current State |
-|---|---|---|
-| Dermatologia Estética Semanal | `CoursesSection.tsx` — course[0] | Short generic description |
-| Dermatologia Estética Mensal | `CoursesSection.tsx` — course[1] | Short generic description |
-| Cirurgia Dermatológica | `CoursesSection.tsx` — course[2] | Title says "Mensal", short desc |
-| Mentoria | `MentoriaSection.tsx` | Different text structure |
+### Problem 2: "Enviar Mensagem" Button Missing Beam Border
+The `BorderBeamButton` has a hardcoded inner `<span>` with `bg-[#E6DFD6]` (beige) and `text-gray-900`. The className passed (`bg-[#7A7168] text-white`) applies to the outer wrapper only, so the visible inner span always shows beige — hiding the beam effect visually because the taupe outer wrapper blends with the beam.
 
-### Changes
+**Fix in `ContactSection.tsx`:**
+- Remove the conflicting `bg-[#7A7168] text-white` classes from the `BorderBeamButton` className — let the component use its default beige inner span so the animated border beam is clearly visible against it (matching the other buttons on the site like "QUERO UMA MENTORIA SOB MEDIDA")
+- Keep only layout classes: `w-full rounded-xl uppercase tracking-[0.2em] text-xs font-semibold`
 
-**1. `src/components/CoursesSection.tsx`** — Update the `courses` array:
-
-- **Course 0 (Estética Semanal)**: Replace description with DOCX text, broken into a concise lead paragraph. The long text will be split: a bold opening hook + supporting details. Tag stays "Intensivo".
-- **Course 1 (Estética Mensal)**: Same treatment — new description from DOCX. Tag stays "Completo".
-- **Course 2 (Cirurgia Dermatológica)**: Fix title (remove "Mensal"), update description from DOCX. Tag stays "Prático".
-- **Tricologia (Course 3)**: Keep as-is (not mentioned in the DOCX, so no update needed).
-
-Each description will be edited for readability — not a raw paste. I'll keep them at a similar length (2-3 sentences max for the card format), preserving the key differentiators from the full DOCX text. The longer details are better suited for dedicated course pages.
-
-**2. `src/components/MentoriaSection.tsx`** — Update the intro text:
-
-- Replace the current subtitle/description with the DOCX mentoria text, adapted to the existing layout structure (heading + paragraph + deliverables list).
-- The text will be split: main value proposition as the paragraph, key details woven into the existing deliverables format.
-
-### Design Approach
-
-- Descriptions stay concise for card readability (3-4 lines max on desktop)
-- Key differentiators from the DOCX are highlighted (e.g., "ÚNICO em BH", "acompanha o paciente durante todo o tratamento")
-- No layout changes — only text content updates
-- Maintain existing typography classes and spacing
+### Files Changed
+- `src/components/ContactSection.tsx` — restructure contact strip grid + fix button classes
 
