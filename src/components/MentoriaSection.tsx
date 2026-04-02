@@ -105,25 +105,6 @@ const MentoriaSection = () => {
               <p><strong className="text-foreground">Duração de 8 horas e pode ter no máximo 2 alunos.</strong></p>
             </motion.div>
 
-            {/* O que entregamos */}
-            <motion.div
-              {...fadeUp(0.3)}
-              animate={inView ? fadeUp(0.3).animate : {}}
-              className="mt-10"
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7A7168]">
-                O que entregamos
-              </p>
-              <div className="mt-5 flex flex-col gap-3.5">
-                {deliverables.map((d) => (
-                  <p key={d.term} className="text-sm leading-relaxed text-neutral-500 lg:text-[15px]">
-                    <span className="font-semibold text-[#1A1A1A]">{d.term}:</span>{" "}
-                    {d.desc}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
-
             {/* Formatos */}
             <motion.div
               {...fadeUp(0.4)}
