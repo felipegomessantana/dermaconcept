@@ -116,7 +116,7 @@ const MentoriaSection = () => {
               </p>
               <div className="mt-4 flex flex-col gap-2">
                 {formats.map((f) => (
-                  <p key={f} className="text-sm text-neutral-500 lg:text-[15px]">{f}</p>
+                  <p key={f} className="text-sm text-muted-foreground lg:text-[15px]">{f}</p>
                 ))}
               </div>
             </motion.div>
