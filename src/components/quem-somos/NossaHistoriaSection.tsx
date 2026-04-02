@@ -17,7 +17,7 @@ const NossaHistoriaSection = () => {
         <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6 text-center">
           Nossa História
         </p>
-        <div className="text-base md:text-lg leading-relaxed text-muted-foreground">
+        <div className="text-base md:text-lg leading-relaxed text-muted-foreground text-center">
           <p className="mb-6">
             A Derma Concept Academy é um centro de excelência em formação médica
             na área de dermatologia, unindo teoria de alto nível a prática
