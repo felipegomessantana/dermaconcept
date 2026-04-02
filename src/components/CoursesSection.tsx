@@ -71,18 +71,6 @@ const courses: CourseData[] = [
     image: courseCirurgia,
     tag: "Prático",
   },
-  {
-    title: "Tricologia",
-    intro: (
-      <p>
-        Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar e mesoterapia.
-      </p>
-    ),
-    benefits: [],
-    callout: "",
-    image: courseTricologia,
-    tag: "Especialização",
-  },
 ];
 
 const BenefitsList = ({ benefits }: { benefits: BenefitItem[] }) => (
