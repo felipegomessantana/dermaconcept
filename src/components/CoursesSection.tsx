@@ -12,21 +12,21 @@ const courses = [
   {
     title: "Dermatologia Estética Semanal",
     description:
-      "Curso intensivo de uma semana com foco em procedimentos estéticos como toxina botulínica, preenchimentos, bioestimuladores e tecnologias. Ideal para quem busca uma imersão rápida e prática na área.",
+      "ÚNICO em BH — fellow de 6 meses com aulas teóricas baseadas em ciência e hands-on intenso. O aluno acompanha seu paciente durante todo o tratamento, realiza o procedimento e avalia o resultado. A prática semanal acelera a segurança para atendimentos particulares.",
     image: courseEstetica,
     tag: "Intensivo",
   },
   {
     title: "Dermatologia Estética Mensal",
     description:
-      "Formação completa ao longo de um mês, com módulos aprofundados em harmonização facial, protocolos combinados, intercorrências e acompanhamento de pacientes. Perfeito para uma formação robusta e detalhada.",
+      "Fellow de 6 meses, um final de semana por mês (3 dias inteiros). Do básico ao avançado, com aula teórica baseada em literatura atualizada e muito hands-on supervisionado por professores referência. Torne-se uma referência na estética e saiba como se diferenciar.",
     image: heroImg,
     tag: "Completo",
   },
   {
-    title: "Cirurgia Dermatológica Mensal",
+    title: "Cirurgia Dermatológica",
     description:
-      "Curso prático e teórico com foco em técnicas cirúrgicas dermatológicas: biópsias, exéreses, retalhos, enxertos e cirurgia micrográfica de Mohs. Aulas com pacientes reais e supervisão especializada.",
+      "ÚNICO em BH — fellow de 6 meses, um final de semana por mês (2 dias inteiros). Aulas teóricas e práticas abordando tumores e pequenas cirurgias estéticas, com hands-on supervisionado por especialistas. Domine os principais procedimentos e se destaque no mercado.",
     image: courseCirurgia,
     tag: "Prático",
   },

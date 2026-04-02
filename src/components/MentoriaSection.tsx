@@ -99,8 +99,8 @@ const MentoriaSection = () => {
               animate={inView ? fadeUp(0.1).animate : {}}
               className="font-heading text-3xl font-bold leading-tight tracking-tight text-[#1A1A1A] sm:text-4xl lg:text-[2.75rem]"
             >
-              Mentoria Clínica &amp; Cirúrgica{" "}
-              <span className="italic font-normal">sob Medida</span>
+              Mentoria em Estética{" "}
+              <span className="italic font-normal">&amp; Cirurgia</span>
             </motion.h2>
 
             <motion.p
@@ -108,8 +108,10 @@ const MentoriaSection = () => {
               animate={inView ? fadeUp(0.2).animate : {}}
               className="mt-5 max-w-xl text-base leading-relaxed text-neutral-500 lg:text-lg"
             >
-              Acelere seus resultados com um plano individual, foco nos seus
-              casos, na sua estrutura e no seu momento de carreira.
+              Quer aperfeiçoar suas técnicas ou aprender algo novo? A mentoria é
+              totalmente personalizada para suprir sua necessidade, com um
+              professor experiente ao seu lado — podendo incluir ou não aula
+              teórica. Duração de 8 horas, com no máximo 2 alunos.
             </motion.p>
 
             {/* O que entregamos */}
