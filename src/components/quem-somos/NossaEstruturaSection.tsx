@@ -2,7 +2,8 @@ import { useRef, useCallback, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 import img1 from "@/assets/estrutura/estrutura-recepcao.jpg";
 import img2 from "@/assets/estrutura/estrutura-cafe.jpg";
@@ -26,16 +27,16 @@ const NossaEstruturaSection = () => {
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      align: "start",
-      slidesToScroll: 1,
-    },
+    { loop: true, align: "start", slidesToScroll: 1 },
     [autoplayPlugin.current]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -59,6 +60,27 @@ const NossaEstruturaSection = () => {
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const lightboxPrev = () =>
+    setLightboxIndex((prev) => (prev - 1 + images.length) % images.length);
+  const lightboxNext = () =>
+    setLightboxIndex((prev) => (prev + 1) % images.length);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") lightboxPrev();
+      if (e.key === "ArrowRight") lightboxNext();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [lightboxOpen]);
 
   return (
     <section className="py-24 md:py-32 lg:py-40 bg-background overflow-hidden relative">
@@ -91,7 +113,10 @@ const NossaEstruturaSection = () => {
                   key={i}
                   className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4 lg:pl-6 min-w-0"
                 >
-                  <div className="overflow-hidden rounded-2xl">
+                  <div
+                    className="overflow-hidden rounded-2xl cursor-pointer"
+                    onClick={() => openLightbox(i)}
+                  >
                     <img
                       src={src}
                       alt={`Estrutura da clínica ${i + 1}`}
@@ -137,6 +162,40 @@ const NossaEstruturaSection = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-4xl w-[95vw] p-0 border-none bg-black/95 overflow-hidden [&>button]:text-white [&>button]:hover:opacity-100">
+          <div className="relative flex items-center justify-center min-h-[50vh]">
+            <img
+              src={images[lightboxIndex]}
+              alt={`Estrutura da clínica ${lightboxIndex + 1}`}
+              className="w-full h-auto max-h-[85vh] object-contain"
+            />
+
+            {/* Lightbox arrows */}
+            <button
+              onClick={lightboxPrev}
+              aria-label="Foto anterior"
+              className="absolute left-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/40 transition-colors"
+            >
+              <ChevronLeft className="h-5 w-5 text-white" />
+            </button>
+            <button
+              onClick={lightboxNext}
+              aria-label="Próxima foto"
+              className="absolute right-3 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/40 transition-colors"
+            >
+              <ChevronRight className="h-5 w-5 text-white" />
+            </button>
+
+            {/* Counter */}
+            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+              {lightboxIndex + 1} / {images.length}
+            </span>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
