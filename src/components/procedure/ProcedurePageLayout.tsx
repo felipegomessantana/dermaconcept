@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, type LucideIcon } from "lucide-react";
+import { Sparkles, CheckCircle2, type LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
@@ -28,8 +28,10 @@ export interface ProcedurePageData {
   benefitsTitle?: string;
   areas?: ProcedureArea[];
   areasTitle?: string;
-  callout?: { title: string; text: string };
+  callout?: { title: string; text?: string; items?: string[] };
   extraSections?: { title: string; content: React.ReactNode }[];
+  closingTitle?: string;
+  closingText?: string;
 }
 
 const TAUPE = "#7A7168";
@@ -158,10 +160,22 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
               className="rounded-2xl border-l-4 bg-white p-8 md:p-10 shadow-sm"
               style={{ borderColor: TAUPE }}
             >
-              <h3 className="font-serif text-xl md:text-2xl text-gray-900 mb-3">
+              <h3 className="font-serif text-xl md:text-2xl text-gray-900 mb-4">
                 {data.callout.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{data.callout.text}</p>
+              {data.callout.text && (
+                <p className="text-gray-600 leading-relaxed mb-4">{data.callout.text}</p>
+              )}
+              {data.callout.items && (
+                <ul className="space-y-3">
+                  {data.callout.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0" style={{ color: TAUPE }} />
+                      <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </motion.div>
           </div>
         </section>
@@ -174,13 +188,13 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
             {...fadeUp(0)}
             className="font-serif text-2xl md:text-3xl text-gray-900 mb-4"
           >
-            Dê o primeiro passo
+            {data.closingTitle || "Dê o primeiro passo"}
           </motion.h2>
           <motion.p
             {...fadeUp(0.1)}
-            className="text-gray-500 mb-8 max-w-md mx-auto"
+            className="text-gray-500 mb-8 max-w-lg mx-auto leading-relaxed"
           >
-            Agende sua avaliação com nossos especialistas e descubra o melhor tratamento para você.
+            {data.closingText || "Agende sua avaliação com nossos especialistas e descubra o melhor tratamento para você."}
           </motion.p>
           <motion.div {...fadeUp(0.2)}>
             <BorderBeamButton

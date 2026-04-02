@@ -1,34 +1,90 @@
-import { Zap, Sparkles, Eye, Shield, Target } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Jato de Plasma",
-  subtitle: "Regeneração e blefaroplastia sem cirurgia.",
+  title: "Jato de Plasma – Tecnologia Avançada para Regeneração da Pele",
+  subtitle: "Alta tecnologia não é apenas inovação. É precisão aplicada à estética.",
   intro: (
     <>
-      <p>O jato de plasma é uma tecnologia inovadora que utiliza energia ionizada para promover a regeneração tecidual e a retração da pele. É especialmente indicado para blefaroplastia não cirúrgica — o tratamento do excesso de pele nas pálpebras sem a necessidade de cortes.</p>
-      <p>O procedimento estimula a produção de colágeno e elastina, promovendo um efeito lifting natural e progressivo. Além das pálpebras, o jato de plasma é eficaz no tratamento de rugas finas, cicatrizes e lesões benignas da pele.</p>
-      <p>Na Derma Concept Academy, o jato de plasma é aplicado com técnica precisa e segura, em um ambiente controlado e por profissionais altamente capacitados.</p>
+      <p>O jato de plasma é uma tecnologia avançada que promove a regeneração da pele através de microdescargas controladas, estimulando a contração imediata dos tecidos e a produção de colágeno.</p>
+      <p>Sem cortes e com abordagem minimamente invasiva, o procedimento é ideal para tratar flacidez, rugas e excesso de pele, especialmente em áreas delicadas.</p>
+      <p>Na Derma Concept, o jato de plasma é aplicado com planejamento individualizado, garantindo resultados naturais, seguros e sofisticados.</p>
     </>
   ),
-  benefitsTitle: "Indicações do Tratamento",
+  benefitsTitle: "O que você pode esperar",
   benefits: [
-    { icon: Eye, text: "Blefaroplastia não cirúrgica: tratamento do excesso de pele nas pálpebras." },
-    { icon: Zap, text: "Regeneração tecidual e retração da pele com energia ionizada." },
-    { icon: Sparkles, text: "Estímulo à produção de colágeno e elastina para efeito lifting." },
-    { icon: Target, text: "Tratamento de rugas finas, cicatrizes e lesões benignas." },
-    { icon: Shield, text: "Procedimento minimamente invasivo com recuperação rápida." },
+    { icon: CheckCircle2, text: "Efeito lifting imediato e progressivo" },
+    { icon: CheckCircle2, text: "Redução de excesso de pele" },
+    { icon: CheckCircle2, text: "Suavização de rugas finas" },
+    { icon: CheckCircle2, text: "Estímulo intenso de colágeno" },
+    { icon: CheckCircle2, text: "Melhora da firmeza e textura da pele" },
   ],
+  extraSections: [
+    {
+      title: "Principais Indicações",
+      content: (
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Flacidez de pálpebras (blefaroplastia sem cirurgia)</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Rugas periorais (código de barras)</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Linhas finas</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Flacidez leve a moderada</span>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: "Por que o Jato de Plasma se destaca",
+      content: (
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Tecnologia minimamente invasiva</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Resultados visíveis já nas primeiras sessões</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Alternativa a procedimentos cirúrgicos em casos selecionados</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: "#7A7168" }} />
+            <span>Alta precisão em áreas delicadas</span>
+          </li>
+        </ul>
+      ),
+    },
+  ],
+  areasTitle: "Áreas Mais Tratadas",
   areas: [
-    { label: "Pálpebras" },
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
+    { label: "Pálpebras superiores e inferiores" },
+    { label: "Região dos olhos" },
+    { label: "Ao redor dos lábios" },
+    { label: "Face" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
-    text: "Tecnologia avançada para resultados que antes só eram possíveis com cirurgia. Rejuvenescimento real, seguro e com olhar especializado.",
+    items: [
+      "Avaliação individualizada",
+      "Procedimentos realizados por médicos",
+      "Protocolos personalizados",
+      "Ambiente premium e acompanhamento especializado",
+    ],
   },
+  closingTitle: "O verdadeiro luxo é rejuvenescer com naturalidade e tecnologia.",
+  closingText: "Agende sua avaliação e descubra como tratar flacidez e rugas com precisão e sofisticação. Vagas limitadas para protocolos personalizados.",
 };
 
 export default function JatoDePlasma() {
