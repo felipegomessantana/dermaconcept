@@ -10,11 +10,11 @@ const fadeUp = (delay = 0) => ({
 });
 
 const deliverables = [
-  { term: "Diagnóstico 360º", desc: "avaliação de lacunas técnicas, fluxos, protocolos e portfólio." },
-  { term: "Plano de evolução", desc: "trilha personalizada com metas e milestones." },
-  { term: "Casos guiados", desc: "discussão de casos reais, tomada de decisão e manejo de intercorrências." },
-  { term: "Suporte prático", desc: "shadowing na Academy ou in loco (consultório do médico) por agenda." },
-  { term: "Negócio & posicionamento", desc: "precificação, montagem de combos, comunicação ética." },
+  { term: "100% personalizada", desc: "conteúdo adaptado às necessidades específicas de cada aluno." },
+  { term: "Professor dedicado", desc: "profissional altamente qualificado e experiente ao seu lado durante toda a jornada." },
+  { term: "Teoria sob demanda", desc: "aula teórica opcional, focada exatamente no que você precisa evoluir." },
+  { term: "Turmas reduzidas", desc: "no máximo 2 alunos por mentoria, garantindo atenção total." },
+  { term: "Imersão de 8 horas", desc: "dia inteiro de prática intensiva para acelerar seus resultados." },
 ];
 
 const formats = [
@@ -99,8 +99,8 @@ const MentoriaSection = () => {
               animate={inView ? fadeUp(0.1).animate : {}}
               className="font-heading text-3xl font-bold leading-tight tracking-tight text-[#1A1A1A] sm:text-4xl lg:text-[2.75rem]"
             >
-              Mentoria Clínica &amp; Cirúrgica{" "}
-              <span className="italic font-normal">sob Medida</span>
+              Mentoria em Estética{" "}
+              <span className="italic font-normal">&amp; Cirurgia</span>
             </motion.h2>
 
             <motion.p
@@ -108,8 +108,10 @@ const MentoriaSection = () => {
               animate={inView ? fadeUp(0.2).animate : {}}
               className="mt-5 max-w-xl text-base leading-relaxed text-neutral-500 lg:text-lg"
             >
-              Acelere seus resultados com um plano individual, foco nos seus
-              casos, na sua estrutura e no seu momento de carreira.
+              Quer aperfeiçoar suas técnicas ou aprender algo novo? A mentoria é
+              totalmente personalizada para suprir sua necessidade, com um
+              professor experiente ao seu lado — podendo incluir ou não aula
+              teórica. Duração de 8 horas, com no máximo 2 alunos.
             </motion.p>
 
             {/* O que entregamos */}
