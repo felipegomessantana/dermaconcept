@@ -17,7 +17,7 @@ const allTestimonials = [
   },
   {
     name: "Dra. Juliana Santos",
-    text: "O curso de Tricologia superou todas as minhas expectativas. O conteúdo é atualizado, a estrutura é impecável e a prática supervisionada me deu uma segurança que nenhum outro curso havia proporcionado.",
+    text: "O curso superou todas as minhas expectativas. O conteúdo é atualizado, a estrutura é impecável e a prática supervisionada me deu uma segurança que nenhum outro curso havia proporcionado.",
     initials: "JS",
   },
   {
@@ -42,7 +42,7 @@ const allTestimonials = [
   },
   {
     name: "Dra. Fernanda Costa",
-    text: "A imersão em Tricologia mudou completamente minha prática clínica. Aprendi técnicas que aplico diariamente com resultados surpreendentes para meus pacientes.",
+    text: "A imersão em Dermatologia Estética mudou completamente minha prática clínica. Aprendi técnicas que aplico diariamente com resultados surpreendentes para meus pacientes.",
     initials: "FC",
   },
   {

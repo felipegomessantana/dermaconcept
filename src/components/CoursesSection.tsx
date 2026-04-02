@@ -5,7 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
 import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
-import courseTricologia from "@/assets/course-tricologia.jpg";
+
 import heroImg from "@/assets/hero-derma.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -70,18 +70,6 @@ const courses: CourseData[] = [
     callout: "Esse fellow, ÚNICO em Belo Horizonte, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).",
     image: courseCirurgia,
     tag: "Prático",
-  },
-  {
-    title: "Tricologia",
-    intro: (
-      <p>
-        Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar e mesoterapia.
-      </p>
-    ),
-    benefits: [],
-    callout: "",
-    image: courseTricologia,
-    tag: "Especialização",
   },
 ];
 

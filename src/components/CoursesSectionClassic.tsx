@@ -1,7 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
-import courseTricologia from "@/assets/course-tricologia.jpg";
 import heroImg from "@/assets/hero-derma.jpg";
 
 const courses = [
@@ -26,13 +25,6 @@ const courses = [
     image: courseCirurgia,
     tag: "Prático",
   },
-  {
-    title: "Tricologia",
-    description:
-      "Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar.",
-    image: courseTricologia,
-    tag: "Especialização",
-  },
 ];
 
 const CoursesSectionClassic = () => (
@@ -50,7 +42,7 @@ const CoursesSectionClassic = () => (
         </p>
       </AnimatedSection>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {courses.map((course, i) => (
           <AnimatedSection key={course.title} delay={i * 0.1}>
             <div className="flex flex-col overflow-hidden rounded-2xl bg-card border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">

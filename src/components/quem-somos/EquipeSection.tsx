@@ -15,7 +15,7 @@ const teamMembers = [
   { name: "Dra. Especialista 2", role: "Cirurgia Dermatológica", image: teamMember2 },
   { name: "Dr. Especialista 3", role: "Dermatologia Clínica", image: teamMember3 },
   { name: "Dr. Leonardo Alves", role: "Dermatologia Avançada", image: teamMember4 },
-  { name: "Dra. Especialista 5", role: "Tricologia", image: teamMember5 },
+  { name: "Dra. Especialista 5", role: "Dermatologia Estética", image: teamMember5 },
   { name: "Dra. Especialista 6", role: "Bioestimuladores & Toxina", image: teamMember6 },
 ];
 

@@ -46,10 +46,9 @@ const schedule: ScheduleMonth[] = [
   },
   {
     month: "Maio",
-    topic: "Tricologia, Fios e Corporal",
+    topic: "Fios e Corporal",
     lessons: [
-      { tag: "Aula 01 - Teoria", description: "Tricologia." },
-      { tag: "Aula 02 - Teoria + Prática", description: "Microagulhamento, MMP, Dermapen, Emptiers e Mesoterapia." },
+      { tag: "Aula 01 - Teoria + Prática", description: "Microagulhamento, MMP, Dermapen, Emptiers e Mesoterapia." },
       { tag: "Aula 03 - Teoria + Prática", description: "Fios PDO (liso e tração)." },
       { tag: "Aula 04 - Teoria + Prática", description: "Tratamentos corporais (tecnologias e injetáveis)." },
     ],
