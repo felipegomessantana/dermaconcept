@@ -2,7 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Jato de Plasma – Tecnologia Avançada para Regeneração da Pele",
+  title: (<>JATO DE PLASMA<br /><span className="block">Tecnologia Avançada para Regeneração da Pele</span></>),
   subtitle: "Alta tecnologia não é apenas inovação. É precisão aplicada à estética.",
   intro: (
     <>

@@ -2,7 +2,7 @@ import { Syringe, Sparkles, Target, Droplets, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Mesoject Gun",
+  title: (<>MESOJECT GUN<br /><span className="block">Intradermoterapia de Alta Precisão</span></>),
   subtitle: "Intradermoterapia de alta precisão e entrega de ativos.",
   intro: (
     <>

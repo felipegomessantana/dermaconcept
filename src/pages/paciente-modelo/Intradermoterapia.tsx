@@ -2,7 +2,7 @@ import { Syringe, Sparkles, Droplets, Target, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Intradermoterapia",
+  title: (<>INTRADERMOTERAPIA<br /><span className="block">Entrega Direta de Ativos para Resultados Potencializados</span></>),
   subtitle: "Entrega direta de ativos para resultados potencializados.",
   intro: (
     <>

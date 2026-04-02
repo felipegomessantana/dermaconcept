@@ -2,7 +2,7 @@ import { ArrowUp, Sparkles, Shield, Layers, Heart } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Fios de PDO",
+  title: (<>FIOS DE PDO<br /><span className="block">Sustentação com Leveza e Efeito Lifting</span></>),
   subtitle: "Sustentação com leveza e efeito lifting.",
   intro: (
     <>
