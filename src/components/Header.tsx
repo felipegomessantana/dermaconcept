@@ -314,16 +314,25 @@ const MobileSubmenu = ({
           className="overflow-hidden"
         >
           <div className="pb-4 pl-4 flex flex-col gap-1">
-            {items.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={onNavigate}
-                className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {items.map((item) =>
+              item.href === "" ? (
+                <p
+                  key={item.label}
+                  className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-gray-400"
+                >
+                  {item.label.replace(/—\s?/g, "").replace(/\s?—/g, "")}
+                </p>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={onNavigate}
+                  className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
         </motion.div>
       )}
