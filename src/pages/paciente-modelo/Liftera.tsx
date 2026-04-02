@@ -2,7 +2,7 @@ import { ArrowUp, Target, Layers, Sparkles } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "LIFTERA 2 – ULTRASSOM MICROFOCADO",
+  title: (<>LIFTERA 2<br /><span className="block">Ultrassom Microfocado</span></>),
   subtitle: "Sofisticação é tratar profundamente sem parecer tratado.",
   intro: (
     <>

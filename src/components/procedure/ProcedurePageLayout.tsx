@@ -21,7 +21,7 @@ export interface ProcedureArea {
 }
 
 export interface ProcedurePageData {
-  title: string;
+  title: React.ReactNode;
   subtitle: string;
   intro: React.ReactNode;
   benefits?: ProcedureBenefit[];
