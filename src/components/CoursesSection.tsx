@@ -62,7 +62,7 @@ const courses = [
 ];
 
 interface ParallaxCourseProps {
-  course: (typeof courses)[0];
+  course: { title: string; description: React.ReactNode; image: string; tag: string };
   index: number;
   total: number;
   reversed: boolean;
