@@ -4,13 +4,16 @@ import { BorderBeamButton } from "./ui/border-beam-button";
 import { Phone, MessageCircle, Mail, Instagram, MapPin } from "lucide-react";
 import contactImg from "@/assets/contact-ambiente.jpg";
 
-const contactStrip = [
+const contactStripRow1 = [
   { icon: Phone, label: "Telefone Fixo", value: "(31) 3564-6953", href: "tel:+553135646953" },
   { icon: MessageCircle, label: "WhatsApp", value: "(31) 98244-9473", href: "https://wa.me/5531982449473" },
   { icon: Instagram, label: "Instagram", value: "@dermaconcept_academy", href: "https://instagram.com/dermaconcept_academy" },
   { icon: Mail, label: "E-mail", value: "contato@dermaconcept.com.br", href: "mailto:contato@dermaconcept.com.br" },
-  { icon: MapPin, label: "Endereço", value: "Av. Bernardo Monteiro, 1557 - 2º Andar - Funcionários, Belo Horizonte - MG, 30150-288", href: "https://maps.google.com/?q=Av.+Bernardo+Monteiro,+1557+-+Funcionários,+Belo+Horizonte+-+MG", wide: true },
 ];
+
+const contactAddress = {
+  icon: MapPin, label: "Endereço", value: "Av. Bernardo Monteiro, 1557 - 2º Andar - Funcionários, Belo Horizonte - MG, 30150-288", href: "https://maps.google.com/?q=Av.+Bernardo+Monteiro,+1557+-+Funcionários,+Belo+Horizonte+-+MG",
+};
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "", mensagem: "" });
