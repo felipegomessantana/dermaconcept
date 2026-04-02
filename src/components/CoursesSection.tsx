@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
 import courseEstetica from "@/assets/course-estetica.jpg";
@@ -8,61 +9,115 @@ import courseTricologia from "@/assets/course-tricologia.jpg";
 import heroImg from "@/assets/hero-derma.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const courses = [
+const taupe = "#7A7168";
+
+interface BenefitItem {
+  text: string;
+}
+
+interface CourseData {
+  title: string;
+  intro: React.ReactNode;
+  benefits: BenefitItem[];
+  callout: string;
+  image: string;
+  tag: string;
+}
+
+const courses: CourseData[] = [
   {
     title: "Dermatologia Estética Semanal",
-    description: (
-      <>
-        <p>Este fellow, <strong className="text-foreground">ÚNICO em Belo Horizonte</strong>, tem duração de 6 meses e é composto por aulas teóricas baseadas em muita ciência e um hands on intenso, com muitos pacientes e tudo acompanhado de professores referência na área e com muita experiência.</p>
-        <p>Ele ensina toda dermatologia estética, do básico ao avançado, do mais antigo (e que funciona até hoje) até as últimas novidades! Mas vai muito além: ele mostra a realidade de um consultório, da avaliação, indicação e resultado dos procedimentos que o aluno fez!</p>
-        <p>Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos! O aluno acompanha seu paciente durante todo o tratamento! Realiza o procedimento e avalia o resultado!</p>
-        <p>Além disso, a prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.</p>
-      </>
+    intro: (
+      <p>
+        Este fellow, <span className="font-semibold text-foreground">ÚNICO em Belo Horizonte</span>, tem duração de 6 meses e é composto por aulas teóricas baseadas em muita ciência e um hands on intenso, com muitos pacientes e tudo acompanhado de professores referência na área e com muita experiência.
+      </p>
     ),
+    benefits: [
+      { text: "Ensina toda dermatologia estética, do básico ao avançado, do mais antigo (e que funciona até hoje) até as últimas novidades! Mas vai muito além: ele mostra a realidade de um consultório, da avaliação, indicação e resultado dos procedimentos que o aluno fez!" },
+      { text: "Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos! O aluno acompanha seu paciente durante todo o tratamento! Realiza o procedimento e avalia o resultado!" },
+    ],
+    callout: "A prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.",
     image: courseEstetica,
     tag: "Intensivo",
   },
   {
     title: "Dermatologia Estética Mensal",
-    description: (
-      <>
-        <p>Este fellow tem duração de 6 meses e ocorre em <strong className="text-foreground">um final de semana por mês (3 dias inteiros)</strong>.</p>
-        <p>Ele ensina toda dermatologia estética, do básico ao avançado, do mais antigo (e que funciona até hoje) até as últimas novidades! Ele mostra a realidade de um consultório, da avaliação, indicação e resultado dos procedimentos que você fez!</p>
-        <p>Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos!</p>
-        <p>Conta com aula teórica baseada em artigos científicos e literatura atualizada e muito hands on!! Tudo acompanhado por professores qualificados e que são referência na área!</p>
-        <p>O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!</p>
-      </>
+    intro: (
+      <p>
+        Este fellow tem duração de 6 meses e ocorre em <span className="font-semibold text-foreground">um final de semana por mês (3 dias inteiros)</span>.
+      </p>
     ),
+    benefits: [
+      { text: "Ensina toda dermatologia estética, do básico ao avançado, do mais antigo (e que funciona até hoje) até as últimas novidades! Mostra a realidade de um consultório, da avaliação, indicação e resultado dos procedimentos que você fez!" },
+      { text: "Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos!" },
+      { text: "Conta com aula teórica baseada em artigos científicos e literatura atualizada e muito hands on!! Tudo acompanhado por professores qualificados e que são referência na área!" },
+    ],
+    callout: "O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!",
     image: heroImg,
     tag: "Completo",
   },
   {
     title: "Cirurgia Dermatológica",
-    description: (
-      <>
-        <p>Ensinar e formar cirurgiões dermatológicos, com aulas teóricas e práticas, abordando vários tumores e pequenas cirurgias estéticas.</p>
-        <p>Este curso é para você que deseja alavancar sua carreira e se destacar no mercado de trabalho, após dominar os principais procedimentos dentro da cirurgia dermatológica.</p>
-        <p>Hands-On supervisionado por especialistas da área de cirurgia dermatológica, colocando em prática todo conhecimento obtido nas aulas teóricas.</p>
-        <p>Esse fellow, <strong className="text-foreground">ÚNICO em Belo Horizonte</strong>, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).</p>
-      </>
+    intro: (
+      <p>
+        Ensinar e formar cirurgiões dermatológicos, com aulas teóricas e práticas, abordando vários tumores e pequenas cirurgias estéticas.
+      </p>
     ),
+    benefits: [
+      { text: "Este curso é para você que deseja alavancar sua carreira e se destacar no mercado de trabalho, após dominar os principais procedimentos dentro da cirurgia dermatológica." },
+      { text: "Hands-On supervisionado por especialistas da área de cirurgia dermatológica, colocando em prática todo conhecimento obtido nas aulas teóricas." },
+    ],
+    callout: "Esse fellow, ÚNICO em Belo Horizonte, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).",
     image: courseCirurgia,
     tag: "Prático",
   },
   {
     title: "Tricologia",
-    description: (
-      <>
-        <p>Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar e mesoterapia.</p>
-      </>
+    intro: (
+      <p>
+        Curso especializado em diagnóstico e tratamento de doenças capilares. Abrange tricoscopia, tratamentos clínicos e procedimentos como microagulhamento capilar e mesoterapia.
+      </p>
     ),
+    benefits: [],
+    callout: "",
     image: courseTricologia,
     tag: "Especialização",
   },
 ];
 
+const BenefitsList = ({ benefits }: { benefits: BenefitItem[] }) => (
+  <ul className="space-y-3">
+    {benefits.map((b, i) => (
+      <li key={i} className="flex items-start gap-3">
+        <CheckCircle2
+          size={18}
+          className="mt-0.5 shrink-0"
+          style={{ color: taupe }}
+        />
+        <span className="text-[13px] md:text-sm leading-relaxed text-muted-foreground">
+          {b.text}
+        </span>
+      </li>
+    ))}
+  </ul>
+);
+
+const CalloutBox = ({ text }: { text: string }) => (
+  <div
+    className="rounded-lg px-5 py-4 border-l-[3px]"
+    style={{ backgroundColor: "#F8F5F1", borderLeftColor: taupe }}
+  >
+    <div className="flex items-start gap-3">
+      <Sparkles size={16} className="mt-0.5 shrink-0" style={{ color: taupe }} />
+      <p className="text-[13px] md:text-sm leading-relaxed font-medium text-foreground">
+        {text}
+      </p>
+    </div>
+  </div>
+);
+
 interface ParallaxCourseProps {
-  course: { title: string; description: React.ReactNode; image: string; tag: string };
+  course: CourseData;
   index: number;
   total: number;
   reversed: boolean;
@@ -79,11 +134,8 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
     offset: ["start end", "end start"],
   });
 
-  // Image moves slower (parallax)
   const imageY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [-50, 50]);
-  // Zoom in as you scroll down
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  // Text moves faster
   const textY = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [60, -60]);
 
   const imageCol = (
@@ -123,9 +175,23 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
         <h3 className="font-serif text-3xl md:text-4xl lg:text-[2.8rem] xl:text-5xl mb-6 leading-[1.15] tracking-tight text-foreground">
           {course.title}
         </h3>
-        <div className="text-muted-foreground text-[13px] md:text-sm leading-relaxed mb-10 max-w-md space-y-3 [&_strong]:font-semibold">
-          {course.description}
+
+        {/* Structured description */}
+        <div className="space-y-5 mb-10 max-w-lg">
+          {/* Intro paragraph */}
+          <div className="text-[13px] md:text-sm leading-relaxed text-muted-foreground">
+            {course.intro}
+          </div>
+
+          {/* Benefits list */}
+          {course.benefits.length > 0 && (
+            <BenefitsList benefits={course.benefits} />
+          )}
+
+          {/* Callout box */}
+          {course.callout && <CalloutBox text={course.callout} />}
         </div>
+
         <BorderBeamButton as="a" href="#contato">
           ACESSE O PROGRAMA
         </BorderBeamButton>
