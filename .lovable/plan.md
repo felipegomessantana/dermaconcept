@@ -1,22 +1,21 @@
 
 
-## Plan: Fix Contact Strip Layout + Button Border Beam
+## Plan: Make BorderBeamButton support full-width
 
-### Problem 1: Contact Strip Cramped in One Line
-The 5 contact items are squeezed into a single row on desktop (`lg:grid-cols-6`). Split into two rows: first row with 4 items (Phone, WhatsApp, Instagram, Email), second row with Address centered below.
+### Problem
+The `w-full` class is applied to the outer `<Tag>` wrapper, but the inner `<span>` (the visible button face) doesn't stretch to fill it — it only wraps the text content. This leaves the beam border looking broken/partial.
 
-**Fix in `ContactSection.tsx`:**
-- Change grid to `lg:grid-cols-4` (4 columns for first 4 items)
-- Remove `wide` / `col-span-2` from Address
-- Instead, render Address as a separate full-width item below the grid, centered, with the same icon+label+value styling
+### Fix
+**`src/components/ui/border-beam-button.tsx`** — Add `w-full` to the inner visible `<span>` (line 39) so when the outer container is full-width, the button face stretches accordingly.
 
-### Problem 2: "Enviar Mensagem" Button Missing Beam Border
-The `BorderBeamButton` has a hardcoded inner `<span>` with `bg-[#E6DFD6]` (beige) and `text-gray-900`. The className passed (`bg-[#7A7168] text-white`) applies to the outer wrapper only, so the visible inner span always shows beige — hiding the beam effect visually because the taupe outer wrapper blends with the beam.
+Change inner span classes from:
+```
+flex items-center justify-center gap-2 rounded-[12px] bg-[#E6DFD6] px-8 py-3.5 ...
+```
+to:
+```
+w-full flex items-center justify-center gap-2 rounded-[12px] bg-[#E6DFD6] px-8 py-3.5 ...
+```
 
-**Fix in `ContactSection.tsx`:**
-- Remove the conflicting `bg-[#7A7168] text-white` classes from the `BorderBeamButton` className — let the component use its default beige inner span so the animated border beam is clearly visible against it (matching the other buttons on the site like "QUERO UMA MENTORIA SOB MEDIDA")
-- Keep only layout classes: `w-full rounded-xl uppercase tracking-[0.2em] text-xs font-semibold`
-
-### Files Changed
-- `src/components/ContactSection.tsx` — restructure contact strip grid + fix button classes
+One line change, one file.
 
