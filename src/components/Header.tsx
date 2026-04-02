@@ -80,7 +80,8 @@ function PacienteModeloContent() {
   const tecnologias = [
     { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
     { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
-    { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+    { label: "Linear Z", href: "/paciente-modelo/linear-z" },
+    { label: "Liftera 2", href: "/paciente-modelo/liftera" },
     { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
     { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
   ];
