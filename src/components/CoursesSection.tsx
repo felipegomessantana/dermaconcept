@@ -5,7 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
 import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
-import courseTricologia from "@/assets/course-tricologia.jpg";
+
 import heroImg from "@/assets/hero-derma.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 

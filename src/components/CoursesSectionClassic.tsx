@@ -42,7 +42,7 @@ const CoursesSectionClassic = () => (
         </p>
       </AnimatedSection>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {courses.map((course, i) => (
           <AnimatedSection key={course.title} delay={i * 0.1}>
             <div className="flex flex-col overflow-hidden rounded-2xl bg-card border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">

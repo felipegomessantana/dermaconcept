@@ -42,7 +42,7 @@ const allTestimonials = [
   },
   {
     name: "Dra. Fernanda Costa",
-    text: "A imersão em Tricologia mudou completamente minha prática clínica. Aprendi técnicas que aplico diariamente com resultados surpreendentes para meus pacientes.",
+    text: "A imersão em Dermatologia Estética mudou completamente minha prática clínica. Aprendi técnicas que aplico diariamente com resultados surpreendentes para meus pacientes.",
     initials: "FC",
   },
   {
