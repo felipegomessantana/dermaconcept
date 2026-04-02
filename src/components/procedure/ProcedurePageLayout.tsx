@@ -1,0 +1,201 @@
+import { motion } from "framer-motion";
+import { Sparkles, type LucideIcon } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { BorderBeamButton } from "@/components/ui/border-beam-button";
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+});
+
+export interface ProcedureBenefit {
+  icon: LucideIcon;
+  text: string;
+}
+
+export interface ProcedureArea {
+  label: string;
+  icon?: LucideIcon;
+}
+
+export interface ProcedurePageData {
+  title: string;
+  subtitle: string;
+  intro: React.ReactNode;
+  benefits?: ProcedureBenefit[];
+  benefitsTitle?: string;
+  areas?: ProcedureArea[];
+  areasTitle?: string;
+  callout?: { title: string; text: string };
+  extraSections?: { title: string; content: React.ReactNode }[];
+}
+
+const TAUPE = "#7A7168";
+
+export default function ProcedurePageLayout({ data }: { data: ProcedurePageData }) {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+
+      {/* Hero */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-[#FAF8F5]">
+        <div className="container max-w-3xl mx-auto px-6 text-center">
+          <motion.p
+            {...fadeUp(0)}
+            className="text-xs font-semibold uppercase tracking-[0.3em] mb-4"
+            style={{ color: TAUPE }}
+          >
+            Seja um Paciente Modelo
+          </motion.p>
+          <motion.h1
+            {...fadeUp(0.1)}
+            className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight"
+          >
+            {data.title}
+          </motion.h1>
+          <motion.p
+            {...fadeUp(0.2)}
+            className="mt-6 text-lg md:text-xl italic text-gray-500 leading-relaxed"
+          >
+            {data.subtitle}
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="py-16 md:py-24">
+        <div className="container max-w-3xl mx-auto px-6">
+          <motion.div
+            {...fadeUp(0.1)}
+            className="text-base md:text-lg text-gray-600 leading-relaxed space-y-4"
+          >
+            {data.intro}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      {data.benefits && data.benefits.length > 0 && (
+        <section className="py-16 md:py-20 bg-[#FAF8F5]">
+          <div className="container max-w-3xl mx-auto px-6">
+            <motion.h2
+              {...fadeUp(0)}
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10"
+            >
+              {data.benefitsTitle || "O que transformamos"}
+            </motion.h2>
+            <div className="space-y-5">
+              {data.benefits.map((b, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeUp(0.05 * i)}
+                  className="flex items-start gap-4"
+                >
+                  <b.icon className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: TAUPE }} />
+                  <p className="text-gray-700 leading-relaxed">{b.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Areas */}
+      {data.areas && data.areas.length > 0 && (
+        <section className="py-16 md:py-20">
+          <div className="container max-w-3xl mx-auto px-6">
+            <motion.h2
+              {...fadeUp(0)}
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10"
+            >
+              {data.areasTitle || "Áreas de Aplicação"}
+            </motion.h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {data.areas.map((a, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeUp(0.04 * i)}
+                  className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 shadow-sm"
+                >
+                  {a.icon ? (
+                    <a.icon className="h-4 w-4 flex-shrink-0" style={{ color: TAUPE }} />
+                  ) : (
+                    <Sparkles className="h-4 w-4 flex-shrink-0" style={{ color: TAUPE }} />
+                  )}
+                  <span className="text-sm text-gray-700">{a.label}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Extra Sections */}
+      {data.extraSections?.map((section, i) => (
+        <section key={i} className={`py-16 md:py-20 ${i % 2 === 0 ? "bg-[#FAF8F5]" : ""}`}>
+          <div className="container max-w-3xl mx-auto px-6">
+            <motion.h2
+              {...fadeUp(0)}
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-8"
+            >
+              {section.title}
+            </motion.h2>
+            <motion.div {...fadeUp(0.1)} className="text-gray-600 leading-relaxed space-y-4">
+              {section.content}
+            </motion.div>
+          </div>
+        </section>
+      ))}
+
+      {/* Callout */}
+      {data.callout && (
+        <section className="py-16 md:py-20 bg-[#FAF8F5]">
+          <div className="container max-w-3xl mx-auto px-6">
+            <motion.div
+              {...fadeUp(0)}
+              className="rounded-2xl border-l-4 bg-white p-8 md:p-10 shadow-sm"
+              style={{ borderColor: TAUPE }}
+            >
+              <h3 className="font-serif text-xl md:text-2xl text-gray-900 mb-3">
+                {data.callout.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{data.callout.text}</p>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
+      <section className="py-20 md:py-28">
+        <div className="container max-w-3xl mx-auto px-6 text-center">
+          <motion.h2
+            {...fadeUp(0)}
+            className="font-serif text-2xl md:text-3xl text-gray-900 mb-4"
+          >
+            Dê o primeiro passo
+          </motion.h2>
+          <motion.p
+            {...fadeUp(0.1)}
+            className="text-gray-500 mb-8 max-w-md mx-auto"
+          >
+            Agende sua avaliação com nossos especialistas e descubra o melhor tratamento para você.
+          </motion.p>
+          <motion.div {...fadeUp(0.2)}>
+            <BorderBeamButton
+              as="a"
+              href="https://wa.me/5531982449473"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agende sua avaliação
+            </BorderBeamButton>
+          </motion.div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

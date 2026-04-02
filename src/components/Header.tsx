@@ -66,45 +66,40 @@ function WorkshopsContent() {
 
 function PacienteModeloContent() {
   const esteticos = [
-    "Preenchimento com Ácido Hialurônico",
-    "Bioestimuladores de Colágeno",
-    "Toxina Botulínica",
-    "Liftera",
-    "Microagulhamento",
-    "Intradermoterapia",
-    "Peeling Químico",
-    "Fio de PDO",
-    "IPCA",
-    "Rejuvenescimento Íntimo",
+    { label: "Preenchimento com Ácido Hialurônico", href: "/paciente-modelo/preenchimento-acido-hialuronico" },
+    { label: "Toxina Botulínica", href: "/paciente-modelo/toxina-botulinica" },
+    { label: "Bioestimuladores de Colágeno", href: "/paciente-modelo/bioestimuladores-colageno" },
+    { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
+    { label: "Fios de PDO", href: "/paciente-modelo/fios-de-pdo" },
+    { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
+    { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
   ];
 
-  const extras = ["Dermatologia Clínica", "Dermatologia Cirúrgica"];
+  const tecnologias = [
+    { label: "Youse Laser Prime", href: "/paciente-modelo/youse-laser-prime" },
+    { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+    { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
+    { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
+    { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
+  ];
 
   return (
     <div className="w-[600px]">
-      {/* Procedimentos Estéticos */}
       <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
         Procedimentos Estéticos
       </p>
       <div className="grid grid-cols-2 gap-x-4">
         {esteticos.map((item) => (
-          <DropdownLink key={item} href="#contato">{item}</DropdownLink>
+          <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
         ))}
       </div>
 
-      {/* Seção secundária */}
       <div className="mt-3 rounded-lg bg-gray-50 p-3">
         <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-          Especialidades
+          Tecnologias
         </p>
-        {extras.map((item) => (
-          <a
-            key={item}
-            href="#contato"
-            className="block rounded-md px-3 py-2 text-sm font-medium text-gray-800 transition-all duration-200 hover:translate-x-1 hover:text-black"
-          >
-            {item}
-          </a>
+        {tecnologias.map((item) => (
+          <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
         ))}
       </div>
     </div>
@@ -362,16 +357,18 @@ const mobileMenuSections = [
   {
     title: "Seja Um Paciente Modelo",
     items: [
-      { label: "Preenchimento com Ácido Hialurônico", href: "#contato" },
-      { label: "Bioestimuladores de Colágeno", href: "#contato" },
-      { label: "Toxina Botulínica", href: "#contato" },
-      { label: "Liftera", href: "#contato" },
-      { label: "Microagulhamento", href: "#contato" },
-      { label: "Intradermoterapia", href: "#contato" },
-      { label: "Peeling Químico", href: "#contato" },
-      { label: "Fio de PDO", href: "#contato" },
-      { label: "Dermatologia Clínica", href: "#contato" },
-      { label: "Dermatologia Cirúrgica", href: "#contato" },
+      { label: "Preenchimento com Ácido Hialurônico", href: "/paciente-modelo/preenchimento-acido-hialuronico" },
+      { label: "Toxina Botulínica", href: "/paciente-modelo/toxina-botulinica" },
+      { label: "Bioestimuladores de Colágeno", href: "/paciente-modelo/bioestimuladores-colageno" },
+      { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
+      { label: "Fios de PDO", href: "/paciente-modelo/fios-de-pdo" },
+      { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
+      { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
+      { label: "Youse Laser Prime", href: "/paciente-modelo/youse-laser-prime" },
+      { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+      { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
+      { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
+      { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
     ],
   },
 ];
