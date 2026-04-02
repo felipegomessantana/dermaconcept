@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, Clock, Users, Video, Building2, MapPin } from "lucide-react";
 import { BorderBeamButton } from "./ui/border-beam-button";
+
+const taupe = "#7A7168";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 } as const,
@@ -10,9 +12,9 @@ const fadeUp = (delay = 0) => ({
 });
 
 const formats = [
-  "1:1 online (sessões de 60-90min)",
-  "Presencial na Academy (meio período ou dia inteiro)",
-  "In loco (consulte disponibilidade)",
+  { icon: Video, text: "1:1 online (sessões de 60-90min)" },
+  { icon: Building2, text: "Presencial na Academy (meio período ou dia inteiro)" },
+  { icon: MapPin, text: "In loco (consulte disponibilidade)" },
 ];
 
 const MentoriaSection = () => {
@@ -95,14 +97,40 @@ const MentoriaSection = () => {
               <span className="italic font-normal">&amp; Cirurgia Dermatológica</span>
             </motion.h2>
 
+            {/* Intro paragraphs */}
             <motion.div
               {...fadeUp(0.2)}
               animate={inView ? fadeUp(0.2).animate : {}}
-              className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground lg:text-[15px] space-y-3"
+              className="mt-6 max-w-xl space-y-4"
             >
-              <p>O aluno que busca aperfeiçoar suas técnicas ou aprender algo novo, esse é o curso ideal!</p>
-              <p>Totalmente personalizado para suprir a necessidade do aluno e com um professor altamente qualificado e experiente ao seu lado, podendo ter ou não aula teórica!</p>
-              <p><strong className="text-foreground">Duração de 8 horas e pode ter no máximo 2 alunos.</strong></p>
+              <p className="text-sm leading-relaxed text-muted-foreground lg:text-[15px]">
+                O aluno que busca aperfeiçoar suas técnicas ou aprender algo novo, esse é o curso ideal!
+              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground lg:text-[15px]">
+                Totalmente personalizado para suprir a necessidade do aluno e com um professor altamente qualificado e experiente ao seu lado, podendo ter ou não aula teórica!
+              </p>
+            </motion.div>
+
+            {/* Callout: Duration & capacity */}
+            <motion.div
+              {...fadeUp(0.3)}
+              animate={inView ? fadeUp(0.3).animate : {}}
+              className="mt-8"
+            >
+              <div
+                className="inline-flex items-center gap-6 rounded-xl px-6 py-4 border"
+                style={{ backgroundColor: "#F8F5F1", borderColor: "hsl(35, 10%, 85%)" }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <Clock size={18} style={{ color: taupe }} />
+                  <span className="text-sm font-semibold text-foreground">8 horas</span>
+                </div>
+                <div className="h-5 w-px bg-border" />
+                <div className="flex items-center gap-2.5">
+                  <Users size={18} style={{ color: taupe }} />
+                  <span className="text-sm font-semibold text-foreground">No máximo 2 alunos</span>
+                </div>
+              </div>
             </motion.div>
 
             {/* Formatos */}
@@ -111,12 +139,20 @@ const MentoriaSection = () => {
               animate={inView ? fadeUp(0.4).animate : {}}
               className="mt-10"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7A7168]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em]" style={{ color: taupe }}>
                 Formatos
               </p>
-              <div className="mt-4 flex flex-col gap-2">
+              <div className="mt-5 flex flex-col gap-4">
                 {formats.map((f) => (
-                  <p key={f} className="text-sm text-muted-foreground lg:text-[15px]">{f}</p>
+                  <div key={f.text} className="flex items-center gap-3">
+                    <div
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+                      style={{ backgroundColor: "#F8F5F1" }}
+                    >
+                      <f.icon size={16} style={{ color: taupe }} />
+                    </div>
+                    <span className="text-sm text-muted-foreground lg:text-[15px]">{f.text}</span>
+                  </div>
                 ))}
               </div>
             </motion.div>
