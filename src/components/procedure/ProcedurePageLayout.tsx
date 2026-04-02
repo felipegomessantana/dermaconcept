@@ -28,8 +28,10 @@ export interface ProcedurePageData {
   benefitsTitle?: string;
   areas?: ProcedureArea[];
   areasTitle?: string;
-  callout?: { title: string; text: string };
+  callout?: { title: string; text?: string; items?: string[] };
   extraSections?: { title: string; content: React.ReactNode }[];
+  closingTitle?: string;
+  closingText?: string;
 }
 
 const TAUPE = "#7A7168";
