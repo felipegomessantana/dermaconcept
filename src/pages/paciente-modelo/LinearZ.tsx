@@ -15,7 +15,13 @@ const data: ProcedurePageData = {
     { icon: Layers, text: "Redução da flacidez" },
     { icon: Target, text: "Melhora do contorno facial" },
     { icon: Sparkles, text: "Estímulo intenso de colágeno" },
-    { icon: Shield, text: "Redução de gordura localizada (efeito adipogênico controlado)" },
+    { icon: Shield, text: (
+      <>
+        Estímulo de gordura localizada (Efeito Adipogênico Controlado)
+        <br />
+        <span className="text-sm text-gray-500">🔜 Amplamente utilizado para estimular a formação de gordura em áreas da face que sofreram perda de volume, especialmente após o uso de canetas emagrecedoras.</span>
+      </>
+    ) },
   ],
   areas: [
     { label: "Face completa" },

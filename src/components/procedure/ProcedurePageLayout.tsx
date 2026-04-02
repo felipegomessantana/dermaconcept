@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
 
 export interface ProcedureBenefit {
   icon: LucideIcon;
-  text: string;
+  text: React.ReactNode;
 }
 
 export interface ProcedureArea {
