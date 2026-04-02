@@ -13,13 +13,15 @@ interface BorderBeamButtonProps
 const BorderBeamButton = React.forwardRef<
   HTMLElement,
   BorderBeamButtonProps
->(function BorderBeamButton({ className, children, as = "button", href, duration = 3.5, style, ...props }, ref) {
+>(function BorderBeamButton({ className, children, as = "button", href, target, rel, duration = 3.5, style, ...props }, ref) {
   const Tag = as === "a" ? "a" : "button";
 
   return (
     <Tag
       ref={ref as any}
       href={as === "a" ? href : undefined}
+      target={as === "a" ? target : undefined}
+      rel={as === "a" ? rel : undefined}
       className={cn(
         "border-beam-btn group relative inline-flex items-center justify-center overflow-hidden rounded-[12px] p-[1.5px] transition-all duration-300",
         className,
