@@ -1,4 +1,4 @@
-import { Sparkles, Eye, Smile, Target, Shield } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -6,33 +6,43 @@ const data: ProcedurePageData = {
   subtitle: "Suavidade não é ausência de expressão. É controle, equilíbrio e sofisticação.",
   intro: (
     <>
-      <p>A toxina botulínica é o procedimento estético mais realizado no mundo. Ela atua nas rugas dinâmicas — aquelas formadas pela contração muscular repetida — suavizando linhas de expressão e prevenindo o aprofundamento de marcas futuras.</p>
-      <p>Na Derma Concept Academy, cada aplicação é precedida de uma avaliação detalhada da musculatura facial, garantindo um resultado harmonioso que preserva a expressividade natural do rosto.</p>
-      <p>O planejamento é individualizado: levamos em conta a anatomia, o tipo de pele, os hábitos e os desejos de cada paciente. O resultado é um rosto descansado, natural e rejuvenescido — nunca congelado.</p>
+      <p>A toxina botulínica é um dos tratamentos mais consagrados da dermatologia estética para suavizar linhas de expressão e prevenir o envelhecimento da pele, mantendo a naturalidade dos movimentos.</p>
+      <p>Ela atua relaxando de forma controlada a musculatura responsável pelas rugas dinâmicas — aquelas que aparecem ao sorrir, franzir a testa ou expressar emoções.</p>
+      <p>Na Derma Concept, a aplicação é realizada com precisão e planejamento individualizado, preservando a identidade do seu rosto e proporcionando um resultado leve, elegante e natural.</p>
     </>
   ),
-  benefitsTitle: "O que tratamos",
+  benefitsTitle: "O que podemos transformar com naturalidade",
   benefits: [
-    { icon: Sparkles, text: "Suavização de rugas dinâmicas da testa, glabela e região periorbital." },
-    { icon: Eye, text: "Elevação sutil das sobrancelhas para um olhar mais aberto e jovem." },
-    { icon: Smile, text: "Correção do sorriso gengival e linhas ao redor da boca." },
-    { icon: Target, text: "Tratamento da hiperidrose (suor excessivo) axilar e palmar." },
-    { icon: Shield, text: "Prevenção do aprofundamento de linhas de expressão." },
+    { icon: CheckCircle2, text: "Suavização de rugas de expressão" },
+    { icon: CheckCircle2, text: "Prevenção do envelhecimento precoce" },
+    { icon: CheckCircle2, text: "Redução de marcas na testa e entre as sobrancelhas" },
+    { icon: CheckCircle2, text: "Abertura do olhar e efeito lifting sutil" },
+    { icon: CheckCircle2, text: "Correção de assimetrias faciais" },
+    { icon: CheckCircle2, text: "Melhora do aspecto cansado ou tenso" },
   ],
-  areasTitle: "Áreas de Aplicação",
+  areasTitle: "Áreas Tratadas",
   areas: [
     { label: "Testa" },
-    { label: "Glabela" },
-    { label: "Pés de galinha" },
-    { label: "Sobrancelhas" },
-    { label: "Nariz" },
-    { label: "Queixo" },
-    { label: "Pescoço" },
+    { label: "Glabela (entre as sobrancelhas)" },
+    { label: "Pés de galinha (região dos olhos)" },
+    { label: "Sobrancelhas (efeito lifting)" },
+    { label: "Nariz (linhas do \"bunny lines\")" },
+    { label: "Queixo (aspecto de casca de laranja)" },
+    { label: "Pescoço (bandas platismais)" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
-    text: "Com técnica precisa e olhar atento, nossos especialistas garantem um resultado que respeita sua identidade facial. A beleza está nos detalhes — e é nos detalhes que fazemos a diferença.",
+    text: "Aqui, cada detalhe importa.",
+    items: [
+      "Procedimentos realizados por médicos experientes",
+      "Supervisão dermatológica especializada",
+      "Planejamento facial individualizado",
+      "Técnicas avançadas para máxima segurança",
+      "Estrutura moderna e tecnologias de ponta",
+    ],
   },
+  closingTitle: "Seu rosto, na sua melhor versão.",
+  closingText: "A naturalidade é o verdadeiro luxo. Resultados sofisticados são construídos com técnica, conhecimento e senso estético apurado. Agende sua avaliação e descubra como suavizar suas expressões com elegância e segurança. Vagas limitadas para atendimento personalizado.",
 };
 
 export default function ToxinaBotulinica() {

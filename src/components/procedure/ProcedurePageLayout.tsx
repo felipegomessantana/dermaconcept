@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, type LucideIcon } from "lucide-react";
+import { Sparkles, CheckCircle2, type LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
