@@ -36,7 +36,7 @@ const BorderBeamButton = React.forwardRef<
             "conic-gradient(from 0deg, transparent 0%, transparent 70%, hsl(var(--brand)) 78%, hsl(var(--primary)) 82%, transparent 90%, transparent 100%)",
         }}
       />
-      <span className="relative z-10 flex items-center justify-center gap-2 rounded-[12px] bg-[#E6DFD6] px-8 py-3.5 text-sm tracking-widest uppercase text-gray-900 transition-colors duration-300 group-hover:bg-[#DDD5CB]">
+      <span className="relative z-10 flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#E6DFD6] px-8 py-3.5 text-sm tracking-widest uppercase text-gray-900 transition-colors duration-300 group-hover:bg-[#DDD5CB]">
         {children}
       </span>
     </Tag>
