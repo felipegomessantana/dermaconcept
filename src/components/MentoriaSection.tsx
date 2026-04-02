@@ -95,16 +95,15 @@ const MentoriaSection = () => {
               <span className="italic font-normal">&amp; Cirurgia Dermatológica</span>
             </motion.h2>
 
-            <motion.p
+            <motion.div
               {...fadeUp(0.2)}
               animate={inView ? fadeUp(0.2).animate : {}}
-              className="mt-5 max-w-xl text-base leading-relaxed text-neutral-500 lg:text-lg"
+              className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground lg:text-[15px] space-y-3"
             >
-              Quer aperfeiçoar suas técnicas ou aprender algo novo? A mentoria é
-              totalmente personalizada para suprir sua necessidade, com um
-              professor experiente ao seu lado — podendo incluir ou não aula
-              teórica. Duração de 8 horas, com no máximo 2 alunos.
-            </motion.p>
+              <p>O aluno que busca aperfeiçoar suas técnicas ou aprender algo novo, esse é o curso ideal!</p>
+              <p>Totalmente personalizado para suprir a necessidade do aluno e com um professor altamente qualificado e experiente ao seu lado, podendo ter ou não aula teórica!</p>
+              <p><strong className="text-foreground">Duração de 8 horas e pode ter no máximo 2 alunos.</strong></p>
+            </motion.div>
 
             {/* O que entregamos */}
             <motion.div
