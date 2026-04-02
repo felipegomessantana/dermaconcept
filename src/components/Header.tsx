@@ -69,24 +69,27 @@ function PacienteModeloContent() {
     { label: "Preenchimento com Ácido Hialurônico", href: "/paciente-modelo/preenchimento-acido-hialuronico" },
     { label: "Toxina Botulínica", href: "/paciente-modelo/toxina-botulinica" },
     { label: "Bioestimuladores de Colágeno", href: "/paciente-modelo/bioestimuladores-colageno" },
-    { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
     { label: "Fios de PDO", href: "/paciente-modelo/fios-de-pdo" },
+    { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
     { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
     { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
+    { label: "Rejuvenescimento Íntimo", href: "#contato" },
+    { label: "IPCA", href: "#contato" },
   ];
 
   const tecnologias = [
-    { label: "Youse Laser Prime", href: "/paciente-modelo/youse-laser-prime" },
-    { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+    { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
     { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
+    { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
     { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
     { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
   ];
 
   return (
-    <div className="w-[600px]">
-      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-        Procedimentos Estéticos
+    <div className="w-[640px]">
+      {/* Dermatologia Estética */}
+      <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+        Dermatologia Estética
       </p>
       <div className="grid grid-cols-2 gap-x-4">
         {esteticos.map((item) => (
@@ -94,13 +97,16 @@ function PacienteModeloContent() {
         ))}
       </div>
 
-      <div className="mt-3 rounded-lg bg-gray-50 p-3">
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+      {/* Tecnologias */}
+      <div className="mt-4 border-t border-gray-100 pt-4">
+        <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
           Tecnologias
         </p>
-        {tecnologias.map((item) => (
-          <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
-        ))}
+        <div className="grid grid-cols-2 gap-x-4">
+          {tecnologias.map((item) => (
+            <DropdownLink key={item.label} href={item.href}>{item.label}</DropdownLink>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -308,16 +314,25 @@ const MobileSubmenu = ({
           className="overflow-hidden"
         >
           <div className="pb-4 pl-4 flex flex-col gap-1">
-            {items.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={onNavigate}
-                className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {items.map((item) =>
+              item.href === "" ? (
+                <p
+                  key={item.label}
+                  className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-gray-400"
+                >
+                  {item.label.replace(/—\s?/g, "").replace(/\s?—/g, "")}
+                </p>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={onNavigate}
+                  className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
         </motion.div>
       )}
@@ -357,16 +372,20 @@ const mobileMenuSections = [
   {
     title: "Seja Um Paciente Modelo",
     items: [
+      { label: "— DERMATOLOGIA ESTÉTICA —", href: "" },
       { label: "Preenchimento com Ácido Hialurônico", href: "/paciente-modelo/preenchimento-acido-hialuronico" },
       { label: "Toxina Botulínica", href: "/paciente-modelo/toxina-botulinica" },
       { label: "Bioestimuladores de Colágeno", href: "/paciente-modelo/bioestimuladores-colageno" },
-      { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
       { label: "Fios de PDO", href: "/paciente-modelo/fios-de-pdo" },
+      { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
       { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
       { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
-      { label: "Youse Laser Prime", href: "/paciente-modelo/youse-laser-prime" },
-      { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
+      { label: "Rejuvenescimento Íntimo", href: "#contato" },
+      { label: "IPCA", href: "#contato" },
+      { label: "— TECNOLOGIAS —", href: "" },
+      { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
       { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
+      { label: "Linear Z & Liftera", href: "/paciente-modelo/linear-z-liftera" },
       { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
       { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
     ],
