@@ -2,7 +2,7 @@ import { Sun, Sparkles, Target, Palette, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Etherea MX",
+  title: (<>ETHEREA MX<br /><span className="block">Tecnologia Avançada para Pigmentos, Manchas e Vasos</span></>),
   subtitle: "Tecnologia avançada para pigmentos, manchas e vasos.",
   intro: (
     <>

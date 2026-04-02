@@ -2,7 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Preenchimento com Ácido Hialurônico",
+  title: (<>PREENCHIMENTO<br /><span className="block">com Ácido Hialurônico</span></>),
   subtitle: "Beleza não é transformação. É refinamento.",
   intro: (
     <>

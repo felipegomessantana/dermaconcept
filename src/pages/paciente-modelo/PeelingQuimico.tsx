@@ -2,7 +2,7 @@ import { Sparkles, Sun, Palette, Layers, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Peeling Químico",
+  title: (<>PEELING QUÍMICO<br /><span className="block">Renovação Celular, Clareamento e Textura</span></>),
   subtitle: "Renovação celular, clareamento e textura.",
   intro: (
     <>

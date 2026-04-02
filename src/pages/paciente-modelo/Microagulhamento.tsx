@@ -2,7 +2,7 @@ import { Sparkles, Target, Layers, Shield, Palette } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Microagulhamento",
+  title: (<>MICROAGULHAMENTO<br /><span className="block">Cicatrizes, Linhas Finas e Textura</span></>),
   subtitle: "Cicatrizes de acne, linhas finas e textura.",
   intro: (
     <>

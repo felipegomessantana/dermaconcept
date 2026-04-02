@@ -2,7 +2,7 @@ import { Sparkles, Heart, Hand, Layers, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Bioestimuladores de Colágeno",
+  title: (<>BIOESTIMULADORES<br /><span className="block">de Colágeno</span></>),
   subtitle: "Foco não é volume — é qualidade.",
   intro: (
     <>

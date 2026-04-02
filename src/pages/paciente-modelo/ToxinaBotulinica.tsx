@@ -2,7 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: "Toxina Botulínica",
+  title: (<>TOXINA BOTULÍNICA<br /><span className="block">Suavidade, Controle e Sofisticação</span></>),
   subtitle: "Suavidade não é ausência de expressão. É controle, equilíbrio e sofisticação.",
   intro: (
     <>
