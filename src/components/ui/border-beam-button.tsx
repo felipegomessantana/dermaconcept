@@ -5,6 +5,8 @@ interface BorderBeamButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   as?: "button" | "a";
   href?: string;
+  target?: string;
+  rel?: string;
   duration?: number;
 }
 
