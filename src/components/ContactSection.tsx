@@ -40,17 +40,16 @@ const ContactSection = () => {
 
         {/* 2. Contact Strip */}
         <AnimatedSection>
-          <div className="my-10 border-y border-neutral-200 py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
-              {contactStrip.map((item) => (
+          <div className="my-10 border-y border-neutral-200 py-8 space-y-6">
+            {/* Row 1: 4 items */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+              {contactStripRow1.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className={`group flex items-start gap-3 transition-colors ${
-                    (item as any).wide ? "lg:col-span-2" : ""
-                  }`}
+                  className="group flex items-start gap-3 transition-colors"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#7A7168]/10 text-[#7A7168]">
                     <item.icon size={15} strokeWidth={1.5} />
@@ -66,6 +65,25 @@ const ContactSection = () => {
                 </a>
               ))}
             </div>
+            {/* Row 2: Address centered */}
+            <a
+              href={contactAddress.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 transition-colors justify-center"
+            >
+              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#7A7168]/10 text-[#7A7168]">
+                <contactAddress.icon size={15} strokeWidth={1.5} />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400">
+                  {contactAddress.label}
+                </p>
+                <p className="mt-0.5 text-sm font-medium leading-relaxed text-neutral-800 group-hover:text-[#7A7168] transition-colors">
+                  {contactAddress.value}
+                </p>
+              </div>
+            </a>
           </div>
         </AnimatedSection>
 
