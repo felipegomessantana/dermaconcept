@@ -2,7 +2,7 @@ import { Zap, Sparkles, Shield, Target, Star } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
-  title: (<>YOUSE LASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
+  title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
   subtitle: "A Ferrari dos lasers CO2. Tecnologia híbrida exclusiva em BH.",
   intro: (
     <>
