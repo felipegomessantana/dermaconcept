@@ -1,41 +1,18 @@
 
 
-## Plan: Create "Nossa Estrutura" Section on Quem Somos Page
+## Plan: Fix Mobile Menu Scroll for Long Submenus
 
-### What
-A new section showcasing the clinic's premium infrastructure with all 10 uploaded photos in an interactive slider/carousel, positioned between MissaoVisaoValores and EquipeSection.
+### Problem
+The mobile navigation menu uses `overflow-hidden` on the `<motion.nav>` container, which prevents scrolling when the expanded submenu content exceeds the viewport height. "Seja Um Paciente Modelo" has 16+ items and gets cut off.
 
-### Implementation
+### Fix
+Two changes in `src/components/Header.tsx`:
 
-**1. Copy all 10 images to `src/assets/estrutura/`**
+1. **Make the mobile nav scrollable**: Change the `<motion.nav>` container (line 433) to use `max-h-[calc(100vh-80px)] overflow-y-auto` instead of just `overflow-hidden`. This limits the menu height to the viewport minus the header, and enables vertical scrolling.
 
-Files to copy:
-- `WhatsApp_Image_2026-04-02_at_16.24.21.jpeg` -> `estrutura-recepcao.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.24.54.jpeg` -> `estrutura-cafe.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.24.55_1.jpeg` -> `estrutura-bar.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.24.55.jpeg` -> `estrutura-lounge.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.25.11.jpeg` -> `estrutura-lobby.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.25.12_1.jpeg` -> `estrutura-varanda.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.25.12-2.jpeg` -> `estrutura-recepcao2.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.23.46-2.jpeg` -> `estrutura-sala-aula.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.23.56-2.jpeg` -> `estrutura-procedimentos.jpg`
-- `WhatsApp_Image_2026-04-02_at_16.24.06.jpeg` -> `estrutura-procedimentos2.jpg`
+2. **Keep `overflow-hidden` only during animation**: Use a state or conditional class so `overflow-hidden` applies only during the open/close animation (to prevent visual glitches), then switches to `overflow-y-auto` once the animation completes. Alternatively, simply replace `overflow-hidden` with `overflow-y-auto` since Framer Motion's height animation handles clipping internally.
 
-**2. Create `src/components/quem-somos/NossaEstruturaSection.tsx`**
-
-- Section header: "Nossa Estrutura" label + heading text
-- Embla Carousel (same pattern as EquipeSection) with autoplay, loop, navigation dots
-- Each slide shows a full-width image with `aspect-video`, `object-cover`, `rounded-2xl`
-- Show 1 slide on mobile, 2 on tablet, 3 on desktop via `slidesToScroll` config
-- Glass-morphism prev/next arrows
-- Framer Motion scroll-in animation consistent with the page
-
-**3. Update `src/pages/QuemSomos.tsx`**
-
-- Import and add `<NossaEstruturaSection />` between `<MissaoVisaoValores />` and `<EquipeSection />`
-
-### Technical Details
-- Reuse `embla-carousel-react` + `embla-carousel-autoplay` (already in project from EquipeSection)
-- Background: `bg-white` to contrast with adjacent `bg-[#F8F5F1]` sections
-- Typography follows existing pattern: `text-sm tracking-[0.3em] uppercase text-muted-foreground` for label
+### Technical Detail
+- Line 433: Change `className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"` to `className="lg:hidden overflow-y-auto max-h-[calc(100dvh-80px)] border-t border-gray-100 bg-white"`
+- Using `100dvh` (dynamic viewport height) ensures correct behavior on mobile browsers with address bars.
 
