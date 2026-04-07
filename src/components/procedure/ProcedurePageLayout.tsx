@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, CheckCircle2, type LucideIcon } from "lucide-react";
+import { Sparkles, CheckCircle2, ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
@@ -47,6 +47,10 @@ function EquipmentSlider({ images }: { images: string[] }) {
     setCurrent((prev) => (prev + 1) % images.length);
   }, [images.length]);
 
+  const prev = useCallback(() => {
+    setCurrent((p) => (p - 1 + images.length) % images.length);
+  }, [images.length]);
+
   useEffect(() => {
     if (images.length <= 1) return;
     const interval = setInterval(next, 3500);
@@ -54,7 +58,7 @@ function EquipmentSlider({ images }: { images: string[] }) {
   }, [next, images.length]);
 
   return (
-    <div className="relative overflow-hidden rounded-2xl shadow-sm aspect-[3/4]">
+    <div className="relative overflow-hidden rounded-2xl shadow-sm aspect-[3/4] group">
       {images.map((src, i) => (
         <img
           key={i}
@@ -65,16 +69,30 @@ function EquipmentSlider({ images }: { images: string[] }) {
         />
       ))}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-6" : "w-2 opacity-50"}`}
-              style={{ backgroundColor: TAUPE }}
-            />
-          ))}
-        </div>
+        <>
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm"
+          >
+            <ChevronLeft className="h-5 w-5 text-gray-700" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm"
+          >
+            <ChevronRight className="h-5 w-5 text-gray-700" />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-6" : "w-2 opacity-50"}`}
+                style={{ backgroundColor: TAUPE }}
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
