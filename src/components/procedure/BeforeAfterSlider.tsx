@@ -60,18 +60,18 @@ export default function BeforeAfterSlider({ before, after, label }: BeforeAfterS
       >
         {/* After (defines the natural size) */}
         <img
-          src={after}
-          alt="Depois"
+          src={before}
+          alt="Antes"
           className="w-full h-auto block"
           draggable={false}
         />
 
-        {/* Before (absolute, clipped, same size as after) */}
+        {/* After (absolute, clipped, revealed from right) */}
         <img
-          src={before}
-          alt="Antes"
+          src={after}
+          alt="Depois"
           className="absolute top-0 left-0 w-full h-auto block"
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          style={{ clipPath: `inset(0 0 0 ${position}%)` }}
           draggable={false}
         />
 
