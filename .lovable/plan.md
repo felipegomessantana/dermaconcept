@@ -1,23 +1,34 @@
 
 
-## Plan: Update Linear Z Last Benefit Item
+## Plan: Add Equipment Image and Before/After Section to YouLaser Prime Page
 
-### Changes
+### What changes
 
-**1. Update `ProcedureBenefit` interface** in `src/components/procedure/ProcedurePageLayout.tsx` (line 15)
-- Change `text: string` to `text: React.ReactNode` so benefits can contain JSX with line breaks and styled sub-text.
+1. **Copy the 4 uploaded images** into `src/assets/youlaser-prime/`:
+   - `image-12.png` — full equipment photo
+   - `Design_sem_nome_1.png` — close-up equipment photo
+   - `YOULASER-PRIME-Antes2.webp` — before photo
+   - `YOULASER-PRIME-Depois2.webp` — after photo
 
-**2. Update the last benefit** in `src/pages/paciente-modelo/LinearZ.tsx` (line 18)
-- Replace `"Redução de gordura localizada (efeito adipogênico controlado)"` with:
-```tsx
-{ icon: Shield, text: (
-  <>
-    Estímulo de gordura localizada (Efeito Adipogênico Controlado)
-    <br />
-    <span className="text-sm text-gray-500">🔜 Amplamente utilizado para estimular a formação de gordura em áreas da face que sofreram perda de volume, especialmente após o uso de canetas emagrecedoras.</span>
-  </>
-)}
-```
+2. **Add optional fields to `ProcedurePageData`** interface in `ProcedurePageLayout.tsx`:
+   - `equipmentImages?: string[]` — array of imported image paths for the equipment showcase
+   - `beforeAfter?: { before: string; after: string; label?: string }[]` — before/after pairs
 
-Two files edited, exact user text preserved.
+3. **Add two new sections to `ProcedurePageLayout.tsx`** (rendered between Intro and Benefits):
+   - **Equipment section**: displays the equipment images side-by-side in a elegant layout with a title like "O Equipamento". Full-body shot on the left, close-up on the right, on a clean white/cream background.
+   - **Before & After section**: displays the before/after pair side-by-side with "Antes" and "Depois" labels, rounded corners, subtle shadow. Title: "Resultados Reais".
+
+4. **Update `YouseLaserPrime.tsx`** to import the images and pass them via the new data fields.
+
+### Layout details
+
+- Equipment section: white background, max-w-4xl, two images in a responsive grid (stack on mobile)
+- Before/After section: bg-[#FAF8F5], max-w-3xl, two images side-by-side with labels, equal sizing, rounded-xl with shadow-sm
+
+### Files modified
+- `src/components/procedure/ProcedurePageLayout.tsx` — interface + 2 new sections
+- `src/pages/paciente-modelo/YouseLaserPrime.tsx` — import images and pass data
+
+### Files created
+- `src/assets/youlaser-prime/` — 4 image files copied from uploads
 
