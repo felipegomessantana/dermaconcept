@@ -1,8 +1,8 @@
 import { Zap, Sparkles, Shield, Target, Star } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
-import equipFull from "@/assets/youlaser-prime/equipamento-full.png";
-import equipDetalhe from "@/assets/youlaser-prime/equipamento-detalhe.png";
+import equipFull from "@/assets/youlaser-prime/equipamento-full.webp";
+import equipDetalhe from "@/assets/youlaser-prime/equipamento-detalhe.webp";
 import antes from "@/assets/youlaser-prime/antes.webp";
 import depois from "@/assets/youlaser-prime/depois.webp";
 
