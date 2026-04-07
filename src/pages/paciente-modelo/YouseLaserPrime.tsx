@@ -9,6 +9,11 @@ import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp";
 import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp";
 import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp";
 import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp";
+import areaRosto from "@/assets/youlaser-prime/rosto.webp";
+import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
+import areaColo from "@/assets/youlaser-prime/colo.webp";
+import areaMaos from "@/assets/youlaser-prime/maos.jpg";
+import areaCorpo from "@/assets/youlaser-prime/corpo.jpg";
 
 const data: ProcedurePageData = {
   title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
@@ -49,11 +54,11 @@ const data: ProcedurePageData = {
     },
   ],
   areas: [
-    { label: "Rosto", image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=530&fit=crop" },
-    { label: "Pescoço", image: "https://images.unsplash.com/photo-1594824476967-48c8b964cc90?w=400&h=530&fit=crop" },
-    { label: "Colo", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=530&fit=crop" },
-    { label: "Mãos", image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=530&fit=crop" },
-    { label: "Corpo", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=530&fit=crop" },
+    { label: "Rosto", image: areaRosto },
+    { label: "Pescoço", image: areaPescoco },
+    { label: "Colo", image: areaColo },
+    { label: "Mãos", image: areaMaos },
+    { label: "Corpo", image: areaCorpo },
   ],
   callout: {
     title: "A Experiência Derma Concept",

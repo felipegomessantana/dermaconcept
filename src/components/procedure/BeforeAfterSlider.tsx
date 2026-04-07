@@ -10,7 +10,7 @@ interface BeforeAfterSliderProps {
 const TAUPE = "#7A7168";
 
 export default function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderProps) {
-  const [position, setPosition] = useState(50);
+  const [position, setPosition] = useState(20);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
@@ -56,7 +56,7 @@ export default function BeforeAfterSlider({ before, after, label }: BeforeAfterS
       )}
       <div
         ref={containerRef}
-        className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-sm cursor-ew-resize select-none"
+        className="relative rounded-xl overflow-hidden shadow-sm cursor-ew-resize select-none bg-gray-100"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -67,7 +67,7 @@ export default function BeforeAfterSlider({ before, after, label }: BeforeAfterS
         <img
           src={after}
           alt="Depois"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-auto block"
           draggable={false}
         />
 
@@ -79,7 +79,7 @@ export default function BeforeAfterSlider({ before, after, label }: BeforeAfterS
           <img
             src={before}
             alt="Antes"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-full object-contain"
             draggable={false}
           />
         </div>
