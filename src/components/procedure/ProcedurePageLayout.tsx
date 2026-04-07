@@ -30,6 +30,7 @@ export interface ProcedurePageData {
   benefitsTitle?: string;
   areas?: ProcedureArea[];
   areasTitle?: string;
+  indications?: { category: string; items: string[] }[];
   callout?: { title: string; text?: string; items?: string[] };
   extraSections?: { title: string; content: React.ReactNode }[];
   closingTitle?: string;
