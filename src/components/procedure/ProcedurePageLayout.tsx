@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, CheckCircle2, ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
+import BeforeAfterSlider from "./BeforeAfterSlider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
@@ -158,26 +159,10 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
             >
               Resultados Reais
             </motion.h2>
-            <div className={`grid gap-8 ${data.beforeAfter!.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"}`}>
+            <div className={`grid gap-8 ${data.beforeAfter!.length >= 3 ? "grid-cols-1 md:grid-cols-3" : data.beforeAfter!.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"}`}>
               {data.beforeAfter!.map((pair, i) => (
                 <motion.div key={i} {...fadeUp(0.1 * i)}>
-                  {pair.label && (
-                    <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-center" style={{ color: TAUPE }}>{pair.label}</p>
-                  )}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="text-center">
-                      <div className="overflow-hidden rounded-xl shadow-sm">
-                        <img src={pair.before} alt="Antes" className="w-full h-auto object-cover" />
-                      </div>
-                      <p className="mt-2 text-xs font-semibold uppercase tracking-widest" style={{ color: TAUPE }}>Antes</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="overflow-hidden rounded-xl shadow-sm">
-                        <img src={pair.after} alt="Depois" className="w-full h-auto object-cover" />
-                      </div>
-                      <p className="mt-2 text-xs font-semibold uppercase tracking-widest" style={{ color: TAUPE }}>Depois</p>
-                    </div>
-                  </div>
+                  <BeforeAfterSlider before={pair.before} after={pair.after} label={pair.label} />
                 </motion.div>
               ))}
             </div>

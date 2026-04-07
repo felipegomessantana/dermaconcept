@@ -7,6 +7,8 @@ import antes from "@/assets/youlaser-prime/antes.webp";
 import depois from "@/assets/youlaser-prime/depois.webp";
 import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp";
 import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp";
+import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp";
+import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
@@ -22,6 +24,7 @@ const data: ProcedurePageData = {
   beforeAfter: [
     { before: antes, after: depois, label: "Cicatriz de acne" },
     { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
+    { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
