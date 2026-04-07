@@ -1,26 +1,13 @@
 
 
-## Plano: Atualizar Áreas de Aplicação e Ajustar Slider
+## Correção: Slider sem recorte de imagem
 
-### 3 mudanças
+### Problema
+A imagem "antes" usa `object-contain` com `h-full`, o que pode distorcer ou não alinhar corretamente com a imagem "depois". As duas imagens precisam ter exatamente o mesmo dimensionamento.
 
-1. **Áreas de Aplicação — trocar placeholders pelas fotos reais**
-   - Copiar as 5 imagens enviadas para `src/assets/youlaser-prime/`: `rosto.webp`, `pescoço.webp`, `colo.webp`, `mãos.jpg`, `corpo.jpg`
-   - Atualizar `YouseLaserPrime.tsx` para importar e usar essas imagens no array `areas`
+### Solução
+Na imagem "antes" (linha 80-84), trocar `w-full h-full object-contain` por `w-full h-auto` — idêntico à imagem "depois". Isso garante que ambas as imagens mantenham sua proporção original sem crop, dimensionadas pela largura do container.
 
-2. **Slider antes/depois — posição inicial em 20%**
-   - Em `BeforeAfterSlider.tsx`, alterar `useState(50)` para `useState(20)` para que a divisão comece a 20% da esquerda
-
-3. **Slider — imagem inteira sem recorte**
-   - Trocar `object-cover` por `object-contain` e adicionar `bg-black` (ou `bg-gray-100`) no container para que as imagens apareçam por inteiro sem crop
-   - Remover `aspect-[3/4]` fixo — usar `aspect-auto` para que o container se adapte à proporção natural da imagem
-
-### Arquivos modificados
-- `src/assets/youlaser-prime/rosto.webp` — novo (cópia)
-- `src/assets/youlaser-prime/pescoço.webp` — novo (cópia)
-- `src/assets/youlaser-prime/colo.webp` — novo (cópia)
-- `src/assets/youlaser-prime/mãos.jpg` — novo (cópia)
-- `src/assets/youlaser-prime/corpo.jpg` — novo (cópia)
-- `src/pages/paciente-modelo/YouseLaserPrime.tsx` — importar imagens reais nas áreas
-- `src/components/procedure/BeforeAfterSlider.tsx` — posição inicial 20%, `object-contain` sem crop
+### Arquivo modificado
+- `src/components/procedure/BeforeAfterSlider.tsx` — linha 82: classe da imagem "antes" de `w-full h-full object-contain` para `w-full h-auto`
 
