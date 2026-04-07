@@ -40,7 +40,42 @@ export interface ProcedurePageData {
 
 const TAUPE = "#7A7168";
 
-export default function ProcedurePageLayout({ data }: { data: ProcedurePageData }) {
+function EquipmentSlider({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(next, 3500);
+    return () => clearInterval(interval);
+  }, [next, images.length]);
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl shadow-sm">
+      <img
+        src={images[current]}
+        alt="Equipamento"
+        className="w-full h-auto object-cover transition-opacity duration-500"
+      />
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-6" : "w-2 opacity-50"}`}
+              style={{ backgroundColor: TAUPE }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
