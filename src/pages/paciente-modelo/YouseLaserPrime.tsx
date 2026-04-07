@@ -29,7 +29,7 @@ const data: ProcedurePageData = {
   ),
   equipmentImages: [equipFull, equipDetalhe],
   beforeAfter: [
-    { before: depois, after: antes, label: "Cicatriz de acne" },
+    { before: antes, after: depois, label: "Cicatriz de acne" },
     { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
     { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
   ],
