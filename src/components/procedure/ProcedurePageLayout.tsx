@@ -76,6 +76,7 @@ function EquipmentSlider({ images }: { images: string[] }) {
   );
 }
 
+export default function ProcedurePageLayout({ data }: { data: ProcedurePageData }) {
   return (
     <div className="min-h-screen bg-white">
       <Header />
