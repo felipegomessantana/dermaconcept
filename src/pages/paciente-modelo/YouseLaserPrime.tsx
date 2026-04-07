@@ -21,7 +21,9 @@ const data: ProcedurePageData = {
   intro: (
     <>
       <p>O YouLaser Prime é um laser de CO2 fracionado de última geração, considerado referência mundial em rejuvenescimento e resurfacing. Sua tecnologia híbrida combina modos ablativo e não ablativo em uma única sessão, permitindo resultados superiores com recuperação mais rápida.</p>
-      <p>Exclusivo em Belo Horizonte na Derma Concept Academy, este equipamento é ideal para tratamentos de cicatrizes de acne, rugas profundas, flacidez e irregularidades de textura da pele.</p>
+      <div className="my-6 border-l-4 pl-5 py-3 rounded-r-lg" style={{ borderColor: '#7A7168', backgroundColor: 'rgba(122, 113, 104, 0.06)' }}>
+        <p className="font-serif text-lg md:text-xl text-gray-900 italic leading-relaxed">Exclusivo em Belo Horizonte na Derma Concept Academy, este equipamento é ideal para tratamentos de cicatrizes de acne, rugas profundas, flacidez e irregularidades de textura da pele.</p>
+      </div>
       <p>O laser atua estimulando a produção de colágeno em profundidade, promovendo uma remodelação completa da pele. Os parâmetros são ajustados individualmente para cada paciente, garantindo segurança e máxima eficácia.</p>
     </>
   ),
