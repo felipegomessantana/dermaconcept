@@ -132,11 +132,11 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
 
       {/* Intro + Equipment Slider */}
       <section className="py-16 md:py-24">
-        <div className="container max-w-5xl mx-auto px-6">
-          <div className={`grid gap-10 ${data.equipmentImages && data.equipmentImages.length > 0 ? "grid-cols-1 md:grid-cols-2 items-center" : "grid-cols-1 max-w-3xl mx-auto"}`}>
+        <div className="container max-w-6xl mx-auto px-6">
+          <div className={`grid ${data.equipmentImages && data.equipmentImages.length > 0 ? "grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-start" : "grid-cols-1 max-w-3xl mx-auto gap-10"}`}>
             <motion.div
               {...fadeUp(0.1)}
-              className="text-base md:text-lg text-gray-600 leading-relaxed space-y-4"
+              className="text-base md:text-[17px] text-gray-600 leading-[1.85] space-y-5"
             >
               {data.intro}
             </motion.div>
