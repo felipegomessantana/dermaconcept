@@ -10,7 +10,7 @@ interface BeforeAfterSliderProps {
 const TAUPE = "#7A7168";
 
 export default function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderProps) {
-  const [position, setPosition] = useState(80);
+  const [position, setPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
@@ -71,7 +71,7 @@ export default function BeforeAfterSlider({ before, after, label }: BeforeAfterS
           src={after}
           alt="Depois"
           className="absolute top-0 left-0 w-full h-auto block"
-          style={{ clipPath: `inset(0 0 0 ${position}%)` }}
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
           draggable={false}
         />
 
