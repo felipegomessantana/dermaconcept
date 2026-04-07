@@ -30,6 +30,7 @@ export interface ProcedurePageData {
   benefitsTitle?: string;
   areas?: ProcedureArea[];
   areasTitle?: string;
+  indications?: { category: string; items: string[] }[];
   callout?: { title: string; text?: string; items?: string[] };
   extraSections?: { title: string; content: React.ReactNode }[];
   closingTitle?: string;
@@ -157,6 +158,42 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
                 >
                   <b.icon className="mt-0.5 h-5 w-5 flex-shrink-0" style={{ color: TAUPE }} />
                   <p className="text-gray-700 leading-relaxed">{b.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Indications */}
+      {data.indications && data.indications.length > 0 && (
+        <section className="py-16 md:py-20">
+          <div className="container max-w-5xl mx-auto px-6">
+            <motion.h2
+              {...fadeUp(0)}
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
+            >
+              Indicações
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {data.indications.map((cat, i) => (
+                <motion.div
+                  key={i}
+                  {...fadeUp(0.1 * i)}
+                  className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden"
+                >
+                  <div className="h-1" style={{ backgroundColor: TAUPE }} />
+                  <div className="p-6">
+                    <h3 className="font-serif text-lg text-gray-900 mb-4">{cat.category}</h3>
+                    <ul className="space-y-2">
+                      {cat.items.map((item, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: TAUPE }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </motion.div>
               ))}
             </div>

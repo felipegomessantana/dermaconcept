@@ -28,6 +28,20 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Recuperação mais rápida em comparação com lasers CO2 convencionais." },
     { icon: Sparkles, text: "Exclusivo em Belo Horizonte — disponível apenas na Derma Concept Academy." },
   ],
+  indications: [
+    {
+      category: "Dermatologia e cirurgia dermatológica",
+      items: ["Ceratose", "Fibroma", "Siringoma", "Verrugas", "Rinofima", "Blefaroplastia", "Condiloma", "Molusco", "Granuloma piogênico", "Neurofibroma", "Lesões cutâneas sólidas"],
+    },
+    {
+      category: "Rejuvenescimento",
+      items: ["Rugas", "Flacidez da pele", "Discromia da pele", "Cicatrizes de acne", "Cicatrizes hipertróficas", "Cicatrizes atróficas", "Poros aumentados"],
+    },
+    {
+      category: "Íntimo",
+      items: ["Atrofia Vaginal", "Flacidez Vaginal", "Rejuvenescimento e remodelação vulvar", "Incontinência Urinária de Esforço (IUE)"],
+    },
+  ],
   areas: [
     { label: "Rosto" },
     { label: "Pescoço" },
