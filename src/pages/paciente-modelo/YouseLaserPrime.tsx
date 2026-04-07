@@ -43,11 +43,11 @@ const data: ProcedurePageData = {
     },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
-    { label: "Mãos" },
-    { label: "Corpo" },
+    { label: "Rosto", image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&h=530&fit=crop" },
+    { label: "Pescoço", image: "https://images.unsplash.com/photo-1594824476967-48c8b964cc90?w=400&h=530&fit=crop" },
+    { label: "Colo", image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=530&fit=crop" },
+    { label: "Mãos", image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=530&fit=crop" },
+    { label: "Corpo", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=530&fit=crop" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
