@@ -54,12 +54,16 @@ function EquipmentSlider({ images }: { images: string[] }) {
   }, [next, images.length]);
 
   return (
-    <div className="relative overflow-hidden rounded-2xl shadow-sm">
-      <img
-        src={images[current]}
-        alt="Equipamento"
-        className="w-full h-auto object-cover transition-opacity duration-500"
-      />
+    <div className="relative overflow-hidden rounded-2xl shadow-sm aspect-[3/4]">
+      {images.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt="Equipamento"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+          style={{ opacity: i === current ? 1 : 0 }}
+        />
+      ))}
       {images.length > 1 && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
           {images.map((_, i) => (
