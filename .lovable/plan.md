@@ -1,34 +1,35 @@
 
 
-## Plan: Add Equipment Image and Before/After Section to YouLaser Prime Page
+## Plan: Add "Indicações" Section to YouLaser Prime Page
 
-### What changes
+### What's being added
+A new "Indicações" (Indications) section showing three categories of treatment indications, based on the reference image. The section will display three elegant cards with category titles and bullet-point lists, adapted to the site's premium editorial aesthetic (no purple background — using the existing cream/white palette).
 
-1. **Copy the 4 uploaded images** into `src/assets/youlaser-prime/`:
-   - `image-12.png` — full equipment photo
-   - `Design_sem_nome_1.png` — close-up equipment photo
-   - `YOULASER-PRIME-Antes2.webp` — before photo
-   - `YOULASER-PRIME-Depois2.webp` — after photo
+### Content (from reference image)
 
-2. **Add optional fields to `ProcedurePageData`** interface in `ProcedurePageLayout.tsx`:
-   - `equipmentImages?: string[]` — array of imported image paths for the equipment showcase
-   - `beforeAfter?: { before: string; after: string; label?: string }[]` — before/after pairs
+**Dermatologia e cirurgia dermatológica:** Ceratose, Fibroma, Siringoma, Verrugas, Rinofima, Blefaroplastia, Condiloma, Molusco, Granuloma piogênico, Neurofibroma, Lesões cutâneas sólidas
 
-3. **Add two new sections to `ProcedurePageLayout.tsx`** (rendered between Intro and Benefits):
-   - **Equipment section**: displays the equipment images side-by-side in a elegant layout with a title like "O Equipamento". Full-body shot on the left, close-up on the right, on a clean white/cream background.
-   - **Before & After section**: displays the before/after pair side-by-side with "Antes" and "Depois" labels, rounded corners, subtle shadow. Title: "Resultados Reais".
+**Rejuvenescimento:** Rugas, Flacidez da pele, Discromia da pele, Cicatrizes de acne, Cicatrizes hipertróficas, Cicatrizes atróficas, Poros aumentados
 
-4. **Update `YouseLaserPrime.tsx`** to import the images and pass them via the new data fields.
+**Íntimo:** Atrofia Vaginal, Flacidez Vaginal, Rejuvenescimento e remodelação vulvar, Incontinência Urinária de Esforço (IUE)
 
-### Layout details
+### Technical approach
 
-- Equipment section: white background, max-w-4xl, two images in a responsive grid (stack on mobile)
-- Before/After section: bg-[#FAF8F5], max-w-3xl, two images side-by-side with labels, equal sizing, rounded-xl with shadow-sm
+1. **Add `indications` field to `ProcedurePageData`** in `ProcedurePageLayout.tsx`:
+   ```ts
+   indications?: { category: string; items: string[] }[];
+   ```
+
+2. **Add Indications section** in `ProcedurePageLayout.tsx` (rendered after Benefits, before Areas):
+   - Three cards in a responsive grid (1 col mobile, 3 cols desktop)
+   - Each card: white bg, rounded-2xl, subtle shadow, taupe accent top border
+   - Category title in serif font, bullet list below
+   - Section title: "Indicações"
+   - Background: `bg-[#FAF8F5]` or white, consistent with existing sections
+
+3. **Update `YouseLaserPrime.tsx`** to pass the indications data with all three categories.
 
 ### Files modified
-- `src/components/procedure/ProcedurePageLayout.tsx` — interface + 2 new sections
-- `src/pages/paciente-modelo/YouseLaserPrime.tsx` — import images and pass data
-
-### Files created
-- `src/assets/youlaser-prime/` — 4 image files copied from uploads
+- `src/components/procedure/ProcedurePageLayout.tsx` — new interface field + new section
+- `src/pages/paciente-modelo/YouseLaserPrime.tsx` — pass indications data
 
