@@ -10,7 +10,7 @@ interface BeforeAfterSliderProps {
 const TAUPE = "#7A7168";
 
 export default function BeforeAfterSlider({ before, after, label }: BeforeAfterSliderProps) {
-  const [position, setPosition] = useState(20);
+  const [position, setPosition] = useState(80);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
