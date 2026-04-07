@@ -79,7 +79,7 @@ export default function BeforeAfterSlider({ before, after, label }: BeforeAfterS
           <img
             src={before}
             alt="Antes"
-            className="w-full h-full object-contain"
+            className="w-full h-auto"
             draggable={false}
           />
         </div>
