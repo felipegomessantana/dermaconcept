@@ -19,6 +19,7 @@ export interface ProcedureBenefit {
 export interface ProcedureArea {
   label: string;
   icon?: LucideIcon;
+  image?: string;
 }
 
 export interface ProcedurePageData {
@@ -249,26 +250,33 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
       {/* Areas */}
       {data.areas && data.areas.length > 0 && (
         <section className="py-16 md:py-20">
-          <div className="container max-w-3xl mx-auto px-6">
+          <div className="container max-w-5xl mx-auto px-6">
             <motion.h2
               {...fadeUp(0)}
-              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10"
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
             >
               {data.areasTitle || "Áreas de Aplicação"}
             </motion.h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {data.areas.map((a, i) => (
                 <motion.div
                   key={i}
                   {...fadeUp(0.04 * i)}
-                  className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 shadow-sm"
+                  className="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-default shadow-sm"
                 >
-                  {a.icon ? (
-                    <a.icon className="h-4 w-4 flex-shrink-0" style={{ color: TAUPE }} />
+                  {a.image ? (
+                    <img
+                      src={a.image}
+                      alt={a.label}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   ) : (
-                    <Sparkles className="h-4 w-4 flex-shrink-0" style={{ color: TAUPE }} />
+                    <div className="absolute inset-0 bg-gray-200" />
                   )}
-                  <span className="text-sm text-gray-700">{a.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <span className="font-serif text-white text-lg tracking-wide">{a.label}</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
