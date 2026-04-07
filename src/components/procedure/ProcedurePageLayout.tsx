@@ -151,20 +151,20 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
       {/* Before & After */}
       {data.beforeAfter && data.beforeAfter.length > 0 && (
         <section className="py-16 md:py-20 bg-[#FAF8F5]">
-          <div className="container max-w-3xl mx-auto px-6">
+          <div className="container max-w-5xl mx-auto px-6">
             <motion.h2
               {...fadeUp(0)}
               className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
             >
               Resultados Reais
             </motion.h2>
-            <div className="space-y-8">
-              {data.beforeAfter.map((pair, i) => (
+            <div className={`grid gap-8 ${data.beforeAfter!.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"}`}>
+              {data.beforeAfter!.map((pair, i) => (
                 <motion.div key={i} {...fadeUp(0.1 * i)}>
                   {pair.label && (
-                    <p className="text-sm font-medium text-gray-500 mb-3 text-center">{pair.label}</p>
+                    <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-center" style={{ color: TAUPE }}>{pair.label}</p>
                   )}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <div className="text-center">
                       <div className="overflow-hidden rounded-xl shadow-sm">
                         <img src={pair.before} alt="Antes" className="w-full h-auto object-cover" />
