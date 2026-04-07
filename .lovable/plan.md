@@ -1,35 +1,27 @@
 
 
-## Plan: Add "Indicações" Section to YouLaser Prime Page
+## Plan: Áreas de Aplicação com Cards de Foto de Fundo
 
-### What's being added
-A new "Indicações" (Indications) section showing three categories of treatment indications, based on the reference image. The section will display three elegant cards with category titles and bullet-point lists, adapted to the site's premium editorial aesthetic (no purple background — using the existing cream/white palette).
+### O que muda
+A seção "Áreas de Aplicação" deixará de usar chips com ícones e passará a exibir cards maiores com foto de fundo e o nome da área sobreposto em texto elegante.
 
-### Content (from reference image)
+### Abordagem técnica
 
-**Dermatologia e cirurgia dermatológica:** Ceratose, Fibroma, Siringoma, Verrugas, Rinofima, Blefaroplastia, Condiloma, Molusco, Granuloma piogênico, Neurofibroma, Lesões cutâneas sólidas
+1. **Atualizar interface `ProcedureArea`** em `ProcedurePageLayout.tsx`:
+   - Adicionar campo opcional `image?: string` para URL da foto de fundo
 
-**Rejuvenescimento:** Rugas, Flacidez da pele, Discromia da pele, Cicatrizes de acne, Cicatrizes hipertróficas, Cicatrizes atróficas, Poros aumentados
+2. **Redesenhar a seção de Áreas** no layout:
+   - Grid responsivo: 2 colunas mobile, 3 colunas md, 5 colunas lg
+   - Cada card: `aspect-[3/4]`, `rounded-2xl`, `overflow-hidden`
+   - Foto como background com `object-cover`
+   - Overlay escuro com gradiente na parte inferior
+   - Nome da área em texto branco sobre o overlay
+   - Efeito hover com leve zoom na imagem
 
-**Íntimo:** Atrofia Vaginal, Flacidez Vaginal, Rejuvenescimento e remodelação vulvar, Incontinência Urinária de Esforço (IUE)
+3. **Atualizar `YouseLaserPrime.tsx`** com imagens para cada área (Rosto, Pescoço, Colo, Mãos, Corpo)
+   - Usaremos imagens placeholder por enquanto — você poderá enviar fotos reais depois
 
-### Technical approach
-
-1. **Add `indications` field to `ProcedurePageData`** in `ProcedurePageLayout.tsx`:
-   ```ts
-   indications?: { category: string; items: string[] }[];
-   ```
-
-2. **Add Indications section** in `ProcedurePageLayout.tsx` (rendered after Benefits, before Areas):
-   - Three cards in a responsive grid (1 col mobile, 3 cols desktop)
-   - Each card: white bg, rounded-2xl, subtle shadow, taupe accent top border
-   - Category title in serif font, bullet list below
-   - Section title: "Indicações"
-   - Background: `bg-[#FAF8F5]` or white, consistent with existing sections
-
-3. **Update `YouseLaserPrime.tsx`** to pass the indications data with all three categories.
-
-### Files modified
-- `src/components/procedure/ProcedurePageLayout.tsx` — new interface field + new section
-- `src/pages/paciente-modelo/YouseLaserPrime.tsx` — pass indications data
+### Arquivos modificados
+- `src/components/procedure/ProcedurePageLayout.tsx` — interface + novo visual da seção
+- `src/pages/paciente-modelo/YouseLaserPrime.tsx` — adicionar URLs de imagens às áreas
 
