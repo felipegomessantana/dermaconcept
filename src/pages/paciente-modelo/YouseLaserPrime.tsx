@@ -1,6 +1,11 @@
 import { Zap, Sparkles, Shield, Target, Star } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
+import equipFull from "@/assets/youlaser-prime/equipamento-full.png";
+import equipDetalhe from "@/assets/youlaser-prime/equipamento-detalhe.png";
+import antes from "@/assets/youlaser-prime/antes.webp";
+import depois from "@/assets/youlaser-prime/depois.webp";
+
 const data: ProcedurePageData = {
   title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
   subtitle: "A Ferrari dos lasers CO2. Tecnologia híbrida exclusiva em BH.",
@@ -11,6 +16,10 @@ const data: ProcedurePageData = {
       <p>O laser atua estimulando a produção de colágeno em profundidade, promovendo uma remodelação completa da pele. Os parâmetros são ajustados individualmente para cada paciente, garantindo segurança e máxima eficácia.</p>
     </>
   ),
+  equipmentImages: [equipFull, equipDetalhe],
+  beforeAfter: [
+    { before: antes, after: depois },
+  ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
     { icon: Zap, text: "Tecnologia híbrida: combina modo ablativo e não ablativo em uma única sessão." },

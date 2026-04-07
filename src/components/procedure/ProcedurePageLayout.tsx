@@ -24,6 +24,8 @@ export interface ProcedurePageData {
   title: React.ReactNode;
   subtitle: string;
   intro: React.ReactNode;
+  equipmentImages?: string[];
+  beforeAfter?: { before: string; after: string; label?: string }[];
   benefits?: ProcedureBenefit[];
   benefitsTitle?: string;
   areas?: ProcedureArea[];
@@ -77,6 +79,64 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
           </motion.div>
         </div>
       </section>
+
+      {/* Equipment */}
+      {data.equipmentImages && data.equipmentImages.length > 0 && (
+        <section className="py-16 md:py-20">
+          <div className="container max-w-4xl mx-auto px-6">
+            <motion.h2
+              {...fadeUp(0)}
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
+            >
+              O Equipamento
+            </motion.h2>
+            <div className={`grid gap-6 ${data.equipmentImages.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-lg mx-auto"}`}>
+              {data.equipmentImages.map((src, i) => (
+                <motion.div key={i} {...fadeUp(0.1 * i)} className="overflow-hidden rounded-2xl shadow-sm">
+                  <img src={src} alt="Equipamento YouLaser Prime" className="w-full h-auto object-cover" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Before & After */}
+      {data.beforeAfter && data.beforeAfter.length > 0 && (
+        <section className="py-16 md:py-20 bg-[#FAF8F5]">
+          <div className="container max-w-3xl mx-auto px-6">
+            <motion.h2
+              {...fadeUp(0)}
+              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
+            >
+              Resultados Reais
+            </motion.h2>
+            <div className="space-y-8">
+              {data.beforeAfter.map((pair, i) => (
+                <motion.div key={i} {...fadeUp(0.1 * i)}>
+                  {pair.label && (
+                    <p className="text-sm font-medium text-gray-500 mb-3 text-center">{pair.label}</p>
+                  )}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <div className="overflow-hidden rounded-xl shadow-sm">
+                        <img src={pair.before} alt="Antes" className="w-full h-auto object-cover" />
+                      </div>
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-widest" style={{ color: TAUPE }}>Antes</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="overflow-hidden rounded-xl shadow-sm">
+                        <img src={pair.after} alt="Depois" className="w-full h-auto object-cover" />
+                      </div>
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-widest" style={{ color: TAUPE }}>Depois</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Benefits */}
       {data.benefits && data.benefits.length > 0 && (
