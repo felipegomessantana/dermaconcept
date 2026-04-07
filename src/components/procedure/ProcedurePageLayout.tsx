@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Sparkles, CheckCircle2, type LucideIcon } from "lucide-react";
 import Header from "@/components/Header";
@@ -39,6 +40,42 @@ export interface ProcedurePageData {
 
 const TAUPE = "#7A7168";
 
+function EquipmentSlider({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(next, 3500);
+    return () => clearInterval(interval);
+  }, [next, images.length]);
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl shadow-sm">
+      <img
+        src={images[current]}
+        alt="Equipamento"
+        className="w-full h-auto object-cover transition-opacity duration-500"
+      />
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-6" : "w-2 opacity-50"}`}
+              style={{ backgroundColor: TAUPE }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ProcedurePageLayout({ data }: { data: ProcedurePageData }) {
   return (
     <div className="min-h-screen bg-white">
@@ -69,38 +106,24 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Intro + Equipment Slider */}
       <section className="py-16 md:py-24">
-        <div className="container max-w-3xl mx-auto px-6">
-          <motion.div
-            {...fadeUp(0.1)}
-            className="text-base md:text-lg text-gray-600 leading-relaxed space-y-4"
-          >
-            {data.intro}
-          </motion.div>
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className={`grid gap-10 ${data.equipmentImages && data.equipmentImages.length > 0 ? "grid-cols-1 md:grid-cols-2 items-center" : "grid-cols-1 max-w-3xl mx-auto"}`}>
+            <motion.div
+              {...fadeUp(0.1)}
+              className="text-base md:text-lg text-gray-600 leading-relaxed space-y-4"
+            >
+              {data.intro}
+            </motion.div>
+            {data.equipmentImages && data.equipmentImages.length > 0 && (
+              <motion.div {...fadeUp(0.2)}>
+                <EquipmentSlider images={data.equipmentImages} />
+              </motion.div>
+            )}
+          </div>
         </div>
       </section>
-
-      {/* Equipment */}
-      {data.equipmentImages && data.equipmentImages.length > 0 && (
-        <section className="py-16 md:py-20">
-          <div className="container max-w-4xl mx-auto px-6">
-            <motion.h2
-              {...fadeUp(0)}
-              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
-            >
-              O Equipamento
-            </motion.h2>
-            <div className={`grid gap-6 ${data.equipmentImages.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-lg mx-auto"}`}>
-              {data.equipmentImages.map((src, i) => (
-                <motion.div key={i} {...fadeUp(0.1 * i)} className="overflow-hidden rounded-2xl shadow-sm">
-                  <img src={src} alt="Equipamento YouLaser Prime" className="w-full h-auto object-cover" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Before & After */}
       {data.beforeAfter && data.beforeAfter.length > 0 && (
