@@ -61,6 +61,7 @@ const data: ProcedurePageData = {
     { before: tattooAntes, after: tattooDepois, label: "Tattoo Removal" },
     { before: hairAntes, after: hairDepois, label: "Hair Removal" },
     { before: acneAntes, after: acneDepois, label: "Acne" },
+    { before: onychoAntes, after: onychoDepois, label: "Onychomycosis" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
