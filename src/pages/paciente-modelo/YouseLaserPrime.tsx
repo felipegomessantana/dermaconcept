@@ -37,6 +37,7 @@ const data: ProcedurePageData = {
     { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
     { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
     { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
+    { before: benignAntes, after: benignDepois, label: "Benign Pigmented Lesions" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
