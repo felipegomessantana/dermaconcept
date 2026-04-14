@@ -29,6 +29,7 @@ export interface ProcedurePageData {
   intro: React.ReactNode;
   equipmentImages?: string[];
   beforeAfter?: { before: string; after: string; label?: string }[];
+  beforeAfterGroups?: { before: string; after: string; label?: string }[][];
   benefits?: ProcedureBenefit[];
   benefitsTitle?: string;
   areas?: ProcedureArea[];
