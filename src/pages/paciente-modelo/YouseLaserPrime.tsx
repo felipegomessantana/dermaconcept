@@ -49,6 +49,7 @@ const data: ProcedurePageData = {
     { before: skinResurfAntes, after: skinResurfDepois, label: "Skin Resurfacing" },
     { before: striaeAntes, after: striaeDepois, label: "Striae" },
     { before: acneScarsAntes, after: acneScarsDepois, label: "Acne Scars" },
+    { before: vascularAntes, after: vascularDepois, label: "Vascular Lesions" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
