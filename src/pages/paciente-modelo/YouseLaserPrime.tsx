@@ -13,6 +13,8 @@ import skinRejuvAntes from "@/assets/youlaser-prime/skin-rejuvenation-antes.webp
 import skinRejuvDepois from "@/assets/youlaser-prime/skin-rejuvenation-depois.webp";
 import benignAntes from "@/assets/youlaser-prime/benign-pigmented-lesions-antes.webp";
 import benignDepois from "@/assets/youlaser-prime/benign-pigmented-lesions-depois.webp";
+import skinResurfAntes from "@/assets/youlaser-prime/skin-resurfacing-antes.webp";
+import skinResurfDepois from "@/assets/youlaser-prime/skin-resurfacing-depois.webp";
 import areaRosto from "@/assets/youlaser-prime/rosto.webp";
 import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
 import areaColo from "@/assets/youlaser-prime/colo.webp";
