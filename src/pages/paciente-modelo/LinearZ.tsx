@@ -15,6 +15,7 @@ const data: ProcedurePageData = {
   ),
   beforeAfter: [
     { before: fatAntes, after: fatDepois, label: "Fat Proliferation / Tightening / Skin Texture" },
+    { before: fatRedAntes, after: fatRedDepois, label: "Fat Proliferation + Fat Reduction + Tightening" },
   ],
   benefitsTitle: "O que você pode esperar",
   benefits: [
