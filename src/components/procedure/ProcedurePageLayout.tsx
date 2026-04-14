@@ -151,25 +151,30 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
       </section>
 
       {/* Before & After */}
-      {data.beforeAfter && data.beforeAfter.length > 0 && (
-        <section className="py-16 md:py-20 bg-[#FAF8F5]">
-          <div className="container max-w-5xl mx-auto px-6">
-            <motion.h2
-              {...fadeUp(0)}
-              className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
-            >
-              Resultados Reais
-            </motion.h2>
-            <div className={`grid gap-8 ${data.beforeAfter!.length >= 3 ? "grid-cols-1 md:grid-cols-3" : data.beforeAfter!.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"}`}>
-              {data.beforeAfter!.map((pair, i) => (
-                <motion.div key={i} {...fadeUp(0.1 * i)}>
-                  <BeforeAfterSlider before={pair.before} after={pair.after} label={pair.label} />
-                </motion.div>
+      {(() => {
+        const groups = data.beforeAfterGroups || (data.beforeAfter && data.beforeAfter.length > 0 ? [data.beforeAfter] : []);
+        return groups.length > 0 && (
+          <section className="py-16 md:py-20 bg-[#FAF8F5]">
+            <div className="container max-w-5xl mx-auto px-6">
+              <motion.h2
+                {...fadeUp(0)}
+                className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
+              >
+                Resultados Reais
+              </motion.h2>
+              {groups.map((group, gi) => (
+                <div key={gi} className={`grid gap-8 ${group.length >= 3 ? "grid-cols-1 md:grid-cols-3" : group.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"} ${gi > 0 ? "mt-8" : ""}`}>
+                  {group.map((pair, i) => (
+                    <motion.div key={i} {...fadeUp(0.05 * i)}>
+                      <BeforeAfterSlider before={pair.before} after={pair.after} label={pair.label} />
+                    </motion.div>
+                  ))}
+                </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        );
+      })()}
 
       {/* Benefits */}
       {data.benefits && data.benefits.length > 0 && (
