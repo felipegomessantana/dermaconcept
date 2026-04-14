@@ -163,7 +163,7 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
                 Resultados Reais
               </motion.h2>
               {groups.map((group, gi) => (
-                <div key={gi} className={`grid gap-8 ${group.length >= 3 ? "grid-cols-1 md:grid-cols-3" : group.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"} ${gi > 0 ? "mt-8" : ""}`}>
+                <div key={gi} className={`grid gap-8 ${group.length === 4 ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4" : group.length >= 3 ? "grid-cols-1 md:grid-cols-3" : group.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-3xl mx-auto"} ${gi > 0 ? "mt-8" : ""}`}>
                   {group.map((pair, i) => (
                     <motion.div key={i} {...fadeUp(0.05 * i)}>
                       <BeforeAfterSlider before={pair.before} after={pair.after} label={pair.label} />
