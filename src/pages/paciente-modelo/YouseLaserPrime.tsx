@@ -9,6 +9,8 @@ import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp";
 import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp";
 import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp";
 import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp";
+import skinRejuvAntes from "@/assets/youlaser-prime/skin-rejuvenation-antes.webp";
+import skinRejuvDepois from "@/assets/youlaser-prime/skin-rejuvenation-depois.webp";
 import areaRosto from "@/assets/youlaser-prime/rosto.webp";
 import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
 import areaColo from "@/assets/youlaser-prime/colo.webp";
@@ -32,6 +34,7 @@ const data: ProcedurePageData = {
     { before: antes, after: depois, label: "Cicatriz de acne" },
     { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
     { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
+    { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
