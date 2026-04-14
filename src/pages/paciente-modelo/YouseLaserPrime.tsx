@@ -34,6 +34,7 @@ const data: ProcedurePageData = {
     { before: antes, after: depois, label: "Cicatriz de acne" },
     { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
     { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
+    { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
