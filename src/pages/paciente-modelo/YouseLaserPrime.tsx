@@ -58,6 +58,7 @@ const data: ProcedurePageData = {
     { before: vascularAntes, after: vascularDepois, label: "Vascular Lesions" },
     { before: tattooAntes, after: tattooDepois, label: "Tattoo Removal" },
     { before: hairAntes, after: hairDepois, label: "Hair Removal" },
+    { before: acneAntes, after: acneDepois, label: "Acne" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
