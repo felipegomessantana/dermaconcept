@@ -48,20 +48,24 @@ const data: ProcedurePageData = {
     </>
   ),
   equipmentImages: [equipFull, equipDetalhe],
-  beforeAfter: [
-    { before: antes, after: depois, label: "Cicatriz de acne" },
-    { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
-    { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
-    { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
-    { before: benignAntes, after: benignDepois, label: "Benign Pigmented Lesions" },
-    { before: skinResurfAntes, after: skinResurfDepois, label: "Skin Resurfacing" },
-    { before: striaeAntes, after: striaeDepois, label: "Striae" },
-    { before: acneScarsAntes, after: acneScarsDepois, label: "Acne Scars" },
-    { before: vascularAntes, after: vascularDepois, label: "Vascular Lesions" },
-    { before: tattooAntes, after: tattooDepois, label: "Tattoo Removal" },
-    { before: hairAntes, after: hairDepois, label: "Hair Removal" },
-    { before: acneAntes, after: acneDepois, label: "Acne" },
-    { before: onychoAntes, after: onychoDepois, label: "Onychomycosis" },
+  beforeAfterGroups: [
+    [
+      { before: antes, after: depois, label: "Cicatriz de acne" },
+      { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
+      { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
+      { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
+      { before: benignAntes, after: benignDepois, label: "Benign Pigmented Lesions" },
+      { before: skinResurfAntes, after: skinResurfDepois, label: "Skin Resurfacing" },
+      { before: striaeAntes, after: striaeDepois, label: "Striae" },
+      { before: acneScarsAntes, after: acneScarsDepois, label: "Acne Scars" },
+      { before: vascularAntes, after: vascularDepois, label: "Vascular Lesions" },
+    ],
+    [
+      { before: tattooAntes, after: tattooDepois, label: "Tattoo Removal" },
+      { before: hairAntes, after: hairDepois, label: "Hair Removal" },
+      { before: acneAntes, after: acneDepois, label: "Acne" },
+      { before: onychoAntes, after: onychoDepois, label: "Onychomycosis" },
+    ],
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
