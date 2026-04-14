@@ -23,6 +23,8 @@ import vascularAntes from "@/assets/youlaser-prime/vascular-lesions-antes.webp";
 import vascularDepois from "@/assets/youlaser-prime/vascular-lesions-depois.webp";
 import tattooAntes from "@/assets/youlaser-prime/tattoo-removal-antes.webp";
 import tattooDepois from "@/assets/youlaser-prime/tattoo-removal-depois.webp";
+import hairAntes from "@/assets/youlaser-prime/hair-removal-antes.webp";
+import hairDepois from "@/assets/youlaser-prime/hair-removal-depois.webp";
 import areaRosto from "@/assets/youlaser-prime/rosto.webp";
 import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
 import areaColo from "@/assets/youlaser-prime/colo.webp";
