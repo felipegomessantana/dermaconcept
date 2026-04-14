@@ -17,6 +17,8 @@ import skinResurfAntes from "@/assets/youlaser-prime/skin-resurfacing-antes.webp
 import skinResurfDepois from "@/assets/youlaser-prime/skin-resurfacing-depois.webp";
 import striaeAntes from "@/assets/youlaser-prime/striae-antes.webp";
 import striaeDepois from "@/assets/youlaser-prime/striae-depois.webp";
+import acneScarsAntes from "@/assets/youlaser-prime/acne-scars-antes.webp";
+import acneScarsDepois from "@/assets/youlaser-prime/acne-scars-depois.webp";
 import areaRosto from "@/assets/youlaser-prime/rosto.webp";
 import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
 import areaColo from "@/assets/youlaser-prime/colo.webp";
@@ -44,6 +46,7 @@ const data: ProcedurePageData = {
     { before: benignAntes, after: benignDepois, label: "Benign Pigmented Lesions" },
     { before: skinResurfAntes, after: skinResurfDepois, label: "Skin Resurfacing" },
     { before: striaeAntes, after: striaeDepois, label: "Striae" },
+    { before: acneScarsAntes, after: acneScarsDepois, label: "Acne Scars" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
