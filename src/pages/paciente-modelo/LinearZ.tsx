@@ -1,5 +1,7 @@
 import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import fatAntes from "@/assets/linear-z/fat-proliferation-antes.webp";
+import fatDepois from "@/assets/linear-z/fat-proliferation-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>LINEAR Z<br /><span className="block">Ultrassom Micro e Macrofocado</span></>),
