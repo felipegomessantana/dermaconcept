@@ -1,5 +1,7 @@
 import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import fatAntes from "@/assets/linear-z/fat-proliferation-antes.webp";
+import fatDepois from "@/assets/linear-z/fat-proliferation-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>LINEAR Z<br /><span className="block">Ultrassom Micro e Macrofocado</span></>),
@@ -9,6 +11,9 @@ const data: ProcedurePageData = {
       <p>O Linear Z representa uma nova geração de ultrassom micro e macrofocado, capaz de tratar flacidez e gordura localizada com precisão, sem cortes e sem tempo de recuperação. Atuando em diferentes profundidades da pele, ele promove contração imediata e estímulo progressivo de colágeno, além de atuar na redução de gordura — entregando contorno, firmeza e definição facial e corporal.</p>
     </>
   ),
+  beforeAfter: [
+    { before: fatAntes, after: fatDepois, label: "Fat Proliferation / Tightening / Skin Texture" },
+  ],
   benefitsTitle: "O que você pode esperar",
   benefits: [
     { icon: ArrowUp, text: "Efeito lifting progressivo e natural" },
