@@ -43,6 +43,7 @@ const data: ProcedurePageData = {
     { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
     { before: benignAntes, after: benignDepois, label: "Benign Pigmented Lesions" },
     { before: skinResurfAntes, after: skinResurfDepois, label: "Skin Resurfacing" },
+    { before: striaeAntes, after: striaeDepois, label: "Striae" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
