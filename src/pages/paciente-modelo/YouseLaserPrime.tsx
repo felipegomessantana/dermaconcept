@@ -21,6 +21,8 @@ import acneScarsAntes from "@/assets/youlaser-prime/acne-scars-antes.webp";
 import acneScarsDepois from "@/assets/youlaser-prime/acne-scars-depois.webp";
 import vascularAntes from "@/assets/youlaser-prime/vascular-lesions-antes.webp";
 import vascularDepois from "@/assets/youlaser-prime/vascular-lesions-depois.webp";
+import tattooAntes from "@/assets/youlaser-prime/tattoo-removal-antes.webp";
+import tattooDepois from "@/assets/youlaser-prime/tattoo-removal-depois.webp";
 import areaRosto from "@/assets/youlaser-prime/rosto.webp";
 import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
 import areaColo from "@/assets/youlaser-prime/colo.webp";
@@ -50,6 +52,7 @@ const data: ProcedurePageData = {
     { before: striaeAntes, after: striaeDepois, label: "Striae" },
     { before: acneScarsAntes, after: acneScarsDepois, label: "Acne Scars" },
     { before: vascularAntes, after: vascularDepois, label: "Vascular Lesions" },
+    { before: tattooAntes, after: tattooDepois, label: "Tattoo Removal" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
