@@ -4,6 +4,8 @@ import fatAntes from "@/assets/linear-z/fat-proliferation-antes.webp";
 import fatDepois from "@/assets/linear-z/fat-proliferation-depois.webp";
 import fatRedAntes from "@/assets/linear-z/fat-prolif-reduction-antes.webp";
 import fatRedDepois from "@/assets/linear-z/fat-prolif-reduction-depois.webp";
+import fatTightAntes from "@/assets/linear-z/fat-prolif-tightening-antes.webp";
+import fatTightDepois from "@/assets/linear-z/fat-prolif-tightening-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>LINEAR Z<br /><span className="block">Ultrassom Micro e Macrofocado</span></>),
