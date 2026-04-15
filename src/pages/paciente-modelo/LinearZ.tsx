@@ -6,6 +6,8 @@ import fatRedAntes from "@/assets/linear-z/fat-prolif-reduction-antes.webp";
 import fatRedDepois from "@/assets/linear-z/fat-prolif-reduction-depois.webp";
 import fatTightAntes from "@/assets/linear-z/fat-prolif-tightening-antes.webp";
 import fatTightDepois from "@/assets/linear-z/fat-prolif-tightening-depois.webp";
+import fatEyeAntes from "@/assets/linear-z/fat-prolif-undereye-antes.webp";
+import fatEyeDepois from "@/assets/linear-z/fat-prolif-undereye-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>LINEAR Z<br /><span className="block">Ultrassom Micro e Macrofocado</span></>),
@@ -19,6 +21,7 @@ const data: ProcedurePageData = {
     { before: fatAntes, after: fatDepois, label: "Fat Proliferation / Tightening / Skin Texture" },
     { before: fatRedAntes, after: fatRedDepois, label: "Fat Proliferation + Fat Reduction + Tightening" },
     { before: fatTightAntes, after: fatTightDepois, label: "Fat Proliferation + Tightening" },
+    { before: fatEyeAntes, after: fatEyeDepois, label: "Fat Proliferation – Under Eye" },
   ],
   benefitsTitle: "O que você pode esperar",
   benefits: [
