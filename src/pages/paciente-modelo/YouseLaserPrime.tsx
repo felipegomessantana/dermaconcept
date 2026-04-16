@@ -9,26 +9,6 @@ import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp";
 import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp";
 import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp";
 import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp";
-import skinRejuvAntes from "@/assets/youlaser-prime/skin-rejuvenation-antes.webp";
-import skinRejuvDepois from "@/assets/youlaser-prime/skin-rejuvenation-depois.webp";
-import benignAntes from "@/assets/youlaser-prime/benign-pigmented-lesions-antes.webp";
-import benignDepois from "@/assets/youlaser-prime/benign-pigmented-lesions-depois.webp";
-import skinResurfAntes from "@/assets/youlaser-prime/skin-resurfacing-antes.webp";
-import skinResurfDepois from "@/assets/youlaser-prime/skin-resurfacing-depois.webp";
-import striaeAntes from "@/assets/youlaser-prime/striae-antes.webp";
-import striaeDepois from "@/assets/youlaser-prime/striae-depois.webp";
-import acneScarsAntes from "@/assets/youlaser-prime/acne-scars-antes.webp";
-import acneScarsDepois from "@/assets/youlaser-prime/acne-scars-depois.webp";
-import vascularAntes from "@/assets/youlaser-prime/vascular-lesions-antes.webp";
-import vascularDepois from "@/assets/youlaser-prime/vascular-lesions-depois.webp";
-import tattooAntes from "@/assets/youlaser-prime/tattoo-removal-antes.webp";
-import tattooDepois from "@/assets/youlaser-prime/tattoo-removal-depois.webp";
-import hairAntes from "@/assets/youlaser-prime/hair-removal-antes.webp";
-import hairDepois from "@/assets/youlaser-prime/hair-removal-depois.webp";
-import acneAntes from "@/assets/youlaser-prime/acne-antes.webp";
-import acneDepois from "@/assets/youlaser-prime/acne-depois.webp";
-import onychoAntes from "@/assets/youlaser-prime/onychomycosis-antes.webp";
-import onychoDepois from "@/assets/youlaser-prime/onychomycosis-depois.webp";
 import areaRosto from "@/assets/youlaser-prime/rosto.webp";
 import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
 import areaColo from "@/assets/youlaser-prime/colo.webp";
@@ -48,24 +28,10 @@ const data: ProcedurePageData = {
     </>
   ),
   equipmentImages: [equipFull, equipDetalhe],
-  beforeAfterGroups: [
-    [
-      { before: antes, after: depois, label: "Cicatriz de acne" },
-      { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
-      { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
-      { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
-      { before: benignAntes, after: benignDepois, label: "Benign Pigmented Lesions" },
-      { before: skinResurfAntes, after: skinResurfDepois, label: "Skin Resurfacing" },
-      { before: striaeAntes, after: striaeDepois, label: "Striae" },
-      { before: acneScarsAntes, after: acneScarsDepois, label: "Acne Scars" },
-      { before: vascularAntes, after: vascularDepois, label: "Vascular Lesions" },
-    ],
-    [
-      { before: tattooAntes, after: tattooDepois, label: "Tattoo Removal" },
-      { before: hairAntes, after: hairDepois, label: "Hair Removal" },
-      { before: acneAntes, after: acneDepois, label: "Acne" },
-      { before: onychoAntes, after: onychoDepois, label: "Onychomycosis" },
-    ],
+  beforeAfter: [
+    { before: antes, after: depois, label: "Cicatriz de acne" },
+    { before: rinofimaAntes, after: rinofimaDepois, label: "Rinofima" },
+    { before: rejuvAntes, after: rejuvDepois, label: "Rejuvenescimento" },
   ],
   benefitsTitle: "Diferenciais da Tecnologia",
   benefits: [
