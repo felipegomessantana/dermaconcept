@@ -29,7 +29,9 @@ const data: ProcedurePageData = {
   intro: (
     <>
       <p>O Etherea MX é uma plataforma multifuncional que reúne diversas tecnologias em um único equipamento, incluindo o módulo Acroma para tratamento de pigmentos e a Luz Intensa Pulsada (IPL) para manchas e vasos.</p>
-      <p>Com o módulo Acroma, é possível tratar melasma, manchas solares e hiperpigmentações pós-inflamatórias com precisão e segurança. A IPL, por sua vez, é indicada para lesões vasculares, rosácea e fotoenvelhecimento.</p>
+      <div className="my-6 border-l-4 pl-5 py-3 rounded-r-lg" style={{ borderColor: '#7A7168', backgroundColor: 'rgba(122, 113, 104, 0.06)' }}>
+        <p className="font-serif text-lg md:text-xl text-gray-900 italic leading-relaxed">Com o módulo Acroma, é possível tratar melasma, manchas solares e hiperpigmentações pós-inflamatórias com precisão e segurança. A IPL, por sua vez, é indicada para lesões vasculares, rosácea e fotoenvelhecimento.</p>
+      </div>
       <p>Na Derma Concept Academy, utilizamos o Etherea MX com protocolos personalizados, combinando diferentes módulos para um resultado completo e eficaz no tratamento de manchas e alterações de pigmentação.</p>
     </>
   ),
