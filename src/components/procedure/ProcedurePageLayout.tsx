@@ -140,6 +140,16 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
               className="text-base md:text-[17px] text-gray-600 leading-[1.85] space-y-5"
             >
               {data.intro}
+              <motion.div {...fadeUp(0.3)} className="mt-8">
+                <BorderBeamButton
+                  as="a"
+                  href="https://wa.me/5531982449473"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Agende sua Avaliação
+                </BorderBeamButton>
+              </motion.div>
             </motion.div>
             {data.equipmentImages && data.equipmentImages.length > 0 && (
               <motion.div {...fadeUp(0.2)}>
