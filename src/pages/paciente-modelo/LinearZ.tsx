@@ -24,6 +24,7 @@ const data: ProcedurePageData = {
     { before: fatRedAntes, after: fatRedDepois, label: "Fat Proliferation + Fat Reduction + Tightening" },
     { before: fatTightAntes, after: fatTightDepois, label: "Fat Proliferation + Tightening" },
     { before: fatEyeAntes, after: fatEyeDepois, label: "Fat Proliferation – Under Eye" },
+    { before: fatRedTightAntes, after: fatRedTightDepois, label: "Fat Reduction + Tightening" },
   ],
   benefitsTitle: "O que você pode esperar",
   benefits: [
