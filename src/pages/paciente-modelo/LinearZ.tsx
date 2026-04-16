@@ -25,6 +25,7 @@ const data: ProcedurePageData = {
       <p>O Linear Z representa uma nova geração de ultrassom micro e macrofocado, capaz de tratar flacidez e gordura localizada com precisão, sem cortes e sem tempo de recuperação. Atuando em diferentes profundidades da pele, ele promove contração imediata e estímulo progressivo de colágeno, além de atuar na redução de gordura — entregando contorno, firmeza e definição facial e corporal.</p>
     </>
   ),
+  equipmentImages: [equipFull, equipDetalhe],
   beforeAfter: [
     { before: fatAntes, after: fatDepois, label: "Fat Proliferation / Tightening / Skin Texture" },
     { before: fatRedAntes, after: fatRedDepois, label: "Fat Proliferation + Fat Reduction + Tightening" },
