@@ -1,5 +1,7 @@
 import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import equipFull from "@/assets/linear-z/equipamento-full.webp";
+import equipDetalhe from "@/assets/linear-z/equipamento-detalhe.webp";
 import fatAntes from "@/assets/linear-z/fat-proliferation-antes.webp";
 import fatDepois from "@/assets/linear-z/fat-proliferation-depois.webp";
 import fatRedAntes from "@/assets/linear-z/fat-prolif-reduction-antes.webp";
