@@ -33,6 +33,7 @@ const data: ProcedurePageData = {
       <p>Na Derma Concept Academy, utilizamos o Etherea MX com protocolos personalizados, combinando diferentes módulos para um resultado completo e eficaz no tratamento de manchas e alterações de pigmentação.</p>
     </>
   ),
+  equipmentImages: [equipamento],
   beforeAfterGroups: [
     [
       { before: skinRejuvAntes, after: skinRejuvDepois, label: "Skin Rejuvenation" },
