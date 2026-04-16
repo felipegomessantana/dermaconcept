@@ -1,6 +1,7 @@
 import { Sun, Sparkles, Target, Palette, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
+import equipamento from "@/assets/etherea-mx/equipamento.webp";
 import skinRejuvAntes from "@/assets/youlaser-prime/skin-rejuvenation-antes.webp";
 import skinRejuvDepois from "@/assets/youlaser-prime/skin-rejuvenation-depois.webp";
 import benignAntes from "@/assets/youlaser-prime/benign-pigmented-lesions-antes.webp";
