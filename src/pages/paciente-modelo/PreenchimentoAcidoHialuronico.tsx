@@ -6,6 +6,8 @@ import olheirasAntes from "@/assets/acido-hialuronico/olheiras-antes.webp";
 import olheirasDepois from "@/assets/acido-hialuronico/olheiras-depois.webp";
 import macasAntes from "@/assets/acido-hialuronico/macas-antes.webp";
 import macasDepois from "@/assets/acido-hialuronico/macas-depois.webp";
+import bigodeChinesAntes from "@/assets/acido-hialuronico/bigode-chines-antes.webp";
+import bigodeChinesDepois from "@/assets/acido-hialuronico/bigode-chines-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>PREENCHIMENTO<br /><span className="block">com Ácido Hialurônico</span></>),
@@ -21,6 +23,7 @@ const data: ProcedurePageData = {
     { before: labiosAntes, after: labiosDepois, label: "Lábios" },
     { before: olheirasAntes, after: olheirasDepois, label: "Olheiras" },
     { before: macasAntes, after: macasDepois, label: "Maçãs do Rosto" },
+    { before: bigodeChinesAntes, after: bigodeChinesDepois, label: "Bigode Chinês" },
   ],
   benefitsTitle: "O que podemos transformar com naturalidade",
   benefits: [
