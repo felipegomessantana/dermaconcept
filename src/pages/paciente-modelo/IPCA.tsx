@@ -12,6 +12,13 @@ import face5Antes from "@/assets/ipca/face-5-antes.webp";
 import face5Depois from "@/assets/ipca/face-5-depois.webp";
 import face6Antes from "@/assets/ipca/face-6-antes.webp";
 import face6Depois from "@/assets/ipca/face-6-depois.webp";
+import areaRosto from "@/assets/ipca/area-rosto.webp";
+import areaPescoco from "@/assets/ipca/area-pescoco.webp";
+import areaColo from "@/assets/ipca/area-colo.webp";
+import areaAbdomen from "@/assets/ipca/area-abdomen.webp";
+import areaCoxas from "@/assets/ipca/area-coxas.webp";
+import areaGluteos from "@/assets/ipca/area-gluteos.webp";
+import areaBracos from "@/assets/ipca/area-bracos.webp";
 
 const data: ProcedurePageData = {
   title: (<>IPCA<br /><span className="block">Indução Percutânea de Colágeno por Agulhas</span></>),
@@ -41,13 +48,13 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Tratadas",
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
-    { label: "Abdômen" },
-    { label: "Coxas" },
-    { label: "Glúteos" },
-    { label: "Braços" },
+    { label: "Rosto", image: areaRosto },
+    { label: "Pescoço", image: areaPescoco },
+    { label: "Colo", image: areaColo },
+    { label: "Abdômen", image: areaAbdomen },
+    { label: "Coxas", image: areaCoxas },
+    { label: "Glúteos", image: areaGluteos },
+    { label: "Braços", image: areaBracos },
   ],
   callout: {
     title: "A Experiência Derma Concept",
