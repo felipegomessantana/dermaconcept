@@ -10,6 +10,8 @@ import face4Antes from "@/assets/ipca/face-4-antes.webp";
 import face4Depois from "@/assets/ipca/face-4-depois.webp";
 import face5Antes from "@/assets/ipca/face-5-antes.webp";
 import face5Depois from "@/assets/ipca/face-5-depois.webp";
+import face6Antes from "@/assets/ipca/face-6-antes.webp";
+import face6Depois from "@/assets/ipca/face-6-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>IPCA<br /><span className="block">Indução Percutânea de Colágeno por Agulhas</span></>),
@@ -27,6 +29,7 @@ const data: ProcedurePageData = {
     { before: face3Antes, after: face3Depois, label: "Cicatrizes de Acne" },
     { before: face4Antes, after: face4Depois, label: "Manchas e Textura" },
     { before: face5Antes, after: face5Depois, label: "Poros e Textura" },
+    { before: face6Antes, after: face6Depois, label: "Cicatrizes de Acne" },
   ],
   benefitsTitle: "O que tratamos com IPCA",
   benefits: [
