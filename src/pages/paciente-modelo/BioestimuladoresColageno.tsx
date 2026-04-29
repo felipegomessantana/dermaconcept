@@ -1,5 +1,7 @@
 import { Sparkles, Heart, Hand, Layers, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import rostoAntes from "@/assets/bioestimuladores/rosto-antes.webp";
+import rostoDepois from "@/assets/bioestimuladores/rosto-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>BIOESTIMULADORES<br /><span className="block">de Colágeno</span></>),
@@ -11,6 +13,9 @@ const data: ProcedurePageData = {
       <p>Na Derma Concept Academy, os bioestimuladores são aplicados com técnica precisa e planejamento individualizado, respeitando a anatomia e as necessidades de cada paciente.</p>
     </>
   ),
+  beforeAfter: [
+    { before: rostoAntes, after: rostoDepois, label: "Rosto" },
+  ],
   benefitsTitle: "O que tratamos",
   benefits: [
     { icon: Sparkles, text: "Estímulo à produção de colágeno para melhora da firmeza e elasticidade." },
