@@ -1,5 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp";
+import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>PREENCHIMENTO<br /><span className="block">com Ácido Hialurônico</span></>),
@@ -11,6 +13,9 @@ const data: ProcedurePageData = {
       <p>Na Derma Concept, cada aplicação é pensada como um projeto exclusivo: técnica, ciência e olhar estético apurado para resultados sofisticados, harmônicos e absolutamente naturais.</p>
     </>
   ),
+  beforeAfter: [
+    { before: labiosAntes, after: labiosDepois, label: "Lábios" },
+  ],
   benefitsTitle: "O que podemos transformar com naturalidade",
   benefits: [
     { icon: CheckCircle2, text: "Suavização de rugas e marcas de expressão" },
