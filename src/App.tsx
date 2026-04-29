@@ -25,6 +25,7 @@ import PeelingQuimico from "./pages/paciente-modelo/PeelingQuimico.tsx";
 import FiosDePDO from "./pages/paciente-modelo/FiosDePDO.tsx";
 import Intradermoterapia from "./pages/paciente-modelo/Intradermoterapia.tsx";
 import Microagulhamento from "./pages/paciente-modelo/Microagulhamento.tsx";
+import IPCA from "./pages/paciente-modelo/IPCA.tsx";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/paciente-modelo/fios-de-pdo" element={<FiosDePDO />} />
           <Route path="/paciente-modelo/intradermoterapia" element={<Intradermoterapia />} />
           <Route path="/paciente-modelo/microagulhamento" element={<Microagulhamento />} />
+          <Route path="/paciente-modelo/ipca" element={<IPCA />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

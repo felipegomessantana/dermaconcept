@@ -74,7 +74,7 @@ function PacienteModeloContent() {
     { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
     { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
     { label: "Rejuvenescimento Íntimo", href: "#contato" },
-    { label: "IPCA", href: "#contato" },
+    { label: "IPCA", href: "/paciente-modelo/ipca" },
   ];
 
   const tecnologias = [
@@ -382,7 +382,7 @@ const mobileMenuSections = [
       { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
       { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
       { label: "Rejuvenescimento Íntimo", href: "#contato" },
-      { label: "IPCA", href: "#contato" },
+      { label: "IPCA", href: "/paciente-modelo/ipca" },
       { label: "— TECNOLOGIAS —", href: "" },
       { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
       { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
