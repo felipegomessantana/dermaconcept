@@ -4,6 +4,8 @@ import toxinaAntes from "@/assets/toxina-botulinica/antes.webp";
 import toxinaDepois from "@/assets/toxina-botulinica/depois.webp";
 import peGalinhaAntes from "@/assets/toxina-botulinica/pe-galinha-antes.webp";
 import peGalinhaDepois from "@/assets/toxina-botulinica/pe-galinha-depois.webp";
+import tercoSuperiorAntes from "@/assets/toxina-botulinica/terco-superior-antes.webp";
+import tercoSuperiorDepois from "@/assets/toxina-botulinica/terco-superior-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>TOXINA BOTULÍNICA<br /><span className="block">Suavidade, Controle e Sofisticação</span></>),
@@ -18,6 +20,7 @@ const data: ProcedurePageData = {
   beforeAfter: [
     { before: toxinaAntes, after: toxinaDepois, label: "Glabela" },
     { before: peGalinhaAntes, after: peGalinhaDepois, label: "Pé de Galinha" },
+    { before: tercoSuperiorAntes, after: tercoSuperiorDepois, label: "Terço Superior" },
   ],
   benefitsTitle: "O que podemos transformar com naturalidade",
   benefits: [
