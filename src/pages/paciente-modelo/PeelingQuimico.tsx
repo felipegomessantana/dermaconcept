@@ -4,6 +4,8 @@ import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp";
 import rostoDepois from "@/assets/peeling-quimico/rosto-depois.webp";
 import maosAntes from "@/assets/peeling-quimico/maos-antes.webp";
 import maosDepois from "@/assets/peeling-quimico/maos-depois.webp";
+import coloAntes from "@/assets/peeling-quimico/colo-antes.webp";
+import coloDepois from "@/assets/peeling-quimico/colo-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>PEELING QUÍMICO<br /><span className="block">Renovação Celular, Clareamento e Textura</span></>),
@@ -18,6 +20,7 @@ const data: ProcedurePageData = {
   beforeAfter: [
     { before: rostoAntes, after: rostoDepois, label: "Rosto" },
     { before: maosAntes, after: maosDepois, label: "Mãos" },
+    { before: coloAntes, after: coloDepois, label: "Colo" },
   ],
   benefitsTitle: "Benefícios do Tratamento",
   benefits: [
