@@ -1,5 +1,7 @@
 import { Sparkles, Sun, Palette, Layers, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp";
+import rostoDepois from "@/assets/peeling-quimico/rosto-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>PEELING QUÍMICO<br /><span className="block">Renovação Celular, Clareamento e Textura</span></>),
@@ -11,6 +13,9 @@ const data: ProcedurePageData = {
       <p>Na Derma Concept Academy, cada protocolo de peeling é selecionado e aplicado de forma individualizada, considerando o tipo de pele, a sensibilidade e os objetivos do paciente.</p>
     </>
   ),
+  beforeAfter: [
+    { before: rostoAntes, after: rostoDepois, label: "Rosto" },
+  ],
   benefitsTitle: "Benefícios do Tratamento",
   benefits: [
     { icon: Sparkles, text: "Renovação celular para uma pele mais luminosa e uniforme." },
