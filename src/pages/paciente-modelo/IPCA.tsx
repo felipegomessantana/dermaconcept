@@ -2,6 +2,8 @@ import { Sparkles, Target, Layers, Shield, Palette } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import face1Antes from "@/assets/ipca/face-1-antes.webp";
 import face1Depois from "@/assets/ipca/face-1-depois.webp";
+import face2Antes from "@/assets/ipca/face-2-antes.webp";
+import face2Depois from "@/assets/ipca/face-2-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>IPCA<br /><span className="block">Indução Percutânea de Colágeno por Agulhas</span></>),
@@ -15,6 +17,7 @@ const data: ProcedurePageData = {
   ),
   beforeAfter: [
     { before: face1Antes, after: face1Depois, label: "Cicatrizes de Acne" },
+    { before: face2Antes, after: face2Depois, label: "Cicatrizes de Acne" },
   ],
   benefitsTitle: "O que tratamos com IPCA",
   benefits: [
