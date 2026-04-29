@@ -2,8 +2,6 @@ import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp";
 import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp";
-import olheirasAntes from "@/assets/acido-hialuronico/olheiras-antes.webp";
-import olheirasDepois from "@/assets/acido-hialuronico/olheiras-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>PREENCHIMENTO<br /><span className="block">com Ácido Hialurônico</span></>),
@@ -17,7 +15,6 @@ const data: ProcedurePageData = {
   ),
   beforeAfter: [
     { before: labiosAntes, after: labiosDepois, label: "Lábios" },
-    { before: olheirasAntes, after: olheirasDepois, label: "Olheiras" },
   ],
   benefitsTitle: "O que podemos transformar com naturalidade",
   benefits: [
