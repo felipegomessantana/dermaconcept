@@ -1,5 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+import toxinaAntes from "@/assets/toxina-botulinica/antes.webp";
+import toxinaDepois from "@/assets/toxina-botulinica/depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>TOXINA BOTULÍNICA<br /><span className="block">Suavidade, Controle e Sofisticação</span></>),
@@ -11,6 +13,9 @@ const data: ProcedurePageData = {
       <p>Na Derma Concept, a aplicação é realizada com precisão e planejamento individualizado, preservando a identidade do seu rosto e proporcionando um resultado leve, elegante e natural.</p>
     </>
   ),
+  beforeAfter: [
+    { before: toxinaAntes, after: toxinaDepois, label: "Glabela" },
+  ],
   benefitsTitle: "O que podemos transformar com naturalidade",
   benefits: [
     { icon: CheckCircle2, text: "Suavização de rugas de expressão" },
