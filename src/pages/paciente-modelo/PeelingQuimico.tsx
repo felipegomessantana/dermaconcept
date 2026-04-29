@@ -2,6 +2,8 @@ import { Sparkles, Sun, Palette, Layers, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp";
 import rostoDepois from "@/assets/peeling-quimico/rosto-depois.webp";
+import maosAntes from "@/assets/peeling-quimico/maos-antes.webp";
+import maosDepois from "@/assets/peeling-quimico/maos-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>PEELING QUÍMICO<br /><span className="block">Renovação Celular, Clareamento e Textura</span></>),
@@ -15,6 +17,7 @@ const data: ProcedurePageData = {
   ),
   beforeAfter: [
     { before: rostoAntes, after: rostoDepois, label: "Rosto" },
+    { before: maosAntes, after: maosDepois, label: "Mãos" },
   ],
   benefitsTitle: "Benefícios do Tratamento",
   benefits: [
