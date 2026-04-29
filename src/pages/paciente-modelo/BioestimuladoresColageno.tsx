@@ -6,6 +6,8 @@ import pescocoAntes from "@/assets/bioestimuladores/pescoco-antes.webp";
 import pescocoDepois from "@/assets/bioestimuladores/pescoco-depois.webp";
 import bracoAntes from "@/assets/bioestimuladores/braco-antes.webp";
 import bracoDepois from "@/assets/bioestimuladores/braco-depois.webp";
+import maosAntes from "@/assets/bioestimuladores/maos-antes.webp";
+import maosDepois from "@/assets/bioestimuladores/maos-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>BIOESTIMULADORES<br /><span className="block">de Colágeno</span></>),
@@ -21,6 +23,7 @@ const data: ProcedurePageData = {
     { before: rostoAntes, after: rostoDepois, label: "Rosto" },
     { before: pescocoAntes, after: pescocoDepois, label: "Pescoço" },
     { before: bracoAntes, after: bracoDepois, label: "Braço" },
+    { before: maosAntes, after: maosDepois, label: "Mãos" },
   ],
   benefitsTitle: "O que tratamos",
   benefits: [
