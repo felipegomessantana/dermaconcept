@@ -2,6 +2,8 @@ import { Sparkles, Heart, Hand, Layers, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import rostoAntes from "@/assets/bioestimuladores/rosto-antes.webp";
 import rostoDepois from "@/assets/bioestimuladores/rosto-depois.webp";
+import pescocoAntes from "@/assets/bioestimuladores/pescoco-antes.webp";
+import pescocoDepois from "@/assets/bioestimuladores/pescoco-depois.webp";
 
 const data: ProcedurePageData = {
   title: (<>BIOESTIMULADORES<br /><span className="block">de Colágeno</span></>),
@@ -15,6 +17,7 @@ const data: ProcedurePageData = {
   ),
   beforeAfter: [
     { before: rostoAntes, after: rostoDepois, label: "Rosto" },
+    { before: pescocoAntes, after: pescocoDepois, label: "Pescoço" },
   ],
   benefitsTitle: "O que tratamos",
   benefits: [
