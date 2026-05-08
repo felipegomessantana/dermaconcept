@@ -117,7 +117,7 @@ const HeroSection = () => {
       />
 
       {/* Gradient overlay — from middle to bottom for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% via-black/60 to-black/90" />
 
       {/* Content */}
       <motion.div
