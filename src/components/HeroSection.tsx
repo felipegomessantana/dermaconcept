@@ -109,7 +109,7 @@ const HeroSection = () => {
     >
       {/* Parallax background image */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat sm:bg-center will-change-transform"
+        className="absolute inset-0 bg-cover bg-no-repeat will-change-transform [background-position:center_-60px] sm:bg-center"
         style={{
           backgroundImage: `url(${bgImage})`,
           y: bgY,
@@ -188,7 +188,7 @@ const HeroSection = () => {
         {/* Stats */}
         <motion.div
           {...fadeUp(1.8)}
-          className="mt-14 grid grid-cols-3 gap-6 border-t border-white/20 pt-8"
+          className="mt-8 grid grid-cols-3 gap-6"
         >
           {stats.map((s) => (
             <div key={s.label}>
