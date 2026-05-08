@@ -40,18 +40,18 @@ const MobileStickyCTA = () => {
             <a
               href="#paciente-modelo"
               onClick={handleClick("paciente-modelo")}
-              className="flex items-center justify-center gap-2 rounded-xl px-3 py-3 text-[12px] font-semibold uppercase tracking-[0.15em] text-white"
+              className="flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-white"
               style={{ backgroundColor: taupe }}
             >
-              <Sparkles size={14} />
+              <Sparkles size={13} />
               Paciente Modelo
             </a>
             <a
               href="#cursos"
               onClick={handleClick("cursos")}
-              className="flex items-center justify-center gap-2 rounded-xl border border-foreground/80 px-3 py-3 text-[12px] font-semibold uppercase tracking-[0.15em] text-foreground"
+              className="flex items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-foreground/80 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-foreground"
             >
-              <GraduationCap size={14} />
+              <GraduationCap size={13} />
               Cursos
             </a>
           </div>
