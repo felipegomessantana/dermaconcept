@@ -157,6 +157,33 @@ const HeroSection = () => {
           Dermatologia que Transforma Carreiras e Pessoas.
         </motion.p>
 
+        {/* Dual CTAs */}
+        <motion.div
+          {...fadeUp(1.6)}
+          className="mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-xl sm:flex-row sm:justify-center"
+        >
+          <a
+            href="#paciente-modelo"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("paciente-modelo")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="rounded-full px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+            style={{ backgroundColor: "#7A7168" }}
+          >
+            Seja Paciente Modelo
+          </a>
+          <a
+            href="#cursos"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("cursos")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="rounded-full border border-white/70 px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-black"
+          >
+            Quero ser Aluno
+          </a>
+        </motion.div>
 
         {/* Stats */}
         <motion.div
