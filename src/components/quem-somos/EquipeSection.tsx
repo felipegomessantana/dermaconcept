@@ -27,8 +27,9 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Dra. Especialista 1",
+    name: "Dra. Ana Flávia",
     role: "Dermatologia · Cirurgia Dermatológica",
+    credentials: "CRM-MG 77.129",
     image: teamMember1,
     specialties: ["Cirurgia Dermatológica", "Cosmiatria", "Laser"],
     bio: [],
