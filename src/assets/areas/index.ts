@@ -5,12 +5,12 @@
 import rosto from "../ipca/area-rosto.webp";
 import pescoco from "../ipca/area-pescoco.webp";
 import colo from "../ipca/area-colo.webp";
-import abdomen from "../ipca/area-abdomen.webp";
-import gluteos from "../ipca/area-gluteos.webp";
-import bracos from "../ipca/area-bracos.webp";
-import coxas from "../ipca/area-coxas.webp";
+import abdomen from "./abdomen.jpg";
+import gluteos from "./gluteos.jpg";
+import bracos from "./bracos.jpg";
+import coxas from "./coxas.jpg";
 import maos from "../youlaser-prime/maos.jpg";
-import corpo from "../youlaser-prime/corpo.jpg";
+import corpo from "./corpo.jpg";
 
 import labios from "./labios.jpg";
 import olheiras from "./olheiras.jpg";
