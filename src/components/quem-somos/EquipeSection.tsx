@@ -11,6 +11,7 @@ import teamMember3 from "@/assets/team-member-3.webp";
 import teamMember4 from "@/assets/team-member-4.webp";
 import teamMember5 from "@/assets/team-member-5.webp";
 import teamMember6 from "@/assets/team-member-6.webp";
+import teamAnaFlavia from "@/assets/team-ana-flavia.jpeg";
 
 type TeamMember = {
   name: string;
@@ -101,6 +102,35 @@ const teamMembers: TeamMember[] = [
       "Promover beleza com ciência e sutileza ao meu paciente! “Elegância é recusa!” Coco Chanel",
     curiosities:
       "Sou muito família, sou esposa, mãe do Benjamin e do meu golden Chico 🐶; apaixonada por viagens e conhecer novas culturas; adoro esportes! Joguei handebol durante todo ensino fundamental, médio e faculdade! No momento me descobrindo e encantada com o tênis!",
+    social: { instagram: "#" },
+  },
+  {
+    name: "Dra. Ana Flávia",
+    role: "Dermatologia Clínica e Estética",
+    image: teamAnaFlavia,
+    credentials: "CRM MG 77.129",
+    specialties: [
+      "Dermatologia Clínica",
+      "Dermatologia Estética",
+      "Cirurgia Dermatológica",
+      "Injetáveis e Tecnologias",
+      "Preceptoria",
+    ],
+    bio: [
+      "Equilibro ciência e sensibilidade. Amo construir, ensinar e cuidar com leveza e entusiasmo — no consultório, em casa e em cada detalhe da vida.",
+      "Entre protocolos e afeto, sou esposa, mãe do Rafael e apaixonada por minha família.",
+    ],
+    formation: [
+      "Formada pela Universidade José do Rosário Vellano, UNIFENAS BH;",
+      "Especialização em Dermatologia Clínica e Estética pelo CEMEPE;",
+      "Coordenadora Pós-Graduação em Dermatologia MEDPÓS Inspirali BH;",
+      "Preceptora de Pós-graduação em Dermatologia Clínica e Estética;",
+      "Mentora de médicos em injetáveis e tecnologias há 6 anos.",
+      "Fellow em Cirurgia Dermatológica;",
+      "Curso em Complicações em Procedimetos Injetáveis.",
+    ],
+    purpose:
+      "Meu objetivo como médica é transformar a relação dos meus pacientes com o espelho e o cuidado com a saúde da pele. No ensino, compartilhar conhecimento e levar mudança profissional na vida dos meus alunos.",
     social: { instagram: "#" },
   },
   {
