@@ -2,6 +2,8 @@ import { useRef, useCallback, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Instagram, Linkedin, GraduationCap } from "lucide-react";
 
 import teamMember1 from "@/assets/team-member-1.webp";
 import teamMember2 from "@/assets/team-member-2.webp";
@@ -10,17 +12,83 @@ import teamMember4 from "@/assets/team-member-4.webp";
 import teamMember5 from "@/assets/team-member-5.webp";
 import teamMember6 from "@/assets/team-member-6.webp";
 
-const teamMembers = [
-  { name: "Dra. Especialista 1", role: "Dermatologia Estética", image: teamMember1 },
-  { name: "Dra. Especialista 2", role: "Cirurgia Dermatológica", image: teamMember2 },
-  { name: "Dr. Especialista 3", role: "Dermatologia Clínica", image: teamMember3 },
-  { name: "Dr. Leonardo Alves", role: "Dermatologia Avançada", image: teamMember4 },
-  { name: "Dra. Especialista 5", role: "Dermatologia Estética", image: teamMember5 },
-  { name: "Dra. Especialista 6", role: "Bioestimuladores & Toxina", image: teamMember6 },
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  specialties: string[];
+  bio: string[];
+  credentials?: string;
+  social?: { instagram?: string; linkedin?: string; lattes?: string };
+};
+
+const teamMembers: TeamMember[] = [
+  {
+    name: "Dra. Especialista 1",
+    role: "Dermatologia Estética",
+    image: teamMember1,
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
+    bio: [
+      "Adicione aqui a biografia completa da médica, com a redação exata fornecida.",
+      "Você pode incluir múltiplos parágrafos descrevendo trajetória, atuação e diferenciais.",
+    ],
+    social: { instagram: "#", linkedin: "#" },
+  },
+  {
+    name: "Dra. Especialista 2",
+    role: "Cirurgia Dermatológica",
+    image: teamMember2,
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Cirurgia Dermatológica", "Oncologia Cutânea", "Reconstrução"],
+    bio: ["Adicione aqui a biografia completa da médica."],
+    social: { instagram: "#" },
+  },
+  {
+    name: "Dr. Especialista 3",
+    role: "Dermatologia Clínica",
+    image: teamMember3,
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Dermatologia Clínica", "Tricologia", "Acne"],
+    bio: ["Adicione aqui a biografia completa do médico."],
+    social: { instagram: "#" },
+  },
+  {
+    name: "Dr. Leonardo Alves",
+    role: "Dermatologia Avançada",
+    image: teamMember4,
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Lasers", "Tecnologias", "Rejuvenescimento"],
+    bio: ["Adicione aqui a biografia completa do médico."],
+    social: { instagram: "#", linkedin: "#" },
+  },
+  {
+    name: "Dra. Especialista 5",
+    role: "Dermatologia Estética",
+    image: teamMember5,
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Estética Facial", "Harmonização", "Skincare"],
+    bio: ["Adicione aqui a biografia completa da médica."],
+    social: { instagram: "#" },
+  },
+  {
+    name: "Dra. Especialista 6",
+    role: "Bioestimuladores & Toxina",
+    image: teamMember6,
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Bioestimuladores", "Toxina Botulínica", "Fios de PDO"],
+    bio: ["Adicione aqui a biografia completa da médica."],
+    social: { instagram: "#" },
+  },
 ];
 
-const TeamCard = ({ member }: { member: (typeof teamMembers)[0] }) => (
-  <div className="group min-w-0">
+const TeamCard = ({ member, onClick }: { member: TeamMember; onClick: () => void }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className="group min-w-0 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7A7168] rounded-2xl"
+    aria-label={`Ver currículo de ${member.name}`}
+  >
     <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4">
       <img
         src={member.image}
@@ -28,11 +96,14 @@ const TeamCard = ({ member }: { member: (typeof teamMembers)[0] }) => (
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <span className="absolute bottom-4 left-4 right-4 text-white text-xs tracking-[0.25em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        Ver currículo →
+      </span>
     </div>
     <h3 className="font-serif text-lg text-foreground mb-0.5">{member.name}</h3>
     <p className="text-sm text-muted-foreground">{member.role}</p>
-  </div>
+  </button>
 );
 
 const EquipeSection = () => {
@@ -58,6 +129,7 @@ const EquipeSection = () => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [activeMember, setActiveMember] = useState<TeamMember | null>(null);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -81,7 +153,6 @@ const EquipeSection = () => {
 
   return (
     <section className="py-24 md:py-32 lg:py-40 bg-secondary/30 overflow-hidden relative">
-      {/* Decorative SVG line */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04]"
         xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +164,6 @@ const EquipeSection = () => {
       </svg>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
-        {/* Header */}
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 30 }}
@@ -119,7 +189,6 @@ const EquipeSection = () => {
           </p>
         </motion.div>
 
-        {/* Carousel */}
         <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
           <div className="flex -ml-4 lg:-ml-6">
             {teamMembers.map((member) => (
@@ -127,13 +196,12 @@ const EquipeSection = () => {
                 key={member.name}
                 className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] pl-4 lg:pl-6 min-w-0"
               >
-                <TeamCard member={member} />
+                <TeamCard member={member} onClick={() => setActiveMember(member)} />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Dots */}
         <div className="flex items-center justify-center gap-2 mt-10">
           {scrollSnaps.map((_, i) => (
             <button
@@ -149,6 +217,96 @@ const EquipeSection = () => {
           ))}
         </div>
       </div>
+
+      {/* CV Modal */}
+      <Dialog open={!!activeMember} onOpenChange={(open) => !open && setActiveMember(null)}>
+        <DialogContent className="max-w-4xl w-[95vw] p-0 overflow-hidden border-none bg-background">
+          {activeMember && (
+            <div className="grid md:grid-cols-[42%_58%] max-h-[90vh] overflow-y-auto">
+              {/* Photo side */}
+              <div className="relative bg-secondary/40 md:min-h-[560px]">
+                <img
+                  src={activeMember.image}
+                  alt={activeMember.name}
+                  className="h-64 md:h-full w-full object-cover"
+                />
+              </div>
+
+              {/* Content side */}
+              <div className="p-8 md:p-10 lg:p-12">
+                <span className="text-xs tracking-[0.3em] uppercase text-[#7A7168]">
+                  {activeMember.role}
+                </span>
+                <h3 className="font-serif text-3xl md:text-4xl text-foreground mt-2 mb-1">
+                  {activeMember.name}
+                </h3>
+                {activeMember.credentials && (
+                  <p className="text-xs text-muted-foreground tracking-wider">
+                    {activeMember.credentials}
+                  </p>
+                )}
+
+                <div className="h-px w-12 bg-[#7A7168] my-6" />
+
+                {/* Bio */}
+                <div className="space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed">
+                  {activeMember.bio.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+
+                {/* Specialties */}
+                <div className="mt-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <GraduationCap className="h-4 w-4 text-[#7A7168]" />
+                    <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                      Especialidades
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {activeMember.specialties.map((s) => (
+                      <span
+                        key={s}
+                        className="px-3 py-1.5 rounded-full bg-[#7A7168]/10 text-[#7A7168] text-xs tracking-wide"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Social */}
+                {activeMember.social && (
+                  <div className="mt-8 flex items-center gap-3">
+                    {activeMember.social.instagram && (
+                      <a
+                        href={activeMember.social.instagram}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="h-9 w-9 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:bg-[#7A7168] hover:text-white hover:border-[#7A7168] transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <Instagram className="h-4 w-4" />
+                      </a>
+                    )}
+                    {activeMember.social.linkedin && (
+                      <a
+                        href={activeMember.social.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="h-9 w-9 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:bg-[#7A7168] hover:text-white hover:border-[#7A7168] transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
