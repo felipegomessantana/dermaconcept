@@ -1,4 +1,5 @@
 import { Sparkles, Heart, Hand, Layers, Shield } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import rostoAntes from "@/assets/bioestimuladores/rosto-antes.webp";
 import rostoDepois from "@/assets/bioestimuladores/rosto-depois.webp";
@@ -40,13 +41,13 @@ const data: ProcedurePageData = {
     { icon: Hand, text: "Rejuvenescimento das mãos, pescoço e colo com naturalidade." },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
-    { label: "Mãos" },
-    { label: "Braços" },
-    { label: "Abdômen" },
-    { label: "Glúteos" },
+    { label: "Rosto", image: areaImages.rosto },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Colo", image: areaImages.colo },
+    { label: "Mãos", image: areaImages.maos },
+    { label: "Braços", image: areaImages.bracos },
+    { label: "Abdômen", image: areaImages.abdomen },
+    { label: "Glúteos", image: areaImages.gluteos },
   ],
   callout: {
     title: "A Experiência Derma Concept",

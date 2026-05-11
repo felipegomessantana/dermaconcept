@@ -1,4 +1,5 @@
 import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import equipFull from "@/assets/linear-z/equipamento-full.webp";
 import equipDetalhe from "@/assets/linear-z/equipamento-detalhe.webp";
@@ -53,12 +54,12 @@ const data: ProcedurePageData = {
     ) },
   ],
   areas: [
-    { label: "Face completa" },
-    { label: "Papada" },
-    { label: "Mandíbula" },
-    { label: "Pescoço" },
-    { label: "Abdômen" },
-    { label: "Flancos" },
+    { label: "Face completa", image: areaImages.face },
+    { label: "Papada", image: areaImages.papada },
+    { label: "Mandíbula", image: areaImages.mandibula },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Abdômen", image: areaImages.abdomen },
+    { label: "Flancos", image: areaImages.flancos },
   ],
   callout: {
     title: "Por que escolher o Linear Z na Derma Concept",

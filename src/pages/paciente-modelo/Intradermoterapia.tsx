@@ -1,4 +1,5 @@
 import { Syringe, Sparkles, Droplets, Target, Shield } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -20,12 +21,12 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Procedimento seguro com resultados progressivos e visíveis." },
   ],
   areas: [
-    { label: "Couro cabeludo" },
-    { label: "Abdômen" },
-    { label: "Flancos" },
-    { label: "Coxas" },
-    { label: "Braços" },
-    { label: "Glúteos" },
+    { label: "Couro cabeludo", image: areaImages.couroCabeludo },
+    { label: "Abdômen", image: areaImages.abdomen },
+    { label: "Flancos", image: areaImages.flancos },
+    { label: "Coxas", image: areaImages.coxas },
+    { label: "Braços", image: areaImages.bracos },
+    { label: "Glúteos", image: areaImages.gluteos },
   ],
   callout: {
     title: "A Experiência Derma Concept",

@@ -1,4 +1,5 @@
 import { Syringe, Sparkles, Target, Droplets, Shield } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -20,10 +21,10 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Ativos de alta qualidade selecionados para cada tipo de pele e necessidade." },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Couro cabeludo" },
-    { label: "Corpo" },
+    { label: "Rosto", image: areaImages.rosto },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Couro cabeludo", image: areaImages.couroCabeludo },
+    { label: "Corpo", image: areaImages.corpo },
   ],
   callout: {
     title: "A Experiência Derma Concept",

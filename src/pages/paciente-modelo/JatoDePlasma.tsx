@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -69,10 +70,10 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Mais Tratadas",
   areas: [
-    { label: "Pálpebras superiores e inferiores" },
-    { label: "Região dos olhos" },
-    { label: "Ao redor dos lábios" },
-    { label: "Face" },
+    { label: "Pálpebras superiores e inferiores", image: areaImages.palpebras },
+    { label: "Região dos olhos", image: areaImages.regiaoOlhos },
+    { label: "Ao redor dos lábios", image: areaImages.aoRedorLabios },
+    { label: "Face", image: areaImages.face },
   ],
   callout: {
     title: "A Experiência Derma Concept",

@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp";
 import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp";
@@ -36,16 +37,16 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Tratadas",
   areas: [
-    { label: "Lábios" },
-    { label: "Olheiras" },
-    { label: "Bigode chinês (sulco nasogeniano)" },
-    { label: "Linhas de marionete" },
-    { label: "Maçãs do rosto" },
-    { label: "Mandíbula" },
-    { label: "Queixo" },
-    { label: "Nariz (rinomodelação)" },
-    { label: "Têmporas" },
-    { label: "Mãos" },
+    { label: "Lábios", image: areaImages.labios },
+    { label: "Olheiras", image: areaImages.olheiras },
+    { label: "Bigode chinês (sulco nasogeniano)", image: areaImages.bigodeChines },
+    { label: "Linhas de marionete", image: areaImages.marionete },
+    { label: "Maçãs do rosto", image: areaImages.macas },
+    { label: "Mandíbula", image: areaImages.mandibula },
+    { label: "Queixo", image: areaImages.queixo },
+    { label: "Nariz (rinomodelação)", image: areaImages.nariz },
+    { label: "Têmporas", image: areaImages.temporas },
+    { label: "Mãos", image: areaImages.maos },
   ],
   callout: {
     title: "A Experiência Derma Concept",

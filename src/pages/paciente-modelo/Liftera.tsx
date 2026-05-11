@@ -1,4 +1,5 @@
 import { ArrowUp, Target, Layers, Sparkles } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -17,10 +18,10 @@ const data: ProcedurePageData = {
     { icon: Sparkles, text: "Pele mais firme e estruturada" },
   ],
   areas: [
-    { label: "Face" },
-    { label: "Papada" },
-    { label: "Sobrancelhas (efeito lifting)" },
-    { label: "Pescoço" },
+    { label: "Face", image: areaImages.face },
+    { label: "Papada", image: areaImages.papada },
+    { label: "Sobrancelhas (efeito lifting)", image: areaImages.sobrancelhas },
+    { label: "Pescoço", image: areaImages.pescoco },
   ],
   callout: {
     title: "A Experiência Derma Concept",
