@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import toxinaAntes from "@/assets/toxina-botulinica/antes.webp";
 import toxinaDepois from "@/assets/toxina-botulinica/depois.webp";
@@ -33,13 +34,13 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Tratadas",
   areas: [
-    { label: "Testa" },
-    { label: "Glabela (entre as sobrancelhas)" },
-    { label: "Pés de galinha (região dos olhos)" },
-    { label: "Sobrancelhas (efeito lifting)" },
-    { label: "Nariz (linhas do \"bunny lines\")" },
-    { label: "Queixo (aspecto de casca de laranja)" },
-    { label: "Pescoço (bandas platismais)" },
+    { label: "Testa", image: areaImages.testa },
+    { label: "Glabela (entre as sobrancelhas)", image: areaImages.glabela },
+    { label: "Pés de galinha (região dos olhos)", image: areaImages.peGalinha },
+    { label: "Sobrancelhas (efeito lifting)", image: areaImages.sobrancelhas },
+    { label: "Nariz (linhas do \"bunny lines\")", image: areaImages.nariz },
+    { label: "Queixo (aspecto de casca de laranja)", image: areaImages.queixo },
+    { label: "Pescoço (bandas platismais)", image: areaImages.pescoco },
   ],
   callout: {
     title: "A Experiência Derma Concept",

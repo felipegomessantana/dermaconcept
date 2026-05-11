@@ -1,4 +1,5 @@
 import { ArrowUp, Sparkles, Shield, Layers, Heart } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -20,11 +21,11 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Fios absorvíveis e biocompatíveis com alto perfil de segurança." },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Papada" },
-    { label: "Sobrancelhas" },
-    { label: "Mandíbula" },
+    { label: "Rosto", image: areaImages.rosto },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Papada", image: areaImages.papada },
+    { label: "Sobrancelhas", image: areaImages.sobrancelhas },
+    { label: "Mandíbula", image: areaImages.mandibula },
   ],
   callout: {
     title: "A Experiência Derma Concept",

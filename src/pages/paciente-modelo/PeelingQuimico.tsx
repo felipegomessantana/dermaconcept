@@ -1,4 +1,5 @@
 import { Sparkles, Sun, Palette, Layers, Shield } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp";
 import rostoDepois from "@/assets/peeling-quimico/rosto-depois.webp";
@@ -31,11 +32,11 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Protocolos individualizados para cada tipo de pele." },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
-    { label: "Mãos" },
-    { label: "Costas" },
+    { label: "Rosto", image: areaImages.rosto },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Colo", image: areaImages.colo },
+    { label: "Mãos", image: areaImages.maos },
+    { label: "Costas", image: areaImages.costas },
   ],
   callout: {
     title: "A Experiência Derma Concept",

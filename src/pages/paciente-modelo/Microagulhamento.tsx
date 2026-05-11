@@ -1,4 +1,5 @@
 import { Sparkles, Target, Layers, Shield, Palette } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -20,11 +21,11 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Equipamentos de última geração com protocolos individualizados." },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
-    { label: "Costas" },
-    { label: "Corpo" },
+    { label: "Rosto", image: areaImages.rosto },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Colo", image: areaImages.colo },
+    { label: "Costas", image: areaImages.costas },
+    { label: "Corpo", image: areaImages.corpo },
   ],
   callout: {
     title: "A Experiência Derma Concept",

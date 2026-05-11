@@ -1,4 +1,5 @@
 import { Sun, Sparkles, Target, Palette, Shield } from "lucide-react";
+import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 import equipamento from "@/assets/etherea-mx/equipamento.webp";
@@ -61,11 +62,11 @@ const data: ProcedurePageData = {
     { icon: Sparkles, text: "Resultados visíveis com mínimo downtime e alta segurança." },
   ],
   areas: [
-    { label: "Rosto" },
-    { label: "Pescoço" },
-    { label: "Colo" },
-    { label: "Mãos" },
-    { label: "Corpo" },
+    { label: "Rosto", image: areaImages.rosto },
+    { label: "Pescoço", image: areaImages.pescoco },
+    { label: "Colo", image: areaImages.colo },
+    { label: "Mãos", image: areaImages.maos },
+    { label: "Corpo", image: areaImages.corpo },
   ],
   callout: {
     title: "A Experiência Derma Concept",
