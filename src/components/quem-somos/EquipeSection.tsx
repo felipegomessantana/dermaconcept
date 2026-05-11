@@ -11,6 +11,7 @@ import teamMember3 from "@/assets/team-member-3.webp";
 import teamMember4 from "@/assets/team-member-4.webp";
 import teamMember5 from "@/assets/team-member-5.webp";
 import teamMember6 from "@/assets/team-member-6.webp";
+import teamAnaFlavia from "@/assets/team-ana-flavia.jpeg";
 
 type TeamMember = {
   name: string;
