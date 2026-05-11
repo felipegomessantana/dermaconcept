@@ -352,9 +352,22 @@ const EquipeSection = () => {
                         Curiosidades
                       </span>
                     </div>
-                    <p className="text-sm text-foreground/80 leading-relaxed">
-                      {activeMember.curiosities}
-                    </p>
+                    {Array.isArray(activeMember.curiosities) ? (
+                      <ul className="space-y-2">
+                        {activeMember.curiosities.map((item) => (
+                          <li
+                            key={item}
+                            className="relative pl-4 text-sm text-foreground/80 leading-relaxed before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[#7A7168]"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-foreground/80 leading-relaxed">
+                        {activeMember.curiosities}
+                      </p>
+                    )}
                   </div>
                 )}
 
