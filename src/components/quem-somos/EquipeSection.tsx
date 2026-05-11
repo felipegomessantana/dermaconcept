@@ -27,18 +27,15 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Dra. Ana Flávia",
-    role: "Dermatologia · Cirurgia Dermatológica",
-    credentials: "CRM-MG 77.129",
+    name: "Dra. Especialista 1",
+    role: "Dermatologia Estética",
     image: teamMember1,
-    specialties: ["Cirurgia Dermatológica", "Cosmiatria", "Laser"],
-    bio: [],
-    formation: [
-      "Formada na turma de 2009 da faculdade de Medicina de Teresópolis - RJ",
-      "Especialista pela Sociedade Brasileira de Dermatologia e de Cirurgia Dermatológica",
-      "Certificada no Curso de aperfeiçoamento em Cirurgia Dermatológica , Cosmiatria e Laser pela Sociedade brasileira Dermatológica",
+    credentials: "CRM 00000 / RQE 0000",
+    specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
+    bio: [
+      "Adicione aqui a biografia completa da médica, com a redação exata fornecida.",
+      "Você pode incluir múltiplos parágrafos descrevendo trajetória, atuação e diferenciais.",
     ],
-    purpose: "Acolhimento e segurança são os propósitos com meu paciente.",
     social: { instagram: "#", linkedin: "#" },
   },
   {
