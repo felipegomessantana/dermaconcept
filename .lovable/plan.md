@@ -1,48 +1,34 @@
-# Imagens nas "Áreas de Aplicação" (todas as páginas Paciente Modelo)
+## Objetivo
+Trocar as imagens corporais que hoje escondem a área tratada com roupa ou linguagem de moda por imagens clínicas/procedurais, mostrando com clareza a região anatômica correta e o contexto estético.
 
-Hoje só **YouLaser Prime** e **IPCA** mostram imagens nos cards. Nas outras 12 páginas o card aparece com fundo cinza. Vou padronizar: todo card de "Áreas de Aplicação" terá uma imagem ilustrativa coerente com o procedimento + a área do corpo, no mesmo estilo do exemplo enviado.
+## O que vou fazer
+1. Auditar todas as áreas corporais compartilhadas usadas nas páginas de procedimento.
+2. Substituir os assets problemáticos de `abdomen`, `bracos`, `coxas`, `flancos`, `costas` e, se necessário, `corpo` e `gluteos` por imagens coerentes com procedimento estético.
+3. Atualizar o registro central `src/assets/areas/index.ts` para que a correção se propague automaticamente para todas as páginas que reutilizam essas imagens.
+4. Revisar as páginas impactadas para garantir que nenhuma seção continue mostrando roupa cobrindo a área tratada ou pose de modelo em vez de contexto clínico.
 
-## Estratégia de imagens
+## Páginas já mapeadas como impactadas
+- `Intradermoterapia`
+- `Linear Z`
+- `Bioestimuladores de Colágeno`
+- `Microagulhamento`
+- `Peeling Químico`
+- `Etherea MX`
+- `Mesoject Gun`
 
-Para evitar inflar o projeto com dezenas de fotos quase iguais, vou usar **dois níveis**:
-
-1. **Reaproveitar imagens já existentes** (`src/assets/ipca/area-*.webp` e `src/assets/youlaser-prime/*.webp`) sempre que o rótulo do card corresponder a uma área já fotografada (Rosto, Pescoço, Colo, Mãos, Corpo, Abdômen, Glúteos, Braços, Coxas).
-2. **Gerar novas imagens (AI, premium)** para áreas específicas que ainda não existem no projeto — sempre fotografias realistas de clínica/procedimento, mesma estética editorial taupe/clean das atuais.
-
-Imagens novas a gerar (≈18 únicas, reutilizadas entre páginas quando o rótulo se repete):
-
-- **Faciais detalhadas** (preenchimento / toxina / fios / jato de plasma): Lábios, Olheiras, Bigode chinês, Linhas de marionete, Maçãs do rosto, Mandíbula, Queixo, Nariz, Têmporas, Testa, Glabela, Pés de galinha, Sobrancelhas, Pálpebras, Ao redor dos lábios, Bandas do pescoço, Papada, Face completa.
-- **Corpo / capilar**: Couro cabeludo, Flancos, Costas.
-
-Cada imagem nova vai para `src/assets/areas/<slug>.webp` (pasta nova compartilhada entre páginas).
-
-## Páginas a atualizar
-
-| Página | Áreas |
-|---|---|
-| BioestimuladoresColageno | Rosto, Pescoço, Colo, Mãos, Braços, Abdômen, Glúteos |
-| EthereaMX | Rosto, Pescoço, Colo, Mãos, Corpo |
-| FiosDePDO | Rosto, Pescoço, Papada, Sobrancelhas, Mandíbula |
-| Intradermoterapia | Couro cabeludo, Abdômen, Flancos, Coxas, Braços, Glúteos |
-| JatoDePlasma | Pálpebras, Região dos olhos, Ao redor dos lábios, Face |
-| Liftera | Face, Papada, Sobrancelhas, Pescoço |
-| LinearZ | Face completa, Papada, Mandíbula, Pescoço, Abdômen, Flancos |
-| MesojectGun | Rosto, Pescoço, Couro cabeludo, Corpo |
-| Microagulhamento | Rosto, Pescoço, Colo, Costas, Corpo |
-| PeelingQuimico | Rosto, Pescoço, Colo, Mãos, Costas |
-| PreenchimentoAcidoHialuronico | Lábios, Olheiras, Bigode chinês, Linhas de marionete, Maçãs, Mandíbula, Queixo, Nariz, Têmporas, Mãos |
-| ToxinaBotulinica | Testa, Glabela, Pés de galinha, Sobrancelhas, Nariz, Queixo, Pescoço |
+## Critério visual de substituição
+- Área anatômica claramente visível
+- Enquadramento de procedimento estético/dermatológico
+- Roupas e styling minimizados ao ponto de não esconder o tratamento
+- Imagem funcional e informativa, não editorial de moda
+- Consistência visual com o restante do site premium da clínica
 
 ## Detalhes técnicos
+- A origem do problema está no reuso central de imagens em `src/assets/areas/index.ts`.
+- Corrigindo os imports compartilhados, a maior parte das páginas será ajustada sem alterar o conteúdo textual.
+- Só farei mudanças de frontend/asset mapping, sem mexer em lógica ou estrutura de páginas além do necessário para a exibição correta.
 
-- Criar `src/assets/areas/` com um único set compartilhado de imagens (importações ES6).
-- Criar um helper `src/assets/areas/index.ts` que exporta cada imagem por chave (`rosto`, `pescoco`, `labios`…), evitando duplicar imports em cada página.
-- Em cada um dos 12 arquivos, alterar apenas o array `areas: [...]` adicionando `image: areas.<chave>` em cada item. Nenhum outro código muda.
-- Layout/estilo do card já existe em `ProcedurePageLayout.tsx` (não precisa alterar) — quando há `image`, o componente já renderiza a foto com gradiente preto inferior e o label sobreposto, exatamente como o exemplo anexado.
-- Geração das imagens novas via `imagegen` em qualidade `standard` (ou `premium` apenas se necessário), formato vertical 3:4 (864×1152) salvas como `.webp` para casar com o restante.
-
-## O que NÃO muda
-
-- Textos, títulos, labels, ordem dos cards.
-- Layout do `ProcedurePageLayout`.
-- Páginas YouseLaserPrime e IPCA (já estão corretas).
+## Validação
+- Conferir visualmente as áreas corporais em todas as páginas afetadas
+- Confirmar que abdômen, braços, coxas, flancos e costas aparecem de forma legível e apropriada ao procedimento
+- Garantir que não restem cards com aparência de “modelo bonita” em vez de demonstração de tratamento
