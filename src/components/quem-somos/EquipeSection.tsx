@@ -57,12 +57,22 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#" },
   },
   {
-    name: "Dr. Leonardo Alves",
-    role: "Dermatologia Avançada",
+    name: "Dr. Leonardo Almeida",
+    role: "Dermatologia",
     image: teamMember4,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Lasers", "Tecnologias", "Rejuvenescimento"],
-    bio: ["Adicione aqui a biografia completa do médico."],
+    specialties: ["Oncologia Cutânea", "Cirurgia Dermatológica", "Cosmiatria", "Transplante Capilar"],
+    bio: [],
+    formation: [
+      "Médico pela Universidade Federal de Minas Gerais (UFMG)",
+      "Residência Médica em Dermatologia HC-UFMG",
+      "Fellow em Oncologia Cutânea e Cirurgia Dermatológica HC-UFMG",
+      "Fellow em Cosmiatria na Santa Casa do RJ",
+      "Membro titular SBD",
+    ],
+    purpose:
+      "Prezo por exercer uma dermatologia completa com excelência técnica e sensibilidade, promovendo resultados que respeitam a individualidade e elevam a qualidade de vida de cada paciente",
+    curiosities:
+      "Sou fascinado por viagens, experiências e culturas diferentes - sempre arrumo uma desculpa para uma viagem. Meu maior medo é ficar careca e, por isso, me aprofundei nos estudos dos cabelos e no transplante capilar.",
     social: { instagram: "#", linkedin: "#" },
   },
   {
