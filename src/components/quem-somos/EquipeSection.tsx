@@ -89,9 +89,9 @@ const teamMembers: TeamMember[] = [
       "Quase 10 anos de atuação como preceptora em pós-graduação de Dermatologia.",
     ],
     purpose:
-      "promover beleza com ciência e sutileza ao meu paciente! “Elegância é recusa!” Coco Chanel",
+      "Promover beleza com ciência e sutileza ao meu paciente! “Elegância é recusa!” Coco Chanel",
     curiosities:
-      "sou muito família, sou esposa, mãe do Benjamin e do meu golden Chico 🐶; apaixonada por viagens e conhecer novas culturas; adoro esportes! Joguei handebol durante todo ensino fundamental, médio e faculdade! No momento me descobrindo e encantada com o tênis!",
+      "Sou muito família, sou esposa, mãe do Benjamin e do meu golden Chico 🐶; apaixonada por viagens e conhecer novas culturas; adoro esportes! Joguei handebol durante todo ensino fundamental, médio e faculdade! No momento me descobrindo e encantada com o tênis!",
     social: { instagram: "#" },
   },
   {
