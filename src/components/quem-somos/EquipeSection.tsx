@@ -134,12 +134,17 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#" },
   },
   {
-    name: "Dra. Especialista 6",
-    role: "Bioestimuladores & Toxina",
+    name: "Dra. Ana Lúcia",
+    role: "Dermatologia",
     image: teamMember6,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Bioestimuladores", "Toxina Botulínica", "Fios de PDO"],
-    bio: ["Adicione aqui a biografia completa da médica."],
+    specialties: ["Dermatologia", "Cirurgia Dermatológica", "Cosmiatria", "Laser"],
+    bio: [],
+    formation: [
+      "Formada na turma de 2009 da faculdade de Medicina de Teresópolis - RJ",
+      "Especialista pela Sociedade Brasileira de Dermatologia e de Cirurgia Dermatológica",
+      "Certificada no Curso de aperfeiçoamento em Cirurgia Dermatológica , Cosmiatria e Laser pela Sociedade brasileira Dermatológica",
+    ],
+    purpose: "Acolhimento e segurança são os propósitos com meu paciente.",
     social: { instagram: "#" },
   },
 ];
