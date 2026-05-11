@@ -58,8 +58,11 @@ const teamMembers: TeamMember[] = [
     ],
     purpose:
       "Transformar a dermatologia por meio de um cuidado ético, técnico e acessível, formando profissionais mais preparados e seguros para a prática clínica.",
-    curiosities:
-      "Apaixonado por ensino e formação de novos especialistas. Valoriza atendimento humanizado e individualizado. Tem grande interesse em inovação e tecnologia aplicada à dermatologia.",
+    curiosities: [
+      "Apaixonado por ensino e formação de novos especialistas",
+      "Valoriza atendimento humanizado e individualizado",
+      "Tem grande interesse em inovação e tecnologia aplicada à dermatologia",
+    ],
     social: { instagram: "#" },
   },
   {
