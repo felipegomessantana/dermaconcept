@@ -20,7 +20,7 @@ type TeamMember = {
   bio: string[];
   formation?: string[];
   purpose?: string;
-  curiosities?: string;
+  curiosities?: string | string[];
   credentials?: string;
   social?: { instagram?: string; linkedin?: string; lattes?: string };
 };
