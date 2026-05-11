@@ -262,14 +262,16 @@ const EquipeSection = () => {
                 <div className="h-px w-12 bg-[#7A7168] my-6" />
 
                 {/* Bio */}
-                <div className="space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed">
-                  {activeMember.bio.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
+                {activeMember.bio.length > 0 && (
+                  <div className="space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed">
+                    {activeMember.bio.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                )}
 
                 {/* Specialties */}
-                <div className="mt-8">
+                <div className="mt-2">
                   <div className="flex items-center gap-2 mb-3">
                     <GraduationCap className="h-4 w-4 text-[#7A7168]" />
                     <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
@@ -287,6 +289,59 @@ const EquipeSection = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Formação */}
+                {activeMember.formation && activeMember.formation.length > 0 && (
+                  <div className="mt-8">
+                    <div className="flex items-center gap-2 mb-3">
+                      <GraduationCap className="h-4 w-4 text-[#7A7168]" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                        Formação
+                      </span>
+                    </div>
+                    <ul className="space-y-2">
+                      {activeMember.formation.map((item) => (
+                        <li
+                          key={item}
+                          className="relative pl-4 text-sm text-foreground/80 leading-relaxed before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[#7A7168]"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Propósito */}
+                {activeMember.purpose && (
+                  <div className="mt-8 border-l-2 border-[#7A7168] pl-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Compass className="h-4 w-4 text-[#7A7168]" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                        Propósito
+                      </span>
+                    </div>
+                    <p className="font-serif italic text-base md:text-lg text-foreground/90 leading-relaxed">
+                      {activeMember.purpose}
+                    </p>
+                  </div>
+                )}
+
+                {/* Curiosidades */}
+                {activeMember.curiosities && (
+                  <div className="mt-8">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="h-4 w-4 text-[#7A7168]" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                        Curiosidades
+                      </span>
+                    </div>
+                    <p className="text-sm text-foreground/80 leading-relaxed">
+                      {activeMember.curiosities}
+                    </p>
+                  </div>
+                )}
+
 
                 {/* Social */}
                 {activeMember.social && (
