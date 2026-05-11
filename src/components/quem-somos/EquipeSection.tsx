@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Instagram, Linkedin, GraduationCap } from "lucide-react";
+import { Instagram, Linkedin, GraduationCap, Sparkles, Compass } from "lucide-react";
 
 import teamMember1 from "@/assets/team-member-1.webp";
 import teamMember2 from "@/assets/team-member-2.webp";
@@ -18,6 +18,9 @@ type TeamMember = {
   image: string;
   specialties: string[];
   bio: string[];
+  formation?: string[];
+  purpose?: string;
+  curiosities?: string;
   credentials?: string;
   social?: { instagram?: string; linkedin?: string; lattes?: string };
 };
@@ -54,12 +57,22 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#" },
   },
   {
-    name: "Dr. Leonardo Alves",
-    role: "Dermatologia Avançada",
+    name: "Dr. Leonardo Almeida",
+    role: "Dermatologia",
     image: teamMember4,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Lasers", "Tecnologias", "Rejuvenescimento"],
-    bio: ["Adicione aqui a biografia completa do médico."],
+    specialties: ["Oncologia Cutânea", "Cirurgia Dermatológica", "Cosmiatria", "Transplante Capilar"],
+    bio: [],
+    formation: [
+      "Médico pela Universidade Federal de Minas Gerais (UFMG)",
+      "Residência Médica em Dermatologia HC-UFMG",
+      "Fellow em Oncologia Cutânea e Cirurgia Dermatológica HC-UFMG",
+      "Fellow em Cosmiatria na Santa Casa do RJ",
+      "Membro titular SBD",
+    ],
+    purpose:
+      "Prezo por exercer uma dermatologia completa com excelência técnica e sensibilidade, promovendo resultados que respeitam a individualidade e elevam a qualidade de vida de cada paciente",
+    curiosities:
+      "Sou fascinado por viagens, experiências e culturas diferentes - sempre arrumo uma desculpa para uma viagem. Meu maior medo é ficar careca e, por isso, me aprofundei nos estudos dos cabelos e no transplante capilar.",
     social: { instagram: "#", linkedin: "#" },
   },
   {
@@ -249,14 +262,16 @@ const EquipeSection = () => {
                 <div className="h-px w-12 bg-[#7A7168] my-6" />
 
                 {/* Bio */}
-                <div className="space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed">
-                  {activeMember.bio.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
+                {activeMember.bio.length > 0 && (
+                  <div className="space-y-4 text-sm md:text-base text-foreground/80 leading-relaxed">
+                    {activeMember.bio.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                )}
 
                 {/* Specialties */}
-                <div className="mt-8">
+                <div className="mt-2">
                   <div className="flex items-center gap-2 mb-3">
                     <GraduationCap className="h-4 w-4 text-[#7A7168]" />
                     <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
@@ -274,6 +289,59 @@ const EquipeSection = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Formação */}
+                {activeMember.formation && activeMember.formation.length > 0 && (
+                  <div className="mt-8">
+                    <div className="flex items-center gap-2 mb-3">
+                      <GraduationCap className="h-4 w-4 text-[#7A7168]" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                        Formação
+                      </span>
+                    </div>
+                    <ul className="space-y-2">
+                      {activeMember.formation.map((item) => (
+                        <li
+                          key={item}
+                          className="relative pl-4 text-sm text-foreground/80 leading-relaxed before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[#7A7168]"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Propósito */}
+                {activeMember.purpose && (
+                  <div className="mt-8 border-l-2 border-[#7A7168] pl-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Compass className="h-4 w-4 text-[#7A7168]" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                        Propósito
+                      </span>
+                    </div>
+                    <p className="font-serif italic text-base md:text-lg text-foreground/90 leading-relaxed">
+                      {activeMember.purpose}
+                    </p>
+                  </div>
+                )}
+
+                {/* Curiosidades */}
+                {activeMember.curiosities && (
+                  <div className="mt-8">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="h-4 w-4 text-[#7A7168]" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+                        Curiosidades
+                      </span>
+                    </div>
+                    <p className="text-sm text-foreground/80 leading-relaxed">
+                      {activeMember.curiosities}
+                    </p>
+                  </div>
+                )}
+
 
                 {/* Social */}
                 {activeMember.social && (
