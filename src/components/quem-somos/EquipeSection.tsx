@@ -137,6 +137,7 @@ const teamMembers: TeamMember[] = [
     name: "Dra. Ana Lúcia",
     role: "Dermatologia",
     image: teamMember6,
+    credentials: "CRM MG: 49442 · RQE: 45109",
     specialties: ["Dermatologia", "Cirurgia Dermatológica", "Cosmiatria", "Laser"],
     bio: [],
     formation: [
