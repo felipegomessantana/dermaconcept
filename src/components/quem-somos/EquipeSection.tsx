@@ -76,12 +76,22 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#", linkedin: "#" },
   },
   {
-    name: "Dra. Especialista 5",
-    role: "Dermatologia Estética",
+    name: "Dra. Karolina Lavagnoli Colombo",
+    role: "Dermatologia",
     image: teamMember5,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Estética Facial", "Harmonização", "Skincare"],
-    bio: ["Adicione aqui a biografia completa da médica."],
+    credentials: "CRM MG 62755 · RQE 55681",
+    specialties: ["Dermatologia Clínica", "Dermatologia Estética", "Preceptoria"],
+    bio: [],
+    formation: [
+      "Formada em Medicina na Santa Casa de Misericórdia de Vitória-ES.",
+      "Pós-graduação em Dermatologia pelo Instituto Superior de Medicina (ISMD) de Belo Horizonte.",
+      "Membro Titular da Sociedade Brasileira de Dermatologia (SBD).",
+      "Quase 10 anos de atuação como preceptora em pós-graduação de Dermatologia.",
+    ],
+    purpose:
+      "Promover beleza com ciência e sutileza ao meu paciente! “Elegância é recusa!” Coco Chanel",
+    curiosities:
+      "Sou muito família, sou esposa, mãe do Benjamin e do meu golden Chico 🐶; apaixonada por viagens e conhecer novas culturas; adoro esportes! Joguei handebol durante todo ensino fundamental, médio e faculdade! No momento me descobrindo e encantada com o tênis!",
     social: { instagram: "#" },
   },
   {
