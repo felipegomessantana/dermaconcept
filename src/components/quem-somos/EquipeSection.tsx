@@ -18,6 +18,9 @@ type TeamMember = {
   image: string;
   specialties: string[];
   bio: string[];
+  formation?: string[];
+  purpose?: string;
+  curiosities?: string;
   credentials?: string;
   social?: { instagram?: string; linkedin?: string; lattes?: string };
 };
