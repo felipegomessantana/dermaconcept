@@ -48,12 +48,18 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#" },
   },
   {
-    name: "Dr. Especialista 3",
-    role: "Dermatologia Clínica",
+    name: "Dr. Paulo Henrique Pimentel",
+    role: "Dermatologia Clínica, Cirúrgica e Estética",
     image: teamMember3,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Dermatologia Clínica", "Tricologia", "Acne"],
-    bio: ["Adicione aqui a biografia completa do médico."],
+    credentials: "CRM-MG: 57.394",
+    specialties: ["Dermatologia Clínica", "Dermatologia Cirúrgica", "Dermatologia Estética", "Preceptoria"],
+    bio: [
+      "Médico com atuação em dermatologia clínica, cirúrgica e estética, com formação complementar em procedimentos avançados e tecnologias dermatológicas. Atua também como preceptor e professor em programas de pós-graduação, com foco em ensino prático baseado em evidência e desenvolvimento de raciocínio clínico aplicado.",
+    ],
+    purpose:
+      "Transformar a dermatologia por meio de um cuidado ético, técnico e acessível, formando profissionais mais preparados e seguros para a prática clínica.",
+    curiosities:
+      "Apaixonado por ensino e formação de novos especialistas. Valoriza atendimento humanizado e individualizado. Tem grande interesse em inovação e tecnologia aplicada à dermatologia.",
     social: { instagram: "#" },
   },
   {
