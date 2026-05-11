@@ -28,14 +28,16 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "Dra. Especialista 1",
-    role: "Dermatologia Estética",
+    role: "Dermatologia · Cirurgia Dermatológica",
     image: teamMember1,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
-    bio: [
-      "Adicione aqui a biografia completa da médica, com a redação exata fornecida.",
-      "Você pode incluir múltiplos parágrafos descrevendo trajetória, atuação e diferenciais.",
+    specialties: ["Cirurgia Dermatológica", "Cosmiatria", "Laser"],
+    bio: [],
+    formation: [
+      "Formada na turma de 2009 da faculdade de Medicina de Teresópolis - RJ",
+      "Especialista pela Sociedade Brasileira de Dermatologia e de Cirurgia Dermatológica",
+      "Certificada no Curso de aperfeiçoamento em Cirurgia Dermatológica , Cosmiatria e Laser pela Sociedade brasileira Dermatológica",
     ],
+    purpose: "Acolhimento e segurança são os propósitos com meu paciente.",
     social: { instagram: "#", linkedin: "#" },
   },
   {
