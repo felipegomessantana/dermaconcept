@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#", linkedin: "#" },
   },
   {
-    name: "Ana Vitória",
+    name: "Dra. Ana Vitória",
     role: "Cirurgia Dermatológica",
     image: teamMember2,
     credentials: "CRM 00000 / RQE 0000",
