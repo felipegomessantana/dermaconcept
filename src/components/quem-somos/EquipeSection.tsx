@@ -20,7 +20,7 @@ type TeamMember = {
   bio: string[];
   formation?: string[];
   purpose?: string;
-  curiosities?: string;
+  curiosities?: string | string[];
   credentials?: string;
   social?: { instagram?: string; linkedin?: string; lattes?: string };
 };
@@ -48,12 +48,21 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#" },
   },
   {
-    name: "Dr. Especialista 3",
-    role: "Dermatologia Clínica",
+    name: "Dr. Paulo Henrique Pimentel",
+    role: "Dermatologia Clínica, Cirúrgica e Estética",
     image: teamMember3,
-    credentials: "CRM 00000 / RQE 0000",
-    specialties: ["Dermatologia Clínica", "Tricologia", "Acne"],
-    bio: ["Adicione aqui a biografia completa do médico."],
+    credentials: "CRM-MG: 57.394",
+    specialties: ["Dermatologia Clínica", "Dermatologia Cirúrgica", "Dermatologia Estética", "Preceptoria"],
+    bio: [
+      "Médico com atuação em dermatologia clínica, cirúrgica e estética, com formação complementar em procedimentos avançados e tecnologias dermatológicas. Atua também como preceptor e professor em programas de pós-graduação, com foco em ensino prático baseado em evidência e desenvolvimento de raciocínio clínico aplicado.",
+    ],
+    purpose:
+      "Transformar a dermatologia por meio de um cuidado ético, técnico e acessível, formando profissionais mais preparados e seguros para a prática clínica.",
+    curiosities: [
+      "Apaixonado por ensino e formação de novos especialistas",
+      "Valoriza atendimento humanizado e individualizado",
+      "Tem grande interesse em inovação e tecnologia aplicada à dermatologia",
+    ],
     social: { instagram: "#" },
   },
   {
@@ -346,9 +355,22 @@ const EquipeSection = () => {
                         Curiosidades
                       </span>
                     </div>
-                    <p className="text-sm text-foreground/80 leading-relaxed">
-                      {activeMember.curiosities}
-                    </p>
+                    {Array.isArray(activeMember.curiosities) ? (
+                      <ul className="space-y-2">
+                        {activeMember.curiosities.map((item) => (
+                          <li
+                            key={item}
+                            className="relative pl-4 text-sm text-foreground/80 leading-relaxed before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[#7A7168]"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-foreground/80 leading-relaxed">
+                        {activeMember.curiosities}
+                      </p>
+                    )}
                   </div>
                 )}
 
