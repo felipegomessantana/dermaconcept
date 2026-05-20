@@ -239,13 +239,18 @@ const DesktopNav = () => {
       onMouseLeave={() => handleSetSelected(null)}
       className="relative flex h-fit items-center gap-1"
     >
-      {/* Página Inicial is now a tab dropdown */}
-
       {TABS.map((t) => (
         <Tab key={t.id} selected={selected} handleSetSelected={handleSetSelected} tab={t.id}>
           {t.title}
         </Tab>
       ))}
+
+      <Link
+        to="/quem-somos"
+        className="px-3 py-1.5 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-800"
+      >
+        Quem Somos
+      </Link>
 
       <Link
         to="/contato"
