@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Instagram, Linkedin, GraduationCap, Sparkles, Compass } from "lucide-react";
+import { Instagram, Linkedin, GraduationCap, Sparkles, Compass, ChevronLeft, ChevronRight } from "lucide-react";
 
 import teamMember1 from "@/assets/team-member-1.webp";
 import teamMember2 from "@/assets/team-member-2.webp";
