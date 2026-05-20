@@ -21,7 +21,7 @@ interface CourseData {
   intro: React.ReactNode;
   benefits: BenefitItem[];
   callout: string;
-  image: string;
+  image: import("./ui/responsive-image").PictureSource;
   tag: string;
 }
 
