@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import heroImg from "@/assets/hero-team.webp";
-import heroMobileImg from "@/assets/hero-mobile.webp";
+import heroImg from "@/assets/hero-team.webp?responsive&w=768;1200;1920";
+import heroMobileImg from "@/assets/hero-mobile.webp?responsive&w=480;768";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 
 /* ── animation helpers ── */
 const letterVariants = {
