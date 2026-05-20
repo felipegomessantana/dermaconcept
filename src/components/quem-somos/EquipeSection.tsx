@@ -508,7 +508,8 @@ const EquipeSection = () => {
                   </div>
                 )}
               </div>
-            </div>
+              </motion.div>
+            </>
           )}
         </DialogContent>
       </Dialog>
