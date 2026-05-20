@@ -133,15 +133,17 @@ const NossaEstruturaSection = () => {
                     className="overflow-hidden rounded-2xl cursor-pointer"
                     onClick={() => openLightbox(i)}
                   >
-                    <img
-                      src={src}
+                    <ResponsiveImage
+                      source={src}
                       alt={`Estrutura da clínica ${i + 1}`}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      pictureClassName="block aspect-video w-full overflow-hidden"
                       className="aspect-video w-full object-cover transition-transform duration-700 hover:scale-105"
-                      loading="lazy"
                     />
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
 
