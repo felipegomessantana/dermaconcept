@@ -5,6 +5,7 @@ import BeforeAfterSlider from "./BeforeAfterSlider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
+import { ResponsiveImage, type PictureSource } from "@/components/ui/responsive-image";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -20,16 +21,16 @@ export interface ProcedureBenefit {
 export interface ProcedureArea {
   label: string;
   icon?: LucideIcon;
-  image?: string;
+  image?: PictureSource;
 }
 
 export interface ProcedurePageData {
   title: React.ReactNode;
   subtitle: string;
   intro: React.ReactNode;
-  equipmentImages?: string[];
-  beforeAfter?: { before: string; after: string; label?: string }[];
-  beforeAfterGroups?: { before: string; after: string; label?: string }[][];
+  equipmentImages?: PictureSource[];
+  beforeAfter?: { before: PictureSource; after: PictureSource; label?: string }[];
+  beforeAfterGroups?: { before: PictureSource; after: PictureSource; label?: string }[][];
   benefits?: ProcedureBenefit[];
   benefitsTitle?: string;
   areas?: ProcedureArea[];
@@ -43,7 +44,7 @@ export interface ProcedurePageData {
 
 const TAUPE = "#7A7168";
 
-function EquipmentSlider({ images }: { images: string[] }) {
+function EquipmentSlider({ images }: { images: PictureSource[] }) {
   const [current, setCurrent] = useState(0);
 
   const next = useCallback(() => {
@@ -63,12 +64,15 @@ function EquipmentSlider({ images }: { images: string[] }) {
   return (
     <div className="relative overflow-hidden rounded-2xl shadow-sm aspect-[3/4] group">
       {images.map((src, i) => (
-        <img
+        <ResponsiveImage
           key={i}
-          src={src}
+          source={src}
           alt="Equipamento"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+          sizes="(min-width: 768px) 40vw, 100vw"
+          pictureClassName="absolute inset-0"
+          className="w-full h-full object-cover transition-opacity duration-700 ease-in-out"
           style={{ opacity: i === current ? 1 : 0 }}
+          showSkeleton={i === 0}
         />
       ))}
       {images.length > 1 && (
