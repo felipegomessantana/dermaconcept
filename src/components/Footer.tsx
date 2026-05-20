@@ -5,23 +5,23 @@ const footerLinks = {
   formacao: {
     title: "Formação",
     items: [
-      { label: "Dermatologia Estética", href: "#cursos" },
-      { label: "Cirurgia Dermatológica", href: "#cursos" },
-      { label: "Mentoria Individual", href: "#cursos" },
+      { label: "Dermatologia Estética", href: "/#cursos" },
+      { label: "Cirurgia Dermatológica", href: "/#cursos" },
+      { label: "Mentoria Individual", href: "/#cursos" },
     ],
   },
   institucional: {
     title: "Institucional",
     items: [
-      { label: "Sobre a Academia", href: "#sobre" },
-      { label: "Fellows", href: "#cursos" },
-      { label: "Seja um Paciente Modelo", href: "#contato" },
+      { label: "Sobre a Academia", href: "/#sobre" },
+      { label: "Fellows", href: "/#cursos" },
+      { label: "Seja um Paciente Modelo", href: "/#contato" },
     ],
   },
   suporte: {
     title: "Suporte",
     items: [
-      { label: "Contato", href: "#contato" },
+      { label: "Contato", href: "/#contato" },
       { label: "Política de Privacidade", href: "#" },
       { label: "Termos de Uso", href: "#" },
     ],
