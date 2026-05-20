@@ -11,7 +11,7 @@ const cards = [
     description:
       "Procedimentos dermatológicos conduzidos por médicos especialistas, com condições especiais para quem participa do nosso programa de pacientes modelo.",
     cta: "Ver procedimentos",
-    href: "#paciente-modelo",
+    href: "/#paciente-modelo",
     icon: Sparkles,
     primary: true,
   },
