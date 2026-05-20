@@ -21,7 +21,7 @@ const cards = [
     description:
       "Fellows, Workshops e Mentorias para médicos que buscam excelência em dermatologia estética e cirúrgica, com hands-on real e supervisão de referência.",
     cta: "Ver cursos",
-    href: "#cursos",
+    href: "/#cursos",
     icon: GraduationCap,
     primary: false,
   },
