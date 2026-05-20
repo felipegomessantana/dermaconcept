@@ -329,8 +329,12 @@ const EquipeSection = () => {
       </div>
 
       {/* CV Modal */}
-      <Dialog open={!!activeMember} onOpenChange={(open) => !open && setActiveMember(null)}>
-        <DialogContent className="max-w-4xl w-[95vw] p-0 overflow-hidden border-none bg-background">
+      <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
+        <DialogContent
+          className="max-w-4xl w-[95vw] p-0 overflow-hidden border-none bg-background"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {activeMember && (
             <div className="grid md:grid-cols-[42%_58%] max-h-[90vh] overflow-y-auto">
               {/* Photo side */}
