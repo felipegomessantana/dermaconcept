@@ -1,5 +1,6 @@
 import { Instagram, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo-derma.webp";
+import logoWatermark from "@/assets/logo-derma-watermark.webp";
 
 const footerLinks = {
   formacao: {
