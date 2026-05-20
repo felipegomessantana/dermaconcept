@@ -2,15 +2,17 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
-import aboutRecepcao from "@/assets/about-recepcao.jpg";
-import aboutSalaAula from "@/assets/about-sala-aula.jpg";
-import aboutSalaProcedimentos from "@/assets/about-sala-procedimentos.jpg";
+import { ResponsiveImage } from "./ui/responsive-image";
+import aboutRecepcao from "@/assets/about-recepcao.jpg?w=480;768;1200&responsive";
+import aboutSalaAula from "@/assets/about-sala-aula.jpg?w=480;768;1200&responsive";
+import aboutSalaProcedimentos from "@/assets/about-sala-procedimentos.jpg?w=480;768;1200&responsive";
 
 const slides = [
-  { src: aboutRecepcao, alt: "Recepção premium da Derma Concept Academy" },
-  { src: aboutSalaAula, alt: "Sala de aula da Derma Concept Academy" },
-  { src: aboutSalaProcedimentos, alt: "Sala de procedimentos da Derma Concept Academy" },
+  { source: aboutRecepcao, alt: "Recepção premium da Derma Concept Academy" },
+  { source: aboutSalaAula, alt: "Sala de aula da Derma Concept Academy" },
+  { source: aboutSalaProcedimentos, alt: "Sala de procedimentos da Derma Concept Academy" },
 ];
+
 
 const AboutSection = () => {
   const [current, setCurrent] = useState(0);
