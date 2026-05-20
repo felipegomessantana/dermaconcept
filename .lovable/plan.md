@@ -1,29 +1,25 @@
-## Objetivo
-Substituir as 7 ilustrações em linha dourada (abdômen, braços, coxas, flancos, costas, glúteos, corpo) por **fotografias clínicas reais** no mesmo padrão da imagem de "Couro cabeludo" e da página YouLaser Prime: pessoa real em ambiente de clínica, área anatômica visível e, sempre que possível, equipamento ou mãos profissionais aplicando o procedimento.
+## Diagnóstico
 
-## Padrão visual (referência)
-- Enquadramento fechado na área tratada (não modelo de corpo inteiro)
-- Ambiente de clínica de dermatologia ao fundo (desfocado)
-- Mãos profissionais (com luva ou aplicador) interagindo com a região
-- Quando fizer sentido, equipamento estético em uso (caneta de mesoterapia, aplicador de ultrassom, ponteira de laser, dermaroller etc.)
-- Iluminação natural e suave, paleta taupe/bege coerente com o site
-- Estilo editorial premium, real, não ilustrado
+Os botões já apontam para seções existentes na home:
+- "Ver procedimentos" → `#paciente-modelo` (existe em `PacienteModeloSection`)
+- "Ver cursos" → `#cursos` (existe em `CoursesSection`)
 
-## Imagens a regenerar
-1. `abdomen.jpg` — close do abdômen com aplicador estético em uso
-2. `bracos.jpg` — close do braço com aplicador/agulha de mesoterapia
-3. `coxas.jpg` — close da coxa com ponteira de equipamento corporal
-4. `flancos.jpg` — close lateral do flanco com aplicador
-5. `costas.jpg` — close da parte superior das costas em maca clínica com aplicador
-6. `gluteos.jpg` — close do quadril/glúteo com ponteira de ultrassom/radiofrequência
-7. `corpo.jpg` — paciente em maca recebendo tratamento corporal em ambiente de clínica
+O problema é técnico: em `DoisCaminhosSection.tsx` os cards usam `<Link to="#cursos">` do react-router. O `Link` trata isso como rota, não dispara o scroll para a âncora, e o `ScrollToTop` global ainda força o topo a cada mudança de URL. Por isso o clique parece "não fazer nada".
 
-## Estratégia técnica
-- Cada imagem será gerada com enquadramento muito fechado na área e foco no equipamento/mão profissional, no mesmo enquadramento clínico que a imagem de couro cabeludo já aprovada.
-- Geração feita pelo gerador de imagens premium para realismo. Caso alguma imagem específica seja barrada por moderação por excesso de pele exposta, será adaptada com aplicação de drapeado clínico branco visível no quadro, mantendo o foco na área tratada e no equipamento.
-- Substituição direta dos arquivos em `src/assets/areas/`. Como o `index.ts` já está apontando para esses arquivos, todas as páginas (Intradermoterapia, Linear Z, Bioestimuladores, Microagulhamento, Peeling Químico, Etherea MX, Mesoject Gun) recebem a atualização sem mudança de código.
+**Não é necessário criar páginas novas** — as seções de Paciente Modelo e Cursos já existem na home (e cada procedimento/curso já tem sua própria página interna acessível a partir dessas seções).
 
-## Validação
-- Conferir cada imagem gerada visualmente
-- Garantir: área visível, equipamento ou mão profissional presente, ambiente clínico, sem look de moda editorial
-- Refazer individualmente qualquer imagem que ainda transmita "modelo posando" em vez de "procedimento"
+## Plano
+
+1. Em `src/components/DoisCaminhosSection.tsx`:
+   - Trocar `<Link to="#...">` por `<a href="/#paciente-modelo">` e `<a href="/#cursos">`, mantendo todo o estilo atual dos cards.
+   - Isso garante que o navegador role até a seção correta quando estiver na home, e que páginas internas naveguem de volta para a home no ponto certo.
+
+2. Ajustar `ScrollToTop` (se necessário) para não anular o scroll quando a URL contém hash — preservando comportamento de âncora.
+
+3. Testar:
+   - Estando em `/`, clicar nos dois botões e confirmar que rolam até as seções corretas.
+   - Estando em uma página interna (ex.: `/paciente-modelo/linear-z`), clicar e confirmar que volta para a home e rola.
+
+## Fora de escopo
+
+- Criação de páginas dedicadas "/procedimentos" ou "/cursos" (as seções existentes já cumprem o papel; cada item já tem sua página).

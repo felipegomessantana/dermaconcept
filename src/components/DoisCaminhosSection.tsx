@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Sparkles } from "lucide-react";
 
@@ -11,7 +11,7 @@ const cards = [
     description:
       "Procedimentos dermatológicos conduzidos por médicos especialistas, com condições especiais para quem participa do nosso programa de pacientes modelo.",
     cta: "Ver procedimentos",
-    href: "#paciente-modelo",
+    href: "/#paciente-modelo",
     icon: Sparkles,
     primary: true,
   },
@@ -21,7 +21,7 @@ const cards = [
     description:
       "Fellows, Workshops e Mentorias para médicos que buscam excelência em dermatologia estética e cirúrgica, com hands-on real e supervisão de referência.",
     cta: "Ver cursos",
-    href: "#cursos",
+    href: "/#cursos",
     icon: GraduationCap,
     primary: false,
   },
@@ -51,8 +51,8 @@ const DoisCaminhosSection = () => {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link
-                  to={card.href}
+                <a
+                  href={card.href}
                   className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border p-8 md:p-10 lg:p-12 transition-all duration-500 hover:-translate-y-1 ${
                     card.primary
                       ? "border-transparent text-white"
@@ -104,7 +104,7 @@ const DoisCaminhosSection = () => {
                       className="transition-transform duration-500 group-hover:translate-x-1"
                     />
                   </div>
-                </Link>
+                </a>
               </motion.div>
             );
           })}
