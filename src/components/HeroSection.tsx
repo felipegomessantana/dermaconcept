@@ -89,7 +89,7 @@ function AnimatedHeadline({ text }: { text: string }) {
 /* ── main section ── */
 const HeroSection = () => {
   const isMobile = useIsMobile();
-  const bgImage = isMobile ? heroMobileImg : heroImg;
+  const bg = isMobile ? heroMobileImg : heroImg;
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -109,17 +109,33 @@ const HeroSection = () => {
       id="inicio"
       className="relative min-h-[100svh] overflow-hidden bg-black"
     >
-      {/* Parallax background image */}
+      {/* Parallax responsive background (AVIF/WebP + srcset) */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-no-repeat will-change-transform [background-position:center_-60px] sm:bg-center"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          y: bgY,
-        }}
-      />
+        className="absolute inset-0 will-change-transform"
+        style={{ y: bgY }}
+      >
+        <picture>
+          {Object.entries(bg.sources).map(([mime, srcSet]) => (
+            <source key={mime} type={mime} srcSet={srcSet} sizes="100vw" />
+          ))}
+          <img
+            src={bg.img.src}
+            width={bg.img.w}
+            height={bg.img.h}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="sync"
+            // @ts-expect-error - fetchpriority is a valid HTML5 attr
+            fetchpriority="high"
+            className="h-full w-full object-cover object-[center_top] sm:object-center"
+          />
+        </picture>
+      </motion.div>
 
       {/* Gradient overlay — from middle to bottom for text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-40% via-black/85 to-black lg:via-black/65 lg:to-black/80" />
+
 
       {/* Content */}
       <motion.div
