@@ -132,20 +132,26 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
       className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5]"
       style={{ y: imageY }}
     >
-      <motion.img
-        src={course.image}
-        alt={course.title}
-        className="w-full h-full object-cover"
-        loading="lazy"
-        width={700}
-        height={875}
-        style={{ scale: imageScale }}
-      />
+      <motion.picture className="block w-full h-full" style={{ scale: imageScale }}>
+        {Object.entries(course.image.sources).map(([mime, srcSet]) => (
+          <source key={mime} type={mime} srcSet={srcSet} sizes="(min-width: 1024px) 45vw, 100vw" />
+        ))}
+        <img
+          src={course.image.img.src}
+          width={course.image.img.w}
+          height={course.image.img.h}
+          alt={course.title}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover"
+        />
+      </motion.picture>
       <span className="absolute top-5 left-5 px-3.5 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase rounded-full bg-card/90 text-foreground backdrop-blur-sm border border-border/30">
         {course.tag}
       </span>
     </motion.div>
   );
+
 
   const textCol = (
     <motion.div
