@@ -115,26 +115,7 @@ function PacienteModeloContent() {
 
 /* ───────────── Tab data ───────────── */
 
-function PaginaInicialContent() {
-  return (
-    <div className="w-[240px]">
-      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-        Página Inicial
-      </p>
-      <div className="flex flex-col">
-        <a href="/" className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black">
-          Versão Atual
-        </a>
-        <a href="/v2" className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black">
-          Versão Clássica
-        </a>
-      </div>
-    </div>
-  );
-}
-
 const TABS = [
-  { title: "Página Inicial", Component: PaginaInicialContent },
   { title: "Fellows", Component: FellowsContent },
   { title: "Workshops", Component: WorkshopsContent },
   { title: "Seja Um Paciente Modelo", Component: PacienteModeloContent },
