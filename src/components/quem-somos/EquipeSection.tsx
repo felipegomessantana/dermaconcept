@@ -301,12 +301,12 @@ const EquipeSection = () => {
 
         <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
           <div className="flex -ml-4 lg:-ml-6">
-            {teamMembers.map((member) => (
+            {teamMembers.map((member, idx) => (
               <div
                 key={member.name}
                 className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] pl-4 lg:pl-6 min-w-0"
               >
-                <TeamCard member={member} onClick={() => setActiveMember(member)} />
+                <TeamCard member={member} onClick={() => setActiveIndex(idx)} />
               </div>
             ))}
           </div>
