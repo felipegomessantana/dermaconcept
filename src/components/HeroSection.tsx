@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import heroImg from "@/assets/hero-team.webp?responsive&w=768;1200;1920";
-import heroMobileImg from "@/assets/hero-mobile.webp?responsive&w=480;768";
+import heroImg from "@/assets/hero-team.webp?w=768;1200;1920&responsive";
+import heroMobileImg from "@/assets/hero-mobile.webp?w=480;768&responsive";
+
 import { useIsMobile } from "@/hooks/use-mobile";
 
 
