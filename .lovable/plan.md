@@ -1,25 +1,17 @@
-## Diagnóstico
+# Ajuste da logo no rodapé
 
-Os botões já apontam para seções existentes na home:
-- "Ver procedimentos" → `#paciente-modelo` (existe em `PacienteModeloSection`)
-- "Ver cursos" → `#cursos` (existe em `CoursesSection`)
+## Problema
+Atualmente a imagem da logo gigante está posicionada com `-bottom-[2vw]`, fazendo com que ela seja cortada na parte inferior do rodapé.
 
-O problema é técnico: em `DoisCaminhosSection.tsx` os cards usam `<Link to="#cursos">` do react-router. O `Link` trata isso como rota, não dispara o scroll para a âncora, e o `ScrollToTop` global ainda força o topo a cada mudança de URL. Por isso o clique parece "não fazer nada".
+## Objetivo
+Manter a logo posicionada na parte de baixo do rodapé (como referência da imagem enviada), mas exibi-la **inteira**, sem corte.
 
-**Não é necessário criar páginas novas** — as seções de Paciente Modelo e Cursos já existem na home (e cada procedimento/curso já tem sua própria página interna acessível a partir dessas seções).
+## Mudanças em `src/components/Footer.tsx`
 
-## Plano
+1. Remover o offset negativo `-bottom-[2vw]` da `<img>` watermark e usar `bottom-0` para que a base da imagem fique alinhada à base do rodapé.
+2. Remover `overflow-hidden` do `<footer>` (ou mantê-lo, já que a imagem agora não ultrapassa o limite).
+3. Ajustar o `padding-bottom` do conteúdo principal (`pb-40`) para garantir espaço suficiente entre os links e a logo, evitando sobreposição. Provavelmente algo como `pb-8` ou `pb-12`, já que a logo agora ocupa seu próprio espaço abaixo do conteúdo.
+4. Reposicionar a logo como um bloco abaixo do conteúdo (não absoluto), centralizada, com `w-[95%]` e `opacity-40`, para garantir que ela apareça por completo independente da altura da viewport.
 
-1. Em `src/components/DoisCaminhosSection.tsx`:
-   - Trocar `<Link to="#...">` por `<a href="/#paciente-modelo">` e `<a href="/#cursos">`, mantendo todo o estilo atual dos cards.
-   - Isso garante que o navegador role até a seção correta quando estiver na home, e que páginas internas naveguem de volta para a home no ponto certo.
-
-2. Ajustar `ScrollToTop` (se necessário) para não anular o scroll quando a URL contém hash — preservando comportamento de âncora.
-
-3. Testar:
-   - Estando em `/`, clicar nos dois botões e confirmar que rolam até as seções corretas.
-   - Estando em uma página interna (ex.: `/paciente-modelo/linear-z`), clicar e confirmar que volta para a home e rola.
-
-## Fora de escopo
-
-- Criação de páginas dedicadas "/procedimentos" ou "/cursos" (as seções existentes já cumprem o papel; cada item já tem sua página).
+## Resultado esperado
+A logo "DERMA Concept Academy" aparecerá inteira, centralizada e abaixo das colunas de links/identidade, mantendo a estética de marca d'água decorativa no fundo do rodapé.
