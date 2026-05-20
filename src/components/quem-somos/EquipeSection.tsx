@@ -31,7 +31,7 @@ const teamMembers: TeamMember[] = [
     name: "Dra. Erika Freira",
     role: "Dermatologia Estética",
     image: teamMember1,
-    credentials: "CRM 00000 / RQE 0000",
+    credentials: "CRM-MG 63788 · RQE 42041",
     specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
     bio: [],
     formation: [

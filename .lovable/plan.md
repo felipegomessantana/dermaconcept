@@ -1,17 +1,22 @@
-# Ajuste da logo no rodapé
+## Mudanças no Menu (Header)
 
-## Problema
-Atualmente a imagem da logo gigante está posicionada com `-bottom-[2vw]`, fazendo com que ela seja cortada na parte inferior do rodapé.
+1. **Remover o submenu "Página Inicial"** do menu desktop e mobile.
+   - O logo no canto superior esquerdo continua levando para a Home (já é assim).
+   - Remover a função `PaginaInicialContent` e a entrada "Página Inicial" do array `TABS` em `src/components/Header.tsx`.
+   - Remover a seção "Página Inicial" de `mobileMenuSections`.
 
-## Objetivo
-Manter a logo posicionada na parte de baixo do rodapé (como referência da imagem enviada), mas exibi-la **inteira**, sem corte.
+2. **Adicionar "Quem Somos"** como link estático no menu.
+   - Desktop: adicionar um `<Link to="/quem-somos">Quem Somos</Link>` no `DesktopNav`, antes do botão "Contato", com o mesmo estilo dos outros itens (sem dropdown, sem chevron).
+   - Mobile: adicionar um link "Quem Somos" antes do CTA "Contato".
 
-## Mudanças em `src/components/Footer.tsx`
+3. **Versão Clássica (`/v2`)**: como o submenu Página Inicial era o único acesso a essa rota, ela ficará sem link no menu. A rota continua existindo, apenas não fica visível.
 
-1. Remover o offset negativo `-bottom-[2vw]` da `<img>` watermark e usar `bottom-0` para que a base da imagem fique alinhada à base do rodapé.
-2. Remover `overflow-hidden` do `<footer>` (ou mantê-lo, já que a imagem agora não ultrapassa o limite).
-3. Ajustar o `padding-bottom` do conteúdo principal (`pb-40`) para garantir espaço suficiente entre os links e a logo, evitando sobreposição. Provavelmente algo como `pb-8` ou `pb-12`, já que a logo agora ocupa seu próprio espaço abaixo do conteúdo.
-4. Reposicionar a logo como um bloco abaixo do conteúdo (não absoluto), centralizada, com `w-[95%]` e `opacity-40`, para garantir que ela apareça por completo independente da altura da viewport.
+## Atualizar credenciais dos médicos (Quem Somos)
 
-## Resultado esperado
-A logo "DERMA Concept Academy" aparecerá inteira, centralizada e abaixo das colunas de links/identidade, mantendo a estética de marca d'água decorativa no fundo do rodapé.
+Em `src/components/quem-somos/EquipeSection.tsx`, atualizar o campo `credentials`:
+
+- **Dra. Ana Vitória**: `CRM-MG 64836 · RQE 44348`
+- **Dra. Erika Freira**: `CRM-MG 63788 · RQE 42041`
+- **Dr. Leonardo Almeida**: `CRM-MG 69784 · RQE 49951` (adicionar campo `credentials`, que hoje não existe nesse cadastro)
+
+Os demais médicos permanecem inalterados.
