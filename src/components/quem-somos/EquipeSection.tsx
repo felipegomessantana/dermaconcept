@@ -52,7 +52,7 @@ const teamMembers: TeamMember[] = [
     name: "Dra. Ana Vitória",
     role: "Cirurgia Dermatológica",
     image: teamMember2,
-    credentials: "CRM 00000 / RQE 0000",
+    credentials: "CRM-MG 64836 · RQE 44348",
     specialties: ["Cirurgia Dermatológica", "Oncologia Cutânea", "Reconstrução"],
     bio: ["Adicione aqui a biografia completa da médica."],
     social: { instagram: "#" },
