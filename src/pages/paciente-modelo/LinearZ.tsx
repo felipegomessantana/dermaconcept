@@ -1,22 +1,22 @@
 import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
-import equipFull from "@/assets/linear-z/equipamento-full.webp";
-import equipDetalhe from "@/assets/linear-z/equipamento-detalhe.webp";
-import fatAntes from "@/assets/linear-z/fat-proliferation-antes.webp";
-import fatDepois from "@/assets/linear-z/fat-proliferation-depois.webp";
-import fatRedAntes from "@/assets/linear-z/fat-prolif-reduction-antes.webp";
-import fatRedDepois from "@/assets/linear-z/fat-prolif-reduction-depois.webp";
-import fatTightAntes from "@/assets/linear-z/fat-prolif-tightening-antes.webp";
-import fatTightDepois from "@/assets/linear-z/fat-prolif-tightening-depois.webp";
-import fatEyeAntes from "@/assets/linear-z/fat-prolif-undereye-antes.webp";
-import fatEyeDepois from "@/assets/linear-z/fat-prolif-undereye-depois.webp";
-import fatRedTightAntes from "@/assets/linear-z/fat-reduction-tightening-antes.webp";
-import fatRedTightDepois from "@/assets/linear-z/fat-reduction-tightening-depois.webp";
-import fatReductionAntes from "@/assets/linear-z/fat-reduction-antes.webp";
-import fatReductionDepois from "@/assets/linear-z/fat-reduction-depois.webp";
-import fatHplAntes from "@/assets/linear-z/fat-reduction-hpl-antes.webp";
-import fatHplDepois from "@/assets/linear-z/fat-reduction-hpl-depois.webp";
+import equipFull from "@/assets/linear-z/equipamento-full.webp?w=480;768;1200&responsive";
+import equipDetalhe from "@/assets/linear-z/equipamento-detalhe.webp?w=480;768;1200&responsive";
+import fatAntes from "@/assets/linear-z/fat-proliferation-antes.webp?w=480;768;1200&responsive";
+import fatDepois from "@/assets/linear-z/fat-proliferation-depois.webp?w=480;768;1200&responsive";
+import fatRedAntes from "@/assets/linear-z/fat-prolif-reduction-antes.webp?w=480;768;1200&responsive";
+import fatRedDepois from "@/assets/linear-z/fat-prolif-reduction-depois.webp?w=480;768;1200&responsive";
+import fatTightAntes from "@/assets/linear-z/fat-prolif-tightening-antes.webp?w=480;768;1200&responsive";
+import fatTightDepois from "@/assets/linear-z/fat-prolif-tightening-depois.webp?w=480;768;1200&responsive";
+import fatEyeAntes from "@/assets/linear-z/fat-prolif-undereye-antes.webp?w=480;768;1200&responsive";
+import fatEyeDepois from "@/assets/linear-z/fat-prolif-undereye-depois.webp?w=480;768;1200&responsive";
+import fatRedTightAntes from "@/assets/linear-z/fat-reduction-tightening-antes.webp?w=480;768;1200&responsive";
+import fatRedTightDepois from "@/assets/linear-z/fat-reduction-tightening-depois.webp?w=480;768;1200&responsive";
+import fatReductionAntes from "@/assets/linear-z/fat-reduction-antes.webp?w=480;768;1200&responsive";
+import fatReductionDepois from "@/assets/linear-z/fat-reduction-depois.webp?w=480;768;1200&responsive";
+import fatHplAntes from "@/assets/linear-z/fat-reduction-hpl-antes.webp?w=480;768;1200&responsive";
+import fatHplDepois from "@/assets/linear-z/fat-reduction-hpl-depois.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>LINEAR Z<br /><span className="block">Ultrassom Micro e Macrofocado</span></>),

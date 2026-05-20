@@ -1,12 +1,12 @@
 import { Sparkles, Sun, Palette, Layers, Shield } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
-import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp";
-import rostoDepois from "@/assets/peeling-quimico/rosto-depois.webp";
-import maosAntes from "@/assets/peeling-quimico/maos-antes.webp";
-import maosDepois from "@/assets/peeling-quimico/maos-depois.webp";
-import coloAntes from "@/assets/peeling-quimico/colo-antes.webp";
-import coloDepois from "@/assets/peeling-quimico/colo-depois.webp";
+import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp?w=480;768;1200&responsive";
+import rostoDepois from "@/assets/peeling-quimico/rosto-depois.webp?w=480;768;1200&responsive";
+import maosAntes from "@/assets/peeling-quimico/maos-antes.webp?w=480;768;1200&responsive";
+import maosDepois from "@/assets/peeling-quimico/maos-depois.webp?w=480;768;1200&responsive";
+import coloAntes from "@/assets/peeling-quimico/colo-antes.webp?w=480;768;1200&responsive";
+import coloDepois from "@/assets/peeling-quimico/colo-depois.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>PEELING QUÍMICO<br /><span className="block">Renovação Celular, Clareamento e Textura</span></>),

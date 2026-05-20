@@ -2,27 +2,27 @@ import { Sun, Sparkles, Target, Palette, Shield } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
-import equipamento from "@/assets/etherea-mx/equipamento.webp";
-import skinRejuvAntes from "@/assets/youlaser-prime/skin-rejuvenation-antes.webp";
-import skinRejuvDepois from "@/assets/youlaser-prime/skin-rejuvenation-depois.webp";
-import benignAntes from "@/assets/youlaser-prime/benign-pigmented-lesions-antes.webp";
-import benignDepois from "@/assets/youlaser-prime/benign-pigmented-lesions-depois.webp";
-import skinResurfAntes from "@/assets/youlaser-prime/skin-resurfacing-antes.webp";
-import skinResurfDepois from "@/assets/youlaser-prime/skin-resurfacing-depois.webp";
-import striaeAntes from "@/assets/youlaser-prime/striae-antes.webp";
-import striaeDepois from "@/assets/youlaser-prime/striae-depois.webp";
-import acneScarsAntes from "@/assets/youlaser-prime/acne-scars-antes.webp";
-import acneScarsDepois from "@/assets/youlaser-prime/acne-scars-depois.webp";
-import vascularAntes from "@/assets/youlaser-prime/vascular-lesions-antes.webp";
-import vascularDepois from "@/assets/youlaser-prime/vascular-lesions-depois.webp";
-import tattooAntes from "@/assets/youlaser-prime/tattoo-removal-antes.webp";
-import tattooDepois from "@/assets/youlaser-prime/tattoo-removal-depois.webp";
-import hairAntes from "@/assets/youlaser-prime/hair-removal-antes.webp";
-import hairDepois from "@/assets/youlaser-prime/hair-removal-depois.webp";
-import acneAntes from "@/assets/youlaser-prime/acne-antes.webp";
-import acneDepois from "@/assets/youlaser-prime/acne-depois.webp";
-import onychoAntes from "@/assets/youlaser-prime/onychomycosis-antes.webp";
-import onychoDepois from "@/assets/youlaser-prime/onychomycosis-depois.webp";
+import equipamento from "@/assets/etherea-mx/equipamento.webp?w=480;768;1200&responsive";
+import skinRejuvAntes from "@/assets/youlaser-prime/skin-rejuvenation-antes.webp?w=480;768;1200&responsive";
+import skinRejuvDepois from "@/assets/youlaser-prime/skin-rejuvenation-depois.webp?w=480;768;1200&responsive";
+import benignAntes from "@/assets/youlaser-prime/benign-pigmented-lesions-antes.webp?w=480;768;1200&responsive";
+import benignDepois from "@/assets/youlaser-prime/benign-pigmented-lesions-depois.webp?w=480;768;1200&responsive";
+import skinResurfAntes from "@/assets/youlaser-prime/skin-resurfacing-antes.webp?w=480;768;1200&responsive";
+import skinResurfDepois from "@/assets/youlaser-prime/skin-resurfacing-depois.webp?w=480;768;1200&responsive";
+import striaeAntes from "@/assets/youlaser-prime/striae-antes.webp?w=480;768;1200&responsive";
+import striaeDepois from "@/assets/youlaser-prime/striae-depois.webp?w=480;768;1200&responsive";
+import acneScarsAntes from "@/assets/youlaser-prime/acne-scars-antes.webp?w=480;768;1200&responsive";
+import acneScarsDepois from "@/assets/youlaser-prime/acne-scars-depois.webp?w=480;768;1200&responsive";
+import vascularAntes from "@/assets/youlaser-prime/vascular-lesions-antes.webp?w=480;768;1200&responsive";
+import vascularDepois from "@/assets/youlaser-prime/vascular-lesions-depois.webp?w=480;768;1200&responsive";
+import tattooAntes from "@/assets/youlaser-prime/tattoo-removal-antes.webp?w=480;768;1200&responsive";
+import tattooDepois from "@/assets/youlaser-prime/tattoo-removal-depois.webp?w=480;768;1200&responsive";
+import hairAntes from "@/assets/youlaser-prime/hair-removal-antes.webp?w=480;768;1200&responsive";
+import hairDepois from "@/assets/youlaser-prime/hair-removal-depois.webp?w=480;768;1200&responsive";
+import acneAntes from "@/assets/youlaser-prime/acne-antes.webp?w=480;768;1200&responsive";
+import acneDepois from "@/assets/youlaser-prime/acne-depois.webp?w=480;768;1200&responsive";
+import onychoAntes from "@/assets/youlaser-prime/onychomycosis-antes.webp?w=480;768;1200&responsive";
+import onychoDepois from "@/assets/youlaser-prime/onychomycosis-depois.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>ETHEREA MX<br /><span className="block">Tecnologia Avançada para Pigmentos, Manchas e Vasos</span></>),
