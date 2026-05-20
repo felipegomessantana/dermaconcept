@@ -31,7 +31,7 @@ const teamMembers: TeamMember[] = [
     name: "Dra. Erika Freira",
     role: "Dermatologia Estética",
     image: teamMember1,
-    credentials: "CRM 00000 / RQE 0000",
+    credentials: "CRM-MG 63788 · RQE 42041",
     specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
     bio: [],
     formation: [
@@ -52,7 +52,7 @@ const teamMembers: TeamMember[] = [
     name: "Dra. Ana Vitória",
     role: "Cirurgia Dermatológica",
     image: teamMember2,
-    credentials: "CRM 00000 / RQE 0000",
+    credentials: "CRM-MG 64836 · RQE 44348",
     specialties: ["Cirurgia Dermatológica", "Oncologia Cutânea", "Reconstrução"],
     bio: ["Adicione aqui a biografia completa da médica."],
     social: { instagram: "#" },
@@ -79,6 +79,7 @@ const teamMembers: TeamMember[] = [
     name: "Dr. Leonardo Almeida",
     role: "Dermatologia",
     image: teamMember4,
+    credentials: "CRM-MG 69784 · RQE 49951",
     specialties: ["Oncologia Cutânea", "Cirurgia Dermatológica", "Cosmiatria", "Transplante Capilar"],
     bio: [],
     formation: [

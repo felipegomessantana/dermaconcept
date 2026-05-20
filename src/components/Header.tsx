@@ -115,26 +115,7 @@ function PacienteModeloContent() {
 
 /* ───────────── Tab data ───────────── */
 
-function PaginaInicialContent() {
-  return (
-    <div className="w-[240px]">
-      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-        Página Inicial
-      </p>
-      <div className="flex flex-col">
-        <a href="/" className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black">
-          Versão Atual
-        </a>
-        <a href="/v2" className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black">
-          Versão Clássica
-        </a>
-      </div>
-    </div>
-  );
-}
-
 const TABS = [
-  { title: "Página Inicial", Component: PaginaInicialContent },
   { title: "Fellows", Component: FellowsContent },
   { title: "Workshops", Component: WorkshopsContent },
   { title: "Seja Um Paciente Modelo", Component: PacienteModeloContent },
@@ -258,13 +239,18 @@ const DesktopNav = () => {
       onMouseLeave={() => handleSetSelected(null)}
       className="relative flex h-fit items-center gap-1"
     >
-      {/* Página Inicial is now a tab dropdown */}
-
       {TABS.map((t) => (
         <Tab key={t.id} selected={selected} handleSetSelected={handleSetSelected} tab={t.id}>
           {t.title}
         </Tab>
       ))}
+
+      <Link
+        to="/quem-somos"
+        className="px-3 py-1.5 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-800"
+      >
+        Quem Somos
+      </Link>
 
       <Link
         to="/contato"
@@ -342,13 +328,6 @@ const MobileSubmenu = ({
 );
 
 const mobileMenuSections = [
-  {
-    title: "Página Inicial",
-    items: [
-      { label: "Versão Atual", href: "/" },
-      { label: "Versão Clássica", href: "/v2" },
-    ],
-  },
   {
     title: "Fellows",
     items: [
@@ -446,6 +425,17 @@ const Header = () => {
                   onNavigate={handleClose}
                 />
               ))}
+
+              {/* Quem Somos */}
+              <div className="border-b border-gray-100/80">
+                <Link
+                  to="/quem-somos"
+                  onClick={handleClose}
+                  className="block py-4 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black"
+                >
+                  Quem Somos
+                </Link>
+              </div>
 
               {/* Contato CTA */}
               <div className="mt-6 pb-2">
