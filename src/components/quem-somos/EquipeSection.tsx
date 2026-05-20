@@ -207,7 +207,39 @@ const EquipeSection = () => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [activeMember, setActiveMember] = useState<TeamMember | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const activeMember = activeIndex !== null ? teamMembers[activeIndex] : null;
+  const touchStartX = useRef<number | null>(null);
+
+  const goPrev = useCallback(() => {
+    setActiveIndex((i) => (i === null ? i : (i - 1 + teamMembers.length) % teamMembers.length));
+  }, []);
+  const goNext = useCallback(() => {
+    setActiveIndex((i) => (i === null ? i : (i + 1) % teamMembers.length));
+  }, []);
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") goPrev();
+      else if (e.key === "ArrowRight") goNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeIndex, goPrev, goNext]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) {
+      if (dx < 0) goNext();
+      else goPrev();
+    }
+    touchStartX.current = null;
+  };
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
