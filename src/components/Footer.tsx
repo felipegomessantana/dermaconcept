@@ -30,9 +30,9 @@ const footerLinks = {
 };
 
 const Footer = () => (
-  <footer className="relative overflow-hidden bg-[#F8F5F1]">
+  <footer className="relative bg-[#F8F5F1]">
     {/* Main content */}
-    <div className="relative z-10 mx-auto max-w-7xl px-6 pb-40 pt-20 lg:px-16">
+    <div className="relative z-10 mx-auto max-w-7xl px-6 pb-12 pt-20 lg:px-16">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-10">
         {/* Column 1 — Identity */}
         <div className="flex flex-col gap-5">
@@ -93,13 +93,15 @@ const Footer = () => (
       </div>
     </div>
 
-    {/* Giant logo watermark — bleeding effect */}
-    <img
-      src={logoWatermark}
-      alt=""
-      aria-hidden="true"
-      className="pointer-events-none absolute -bottom-[2vw] left-1/2 z-0 w-[95%] max-w-none -translate-x-1/2 select-none opacity-40"
-    />
+    {/* Large logo — full, below content */}
+    <div className="px-6 pb-6 lg:px-16">
+      <img
+        src={logoWatermark}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none mx-auto block w-[95%] max-w-none select-none opacity-40"
+      />
+    </div>
   </footer>
 );
 
