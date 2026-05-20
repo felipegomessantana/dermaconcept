@@ -329,13 +329,6 @@ const MobileSubmenu = ({
 
 const mobileMenuSections = [
   {
-    title: "Página Inicial",
-    items: [
-      { label: "Versão Atual", href: "/" },
-      { label: "Versão Clássica", href: "/v2" },
-    ],
-  },
-  {
     title: "Fellows",
     items: [
       { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
