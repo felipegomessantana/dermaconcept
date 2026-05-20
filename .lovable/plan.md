@@ -1,72 +1,52 @@
-# Plano de otimização de performance de imagens
+# Otimização de imagens — Páginas de procedimento
 
-## Diagnóstico
+## Objetivo
+Aplicar o mesmo padrão de otimização já implementado em Hero/About/Estrutura/Courses nas páginas de procedimento (`/paciente-modelo/*`) e nos componentes restantes com imagens pesadas. Meta: reduzir peso das imagens em 70–85% e eliminar CLS.
 
-O projeto tem **29 MB de imagens** em `src/assets/`, com vários arquivos entre 400 KB e 830 KB — mesmo já em `.webp`. As imagens são servidas **em tamanho/peso únicos** independente do dispositivo (um celular baixa o mesmo arquivo de 800 KB que um desktop 4K). Não há `width`/`height` em várias `<img>`, o que causa **CLS** (layout shift, ruim para Core Web Vitals e SEO).
+## Escopo
 
-**Sobre skeleton e SEO:** skeleton **não atrapalha SEO**. O Googlebot indexa o HTML, e as tags `<img src=... alt=...>` continuam presentes. Skeleton é puramente visual — melhora a percepção de velocidade, mas **não resolve o peso real** das imagens. Precisa ser combinado com otimização verdadeira.
+### 1. ProcedurePageLayout (componente compartilhado)
+Arquivo: `src/components/procedure/ProcedurePageLayout.tsx`
+- Trocar `<img>` de hero, intro, áreas e callouts por `<ResponsiveImage>`.
+- Adicionar `priority` apenas na primeira imagem visível (hero da página).
+- Definir `sizes` adequado por contexto (hero 100vw, grid de áreas ~33vw em desktop).
 
-## O que será feito
+### 2. BeforeAfterSlider
+Arquivo: `src/components/procedure/BeforeAfterSlider.tsx`
+- Migrar para `<picture>` responsivo mantendo o slider funcional.
+- Como ambas as imagens precisam ficar sobrepostas no mesmo tamanho, manter dimensões fixas via width/height.
 
-### 1. Otimização real de imagens (impacto maior)
-- Instalar `vite-imagetools` (plugin oficial Vite) para gerar variantes responsivas e formatos modernos em build time
-- Criar um helper `<ResponsiveImage>` que emite `<picture>` com:
-  - `<source type="image/avif" srcset="...">` (formato mais leve, ~30% menor que WebP)
-  - `<source type="image/webp" srcset="...">`
-  - `<img>` fallback com `width`, `height`, `loading`, `decoding`
-- Tamanhos gerados: 480w, 768w, 1200w, 1920w → browser baixa só o necessário
-- Resultado esperado: imagens de 500 KB → 60–120 KB no mobile
+### 3. Páginas de procedimento (imports `?responsive`)
+Trocar todos os imports `.webp` por `?w=480;768;1200&responsive` nas páginas:
+- `BioestimuladoresColageno.tsx` (12 imagens antes/depois)
+- `PeelingQuimico.tsx` (6 imagens)
+- `EthereaMX.tsx`, `IPCA.tsx`, `JatoDePlasma.tsx`, `LinearZ.tsx`
+- `PreenchimentoAcidoHialuronico.tsx`, `ToxinaBotulinica.tsx`
+- `YouseLaserPrime.tsx`, `FiosDePDO.tsx`, `Intradermoterapia.tsx`
+- `Liftera.tsx`, `MesojectGun.tsx`, `Microagulhamento.tsx`
+- `src/assets/areas/index.ts` (imagens de áreas reutilizadas)
 
-### 2. Preload do LCP (Largest Contentful Paint)
-- Identificar a imagem do Hero da home (`HeroSection`) e adicionar `<link rel="preload" as="image" fetchpriority="high">` em `index.html`
-- Marcar essa imagem com `fetchpriority="high"` e `loading="eager"`
-- Todas as demais imagens abaixo da dobra: `loading="lazy"` + `decoding="async"`
+### 4. Seções restantes da home / quem-somos
+- `EquipeSection.tsx` — fotos da equipe
+- `TestimonialsSection.tsx` — se houver fotos
+- `PacienteModeloSection.tsx`, `DoisCaminhosSection.tsx`
+- `fellow-semanal/*` e `MentoriaIndividual` (se tiverem imagens)
 
-### 3. Skeleton + blur placeholder (percepção)
-- Estender `<ResponsiveImage>` com:
-  - Skeleton (`animate-pulse bg-muted`) com aspect-ratio reservado enquanto `onLoad` não dispara
-  - LQIP opcional: versão miniatura blur (10px) renderizada por trás via CSS `filter: blur(20px)` que some quando a real carrega
-- Aplicar nas seções pesadas: `AboutSection`, `NossaEstruturaSection`, `EquipeSection`, páginas de procedimentos
+### 5. CLS / atributos faltantes
+Varrer `<img>` restantes sem `width`/`height` e adicionar, mesmo nos que não migrarem para `<picture>` agora (ícones, logos pequenos).
 
-### 4. Width/height em todas as `<img>` (corrige CLS)
-- Auditar componentes que usam `<img>` direto sem dimensões e adicionar atributos explícitos
-- Manter `aspect-ratio` no CSS pra responsividade
-
-### 5. Vídeo do `MentoriaSection`
-- Já está com `preload="metadata"` ✓
-- Adicionar `poster` (frame estático) para ele não ficar preto antes do play
+### 6. Validação
+- Build local: confirmar que `vite-imagetools` gera variantes sem erro.
+- Inspecionar 2–3 páginas no preview: ver no Network que AVIF/WebP servem por largura correta e que LCP do hero baixa.
+- Conferir visualmente que slider antes/depois continua alinhado.
 
 ## Detalhes técnicos
+- Padrão de import: `import x from "@/assets/foo.webp?w=480;768;1200&responsive"` (mantém AVIF+WebP+JPG via `defaultDirectives`).
+- `<ResponsiveImage source={x} alt="..." sizes="(min-width:1024px) 33vw, 100vw" />`.
+- Para grids de áreas usar `sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw"`.
+- `areas/index.ts` precisa exportar objetos `PictureSource` em vez de strings; os usos atuais (`<img src={areaImages.rosto}>`) terão de ser substituídos por `<ResponsiveImage source={areaImages.rosto}>`.
 
-```ts
-// vite.config.ts
-import { imagetools } from "vite-imagetools";
-plugins: [react(), imagetools()]
-```
-
-```tsx
-// uso
-import hero from "@/assets/hero.jpg?w=480;768;1200;1920&format=avif;webp;jpg&as=picture";
-<ResponsiveImage {...hero} alt="..." width={1200} height={800} priority />
-```
-
-```html
-<!-- index.html -->
-<link rel="preload" as="image" href="/hero-1200.avif" type="image/avif" fetchpriority="high" />
-```
-
-## Ordem de execução
-
-1. Instalar `vite-imagetools` + criar `<ResponsiveImage>` com skeleton/blur
-2. Migrar Hero da home + preload LCP (maior ganho percebido)
-3. Migrar `AboutSection`, `NossaEstruturaSection` (carrosséis pesados)
-4. Migrar páginas de procedimentos (`paciente-modelo/*`)
-5. Auditar `width`/`height` faltantes
-6. Validar com Lighthouse / `browser--performance_profile`
-
-## Fora do escopo
-- Mudança de CDN ou hospedagem de imagens (Cloudflare Images etc.) — pode ser feito depois se necessário
-- Reescrever animações/Motion existentes
-- Mudanças de conteúdo ou design
-
-Quer que eu siga com tudo, ou prefere começar só pelo passo 1+2 (Hero + helper) pra você ver o ganho antes?
+## Fora de escopo
+- Mudança de CDN, conteúdo, design ou copy.
+- Reescrita do slider antes/depois.
+- Otimização do vídeo da mentoria (já tem `preload="metadata"`).
