@@ -79,6 +79,7 @@ const teamMembers: TeamMember[] = [
     name: "Dr. Leonardo Almeida",
     role: "Dermatologia",
     image: teamMember4,
+    credentials: "CRM-MG 69784 · RQE 49951",
     specialties: ["Oncologia Cutânea", "Cirurgia Dermatológica", "Cosmiatria", "Transplante Capilar"],
     bio: [],
     formation: [
