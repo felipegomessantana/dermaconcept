@@ -336,7 +336,30 @@ const EquipeSection = () => {
           onTouchEnd={handleTouchEnd}
         >
           {activeMember && (
-            <div className="grid md:grid-cols-[42%_58%] max-h-[90vh] overflow-y-auto">
+            <>
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Médico anterior"
+                className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-[#7A7168] shadow-md backdrop-blur transition hover:bg-[#7A7168] hover:text-white"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Próximo médico"
+                className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-[#7A7168] shadow-md backdrop-blur transition hover:bg-[#7A7168] hover:text-white"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+                className="grid md:grid-cols-[42%_58%] max-h-[90vh] overflow-y-auto"
+              >
               {/* Photo side */}
               <div className="relative bg-secondary/40 md:min-h-[560px]">
                 <img
