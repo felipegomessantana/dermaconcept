@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Sparkles } from "lucide-react";
 
