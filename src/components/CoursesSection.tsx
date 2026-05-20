@@ -3,10 +3,11 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
-import courseEstetica from "@/assets/course-estetica.jpg";
-import courseCirurgia from "@/assets/course-cirurgia.jpg";
+import courseEstetica from "@/assets/course-estetica.jpg?w=480;768;1000&responsive";
+import courseCirurgia from "@/assets/course-cirurgia.jpg?w=480;768;1000&responsive";
 
-import heroImg from "@/assets/hero-derma.jpg";
+import heroImg from "@/assets/hero-derma.jpg?w=480;768;1000&responsive";
+
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const taupe = "#7A7168";
