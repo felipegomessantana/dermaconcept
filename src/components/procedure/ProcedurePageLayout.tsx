@@ -270,10 +270,12 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
                   className="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-default shadow-sm"
                 >
                   {a.image ? (
-                    <img
-                      src={a.image}
+                    <ResponsiveImage
+                      source={a.image}
                       alt={a.label}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
+                      pictureClassName="absolute inset-0"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gray-200" />
