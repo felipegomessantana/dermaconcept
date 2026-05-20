@@ -93,13 +93,13 @@ const Footer = () => (
       </div>
     </div>
 
-    {/* Giant watermark text — Obsidian-style bleeding effect */}
-    <span
+    {/* Giant logo watermark — bleeding effect */}
+    <img
+      src={logoWatermark}
+      alt=""
       aria-hidden="true"
-      className="pointer-events-none absolute -bottom-[0.15em] left-0 z-0 w-full select-none text-center font-serif text-[20vw] font-bold leading-none tracking-tight text-neutral-300/40"
-    >
-      DERMA
-    </span>
+      className="pointer-events-none absolute -bottom-[2vw] left-1/2 z-0 w-[95%] max-w-none -translate-x-1/2 select-none opacity-40"
+    />
   </footer>
 );
 
