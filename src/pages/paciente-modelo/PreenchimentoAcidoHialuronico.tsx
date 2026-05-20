@@ -1,14 +1,14 @@
 import { CheckCircle2 } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
-import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp";
-import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp";
-import olheirasAntes from "@/assets/acido-hialuronico/olheiras-antes.webp";
-import olheirasDepois from "@/assets/acido-hialuronico/olheiras-depois.webp";
-import macasAntes from "@/assets/acido-hialuronico/macas-antes.webp";
-import macasDepois from "@/assets/acido-hialuronico/macas-depois.webp";
-import bigodeChinesAntes from "@/assets/acido-hialuronico/bigode-chines-antes.webp";
-import bigodeChinesDepois from "@/assets/acido-hialuronico/bigode-chines-depois.webp";
+import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp?w=480;768;1200&responsive";
+import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp?w=480;768;1200&responsive";
+import olheirasAntes from "@/assets/acido-hialuronico/olheiras-antes.webp?w=480;768;1200&responsive";
+import olheirasDepois from "@/assets/acido-hialuronico/olheiras-depois.webp?w=480;768;1200&responsive";
+import macasAntes from "@/assets/acido-hialuronico/macas-antes.webp?w=480;768;1200&responsive";
+import macasDepois from "@/assets/acido-hialuronico/macas-depois.webp?w=480;768;1200&responsive";
+import bigodeChinesAntes from "@/assets/acido-hialuronico/bigode-chines-antes.webp?w=480;768;1200&responsive";
+import bigodeChinesDepois from "@/assets/acido-hialuronico/bigode-chines-depois.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>PREENCHIMENTO<br /><span className="block">com Ácido Hialurônico</span></>),

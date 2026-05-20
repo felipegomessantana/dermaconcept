@@ -1,18 +1,18 @@
 import { Sparkles, Heart, Hand, Layers, Shield } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
-import rostoAntes from "@/assets/bioestimuladores/rosto-antes.webp";
-import rostoDepois from "@/assets/bioestimuladores/rosto-depois.webp";
-import pescocoAntes from "@/assets/bioestimuladores/pescoco-antes.webp";
-import pescocoDepois from "@/assets/bioestimuladores/pescoco-depois.webp";
-import bracoAntes from "@/assets/bioestimuladores/braco-antes.webp";
-import bracoDepois from "@/assets/bioestimuladores/braco-depois.webp";
-import maosAntes from "@/assets/bioestimuladores/maos-antes.webp";
-import maosDepois from "@/assets/bioestimuladores/maos-depois.webp";
-import coloAntes from "@/assets/bioestimuladores/colo-antes.webp";
-import coloDepois from "@/assets/bioestimuladores/colo-depois.webp";
-import barrigaAntes from "@/assets/bioestimuladores/barriga-antes.webp";
-import barrigaDepois from "@/assets/bioestimuladores/barriga-depois.webp";
+import rostoAntes from "@/assets/bioestimuladores/rosto-antes.webp?w=480;768;1200&responsive";
+import rostoDepois from "@/assets/bioestimuladores/rosto-depois.webp?w=480;768;1200&responsive";
+import pescocoAntes from "@/assets/bioestimuladores/pescoco-antes.webp?w=480;768;1200&responsive";
+import pescocoDepois from "@/assets/bioestimuladores/pescoco-depois.webp?w=480;768;1200&responsive";
+import bracoAntes from "@/assets/bioestimuladores/braco-antes.webp?w=480;768;1200&responsive";
+import bracoDepois from "@/assets/bioestimuladores/braco-depois.webp?w=480;768;1200&responsive";
+import maosAntes from "@/assets/bioestimuladores/maos-antes.webp?w=480;768;1200&responsive";
+import maosDepois from "@/assets/bioestimuladores/maos-depois.webp?w=480;768;1200&responsive";
+import coloAntes from "@/assets/bioestimuladores/colo-antes.webp?w=480;768;1200&responsive";
+import coloDepois from "@/assets/bioestimuladores/colo-depois.webp?w=480;768;1200&responsive";
+import barrigaAntes from "@/assets/bioestimuladores/barriga-antes.webp?w=480;768;1200&responsive";
+import barrigaDepois from "@/assets/bioestimuladores/barriga-depois.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>BIOESTIMULADORES<br /><span className="block">de Colágeno</span></>),

@@ -1,19 +1,19 @@
 import { Zap, Sparkles, Shield, Target, Star } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
-import equipFull from "@/assets/youlaser-prime/equipamento-full.webp";
-import equipDetalhe from "@/assets/youlaser-prime/equipamento-detalhe.webp";
-import antes from "@/assets/youlaser-prime/antes.webp";
-import depois from "@/assets/youlaser-prime/depois.webp";
-import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp";
-import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp";
-import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp";
-import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp";
-import areaRosto from "@/assets/youlaser-prime/rosto.webp";
-import areaPescoco from "@/assets/youlaser-prime/pescoco.webp";
-import areaColo from "@/assets/youlaser-prime/colo.webp";
-import areaMaos from "@/assets/youlaser-prime/maos.jpg";
-import areaCorpo from "@/assets/youlaser-prime/corpo.jpg";
+import equipFull from "@/assets/youlaser-prime/equipamento-full.webp?w=480;768;1200&responsive";
+import equipDetalhe from "@/assets/youlaser-prime/equipamento-detalhe.webp?w=480;768;1200&responsive";
+import antes from "@/assets/youlaser-prime/antes.webp?w=480;768;1200&responsive";
+import depois from "@/assets/youlaser-prime/depois.webp?w=480;768;1200&responsive";
+import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp?w=480;768;1200&responsive";
+import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp?w=480;768;1200&responsive";
+import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp?w=480;768;1200&responsive";
+import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp?w=480;768;1200&responsive";
+import areaRosto from "@/assets/youlaser-prime/rosto.webp?w=480;768;1200&responsive";
+import areaPescoco from "@/assets/youlaser-prime/pescoco.webp?w=480;768;1200&responsive";
+import areaColo from "@/assets/youlaser-prime/colo.webp?w=480;768;1200&responsive";
+import areaMaos from "@/assets/youlaser-prime/maos.jpg?w=480;768;1200&responsive";
+import areaCorpo from "@/assets/youlaser-prime/corpo.jpg?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),

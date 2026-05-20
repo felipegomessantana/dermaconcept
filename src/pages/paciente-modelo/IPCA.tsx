@@ -1,24 +1,24 @@
 import { Sparkles, Target, Layers, Shield, Palette } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
-import face1Antes from "@/assets/ipca/face-1-antes.webp";
-import face1Depois from "@/assets/ipca/face-1-depois.webp";
-import face2Antes from "@/assets/ipca/face-2-antes.webp";
-import face2Depois from "@/assets/ipca/face-2-depois.webp";
-import face3Antes from "@/assets/ipca/face-3-antes.webp";
-import face3Depois from "@/assets/ipca/face-3-depois.webp";
-import face4Antes from "@/assets/ipca/face-4-antes.webp";
-import face4Depois from "@/assets/ipca/face-4-depois.webp";
-import face5Antes from "@/assets/ipca/face-5-antes.webp";
-import face5Depois from "@/assets/ipca/face-5-depois.webp";
-import face6Antes from "@/assets/ipca/face-6-antes.webp";
-import face6Depois from "@/assets/ipca/face-6-depois.webp";
-import areaRosto from "@/assets/ipca/area-rosto.webp";
-import areaPescoco from "@/assets/ipca/area-pescoco.webp";
-import areaColo from "@/assets/ipca/area-colo.webp";
-import areaAbdomen from "@/assets/ipca/area-abdomen.webp";
-import areaCoxas from "@/assets/ipca/area-coxas.webp";
-import areaGluteos from "@/assets/ipca/area-gluteos.webp";
-import areaBracos from "@/assets/ipca/area-bracos.webp";
+import face1Antes from "@/assets/ipca/face-1-antes.webp?w=480;768;1200&responsive";
+import face1Depois from "@/assets/ipca/face-1-depois.webp?w=480;768;1200&responsive";
+import face2Antes from "@/assets/ipca/face-2-antes.webp?w=480;768;1200&responsive";
+import face2Depois from "@/assets/ipca/face-2-depois.webp?w=480;768;1200&responsive";
+import face3Antes from "@/assets/ipca/face-3-antes.webp?w=480;768;1200&responsive";
+import face3Depois from "@/assets/ipca/face-3-depois.webp?w=480;768;1200&responsive";
+import face4Antes from "@/assets/ipca/face-4-antes.webp?w=480;768;1200&responsive";
+import face4Depois from "@/assets/ipca/face-4-depois.webp?w=480;768;1200&responsive";
+import face5Antes from "@/assets/ipca/face-5-antes.webp?w=480;768;1200&responsive";
+import face5Depois from "@/assets/ipca/face-5-depois.webp?w=480;768;1200&responsive";
+import face6Antes from "@/assets/ipca/face-6-antes.webp?w=480;768;1200&responsive";
+import face6Depois from "@/assets/ipca/face-6-depois.webp?w=480;768;1200&responsive";
+import areaRosto from "@/assets/ipca/area-rosto.webp?w=480;768;1200&responsive";
+import areaPescoco from "@/assets/ipca/area-pescoco.webp?w=480;768;1200&responsive";
+import areaColo from "@/assets/ipca/area-colo.webp?w=480;768;1200&responsive";
+import areaAbdomen from "@/assets/ipca/area-abdomen.webp?w=480;768;1200&responsive";
+import areaCoxas from "@/assets/ipca/area-coxas.webp?w=480;768;1200&responsive";
+import areaGluteos from "@/assets/ipca/area-gluteos.webp?w=480;768;1200&responsive";
+import areaBracos from "@/assets/ipca/area-bracos.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>IPCA<br /><span className="block">Indução Percutânea de Colágeno por Agulhas</span></>),
