@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Instagram, Linkedin, GraduationCap, Sparkles, Compass } from "lucide-react";
+import { Instagram, Linkedin, GraduationCap, Sparkles, Compass, ChevronLeft, ChevronRight } from "lucide-react";
 
 import teamMember1 from "@/assets/team-member-1.webp";
 import teamMember2 from "@/assets/team-member-2.webp";
@@ -207,7 +207,39 @@ const EquipeSection = () => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [activeMember, setActiveMember] = useState<TeamMember | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const activeMember = activeIndex !== null ? teamMembers[activeIndex] : null;
+  const touchStartX = useRef<number | null>(null);
+
+  const goPrev = useCallback(() => {
+    setActiveIndex((i) => (i === null ? i : (i - 1 + teamMembers.length) % teamMembers.length));
+  }, []);
+  const goNext = useCallback(() => {
+    setActiveIndex((i) => (i === null ? i : (i + 1) % teamMembers.length));
+  }, []);
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") goPrev();
+      else if (e.key === "ArrowRight") goNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeIndex, goPrev, goNext]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) {
+      if (dx < 0) goNext();
+      else goPrev();
+    }
+    touchStartX.current = null;
+  };
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -269,12 +301,12 @@ const EquipeSection = () => {
 
         <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
           <div className="flex -ml-4 lg:-ml-6">
-            {teamMembers.map((member) => (
+            {teamMembers.map((member, idx) => (
               <div
                 key={member.name}
                 className="flex-[0_0_85%] sm:flex-[0_0_45%] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] pl-4 lg:pl-6 min-w-0"
               >
-                <TeamCard member={member} onClick={() => setActiveMember(member)} />
+                <TeamCard member={member} onClick={() => setActiveIndex(idx)} />
               </div>
             ))}
           </div>
@@ -297,10 +329,37 @@ const EquipeSection = () => {
       </div>
 
       {/* CV Modal */}
-      <Dialog open={!!activeMember} onOpenChange={(open) => !open && setActiveMember(null)}>
-        <DialogContent className="max-w-4xl w-[95vw] p-0 overflow-hidden border-none bg-background">
+      <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
+        <DialogContent
+          className="max-w-4xl w-[95vw] p-0 overflow-hidden border-none bg-background"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {activeMember && (
-            <div className="grid md:grid-cols-[42%_58%] max-h-[90vh] overflow-y-auto">
+            <>
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Médico anterior"
+                className="absolute left-2 md:left-3 top-1/2 -translate-y-1/2 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-[#7A7168] shadow-md backdrop-blur transition hover:bg-[#7A7168] hover:text-white"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Próximo médico"
+                className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/85 text-[#7A7168] shadow-md backdrop-blur transition hover:bg-[#7A7168] hover:text-white"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+                className="grid md:grid-cols-[42%_58%] max-h-[90vh] overflow-y-auto"
+              >
               {/* Photo side */}
               <div className="relative bg-secondary/40 md:min-h-[560px]">
                 <img
@@ -449,7 +508,8 @@ const EquipeSection = () => {
                   </div>
                 )}
               </div>
-            </div>
+              </motion.div>
+            </>
           )}
         </DialogContent>
       </Dialog>
