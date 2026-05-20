@@ -104,7 +104,7 @@ const DoisCaminhosSection = () => {
                       className="transition-transform duration-500 group-hover:translate-x-1"
                     />
                   </div>
-                </Link>
+                </a>
               </motion.div>
             );
           })}
