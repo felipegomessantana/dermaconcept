@@ -185,11 +185,16 @@ const NossaEstruturaSection = () => {
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-4xl w-[95vw] p-0 border-none bg-black/95 overflow-hidden [&>button]:text-white [&>button]:hover:opacity-100">
           <div className="relative flex items-center justify-center min-h-[50vh]">
-            <img
-              src={images[lightboxIndex]}
+            <ResponsiveImage
+              source={imagesFull[lightboxIndex]}
               alt={`Estrutura da clínica ${lightboxIndex + 1}`}
+              sizes="95vw"
+              priority
+              pictureClassName="block w-full"
               className="w-full h-auto max-h-[85vh] object-contain"
+              showSkeleton={false}
             />
+
 
             {/* Lightbox arrows */}
             <button
