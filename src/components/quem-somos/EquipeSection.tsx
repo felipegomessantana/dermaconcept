@@ -33,9 +33,18 @@ const teamMembers: TeamMember[] = [
     image: teamMember1,
     credentials: "CRM 00000 / RQE 0000",
     specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
-    bio: [
-      "Adicione aqui a biografia completa da médica, com a redação exata fornecida.",
-      "Você pode incluir múltiplos parágrafos descrevendo trajetória, atuação e diferenciais.",
+    bio: [],
+    formation: [
+      "Graduação, residência em dermatologia e mestrado pela Universidade Federal de Juiz de Fora",
+      "Especialização em tricologia Tricomed São Paulo",
+      "Cirurgiã Micrográfica de Mohs pela SBD",
+      "Membro titular SBD e SBCD",
+    ],
+    purpose:
+      "Tenho como propósito olhar o paciente de maneira global, melhorando sua qualidade de vida através da dermatologia!",
+    curiosities: [
+      "Adoro viajar, cozinhar e praticar esportes (tênis e beach tênis)",
+      "Sou muito prática e objetiva, sem perder o cuidado humanizado!",
     ],
     social: { instagram: "#", linkedin: "#" },
   },
