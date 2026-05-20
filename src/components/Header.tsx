@@ -426,6 +426,17 @@ const Header = () => {
                 />
               ))}
 
+              {/* Quem Somos */}
+              <div className="border-b border-gray-100/80">
+                <Link
+                  to="/quem-somos"
+                  onClick={handleClose}
+                  className="block py-4 text-left text-sm font-semibold uppercase tracking-[0.2em] text-gray-800 transition-colors hover:text-black"
+                >
+                  Quem Somos
+                </Link>
+              </div>
+
               {/* Contato CTA */}
               <div className="mt-6 pb-2">
                 <Link
