@@ -5,18 +5,34 @@ import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-import img1 from "@/assets/estrutura/estrutura-recepcao.jpg";
-import img2 from "@/assets/estrutura/estrutura-cafe.jpg";
-import img3 from "@/assets/estrutura/estrutura-bar.jpg";
-import img4 from "@/assets/estrutura/estrutura-lounge.jpg";
-import img5 from "@/assets/estrutura/estrutura-lobby.jpg";
-import img6 from "@/assets/estrutura/estrutura-varanda.jpg";
-import img7 from "@/assets/estrutura/estrutura-recepcao2.jpg";
-import img8 from "@/assets/estrutura/estrutura-sala-aula.jpg";
-import img9 from "@/assets/estrutura/estrutura-procedimentos.jpg";
-import img10 from "@/assets/estrutura/estrutura-procedimentos2.jpg";
+import { ResponsiveImage } from "@/components/ui/responsive-image";
+
+import img1 from "@/assets/estrutura/estrutura-recepcao.jpg?w=480;768;1200&responsive";
+import img2 from "@/assets/estrutura/estrutura-cafe.jpg?w=480;768;1200&responsive";
+import img3 from "@/assets/estrutura/estrutura-bar.jpg?w=480;768;1200&responsive";
+import img4 from "@/assets/estrutura/estrutura-lounge.jpg?w=480;768;1200&responsive";
+import img5 from "@/assets/estrutura/estrutura-lobby.jpg?w=480;768;1200&responsive";
+import img6 from "@/assets/estrutura/estrutura-varanda.jpg?w=480;768;1200&responsive";
+import img7 from "@/assets/estrutura/estrutura-recepcao2.jpg?w=480;768;1200&responsive";
+import img8 from "@/assets/estrutura/estrutura-sala-aula.jpg?w=480;768;1200&responsive";
+import img9 from "@/assets/estrutura/estrutura-procedimentos.jpg?w=480;768;1200&responsive";
+import img10 from "@/assets/estrutura/estrutura-procedimentos2.jpg?w=480;768;1200&responsive";
+
+// Full-size variants for lightbox
+import img1Full from "@/assets/estrutura/estrutura-recepcao.jpg?w=1600&responsive";
+import img2Full from "@/assets/estrutura/estrutura-cafe.jpg?w=1600&responsive";
+import img3Full from "@/assets/estrutura/estrutura-bar.jpg?w=1600&responsive";
+import img4Full from "@/assets/estrutura/estrutura-lounge.jpg?w=1600&responsive";
+import img5Full from "@/assets/estrutura/estrutura-lobby.jpg?w=1600&responsive";
+import img6Full from "@/assets/estrutura/estrutura-varanda.jpg?w=1600&responsive";
+import img7Full from "@/assets/estrutura/estrutura-recepcao2.jpg?w=1600&responsive";
+import img8Full from "@/assets/estrutura/estrutura-sala-aula.jpg?w=1600&responsive";
+import img9Full from "@/assets/estrutura/estrutura-procedimentos.jpg?w=1600&responsive";
+import img10Full from "@/assets/estrutura/estrutura-procedimentos2.jpg?w=1600&responsive";
 
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+const imagesFull = [img1Full, img2Full, img3Full, img4Full, img5Full, img6Full, img7Full, img8Full, img9Full, img10Full];
+
 
 const NossaEstruturaSection = () => {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -117,15 +133,17 @@ const NossaEstruturaSection = () => {
                     className="overflow-hidden rounded-2xl cursor-pointer"
                     onClick={() => openLightbox(i)}
                   >
-                    <img
-                      src={src}
+                    <ResponsiveImage
+                      source={src}
                       alt={`Estrutura da clínica ${i + 1}`}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      pictureClassName="block aspect-video w-full overflow-hidden"
                       className="aspect-video w-full object-cover transition-transform duration-700 hover:scale-105"
-                      loading="lazy"
                     />
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
 
@@ -167,11 +185,16 @@ const NossaEstruturaSection = () => {
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-4xl w-[95vw] p-0 border-none bg-black/95 overflow-hidden [&>button]:text-white [&>button]:hover:opacity-100">
           <div className="relative flex items-center justify-center min-h-[50vh]">
-            <img
-              src={images[lightboxIndex]}
+            <ResponsiveImage
+              source={imagesFull[lightboxIndex]}
               alt={`Estrutura da clínica ${lightboxIndex + 1}`}
+              sizes="95vw"
+              priority
+              pictureClassName="block w-full"
               className="w-full h-auto max-h-[85vh] object-contain"
+              showSkeleton={false}
             />
+
 
             {/* Lightbox arrows */}
             <button

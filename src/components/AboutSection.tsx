@@ -2,15 +2,17 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
-import aboutRecepcao from "@/assets/about-recepcao.jpg";
-import aboutSalaAula from "@/assets/about-sala-aula.jpg";
-import aboutSalaProcedimentos from "@/assets/about-sala-procedimentos.jpg";
+import { ResponsiveImage } from "./ui/responsive-image";
+import aboutRecepcao from "@/assets/about-recepcao.jpg?w=480;768;1200&responsive";
+import aboutSalaAula from "@/assets/about-sala-aula.jpg?w=480;768;1200&responsive";
+import aboutSalaProcedimentos from "@/assets/about-sala-procedimentos.jpg?w=480;768;1200&responsive";
 
 const slides = [
-  { src: aboutRecepcao, alt: "Recepção premium da Derma Concept Academy" },
-  { src: aboutSalaAula, alt: "Sala de aula da Derma Concept Academy" },
-  { src: aboutSalaProcedimentos, alt: "Sala de procedimentos da Derma Concept Academy" },
+  { source: aboutRecepcao, alt: "Recepção premium da Derma Concept Academy" },
+  { source: aboutSalaAula, alt: "Sala de aula da Derma Concept Academy" },
+  { source: aboutSalaProcedimentos, alt: "Sala de procedimentos da Derma Concept Academy" },
 ];
+
 
 const AboutSection = () => {
   const [current, setCurrent] = useState(0);
@@ -71,18 +73,20 @@ const AboutSection = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]">
               <div className="relative aspect-[4/5]">
                 {slides.map((slide, i) => (
-                  <img
+                  <ResponsiveImage
                     key={i}
-                    src={slide.src}
+                    source={slide.source}
                     alt={slide.alt}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    priority={i === 0}
+                    pictureClassName={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
                       i === current ? "opacity-100" : "opacity-0"
                     }`}
-                    loading={i === 0 ? "eager" : "lazy"}
-                    width={1280}
-                    height={720}
+                    className="w-full h-full object-cover"
+                    showSkeleton={i === 0}
                   />
                 ))}
+
               </div>
 
               {/* Navigation arrows */}
