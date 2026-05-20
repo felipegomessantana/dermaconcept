@@ -1,8 +1,26 @@
-import { Phone, MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
+import { Phone, Instagram, Mail, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+const WhatsAppIcon = ({ size = 18, strokeWidth = 1.5 }: { size?: number; strokeWidth?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={strokeWidth}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+    <path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z" />
+    <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+  </svg>
+);
+
 export interface ContactInfoItem {
-  icon: LucideIcon;
+  icon: LucideIcon | React.FC<{ size?: number; strokeWidth?: number }>;
   label: string;
   value: string;
   href?: string;
@@ -16,7 +34,7 @@ export const CONTACT_INFO: ContactInfoItem[] = [
     href: "tel:+553135646953",
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: "WhatsApp",
     value: "(31) 98244-9473",
     href: "https://wa.me/5531982449473",
