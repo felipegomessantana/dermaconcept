@@ -1,18 +1,23 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-imagetools/client" />
 
-declare module "*&responsive" {
-  const out: {
-    sources: Record<string, string>; // mime -> srcset
-    img: { src: string; w: number; h: number };
-  };
+type _ResponsivePicture = {
+  sources: Record<string, string>;
+  img: { src: string; w: number; h: number };
+};
+
+declare module "*?responsive" {
+  const out: _ResponsivePicture;
   export default out;
 }
 
-declare module "*?responsive" {
-  const out: {
-    sources: Record<string, string>;
-    img: { src: string; w: number; h: number };
-  };
+// Match `?responsive&w=...&format=...` etc.
+declare module "*&responsive" {
+  const out: _ResponsivePicture;
+  export default out;
+}
+
+declare module "*?responsive&*" {
+  const out: _ResponsivePicture;
   export default out;
 }
