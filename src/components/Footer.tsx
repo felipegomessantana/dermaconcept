@@ -65,8 +65,6 @@ const Footer = () => (
           </div>
 
           <p className="mt-auto text-xs text-neutral-400">
-            © {new Date().getFullYear()} Derma Concept Academy.
-            <br />
             Todos os direitos reservados.
           </p>
         </div>
@@ -101,6 +99,19 @@ const Footer = () => (
         aria-hidden="true"
         className="pointer-events-none mx-auto block w-[95%] max-w-none select-none opacity-40"
       />
+    </div>
+
+    {/* Copyright bar */}
+    <div className="border-t border-[#E8E4DD] bg-[#F8F5F1]">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row lg:px-16">
+        <p className="text-[11px] text-neutral-500">
+          © {new Date().getFullYear()} Derma Concept Academy. Todos os
+          direitos reservados.
+        </p>
+        <p className="text-[11px] text-neutral-500">
+          Desenvolvido com excelência para a prática dermatológica.
+        </p>
+      </div>
     </div>
   </footer>
 );
