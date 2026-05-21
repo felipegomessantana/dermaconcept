@@ -65,8 +65,6 @@ const Footer = () => (
           </div>
 
           <p className="mt-auto text-xs text-neutral-400">
-            © {new Date().getFullYear()} Derma Concept Academy.
-            <br />
             Todos os direitos reservados.
           </p>
         </div>
