@@ -49,7 +49,7 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#" },
   },
   {
-    name: "Dra. Erika Freira",
+    name: "Dra. Érika Freire",
     role: "Dermatologia Estética",
     position: "Preceptor",
     image: teamMember1,
