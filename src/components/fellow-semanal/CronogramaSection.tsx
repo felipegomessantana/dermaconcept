@@ -59,7 +59,7 @@ const schedule: ScheduleMonth[] = [
     lessons: [
       { tag: "Aula 01 - Teoria", description: "Dermocosméticos." },
       { tag: "Aula 02 - Prática", description: "Mix de todos os procedimentos." },
-      { tag: "Aula 03 - Teoria + Prática", description: "Tecnologias (Liftera, Laser CO2, Etherea, Mesojectgun, Jato de Plasma)." },
+      { tag: "Aula 03 - Teoria + Prática", description: "Tecnologias (Laser CO2, Etherea, Mesojectgun, Jato de Plasma)." },
       { tag: "Aula 04 - Teoria + Prática", description: "Ácido hialurônico avançado guiado por ultrassom dermatológico." },
     ],
   },

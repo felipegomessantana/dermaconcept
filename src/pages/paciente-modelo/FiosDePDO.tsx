@@ -24,8 +24,8 @@ const data: ProcedurePageData = {
     { label: "Rosto", image: areaImages.rosto },
     { label: "Pescoço", image: areaImages.pescoco },
     { label: "Papada", image: areaImages.papada },
-    { label: "Sobrancelhas", image: areaImages.sobrancelhas },
-    { label: "Mandíbula", image: areaImages.mandibula },
+    { label: "Colo", image: areaImages.colo },
+    { label: "Abdômen", image: areaImages.abdomen },
   ],
   callout: {
     title: "A Experiência Derma Concept",

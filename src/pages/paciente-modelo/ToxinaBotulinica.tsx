@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Heart, Brain, Droplets, Footprints } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import toxinaAntes from "@/assets/toxina-botulinica/antes.webp?w=480;768;1200&responsive";
@@ -41,6 +41,12 @@ const data: ProcedurePageData = {
     { label: "Nariz (linhas do \"bunny lines\")", image: areaImages.nariz },
     { label: "Queixo (aspecto de casca de laranja)", image: areaImages.queixo },
     { label: "Pescoço (bandas platismais)", image: areaImages.pescoco },
+    { label: "Mandíbula", image: areaImages.mandibula },
+    { label: "Terço inferior da face", image: areaImages.face },
+    { label: "Enxaqueca", icon: Brain },
+    { label: "Hiperidrose axilar — axilas", icon: Droplets },
+    { label: "Hiperidrose palmar — mãos", image: areaImages.maos },
+    { label: "Hiperidrose plantar — pés", icon: Footprints },
   ],
   callout: {
     title: "A Experiência Derma Concept",

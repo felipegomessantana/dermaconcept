@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Heart } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp?w=480;768;1200&responsive";
@@ -46,7 +46,8 @@ const data: ProcedurePageData = {
     { label: "Queixo", image: areaImages.queixo },
     { label: "Nariz (rinomodelação)", image: areaImages.nariz },
     { label: "Têmporas", image: areaImages.temporas },
-    { label: "Mãos", image: areaImages.maos },
+    { label: "Glúteos", image: areaImages.gluteos },
+    { label: "Preenchimento íntimo", icon: Heart },
   ],
   callout: {
     title: "A Experiência Derma Concept",

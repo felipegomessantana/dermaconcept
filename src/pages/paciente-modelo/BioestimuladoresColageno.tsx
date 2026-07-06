@@ -48,6 +48,9 @@ const data: ProcedurePageData = {
     { label: "Braços", image: areaImages.bracos },
     { label: "Abdômen", image: areaImages.abdomen },
     { label: "Glúteos", image: areaImages.gluteos },
+    { label: "Coxas", image: areaImages.coxas },
+    { label: "Pernas", image: areaImages.coxas },
+    { label: "Preenchimento íntimo feminino", icon: Heart },
   ],
   callout: {
     title: "A Experiência Derma Concept",

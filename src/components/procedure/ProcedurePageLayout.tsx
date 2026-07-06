@@ -44,6 +44,42 @@ export interface ProcedurePageData {
 
 const TAUPE = "#7A7168";
 
+function ProcedureAreaCard({ area }: { area: ProcedureArea }) {
+  if (area.image) {
+    return (
+      <>
+        <ResponsiveImage
+          source={area.image}
+          alt={area.label}
+          sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
+          pictureClassName="absolute inset-0"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <span className="font-serif text-white text-lg tracking-wide">{area.label}</span>
+        </div>
+      </>
+    );
+  }
+
+  const Icon = area.icon ?? Sparkles;
+
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#FAF8F5] p-5 text-center border border-gray-100">
+      <div
+        className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white border border-gray-100 shadow-sm"
+        aria-hidden="true"
+      >
+        <Icon className="h-5 w-5" style={{ color: TAUPE }} />
+      </div>
+      <span className="font-serif text-gray-900 text-base md:text-lg leading-snug tracking-wide">
+        {area.label}
+      </span>
+    </div>
+  );
+}
+
 function EquipmentSlider({ images }: { images: PictureSource[] }) {
   const [current, setCurrent] = useState(0);
 
@@ -269,21 +305,7 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
                   {...fadeUp(0.04 * i)}
                   className="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-default shadow-sm"
                 >
-                  {a.image ? (
-                    <ResponsiveImage
-                      source={a.image}
-                      alt={a.label}
-                      sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
-                      pictureClassName="absolute inset-0"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-gray-200" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="font-serif text-white text-lg tracking-wide">{a.label}</span>
-                  </div>
+                  <ProcedureAreaCard area={a} />
                 </motion.div>
               ))}
             </div>

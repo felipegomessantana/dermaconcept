@@ -55,27 +55,6 @@ const HeroSectionClassic = () => {
             Conheça os cursos ↓
           </a>
         </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          {...fadeUp(0.9)}
-          className="mt-14 w-full max-w-md grid grid-cols-3 gap-6 border-t border-primary-foreground/15 pt-8"
-        >
-          {[
-            { value: "15+", label: "Anos de Experiência" },
-            { value: "47+", label: "Turmas Formadas" },
-            { value: "9", label: "Cursos Especializados" },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="font-heading text-2xl font-extrabold text-primary-foreground lg:text-3xl">
-                {s.value}
-              </p>
-              <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-primary-foreground/50">
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

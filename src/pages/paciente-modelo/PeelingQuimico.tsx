@@ -1,4 +1,4 @@
-import { Sparkles, Sun, Palette, Layers, Shield } from "lucide-react";
+import { Sparkles, Sun, Palette, Layers, Shield, Heart } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import rostoAntes from "@/assets/peeling-quimico/rosto-antes.webp?w=480;768;1200&responsive";
@@ -36,7 +36,9 @@ const data: ProcedurePageData = {
     { label: "Pescoço", image: areaImages.pescoco },
     { label: "Colo", image: areaImages.colo },
     { label: "Mãos", image: areaImages.maos },
+    { label: "Braços", image: areaImages.bracos },
     { label: "Costas", image: areaImages.costas },
+    { label: "Íntimo feminino", icon: Heart },
   ],
   callout: {
     title: "A Experiência Derma Concept",

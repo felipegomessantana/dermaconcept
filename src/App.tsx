@@ -16,7 +16,6 @@ import PreenchimentoAcidoHialuronico from "./pages/paciente-modelo/Preenchimento
 import ToxinaBotulinica from "./pages/paciente-modelo/ToxinaBotulinica.tsx";
 import YouseLaserPrime from "./pages/paciente-modelo/YouseLaserPrime.tsx";
 import LinearZ from "./pages/paciente-modelo/LinearZ.tsx";
-import Liftera from "./pages/paciente-modelo/Liftera.tsx";
 import EthereaMX from "./pages/paciente-modelo/EthereaMX.tsx";
 import JatoDePlasma from "./pages/paciente-modelo/JatoDePlasma.tsx";
 import MesojectGun from "./pages/paciente-modelo/MesojectGun.tsx";
@@ -26,6 +25,8 @@ import FiosDePDO from "./pages/paciente-modelo/FiosDePDO.tsx";
 import Intradermoterapia from "./pages/paciente-modelo/Intradermoterapia.tsx";
 import Microagulhamento from "./pages/paciente-modelo/Microagulhamento.tsx";
 import IPCA from "./pages/paciente-modelo/IPCA.tsx";
+import RejuvenescimentoIntimo from "./pages/paciente-modelo/RejuvenescimentoIntimo.tsx";
+import LifteraRedirect from "./pages/paciente-modelo/LifteraRedirect.tsx";
 
 const queryClient = new QueryClient();
 
@@ -49,7 +50,6 @@ const App = () => (
           <Route path="/paciente-modelo/toxina-botulinica" element={<ToxinaBotulinica />} />
           <Route path="/paciente-modelo/youse-laser-prime" element={<YouseLaserPrime />} />
           <Route path="/paciente-modelo/linear-z" element={<LinearZ />} />
-          <Route path="/paciente-modelo/liftera" element={<Liftera />} />
           <Route path="/paciente-modelo/etherea-mx" element={<EthereaMX />} />
           <Route path="/paciente-modelo/jato-de-plasma" element={<JatoDePlasma />} />
           <Route path="/paciente-modelo/mesoject-gun" element={<MesojectGun />} />
@@ -59,6 +59,8 @@ const App = () => (
           <Route path="/paciente-modelo/intradermoterapia" element={<Intradermoterapia />} />
           <Route path="/paciente-modelo/microagulhamento" element={<Microagulhamento />} />
           <Route path="/paciente-modelo/ipca" element={<IPCA />} />
+          <Route path="/paciente-modelo/rejuvenescimento-intimo" element={<RejuvenescimentoIntimo />} />
+          <Route path="/paciente-modelo/liftera" element={<LifteraRedirect />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

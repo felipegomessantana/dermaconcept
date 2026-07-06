@@ -73,7 +73,7 @@ function PacienteModeloContent() {
     { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
     { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
     { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
-    { label: "Rejuvenescimento Íntimo", href: "#contato" },
+    { label: "Rejuvenescimento Íntimo", href: "/paciente-modelo/rejuvenescimento-intimo" },
     { label: "IPCA", href: "/paciente-modelo/ipca" },
   ];
 
@@ -81,7 +81,6 @@ function PacienteModeloContent() {
     { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
     { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
     { label: "Linear Z", href: "/paciente-modelo/linear-z" },
-    { label: "Liftera 2", href: "/paciente-modelo/liftera" },
     { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
     { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
   ];
@@ -360,13 +359,12 @@ const mobileMenuSections = [
       { label: "Peeling Químico", href: "/paciente-modelo/peeling-quimico" },
       { label: "Intradermoterapia", href: "/paciente-modelo/intradermoterapia" },
       { label: "Microagulhamento", href: "/paciente-modelo/microagulhamento" },
-      { label: "Rejuvenescimento Íntimo", href: "#contato" },
+      { label: "Rejuvenescimento Íntimo", href: "/paciente-modelo/rejuvenescimento-intimo" },
       { label: "IPCA", href: "/paciente-modelo/ipca" },
       { label: "— TECNOLOGIAS —", href: "" },
       { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
       { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
       { label: "Linear Z", href: "/paciente-modelo/linear-z" },
-      { label: "Liftera 2", href: "/paciente-modelo/liftera" },
       { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
       { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
     ],

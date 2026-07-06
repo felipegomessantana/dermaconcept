@@ -16,6 +16,7 @@ import teamAnaFlavia from "@/assets/team-ana-flavia.jpeg";
 type TeamMember = {
   name: string;
   role: string;
+  position?: string;
   image: string;
   specialties: string[];
   bio: string[];
@@ -28,8 +29,29 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
+    name: "Dra. Karolina Lavagnoli Colombo",
+    role: "Dermatologia",
+    position: "Coordenadora e Preceptora",
+    image: teamMember5,
+    credentials: "CRM MG 62755 · RQE 55681",
+    specialties: ["Dermatologia Clínica", "Dermatologia Estética", "Preceptoria"],
+    bio: [],
+    formation: [
+      "Formada em Medicina na Santa Casa de Misericórdia de Vitória-ES.",
+      "Pós-graduação em Dermatologia pelo Instituto Superior de Medicina (ISMD) de Belo Horizonte.",
+      "Membro Titular da Sociedade Brasileira de Dermatologia (SBD).",
+      "Quase 10 anos de atuação como preceptora em pós-graduação de Dermatologia.",
+    ],
+    purpose:
+      "Promover beleza com ciência e sutileza ao meu paciente! “Elegância é recusa!” Coco Chanel",
+    curiosities:
+      "Sou muito família, sou esposa, mãe do Benjamin e do meu golden Chico 🐶; apaixonada por viagens e conhecer novas culturas; adoro esportes! Joguei handebol durante todo ensino fundamental, médio e faculdade! No momento me descobrindo e encantada com o tênis!",
+    social: { instagram: "#" },
+  },
+  {
     name: "Dra. Erika Freira",
     role: "Dermatologia Estética",
+    position: "Preceptor",
     image: teamMember1,
     credentials: "CRM-MG 63788 · RQE 42041",
     specialties: ["Toxina Botulínica", "Preenchimento", "Bioestimuladores", "Lasers"],
@@ -51,6 +73,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Dra. Ana Vitória",
     role: "Cirurgia Dermatológica",
+    position: "Preceptor",
     image: teamMember2,
     credentials: "CRM-MG 64836 · RQE 44348",
     specialties: ["Cirurgia Dermatológica", "Oncologia Cutânea", "Reconstrução"],
@@ -60,6 +83,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Dr. Paulo Henrique Pimentel",
     role: "Dermatologia Clínica, Cirúrgica e Estética",
+    position: "Preceptor",
     image: teamMember3,
     credentials: "CRM-MG: 57.394",
     specialties: ["Dermatologia Clínica", "Dermatologia Cirúrgica", "Dermatologia Estética", "Preceptoria"],
@@ -78,6 +102,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Dr. Leonardo Almeida",
     role: "Dermatologia",
+    position: "Preceptor",
     image: teamMember4,
     credentials: "CRM-MG 69784 · RQE 49951",
     specialties: ["Oncologia Cutânea", "Cirurgia Dermatológica", "Cosmiatria", "Transplante Capilar"],
@@ -96,27 +121,9 @@ const teamMembers: TeamMember[] = [
     social: { instagram: "#", linkedin: "#" },
   },
   {
-    name: "Dra. Karolina Lavagnoli Colombo",
-    role: "Dermatologia",
-    image: teamMember5,
-    credentials: "CRM MG 62755 · RQE 55681",
-    specialties: ["Dermatologia Clínica", "Dermatologia Estética", "Preceptoria"],
-    bio: [],
-    formation: [
-      "Formada em Medicina na Santa Casa de Misericórdia de Vitória-ES.",
-      "Pós-graduação em Dermatologia pelo Instituto Superior de Medicina (ISMD) de Belo Horizonte.",
-      "Membro Titular da Sociedade Brasileira de Dermatologia (SBD).",
-      "Quase 10 anos de atuação como preceptora em pós-graduação de Dermatologia.",
-    ],
-    purpose:
-      "Promover beleza com ciência e sutileza ao meu paciente! “Elegância é recusa!” Coco Chanel",
-    curiosities:
-      "Sou muito família, sou esposa, mãe do Benjamin e do meu golden Chico 🐶; apaixonada por viagens e conhecer novas culturas; adoro esportes! Joguei handebol durante todo ensino fundamental, médio e faculdade! No momento me descobrindo e encantada com o tênis!",
-    social: { instagram: "#" },
-  },
-  {
     name: "Dra. Ana Flávia",
     role: "Dermatologia Clínica e Estética",
+    position: "Preceptor",
     image: teamAnaFlavia,
     credentials: "CRM MG 77.129",
     specialties: [
@@ -146,6 +153,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Dra. Ana Lúcia",
     role: "Dermatologia",
+    position: "Preceptor",
     image: teamMember6,
     credentials: "CRM MG: 49442 · RQE: 45109",
     specialties: ["Dermatologia", "Cirurgia Dermatológica", "Cosmiatria", "Laser"],
@@ -181,6 +189,9 @@ const TeamCard = ({ member, onClick }: { member: TeamMember; onClick: () => void
     </div>
     <h3 className="font-serif text-lg text-foreground mb-0.5">{member.name}</h3>
     <p className="text-sm text-muted-foreground">{member.role}</p>
+    {member.position && (
+      <p className="text-xs text-muted-foreground/70 mt-0.5">{member.position}</p>
+    )}
   </button>
 );
 
@@ -377,6 +388,11 @@ const EquipeSection = () => {
                 <h3 className="font-serif text-3xl md:text-4xl text-foreground mt-2 mb-1">
                   {activeMember.name}
                 </h3>
+                {activeMember.position && (
+                  <p className="text-sm text-muted-foreground/70 mt-1">
+                    {activeMember.position}
+                  </p>
+                )}
                 {activeMember.credentials && (
                   <p className="text-xs text-muted-foreground tracking-wider">
                     {activeMember.credentials}

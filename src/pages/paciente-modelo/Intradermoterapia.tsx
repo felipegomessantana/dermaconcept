@@ -22,9 +22,12 @@ const data: ProcedurePageData = {
   ],
   areas: [
     { label: "Couro cabeludo", image: areaImages.couroCabeludo },
+    { label: "Face", image: areaImages.face },
     { label: "Abdômen", image: areaImages.abdomen },
     { label: "Flancos", image: areaImages.flancos },
+    { label: "Culotes", image: areaImages.coxas },
     { label: "Coxas", image: areaImages.coxas },
+    { label: "Dorso", image: areaImages.costas },
     { label: "Braços", image: areaImages.bracos },
     { label: "Glúteos", image: areaImages.gluteos },
   ],

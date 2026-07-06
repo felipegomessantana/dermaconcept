@@ -22,10 +22,10 @@ const data: ProcedurePageData = {
   ],
   areas: [
     { label: "Rosto", image: areaImages.rosto },
-    { label: "Pescoço", image: areaImages.pescoco },
-    { label: "Colo", image: areaImages.colo },
-    { label: "Costas", image: areaImages.costas },
     { label: "Corpo", image: areaImages.corpo },
+    { label: "Nádegas", image: areaImages.gluteos },
+    { label: "Coxas", image: areaImages.coxas },
+    { label: "Abdômen", image: areaImages.abdomen },
   ],
   callout: {
     title: "A Experiência Derma Concept",

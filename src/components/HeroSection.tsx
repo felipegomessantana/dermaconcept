@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import heroImg from "@/assets/hero-team.webp?w=768;1200;1920&responsive";
 import heroMobileImg from "@/assets/hero-mobile.webp?w=480;768&responsive";
 
@@ -26,33 +26,6 @@ const fadeUp = (delay = 0) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
-
-const stats = [
-  { value: 15, suffix: "+", label: "Anos de Experiência" },
-  { value: 47, suffix: "+", label: "Turmas Formadas" },
-  { value: 9, suffix: "", label: "Cursos Especializados" },
-];
-
-/* ── animated counter ── */
-function AnimatedNumber({ value, suffix, duration = 1.8 }: { value: number; suffix: string; duration?: number }) {
-  const [display, setDisplay] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-
-  useEffect(() => {
-    if (!inView) return;
-    const start = performance.now();
-    const step = (now: number) => {
-      const t = Math.min((now - start) / (duration * 1000), 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      setDisplay(Math.round(eased * value));
-      if (t < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [inView, value, duration]);
-
-  return <span ref={ref}>{display}{suffix}</span>;
-}
 
 /* ── animated headline ── */
 function AnimatedHeadline({ text }: { text: string }) {
@@ -203,22 +176,6 @@ const HeroSection = () => {
           </a>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          {...fadeUp(1.8)}
-          className="mt-8 grid grid-cols-3 gap-6"
-        >
-          {stats.map((s) => (
-            <div key={s.label}>
-              <p className="font-heading text-2xl font-extrabold text-white lg:text-3xl">
-                <AnimatedNumber value={s.value} suffix={s.suffix} />
-              </p>
-              <p className="mt-1 text-[10px] font-medium tracking-wider uppercase text-white/60">
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Bottom scroll indicator */}
