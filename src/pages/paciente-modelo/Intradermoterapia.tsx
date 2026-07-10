@@ -1,5 +1,4 @@
 import { Syringe, Sparkles, Droplets, Target, Shield } from "lucide-react";
-import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
 const data: ProcedurePageData = {
@@ -21,15 +20,15 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Procedimento seguro com resultados progressivos e visíveis." },
   ],
   areas: [
-    { label: "Couro cabeludo", image: areaImages.couroCabeludo },
-    { label: "Face", image: areaImages.face },
-    { label: "Abdômen", image: areaImages.abdomen },
-    { label: "Flancos", image: areaImages.flancos },
-    { label: "Culotes", image: areaImages.coxas },
-    { label: "Coxas", image: areaImages.coxas },
-    { label: "Dorso", image: areaImages.costas },
-    { label: "Braços", image: areaImages.bracos },
-    { label: "Glúteos", image: areaImages.gluteos },
+    { label: "Couro cabeludo", imageSrc: "/intradermoterapia/couro-cabeludo.png", alt: "Intradermoterapia no couro cabeludo" },
+    { label: "Face", imageSrc: "/intradermoterapia/face.png", alt: "Intradermoterapia na face" },
+    { label: "Abdômen", imageSrc: "/intradermoterapia/abdomen.png", alt: "Intradermoterapia no abdômen" },
+    { label: "Flancos", imageSrc: "/intradermoterapia/flancos.png", alt: "Intradermoterapia nos flancos" },
+    { label: "Culotes", imageSrc: "/intradermoterapia/culotes.png", alt: "Intradermoterapia nos culotes" },
+    { label: "Coxas", imageSrc: "/intradermoterapia/coxas.png", alt: "Intradermoterapia nas coxas" },
+    { label: "Dorso", imageSrc: "/intradermoterapia/dorco.png", alt: "Intradermoterapia no dorso" },
+    { label: "Braços", imageSrc: "/intradermoterapia/braco.png", alt: "Intradermoterapia nos braços" },
+    { label: "Glúteos", alt: "Intradermoterapia na região dos glúteos" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
