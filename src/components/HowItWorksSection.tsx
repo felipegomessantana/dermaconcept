@@ -51,7 +51,7 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
   return (
     <div
       ref={targetRef}
-      className="sticky top-0 z-0 h-[33vh] overflow-hidden max-w-7xl mx-auto"
+      className="sticky top-0 z-0 h-[33vh] overflow-hidden container-narrow"
       style={{ paddingLeft: IMG_PADDING, paddingRight: IMG_PADDING }}
     >
       <motion.div
@@ -117,7 +117,7 @@ const ExampleContent = ({
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <div ref={ref} className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-6 pb-24 pt-12 md:grid-cols-12 lg:px-16">
+    <div ref={ref} className="container-narrow grid grid-cols-1 gap-8 pb-24 pt-12 md:grid-cols-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}

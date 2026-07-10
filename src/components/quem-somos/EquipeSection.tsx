@@ -284,7 +284,7 @@ const EquipeSection = () => {
         <path d="M0 350 Q360 150 720 350 T1440 350" fill="none" stroke="#7A7168" strokeWidth="1.5" />
       </svg>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
+      <div className="container-narrow relative z-10">
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 30 }}

@@ -25,7 +25,7 @@ const HeroSectionClassic = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-transparent to-foreground/90" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-16 pt-24 text-center sm:px-10 lg:px-14 xl:px-20">
+      <div className="relative z-10 container-narrow flex min-h-[100svh] flex-col items-center justify-end pb-16 pt-24 text-center">
         <motion.p
           {...fadeUp(0.1)}
           className="mb-5 text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/60"

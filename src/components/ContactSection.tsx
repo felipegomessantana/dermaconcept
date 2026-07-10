@@ -26,7 +26,7 @@ const ContactSection = () => {
 
   return (
     <section id="contato" className="bg-[#FAF8F5] py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-16">
+      <div className="container-narrow">
 
         {/* 1. Cabeçalho */}
         <AnimatedSection className="text-center">

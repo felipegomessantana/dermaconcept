@@ -38,7 +38,7 @@ const MentoriaSection = () => {
         </svg>
       </div>
 
-      <div ref={ref} className="container-narrow relative z-10 px-6 lg:px-20">
+      <div ref={ref} className="container-narrow relative z-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Left — Video placeholder (1/3) */}
           <motion.div

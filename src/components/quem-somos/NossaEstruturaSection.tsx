@@ -100,7 +100,7 @@ const NossaEstruturaSection = () => {
 
   return (
     <section className="py-24 md:py-32 lg:py-40 bg-background overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
+      <div className="container-narrow relative z-10">
         {/* Header */}
         <motion.div
           ref={headerRef}

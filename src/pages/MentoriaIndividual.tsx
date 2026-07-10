@@ -74,7 +74,7 @@ const ProblemSection = () => {
 
   return (
     <section className="bg-[#2C2722] py-24 lg:py-32">
-      <div ref={ref} className="mx-auto max-w-5xl px-6 lg:px-16">
+      <div ref={ref} className="container-narrow">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -127,7 +127,7 @@ const SolutionSection = () => {
 
   return (
     <section className="bg-[#F8F5F1] py-24 lg:py-32">
-      <div ref={ref} className="mx-auto max-w-5xl px-6 lg:px-16">
+      <div ref={ref} className="container-narrow">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -200,7 +200,7 @@ const FormatsSection = () => {
 
   return (
     <section className="bg-white py-24 lg:py-32">
-      <div ref={ref} className="mx-auto max-w-5xl px-6 lg:px-16">
+      <div ref={ref} className="container-narrow">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

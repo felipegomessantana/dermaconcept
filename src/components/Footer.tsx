@@ -32,7 +32,7 @@ const footerLinks = {
 const Footer = () => (
   <footer className="relative bg-[#F8F5F1]">
     {/* Main content */}
-    <div className="relative z-10 mx-auto max-w-7xl px-6 pb-12 pt-20 lg:px-16">
+    <div className="container-narrow relative z-10 pb-12 pt-20">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-10">
         {/* Column 1 — Identity */}
         <div className="flex flex-col gap-5">
@@ -103,7 +103,7 @@ const Footer = () => (
 
     {/* Copyright bar */}
     <div className="border-t border-[#E8E4DD] bg-[#F8F5F1]">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row lg:px-16">
+      <div className="container-narrow flex flex-col items-center justify-between gap-2 py-5 sm:flex-row">
         <p className="text-[11px] text-neutral-500">
           © {new Date().getFullYear()} Derma Concept Academy. Todos os
           direitos reservados.

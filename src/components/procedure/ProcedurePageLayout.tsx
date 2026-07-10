@@ -196,7 +196,7 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
 
       {/* Intro + Equipment Slider */}
       <section className="py-16 md:py-24">
-        <div className="container max-w-6xl mx-auto px-6">
+        <div className="container-narrow">
           <div className={`grid ${data.equipmentImages && data.equipmentImages.length > 0 ? "grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-start" : "grid-cols-1 max-w-3xl mx-auto gap-10"}`}>
             <motion.div
               {...fadeUp(0.1)}
@@ -228,7 +228,7 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
         const groups = data.beforeAfterGroups || (data.beforeAfter && data.beforeAfter.length > 0 ? [data.beforeAfter] : []);
         return groups.length > 0 && (
           <section className="py-16 md:py-20 bg-[#FAF8F5]">
-            <div className="container max-w-5xl mx-auto px-6">
+            <div className="container-narrow">
               <motion.h2
                 {...fadeUp(0)}
                 className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
@@ -278,7 +278,7 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
       {/* Indications */}
       {data.indications && data.indications.length > 0 && (
         <section className="py-16 md:py-20">
-          <div className="container max-w-5xl mx-auto px-6">
+          <div className="container-narrow">
             <motion.h2
               {...fadeUp(0)}
               className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
@@ -314,14 +314,14 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
       {/* Areas */}
       {data.areas && data.areas.length > 0 && (
         <section className="py-16 md:py-20">
-          <div className="container max-w-5xl mx-auto px-6">
+          <div className="container-narrow">
             <motion.h2
               {...fadeUp(0)}
               className="font-serif text-2xl md:text-3xl text-gray-900 mb-10 text-center"
             >
               {data.areasTitle || "Áreas de Aplicação"}
             </motion.h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
               {data.areas.map((a, i) => (
                 <motion.div
                   key={i}

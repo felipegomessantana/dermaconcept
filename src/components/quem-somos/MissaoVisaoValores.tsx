@@ -75,7 +75,7 @@ const MissaoVisaoValores = () => {
 
   return (
     <section className="py-24 md:py-32 lg:py-40 bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="container-narrow">
         {/* Section header */}
         <motion.div
           ref={headerRef}

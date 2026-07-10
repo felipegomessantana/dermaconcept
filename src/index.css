@@ -72,7 +72,7 @@
   }
 
   .container-narrow {
-    @apply max-w-6xl mx-auto;
+    @apply w-full max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .scrollbar-hide {

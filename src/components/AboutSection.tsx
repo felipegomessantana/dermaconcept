@@ -27,7 +27,7 @@ const AboutSection = () => {
 
   return (
     <section id="sobre" className="py-24 md:py-32 lg:py-40 bg-[#F8F5F1]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-20">
+      <div className="container-narrow">
         <div className="grid lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-24 items-center">
           {/* Text */}
           <AnimatedSection>

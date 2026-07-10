@@ -29,7 +29,7 @@ const courses = [
 
 const CoursesSectionClassic = () => (
   <section id="cursos" className="py-24 md:py-32 lg:py-40">
-    <div className="max-w-[1300px] mx-auto px-6 lg:px-16">
+    <div className="container-narrow">
       <AnimatedSection className="text-center mb-16 lg:mb-24">
         <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
           Formação

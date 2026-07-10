@@ -13,7 +13,7 @@ const FellowSemanalSobre = () => {
 
   return (
     <section className="bg-white py-24 lg:py-32">
-      <div ref={ref} className="mx-auto max-w-7xl px-6 lg:px-16">
+      <div ref={ref} className="container-narrow">
         {/* Title */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}

@@ -55,7 +55,7 @@ const PacienteModeloSection = () => {
       className="py-24 md:py-32 lg:py-40"
       style={{ backgroundColor: "#F8F5F1" }}
     >
-      <div className="max-w-[1300px] mx-auto px-6 lg:px-16">
+      <div className="container-narrow">
         <AnimatedSection className="text-center mb-12 lg:mb-20">
           <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             Programa de Pacientes Modelo

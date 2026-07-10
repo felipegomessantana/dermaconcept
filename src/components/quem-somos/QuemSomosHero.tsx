@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const QuemSomosHero = () => (
   <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#F8F5F1]">
-    <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
+    <div className="container-narrow text-center">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -196,7 +196,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
 
   return (
     <div ref={containerRef} className="py-16 md:py-24 lg:py-32">
-      <div className="max-w-[1300px] mx-auto px-6 lg:px-16">
+      <div className="container-narrow">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
           {reversed && !isMobile ? (
             <>
@@ -217,7 +217,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
 
 const CoursesSection = () => (
   <section id="cursos" className="py-24 md:py-32 lg:py-40">
-    <div className="max-w-[1300px] mx-auto px-6 lg:px-16">
+    <div className="container-narrow">
       <AnimatedSection className="text-center mb-8 lg:mb-16">
         <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
           Formação

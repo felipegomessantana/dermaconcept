@@ -30,7 +30,7 @@ const cards = [
 const DoisCaminhosSection = () => {
   return (
     <section id="caminhos" className="py-20 md:py-28 lg:py-32 bg-background">
-      <div className="max-w-[1300px] mx-auto px-6 lg:px-16">
+      <div className="container-narrow">
         <div className="text-center mb-12 lg:mb-16">
           <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             Dois caminhos
