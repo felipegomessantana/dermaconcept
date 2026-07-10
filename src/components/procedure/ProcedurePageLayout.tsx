@@ -6,6 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
 import { ResponsiveImage, type PictureSource } from "@/components/ui/responsive-image";
+import {
+  getCanonicalProcedureAreaAlt,
+  getCanonicalProcedureAreaImage,
+} from "@/lib/procedureAreaImages";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -48,13 +52,15 @@ export interface ProcedurePageData {
 const TAUPE = "#7A7168";
 
 function ProcedureAreaCard({ area }: { area: ProcedureArea }) {
-  const alt = area.alt ?? area.label;
+  const canonicalImageSrc = getCanonicalProcedureAreaImage(area.label);
+  const resolvedImageSrc = canonicalImageSrc ?? area.imageSrc;
+  const alt = area.alt ?? getCanonicalProcedureAreaAlt(area.label) ?? area.label;
 
-  if (area.imageSrc) {
+  if (resolvedImageSrc) {
     return (
       <>
         <img
-          src={area.imageSrc}
+          src={resolvedImageSrc}
           alt={alt}
           loading="lazy"
           decoding="async"

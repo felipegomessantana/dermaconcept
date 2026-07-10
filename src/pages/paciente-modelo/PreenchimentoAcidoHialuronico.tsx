@@ -38,52 +38,42 @@ const data: ProcedurePageData = {
   areas: [
     {
       label: "Lábios",
-      imageSrc: "/01_labios.webp",
       alt: "Preenchimento com ácido hialurônico nos lábios",
     },
     {
       label: "Olheiras",
-      imageSrc: "/02_olheiras.webp",
       alt: "Tratamento de olheiras com ácido hialurônico",
     },
     {
       label: "Bigode chinês (sulco nasogeniano)",
-      imageSrc: "/03_bigode_chines.webp",
       alt: "Preenchimento do bigode chinês ou sulco nasogeniano",
     },
     {
       label: "Linhas de marionete",
-      imageSrc: "/04_linhas_de_marionete.webp",
       alt: "Preenchimento das linhas de marionete",
     },
     {
       label: "Maçãs do rosto",
-      imageSrc: "/05_macas_do_rosto.webp",
       alt: "Preenchimento das maçãs do rosto",
     },
     {
       label: "Mandíbula",
-      imageSrc: "/06_mandibula.webp",
       alt: "Harmonização e preenchimento da mandíbula",
     },
     {
       label: "Queixo",
-      imageSrc: "/07_queixo.webp",
       alt: "Preenchimento e harmonização do queixo",
     },
     {
       label: "Nariz (rinomodelação)",
-      imageSrc: "/08_nariz_rinomodelacao.webp",
       alt: "Rinomodelação com ácido hialurônico",
     },
     {
       label: "Têmporas",
-      imageSrc: "/09_temporas.webp",
       alt: "Preenchimento das têmporas",
     },
     {
       label: "Glúteos",
-      imageSrc: "/10_gluteos.webp",
       alt: "Procedimento estético na região dos glúteos",
     },
   ],
