@@ -1,5 +1,4 @@
 import { CheckCircle2, Heart } from "lucide-react";
-import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp?w=480;768;1200&responsive";
 import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp?w=480;768;1200&responsive";
@@ -37,16 +36,56 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Tratadas",
   areas: [
-    { label: "Lábios", image: areaImages.labios },
-    { label: "Olheiras", image: areaImages.olheiras },
-    { label: "Bigode chinês (sulco nasogeniano)", image: areaImages.bigodeChines },
-    { label: "Linhas de marionete", image: areaImages.marionete },
-    { label: "Maçãs do rosto", image: areaImages.macas },
-    { label: "Mandíbula", image: areaImages.mandibula },
-    { label: "Queixo", image: areaImages.queixo },
-    { label: "Nariz (rinomodelação)", image: areaImages.nariz },
-    { label: "Têmporas", image: areaImages.temporas },
-    { label: "Glúteos", image: areaImages.gluteos },
+    {
+      label: "Lábios",
+      imageSrc: "/01_labios.png",
+      alt: "Preenchimento com ácido hialurônico nos lábios",
+    },
+    {
+      label: "Olheiras",
+      imageSrc: "/02_olheiras.png",
+      alt: "Tratamento de olheiras com ácido hialurônico",
+    },
+    {
+      label: "Bigode chinês (sulco nasogeniano)",
+      imageSrc: "/03_bigode_chines.png",
+      alt: "Preenchimento do bigode chinês ou sulco nasogeniano",
+    },
+    {
+      label: "Linhas de marionete",
+      imageSrc: "/04_linhas_de_marionete.png",
+      alt: "Preenchimento das linhas de marionete",
+    },
+    {
+      label: "Maçãs do rosto",
+      imageSrc: "/05_macas_do_rosto.png",
+      alt: "Preenchimento das maçãs do rosto",
+    },
+    {
+      label: "Mandíbula",
+      imageSrc: "/06_mandibula.png",
+      alt: "Harmonização e preenchimento da mandíbula",
+    },
+    {
+      label: "Queixo",
+      imageSrc: "/07_queixo.png",
+      alt: "Preenchimento e harmonização do queixo",
+    },
+    {
+      label: "Nariz (rinomodelação)",
+      imageSrc: "/08_nariz_rinomodelacao.png",
+      alt: "Rinomodelação com ácido hialurônico",
+    },
+    {
+      label: "Têmporas",
+      imageSrc: "/09_temporas.png",
+      alt: "Preenchimento das têmporas",
+    },
+    {
+      label: "Glúteos",
+      imageSrc: "/10_gluteos.png",
+      alt: "Procedimento estético na região dos glúteos",
+    },
     { label: "Preenchimento íntimo", icon: Heart },
   ],
   callout: {

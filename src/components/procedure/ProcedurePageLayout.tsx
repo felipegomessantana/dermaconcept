@@ -22,6 +22,9 @@ export interface ProcedureArea {
   label: string;
   icon?: LucideIcon;
   image?: PictureSource;
+  /** Caminho absoluto para arquivo em public/, ex.: /01_labios.png */
+  imageSrc?: string;
+  alt?: string;
 }
 
 export interface ProcedurePageData {
@@ -45,12 +48,32 @@ export interface ProcedurePageData {
 const TAUPE = "#7A7168";
 
 function ProcedureAreaCard({ area }: { area: ProcedureArea }) {
+  const alt = area.alt ?? area.label;
+
+  if (area.imageSrc) {
+    return (
+      <>
+        <img
+          src={area.imageSrc}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <span className="font-serif text-white text-lg tracking-wide">{area.label}</span>
+        </div>
+      </>
+    );
+  }
+
   if (area.image) {
     return (
       <>
         <ResponsiveImage
           source={area.image}
-          alt={area.label}
+          alt={alt}
           sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
           pictureClassName="absolute inset-0"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
