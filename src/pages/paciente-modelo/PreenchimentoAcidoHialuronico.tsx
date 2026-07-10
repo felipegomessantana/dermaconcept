@@ -1,4 +1,4 @@
-import { CheckCircle2, Heart } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import labiosAntes from "@/assets/acido-hialuronico/labios-antes.webp?w=480;768;1200&responsive";
 import labiosDepois from "@/assets/acido-hialuronico/labios-depois.webp?w=480;768;1200&responsive";
@@ -86,7 +86,6 @@ const data: ProcedurePageData = {
       imageSrc: "/10_gluteos.png",
       alt: "Procedimento estético na região dos glúteos",
     },
-    { label: "Preenchimento íntimo", icon: Heart },
   ],
   callout: {
     title: "A Experiência Derma Concept",
