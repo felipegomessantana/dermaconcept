@@ -9,11 +9,9 @@ import rinofimaAntes from "@/assets/youlaser-prime/rinofima-antes.webp?w=480;768
 import rinofimaDepois from "@/assets/youlaser-prime/rinofima-depois.webp?w=480;768;1200&responsive";
 import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp?w=480;768;1200&responsive";
 import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp?w=480;768;1200&responsive";
-import areaRosto from "@/assets/youlaser-prime/rosto.webp?w=480;768;1200&responsive";
-import areaPescoco from "@/assets/youlaser-prime/pescoco.webp?w=480;768;1200&responsive";
-import areaColo from "@/assets/youlaser-prime/colo.webp?w=480;768;1200&responsive";
-import areaMaos from "@/assets/youlaser-prime/maos.jpg?w=480;768;1200&responsive";
 import areaCorpo from "@/assets/youlaser-prime/corpo.jpg?w=480;768;1200&responsive";
+
+const areaImage = (file: string) => `/paciente-modelo/peeling-quimico/${file}`;
 
 const data: ProcedurePageData = {
   title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
@@ -56,11 +54,11 @@ const data: ProcedurePageData = {
     },
   ],
   areas: [
-    { label: "Rosto", image: areaRosto },
-    { label: "Pescoço", image: areaPescoco },
-    { label: "Colo", image: areaColo },
-    { label: "Mãos", image: areaMaos },
-    { label: "Corpo", image: areaCorpo },
+    { label: "Rosto", imageSrc: areaImage("rosto.webp"), alt: "YouLaser Prime no rosto" },
+    { label: "Pescoço", imageSrc: areaImage("pescoco.webp"), alt: "YouLaser Prime no pescoço" },
+    { label: "Colo", imageSrc: areaImage("colo.webp"), alt: "YouLaser Prime no colo" },
+    { label: "Mãos", imageSrc: areaImage("maos.webp"), alt: "YouLaser Prime nas mãos" },
+    { label: "Corpo", image: areaCorpo, alt: "YouLaser Prime no corpo" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
