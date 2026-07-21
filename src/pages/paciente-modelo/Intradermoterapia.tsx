@@ -1,6 +1,8 @@
 import { Syringe, Sparkles, Droplets, Target, Shield } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
+const areaImage = (file: string) => `/paciente-modelo/intradermoterapia/${file}`;
+
 const data: ProcedurePageData = {
   title: (<>INTRADERMOTERAPIA<br /><span className="block">Entrega Direta de Ativos para Resultados Potencializados</span></>),
   subtitle: "Entrega direta de ativos para resultados potencializados.",
@@ -20,14 +22,14 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Procedimento seguro com resultados progressivos e visíveis." },
   ],
   areas: [
-    { label: "Couro cabeludo", imageSrc: "/intradermoterapia/couro-cabeludo.png", alt: "Intradermoterapia no couro cabeludo" },
-    { label: "Face", imageSrc: "/intradermoterapia/face.png", alt: "Intradermoterapia na face" },
-    { label: "Abdômen", imageSrc: "/intradermoterapia/abdomen.png", alt: "Intradermoterapia no abdômen" },
-    { label: "Flancos", imageSrc: "/intradermoterapia/flancos.png", alt: "Intradermoterapia nos flancos" },
-    { label: "Culotes", imageSrc: "/intradermoterapia/culotes.png", alt: "Intradermoterapia nos culotes" },
-    { label: "Coxas", imageSrc: "/intradermoterapia/coxas.png", alt: "Intradermoterapia nas coxas" },
-    { label: "Dorso", imageSrc: "/intradermoterapia/dorco.png", alt: "Intradermoterapia no dorso" },
-    { label: "Braços", imageSrc: "/intradermoterapia/braco.png", alt: "Intradermoterapia nos braços" },
+    { label: "Couro cabeludo", imageSrc: areaImage("couro-cabeludo.webp"), alt: "Intradermoterapia no couro cabeludo" },
+    { label: "Face", imageSrc: areaImage("face.webp"), alt: "Intradermoterapia na face" },
+    { label: "Abdômen", imageSrc: areaImage("abdomen.webp"), alt: "Intradermoterapia no abdômen" },
+    { label: "Flancos", imageSrc: areaImage("flancos.webp"), alt: "Intradermoterapia nos flancos" },
+    { label: "Culotes", imageSrc: areaImage("culotes.webp"), alt: "Intradermoterapia nos culotes" },
+    { label: "Coxas", imageSrc: areaImage("coxas.webp"), alt: "Intradermoterapia nas coxas" },
+    { label: "Dorso", imageSrc: areaImage("dorso.webp"), alt: "Intradermoterapia no dorso" },
+    { label: "Braços", imageSrc: areaImage("braco.webp"), alt: "Intradermoterapia nos braços" },
     { label: "Glúteos", alt: "Intradermoterapia na região dos glúteos" },
   ],
   callout: {
