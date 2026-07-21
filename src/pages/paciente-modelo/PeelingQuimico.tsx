@@ -33,12 +33,12 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Protocolos individualizados para cada tipo de pele." },
   ],
   areas: [
-    { label: "Rosto", imageSrc: areaImage("rosto.png"), alt: "Peeling químico no rosto" },
-    { label: "Pescoço", imageSrc: areaImage("pescoco.png"), alt: "Peeling químico no pescoço" },
-    { label: "Colo", imageSrc: areaImage("colo.png"), alt: "Peeling químico no colo" },
-    { label: "Mãos", imageSrc: areaImage("maos.png"), alt: "Peeling químico nas mãos" },
-    { label: "Braços", imageSrc: areaImage("braco.png"), alt: "Peeling químico nos braços" },
-    { label: "Costas", imageSrc: areaImage("costas.png"), alt: "Peeling químico nas costas" },
+    { label: "Rosto", imageSrc: areaImage("rosto.webp"), alt: "Peeling químico no rosto" },
+    { label: "Pescoço", imageSrc: areaImage("pescoco.webp"), alt: "Peeling químico no pescoço" },
+    { label: "Colo", imageSrc: areaImage("colo.webp"), alt: "Peeling químico no colo" },
+    { label: "Mãos", imageSrc: areaImage("maos.webp"), alt: "Peeling químico nas mãos" },
+    { label: "Braços", imageSrc: areaImage("braco.webp"), alt: "Peeling químico nos braços" },
+    { label: "Costas", imageSrc: areaImage("costas.webp"), alt: "Peeling químico nas costas" },
     { label: "Íntimo feminino", icon: Heart },
   ],
   callout: {
