@@ -1,5 +1,4 @@
-import { CheckCircle2, Brain, Droplets, Footprints } from "lucide-react";
-import { areaImages } from "@/assets/areas";
+import { CheckCircle2 } from "lucide-react";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import toxinaAntes from "@/assets/toxina-botulinica/antes.webp?w=480;768;1200&responsive";
 import toxinaDepois from "@/assets/toxina-botulinica/depois.webp?w=480;768;1200&responsive";
@@ -73,10 +72,22 @@ const data: ProcedurePageData = {
       imageSrc: areaImage("terco-inferior-da-face.webp"),
       alt: "Toxina botulínica no terço inferior da face",
     },
-    { label: "Enxaqueca", icon: Brain },
-    { label: "Hiperidrose axilar — axilas", icon: Droplets },
-    { label: "Hiperidrose palmar — mãos", image: areaImages.maos },
-    { label: "Hiperidrose plantar — pés", icon: Footprints },
+    { label: "Enxaqueca", imageSrc: areaImage("enxaqueca.webp"), alt: "Toxina botulínica para enxaqueca" },
+    {
+      label: "Hiperidrose axilar — axilas",
+      imageSrc: areaImage("hiperidrose-axilar-axilas.webp"),
+      alt: "Toxina botulínica para hiperidrose axilar",
+    },
+    {
+      label: "Hiperidrose palmar — mãos",
+      imageSrc: areaImage("hiperidrose-palmar-maos.webp"),
+      alt: "Toxina botulínica para hiperidrose palmar",
+    },
+    {
+      label: "Hiperidrose plantar — pés",
+      imageSrc: areaImage("hiperidrose-plantar-pes.webp"),
+      alt: "Toxina botulínica para hiperidrose plantar",
+    },
   ],
   callout: {
     title: "A Experiência Derma Concept",
