@@ -7,7 +7,7 @@ import maosDepois from "@/assets/peeling-quimico/maos-depois.webp?w=480;768;1200
 import coloAntes from "@/assets/peeling-quimico/colo-antes.webp?w=480;768;1200&responsive";
 import coloDepois from "@/assets/peeling-quimico/colo-depois.webp?w=480;768;1200&responsive";
 
-const areaImage = (file: string) => `/peeling-quimico/${file}`;
+const areaImage = (file: string) => `/paciente-modelo/peeling-quimico/${file}`;
 
 const data: ProcedurePageData = {
   title: (<>PEELING QUÍMICO<br /><span className="block">Renovação Celular, Clareamento e Textura</span></>),
