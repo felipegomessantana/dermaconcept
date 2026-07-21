@@ -36,7 +36,7 @@ const courses: CourseData[] = [
       { text: "Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos! O aluno acompanha seu paciente durante todo o tratamento! Realiza o procedimento e avalia o resultado!" },
     ],
     callout: "A prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.",
-    imageSrc: "/dermatologia-estetica-semanal.webp",
+    imageSrc: "/pagina-inicial/dermatologia-estetica-semanal.webp",
     tag: "Intensivo",
   },
   {
@@ -52,7 +52,7 @@ const courses: CourseData[] = [
       { text: "Conta com aula teórica baseada em artigos científicos e literatura atualizada e muito hands on!! Tudo acompanhado por professores qualificados e que são referência na área!" },
     ],
     callout: "O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!",
-    imageSrc: "/dermatologia-estetica-mensal.webp",
+    imageSrc: "/pagina-inicial/dermatologia-estetica-mensal.webp",
     tag: "Completo",
   },
   {
