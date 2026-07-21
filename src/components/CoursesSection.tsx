@@ -36,7 +36,7 @@ const courses: CourseData[] = [
       { text: "Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos! O aluno acompanha seu paciente durante todo o tratamento! Realiza o procedimento e avalia o resultado!" },
     ],
     callout: "A prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.",
-    imageSrc: "/pagina-inicial/dermatologia-estetica-semanal.webp",
+    imageSrc: "/pagina-inicial/dermatologia-estetica-semanal.jpeg",
     tag: "Intensivo",
   },
   {

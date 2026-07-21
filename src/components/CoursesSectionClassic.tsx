@@ -6,7 +6,7 @@ const courses = [
     title: "Dermatologia Estética Semanal",
     description:
       "Curso intensivo de uma semana com foco em procedimentos estéticos como toxina botulínica, preenchimentos, bioestimuladores e tecnologias.",
-    image: "/pagina-inicial/dermatologia-estetica-semanal.webp",
+    image: "/pagina-inicial/dermatologia-estetica-semanal.jpeg",
     tag: "Intensivo",
   },
   {
