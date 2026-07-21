@@ -12,7 +12,6 @@ import face5Antes from "@/assets/ipca/face-5-antes.webp?w=480;768;1200&responsiv
 import face5Depois from "@/assets/ipca/face-5-depois.webp?w=480;768;1200&responsive";
 import face6Antes from "@/assets/ipca/face-6-antes.webp?w=480;768;1200&responsive";
 import face6Depois from "@/assets/ipca/face-6-depois.webp?w=480;768;1200&responsive";
-import areaRosto from "@/assets/ipca/area-rosto.webp?w=480;768;1200&responsive";
 
 const data: ProcedurePageData = {
   title: (<>IPCA<br /><span className="block">Indução Percutânea de Colágeno por Agulhas</span></>),
@@ -42,7 +41,11 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Tratadas",
   areas: [
-    { label: "Rosto", image: areaRosto },
+    {
+      label: "Rosto",
+      imageSrc: "/paciente-modelo/ipca/rosto.webp",
+      alt: "IPCA na região do rosto",
+    },
   ],
   callout: {
     title: "A Experiência Derma Concept",
