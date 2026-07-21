@@ -55,32 +55,32 @@ const data: ProcedurePageData = {
   areas: [
     {
       label: "Face completa",
-      imageSrc: "/paciente-modelo/intradermoterapia/face.webp",
+      imageSrc: "/paciente-modelo/linear-z/face-completa.webp",
       alt: "Linear Z na face completa",
     },
     {
       label: "Papada",
-      imageSrc: "/paciente-modelo/fios-de-pdo/papada.webp",
+      imageSrc: "/paciente-modelo/linear-z/papada.webp",
       alt: "Linear Z na papada",
     },
     {
       label: "Mandíbula",
-      imageSrc: "/paciente-modelo/toxina-botulinica/mandibula.webp",
+      imageSrc: "/paciente-modelo/linear-z/mandibula.webp",
       alt: "Linear Z na mandíbula",
     },
     {
       label: "Pescoço",
-      imageSrc: "/paciente-modelo/peeling-quimico/pescoco.webp",
+      imageSrc: "/paciente-modelo/linear-z/pescoco.webp",
       alt: "Linear Z no pescoço",
     },
     {
       label: "Abdômen",
-      imageSrc: "/paciente-modelo/intradermoterapia/abdomen.webp",
+      imageSrc: "/paciente-modelo/linear-z/abdomen.webp",
       alt: "Linear Z no abdômen",
     },
     {
       label: "Flancos",
-      imageSrc: "/paciente-modelo/intradermoterapia/flancos.webp",
+      imageSrc: "/paciente-modelo/linear-z/flancos.webp",
       alt: "Linear Z nos flancos",
     },
   ],

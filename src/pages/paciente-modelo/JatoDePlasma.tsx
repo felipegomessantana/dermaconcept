@@ -75,7 +75,7 @@ const data: ProcedurePageData = {
     { label: "Ao redor dos lábios", image: areaImages.aoRedorLabios },
     {
       label: "Face",
-      imageSrc: "/paciente-modelo/intradermoterapia/face.webp",
+      imageSrc: "/paciente-modelo/jato-de-plasma/face.webp",
       alt: "Jato de plasma na face",
     },
   ],

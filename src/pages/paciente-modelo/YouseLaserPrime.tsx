@@ -11,7 +11,7 @@ import rejuvAntes from "@/assets/youlaser-prime/rejuvenescimento-antes.webp?w=48
 import rejuvDepois from "@/assets/youlaser-prime/rejuvenescimento-depois.webp?w=480;768;1200&responsive";
 import areaCorpo from "@/assets/youlaser-prime/corpo.jpg?w=480;768;1200&responsive";
 
-const areaImage = (file: string) => `/paciente-modelo/peeling-quimico/${file}`;
+const areaImage = (file: string) => `/paciente-modelo/youse-laser-prime/${file}`;
 
 const data: ProcedurePageData = {
   title: (<>YOULASER PRIME<br /><span className="block">Laser CO2 Híbrido Exclusivo</span></>),
