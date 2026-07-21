@@ -52,7 +52,7 @@ const data: ProcedurePageData = {
     { label: "Glúteos", alt: "Bioestimuladores de colágeno na região dos glúteos" },
     { label: "Coxas", imageSrc: areaImage("coxas.webp"), alt: "Bioestimuladores de colágeno nas coxas" },
     { label: "Pernas", imageSrc: areaImage("Pernas.webp"), alt: "Bioestimuladores de colágeno nas pernas" },
-    { label: "Preenchimento íntimo feminino", icon: Heart },
+    { label: "Íntimo feminino", icon: Heart },
   ],
   callout: {
     title: "A Experiência Derma Concept",
