@@ -73,7 +73,11 @@ const data: ProcedurePageData = {
     { label: "Pálpebras superiores e inferiores", image: areaImages.palpebras },
     { label: "Região dos olhos", image: areaImages.regiaoOlhos },
     { label: "Ao redor dos lábios", image: areaImages.aoRedorLabios },
-    { label: "Face", image: areaImages.face },
+    {
+      label: "Face",
+      imageSrc: "/paciente-modelo/intradermoterapia/face.webp",
+      alt: "Jato de plasma na face",
+    },
   ],
   callout: {
     title: "A Experiência Derma Concept",

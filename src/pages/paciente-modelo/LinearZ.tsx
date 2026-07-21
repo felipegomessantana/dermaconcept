@@ -1,5 +1,4 @@
 import { ArrowUp, Target, Layers, Shield, Sparkles } from "lucide-react";
-import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import equipFull from "@/assets/linear-z/equipamento-full.webp?w=480;768;1200&responsive";
 import equipDetalhe from "@/assets/linear-z/equipamento-detalhe.webp?w=480;768;1200&responsive";
@@ -54,12 +53,36 @@ const data: ProcedurePageData = {
     ) },
   ],
   areas: [
-    { label: "Face completa", image: areaImages.face },
-    { label: "Papada", image: areaImages.papada },
-    { label: "Mandíbula", image: areaImages.mandibula },
-    { label: "Pescoço", image: areaImages.pescoco },
-    { label: "Abdômen", image: areaImages.abdomen },
-    { label: "Flancos", image: areaImages.flancos },
+    {
+      label: "Face completa",
+      imageSrc: "/paciente-modelo/intradermoterapia/face.webp",
+      alt: "Linear Z na face completa",
+    },
+    {
+      label: "Papada",
+      imageSrc: "/paciente-modelo/fios-de-pdo/papada.webp",
+      alt: "Linear Z na papada",
+    },
+    {
+      label: "Mandíbula",
+      imageSrc: "/paciente-modelo/toxina-botulinica/mandibula.webp",
+      alt: "Linear Z na mandíbula",
+    },
+    {
+      label: "Pescoço",
+      imageSrc: "/paciente-modelo/peeling-quimico/pescoco.webp",
+      alt: "Linear Z no pescoço",
+    },
+    {
+      label: "Abdômen",
+      imageSrc: "/paciente-modelo/intradermoterapia/abdomen.webp",
+      alt: "Linear Z no abdômen",
+    },
+    {
+      label: "Flancos",
+      imageSrc: "/paciente-modelo/intradermoterapia/flancos.webp",
+      alt: "Linear Z nos flancos",
+    },
   ],
   callout: {
     title: "Por que escolher o Linear Z na Derma Concept",

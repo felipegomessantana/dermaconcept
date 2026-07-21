@@ -24,6 +24,8 @@ import acneDepois from "@/assets/youlaser-prime/acne-depois.webp?w=480;768;1200&
 import onychoAntes from "@/assets/youlaser-prime/onychomycosis-antes.webp?w=480;768;1200&responsive";
 import onychoDepois from "@/assets/youlaser-prime/onychomycosis-depois.webp?w=480;768;1200&responsive";
 
+const peeling = (file: string) => `/paciente-modelo/peeling-quimico/${file}`;
+
 const data: ProcedurePageData = {
   title: (<>ETHEREA MX<br /><span className="block">Tecnologia Avançada para Pigmentos, Manchas e Vasos</span></>),
   subtitle: "Tecnologia avançada para pigmentos, manchas e vasos.",
@@ -62,11 +64,11 @@ const data: ProcedurePageData = {
     { icon: Sparkles, text: "Resultados visíveis com mínimo downtime e alta segurança." },
   ],
   areas: [
-    { label: "Rosto", image: areaImages.rosto },
-    { label: "Pescoço", image: areaImages.pescoco },
-    { label: "Colo", image: areaImages.colo },
-    { label: "Mãos", image: areaImages.maos },
-    { label: "Corpo", image: areaImages.corpo },
+    { label: "Rosto", imageSrc: peeling("rosto.webp"), alt: "Etherea MX no rosto" },
+    { label: "Pescoço", imageSrc: peeling("pescoco.webp"), alt: "Etherea MX no pescoço" },
+    { label: "Colo", imageSrc: peeling("colo.webp"), alt: "Etherea MX no colo" },
+    { label: "Mãos", imageSrc: peeling("maos.webp"), alt: "Etherea MX nas mãos" },
+    { label: "Corpo", image: areaImages.corpo, alt: "Etherea MX no corpo" },
   ],
   callout: {
     title: "A Experiência Derma Concept",

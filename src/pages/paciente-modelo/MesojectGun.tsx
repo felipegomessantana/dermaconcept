@@ -2,6 +2,8 @@ import { Syringe, Sparkles, Target, Droplets, Shield } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
+const peeling = (file: string) => `/paciente-modelo/peeling-quimico/${file}`;
+
 const data: ProcedurePageData = {
   title: (<>MESOJECT GUN<br /><span className="block">Intradermoterapia de Alta Precisão</span></>),
   subtitle: "Intradermoterapia de alta precisão e entrega de ativos.",
@@ -21,10 +23,14 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Ativos de alta qualidade selecionados para cada tipo de pele e necessidade." },
   ],
   areas: [
-    { label: "Rosto", image: areaImages.rosto },
-    { label: "Pescoço", image: areaImages.pescoco },
-    { label: "Couro cabeludo", image: areaImages.couroCabeludo },
-    { label: "Corpo", image: areaImages.corpo },
+    { label: "Rosto", imageSrc: peeling("rosto.webp"), alt: "Mesoject Gun no rosto" },
+    { label: "Pescoço", imageSrc: peeling("pescoco.webp"), alt: "Mesoject Gun no pescoço" },
+    {
+      label: "Couro cabeludo",
+      imageSrc: "/paciente-modelo/intradermoterapia/couro-cabeludo.webp",
+      alt: "Mesoject Gun no couro cabeludo",
+    },
+    { label: "Corpo", image: areaImages.corpo, alt: "Mesoject Gun no corpo" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
