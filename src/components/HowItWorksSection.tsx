@@ -6,7 +6,7 @@ import { BookOpen, Hand, Users } from "lucide-react";
 
 const blocks = [
   {
-    imgUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    imgUrl: "/pagina-inicial/cursos-teoricos.webp",
     subheading: "Metodologia",
     heading: "Cursos teóricos",
     icon: BookOpen,
@@ -15,7 +15,7 @@ const blocks = [
       "Aulas ministradas por especialistas com vasta experiência clínica e acadêmica. Conteúdo baseado em evidências científicas e nas mais recentes atualizações da dermatologia.",
   },
   {
-    imgUrl: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80",
+    imgUrl: "/pagina-inicial/maos-na-massa.webp",
     subheading: "Prática",
     heading: "Mãos na massa",
     icon: Hand,
@@ -24,7 +24,7 @@ const blocks = [
       "Prática intensiva em procedimentos reais, com acompanhamento individualizado. Cada aluno tem a oportunidade de executar técnicas sob orientação de preceptores qualificados.",
   },
   {
-    imgUrl: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80",
+    imgUrl: "/pagina-inicial/pacientes-reais.webp",
     subheading: "Realidade",
     heading: "Pacientes reais",
     icon: Users,
