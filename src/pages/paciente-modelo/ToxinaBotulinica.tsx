@@ -1,4 +1,4 @@
-import { CheckCircle2, Heart, Brain, Droplets, Footprints } from "lucide-react";
+import { CheckCircle2, Brain, Droplets, Footprints } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import toxinaAntes from "@/assets/toxina-botulinica/antes.webp?w=480;768;1200&responsive";
@@ -7,6 +7,8 @@ import peGalinhaAntes from "@/assets/toxina-botulinica/pe-galinha-antes.webp?w=4
 import peGalinhaDepois from "@/assets/toxina-botulinica/pe-galinha-depois.webp?w=480;768;1200&responsive";
 import tercoSuperiorAntes from "@/assets/toxina-botulinica/terco-superior-antes.webp?w=480;768;1200&responsive";
 import tercoSuperiorDepois from "@/assets/toxina-botulinica/terco-superior-depois.webp?w=480;768;1200&responsive";
+
+const areaImage = (file: string) => `/paciente-modelo/toxina-botulinica/${file}`;
 
 const data: ProcedurePageData = {
   title: (<>TOXINA BOTULÍNICA<br /><span className="block">Suavidade, Controle e Sofisticação</span></>),
@@ -34,15 +36,43 @@ const data: ProcedurePageData = {
   ],
   areasTitle: "Áreas Tratadas",
   areas: [
-    { label: "Testa", image: areaImages.testa },
-    { label: "Glabela (entre as sobrancelhas)", image: areaImages.glabela },
-    { label: "Pés de galinha (região dos olhos)", image: areaImages.peGalinha },
-    { label: "Sobrancelhas (efeito lifting)", image: areaImages.sobrancelhas },
-    { label: "Nariz (linhas do \"bunny lines\")", image: areaImages.nariz },
-    { label: "Queixo (aspecto de casca de laranja)", image: areaImages.queixo },
-    { label: "Pescoço (bandas platismais)", image: areaImages.pescoco },
-    { label: "Mandíbula", image: areaImages.mandibula },
-    { label: "Terço inferior da face", image: areaImages.face },
+    { label: "Testa", imageSrc: areaImage("testa.webp"), alt: "Toxina botulínica na testa" },
+    {
+      label: "Glabela (entre as sobrancelhas)",
+      imageSrc: areaImage("glabela-entre-as-sobrancelhas.webp"),
+      alt: "Toxina botulínica na glabela",
+    },
+    {
+      label: "Pés de galinha (região dos olhos)",
+      imageSrc: areaImage("pes-de-galinha-regiao-dos-olhos.webp"),
+      alt: "Toxina botulínica nos pés de galinha",
+    },
+    {
+      label: "Sobrancelhas (efeito lifting)",
+      imageSrc: areaImage("sobrancelhas-efeito-lifting.webp"),
+      alt: "Toxina botulínica nas sobrancelhas",
+    },
+    {
+      label: "Nariz (linhas do \"bunny lines\")",
+      imageSrc: areaImage("nariz-linhas-do-bunny-lines.webp"),
+      alt: "Toxina botulínica nas linhas do nariz",
+    },
+    {
+      label: "Queixo (aspecto de casca de laranja)",
+      imageSrc: areaImage("queixo-aspecto-de-casca-de-laranja.webp"),
+      alt: "Toxina botulínica no queixo",
+    },
+    {
+      label: "Pescoço (bandas platismais)",
+      imageSrc: areaImage("pescoco-bandas-platismais.webp"),
+      alt: "Toxina botulínica no pescoço",
+    },
+    { label: "Mandíbula", imageSrc: areaImage("mandibula.webp"), alt: "Toxina botulínica na mandíbula" },
+    {
+      label: "Terço inferior da face",
+      imageSrc: areaImage("terco-inferior-da-face.webp"),
+      alt: "Toxina botulínica no terço inferior da face",
+    },
     { label: "Enxaqueca", icon: Brain },
     { label: "Hiperidrose axilar — axilas", icon: Droplets },
     { label: "Hiperidrose palmar — mãos", image: areaImages.maos },

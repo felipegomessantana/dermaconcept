@@ -53,7 +53,7 @@ const TAUPE = "#7A7168";
 
 function ProcedureAreaCard({ area }: { area: ProcedureArea }) {
   const canonicalImageSrc = getCanonicalProcedureAreaImage(area.label);
-  const resolvedImageSrc = canonicalImageSrc ?? area.imageSrc;
+  const resolvedImageSrc = area.imageSrc ?? canonicalImageSrc;
   const alt = area.alt ?? getCanonicalProcedureAreaAlt(area.label) ?? area.label;
 
   if (resolvedImageSrc) {
