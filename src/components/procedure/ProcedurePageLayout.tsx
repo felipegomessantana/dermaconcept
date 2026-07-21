@@ -327,12 +327,20 @@ export default function ProcedurePageLayout({ data }: { data: ProcedurePageData 
             >
               {data.areasTitle || "Áreas de Aplicação"}
             </motion.h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+            <div
+              className={
+                data.areas.length === 1
+                  ? "flex justify-center"
+                  : "grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4"
+              }
+            >
               {data.areas.map((a, i) => (
                 <motion.div
                   key={i}
                   {...fadeUp(0.04 * i)}
-                  className="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-default shadow-sm"
+                  className={`relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-default shadow-sm${
+                    data.areas.length === 1 ? " w-full max-w-[240px]" : ""
+                  }`}
                 >
                   <ProcedureAreaCard area={a} />
                 </motion.div>
