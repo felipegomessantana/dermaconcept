@@ -26,7 +26,7 @@ export interface ProcedureArea {
   label: string;
   icon?: LucideIcon;
   image?: PictureSource;
-  /** Caminho absoluto para arquivo em public/, ex.: /01_labios.png */
+  /** Caminho absoluto para arquivo em public/, ex.: /paciente-modelo/.../01_labios.webp */
   imageSrc?: string;
   alt?: string;
 }
