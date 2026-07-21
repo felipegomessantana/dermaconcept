@@ -1,5 +1,4 @@
 import { Sparkles, Heart, Hand, Layers, Shield } from "lucide-react";
-import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 import rostoAntes from "@/assets/bioestimuladores/rosto-antes.webp?w=480;768;1200&responsive";
 import rostoDepois from "@/assets/bioestimuladores/rosto-depois.webp?w=480;768;1200&responsive";
@@ -13,6 +12,9 @@ import coloAntes from "@/assets/bioestimuladores/colo-antes.webp?w=480;768;1200&
 import coloDepois from "@/assets/bioestimuladores/colo-depois.webp?w=480;768;1200&responsive";
 import barrigaAntes from "@/assets/bioestimuladores/barriga-antes.webp?w=480;768;1200&responsive";
 import barrigaDepois from "@/assets/bioestimuladores/barriga-depois.webp?w=480;768;1200&responsive";
+
+const areaImage = (file: string) =>
+  `/paciente-modelo/bioestimuladores-colageno/${file}`;
 
 const data: ProcedurePageData = {
   title: (<>BIOESTIMULADORES<br /><span className="block">de Colágeno</span></>),
@@ -41,15 +43,15 @@ const data: ProcedurePageData = {
     { icon: Hand, text: "Rejuvenescimento das mãos, pescoço e colo com naturalidade." },
   ],
   areas: [
-    { label: "Rosto", image: areaImages.rosto },
-    { label: "Pescoço", image: areaImages.pescoco },
-    { label: "Colo", image: areaImages.colo },
-    { label: "Mãos", image: areaImages.maos },
-    { label: "Braços", image: areaImages.bracos },
-    { label: "Abdômen", image: areaImages.abdomen },
-    { label: "Glúteos", image: areaImages.gluteos },
-    { label: "Coxas", image: areaImages.coxas },
-    { label: "Pernas", image: areaImages.coxas },
+    { label: "Rosto", imageSrc: areaImage("rosto.webp"), alt: "Bioestimuladores de colágeno no rosto" },
+    { label: "Pescoço", imageSrc: areaImage("pescoco.webp"), alt: "Bioestimuladores de colágeno no pescoço" },
+    { label: "Colo", imageSrc: areaImage("colo.webp"), alt: "Bioestimuladores de colágeno no colo" },
+    { label: "Mãos", imageSrc: areaImage("maos.webp"), alt: "Bioestimuladores de colágeno nas mãos" },
+    { label: "Braços", imageSrc: areaImage("braco.webp"), alt: "Bioestimuladores de colágeno nos braços" },
+    { label: "Abdômen", imageSrc: areaImage("abdomen.webp"), alt: "Bioestimuladores de colágeno no abdômen" },
+    { label: "Glúteos", alt: "Bioestimuladores de colágeno na região dos glúteos" },
+    { label: "Coxas", imageSrc: areaImage("coxas.webp"), alt: "Bioestimuladores de colágeno nas coxas" },
+    { label: "Pernas", imageSrc: areaImage("Pernas.webp"), alt: "Bioestimuladores de colágeno nas pernas" },
     { label: "Preenchimento íntimo feminino", icon: Heart },
   ],
   callout: {
