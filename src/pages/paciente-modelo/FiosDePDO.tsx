@@ -1,6 +1,7 @@
 import { ArrowUp, Sparkles, Shield, Layers, Heart } from "lucide-react";
-import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
+
+const areaImage = (file: string) => `/paciente-modelo/fios-de-pdo/${file}`;
 
 const data: ProcedurePageData = {
   title: (<>FIOS DE PDO<br /><span className="block">Sustentação com Leveza e Efeito Lifting</span></>),
@@ -21,11 +22,11 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Fios absorvíveis e biocompatíveis com alto perfil de segurança." },
   ],
   areas: [
-    { label: "Rosto", image: areaImages.rosto },
-    { label: "Pescoço", image: areaImages.pescoco },
-    { label: "Papada", image: areaImages.papada },
-    { label: "Colo", image: areaImages.colo },
-    { label: "Abdômen", image: areaImages.abdomen },
+    { label: "Rosto", imageSrc: areaImage("rosto.webp"), alt: "Fios de PDO no rosto" },
+    { label: "Pescoço", imageSrc: areaImage("pescoco.webp"), alt: "Fios de PDO no pescoço" },
+    { label: "Papada", imageSrc: areaImage("papada.webp"), alt: "Fios de PDO na papada" },
+    { label: "Colo", imageSrc: areaImage("colo.webp"), alt: "Fios de PDO no colo" },
+    { label: "Abdômen", imageSrc: areaImage("abdomen.webp"), alt: "Fios de PDO no abdômen" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
