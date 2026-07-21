@@ -2,6 +2,8 @@ import { Sparkles, Target, Layers, Shield, Palette } from "lucide-react";
 import { areaImages } from "@/assets/areas";
 import ProcedurePageLayout, { type ProcedurePageData } from "@/components/procedure/ProcedurePageLayout";
 
+const areaImage = (file: string) => `/paciente-modelo/microagulhamento/${file}`;
+
 const data: ProcedurePageData = {
   title: (<>MICROAGULHAMENTO<br /><span className="block">Cicatrizes, Linhas Finas e Textura</span></>),
   subtitle: "Cicatrizes de acne, linhas finas e textura.",
@@ -21,11 +23,11 @@ const data: ProcedurePageData = {
     { icon: Shield, text: "Equipamentos de última geração com protocolos individualizados." },
   ],
   areas: [
-    { label: "Rosto", image: areaImages.rosto },
+    { label: "Rosto", imageSrc: areaImage("rosto.webp"), alt: "Microagulhamento no rosto" },
     { label: "Corpo", image: areaImages.corpo },
     { label: "Nádegas", image: areaImages.gluteos },
-    { label: "Coxas", image: areaImages.coxas },
-    { label: "Abdômen", image: areaImages.abdomen },
+    { label: "Coxas", imageSrc: areaImage("coxas.webp"), alt: "Microagulhamento nas coxas" },
+    { label: "Abdômen", imageSrc: areaImage("abdomen.webp"), alt: "Microagulhamento no abdômen" },
   ],
   callout: {
     title: "A Experiência Derma Concept",
