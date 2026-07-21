@@ -1,21 +1,19 @@
 import AnimatedSection from "./AnimatedSection";
-import courseEstetica from "@/assets/course-estetica.jpg";
 import courseCirurgia from "@/assets/course-cirurgia.jpg";
-import heroImg from "@/assets/hero-derma.jpg";
 
 const courses = [
   {
     title: "Dermatologia Estética Semanal",
     description:
       "Curso intensivo de uma semana com foco em procedimentos estéticos como toxina botulínica, preenchimentos, bioestimuladores e tecnologias.",
-    image: courseEstetica,
+    image: "/dermatologia-estetica-semanal.webp",
     tag: "Intensivo",
   },
   {
     title: "Dermatologia Estética Mensal",
     description:
       "Formação completa ao longo de um mês, com módulos aprofundados em harmonização facial, protocolos combinados e acompanhamento de pacientes.",
-    image: heroImg,
+    image: "/dermatologia-estetica-mensal.webp",
     tag: "Completo",
   },
   {

@@ -3,12 +3,9 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
-import courseEstetica from "@/assets/course-estetica.jpg?w=480;768;1000&responsive";
 import courseCirurgia from "@/assets/course-cirurgia.jpg?w=480;768;1000&responsive";
-
-import heroImg from "@/assets/hero-derma.jpg?w=480;768;1000&responsive";
-
 import { useIsMobile } from "@/hooks/use-mobile";
+import type { PictureSource } from "./ui/responsive-image";
 
 const taupe = "#7A7168";
 
@@ -21,7 +18,8 @@ interface CourseData {
   intro: React.ReactNode;
   benefits: BenefitItem[];
   callout: string;
-  image: import("./ui/responsive-image").PictureSource;
+  image?: PictureSource;
+  imageSrc?: string;
   tag: string;
 }
 
@@ -38,7 +36,7 @@ const courses: CourseData[] = [
       { text: "Ensina a lidar com várias queixas, insatisfações, intercorrências, vendas e até precificar os procedimentos! O aluno acompanha seu paciente durante todo o tratamento! Realiza o procedimento e avalia o resultado!" },
     ],
     callout: "A prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.",
-    image: courseEstetica,
+    imageSrc: "/dermatologia-estetica-semanal.webp",
     tag: "Intensivo",
   },
   {
@@ -54,7 +52,7 @@ const courses: CourseData[] = [
       { text: "Conta com aula teórica baseada em artigos científicos e literatura atualizada e muito hands on!! Tudo acompanhado por professores qualificados e que são referência na área!" },
     ],
     callout: "O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!",
-    image: heroImg,
+    imageSrc: "/dermatologia-estetica-mensal.webp",
     tag: "Completo",
   },
   {
@@ -132,20 +130,32 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
       className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5]"
       style={{ y: imageY }}
     >
-      <motion.picture className="block w-full h-full" style={{ scale: imageScale }}>
-        {Object.entries(course.image.sources).map(([mime, srcSet]) => (
-          <source key={mime} type={mime} srcSet={srcSet} sizes="(min-width: 1024px) 45vw, 100vw" />
-        ))}
-        <img
-          src={course.image.img.src}
-          width={course.image.img.w}
-          height={course.image.img.h}
-          alt={course.title}
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover"
-        />
-      </motion.picture>
+      <motion.div className="block w-full h-full" style={{ scale: imageScale }}>
+        {course.imageSrc ? (
+          <img
+            src={course.imageSrc}
+            alt={course.title}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
+        ) : course.image ? (
+          <picture className="block w-full h-full">
+            {Object.entries(course.image.sources).map(([mime, srcSet]) => (
+              <source key={mime} type={mime} srcSet={srcSet} sizes="(min-width: 1024px) 45vw, 100vw" />
+            ))}
+            <img
+              src={course.image.img.src}
+              width={course.image.img.w}
+              height={course.image.img.h}
+              alt={course.title}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+          </picture>
+        ) : null}
+      </motion.div>
       <span className="absolute top-5 left-5 px-3.5 py-1.5 text-[11px] font-medium tracking-[0.2em] uppercase rounded-full bg-card/90 text-foreground backdrop-blur-sm border border-border/30">
         {course.tag}
       </span>
