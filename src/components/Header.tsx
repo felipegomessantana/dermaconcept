@@ -20,8 +20,8 @@ const DropdownLink = ({ href, children }: { href: string; children: React.ReactN
 function FellowsContent() {
   const items = [
     { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
-    { label: "Dermatologia Estética Mensal", href: "#cursos" },
-    { label: "Cirurgia Dermatológica", href: "#cursos" },
+    { label: "Dermatologia Estética Mensal", href: "/#cursos" },
+    { label: "Cirurgia Dermatológica", href: "/#cursos" },
   ];
 
   return (
@@ -40,13 +40,13 @@ function FellowsContent() {
 
 function WorkshopsContent() {
   const items = [
-    { label: "Toxina Botulínica", href: "#cursos" },
-    { label: "Preenchimento com Ácido Hialurônico + Bloqueio", href: "#cursos" },
-    { label: "Preenchimento com Ácido Hialurônico Avançado + Ultrassom de Pelo Guiado", href: "#cursos" },
-    { label: "Bioestimuladores de Colágeno", href: "#cursos" },
-    { label: "Rejuvenescimento Íntimo", href: "#cursos" },
-    { label: "Peeling Médico", href: "#cursos" },
-    { label: "IPCA", href: "#cursos" },
+    { label: "Toxina Botulínica", href: "/#cursos" },
+    { label: "Preenchimento com Ácido Hialurônico + Bloqueio", href: "/#cursos" },
+    { label: "Preenchimento com Ácido Hialurônico Avançado + Ultrassom de Pelo Guiado", href: "/#cursos" },
+    { label: "Bioestimuladores de Colágeno", href: "/#cursos" },
+    { label: "Rejuvenescimento Íntimo", href: "/#cursos" },
+    { label: "Peeling Médico", href: "/#cursos" },
+    { label: "IPCA", href: "/#cursos" },
     { label: "Mentoria Individual", href: "/mentoria-individual" },
   ];
 
@@ -331,20 +331,20 @@ const mobileMenuSections = [
     title: "Fellows",
     items: [
       { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
-      { label: "Dermatologia Estética Mensal", href: "#cursos" },
-      { label: "Cirurgia Dermatológica", href: "#cursos" },
+      { label: "Dermatologia Estética Mensal", href: "/#cursos" },
+      { label: "Cirurgia Dermatológica", href: "/#cursos" },
     ],
   },
   {
     title: "Workshops",
     items: [
-      { label: "Toxina Botulínica", href: "#cursos" },
-      { label: "Preenchimento com Ácido Hialurônico + Bloqueio", href: "#cursos" },
-      { label: "Preenchimento Avançado + Ultrassom", href: "#cursos" },
-      { label: "Bioestimuladores de Colágeno", href: "#cursos" },
-      { label: "Rejuvenescimento Íntimo", href: "#cursos" },
-      { label: "Peeling Médico", href: "#cursos" },
-      { label: "IPCA", href: "#cursos" },
+      { label: "Toxina Botulínica", href: "/#cursos" },
+      { label: "Preenchimento com Ácido Hialurônico + Bloqueio", href: "/#cursos" },
+      { label: "Preenchimento Avançado + Ultrassom", href: "/#cursos" },
+      { label: "Bioestimuladores de Colágeno", href: "/#cursos" },
+      { label: "Rejuvenescimento Íntimo", href: "/#cursos" },
+      { label: "Peeling Médico", href: "/#cursos" },
+      { label: "IPCA", href: "/#cursos" },
       { label: "Mentoria Individual", href: "/mentoria-individual" },
     ],
   },
