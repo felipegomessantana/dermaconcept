@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 const formats = [
-  { icon: Building2, text: "Presencial na Academy (meio período ou dia inteiro)" },
+  { icon: Building2, text: "Presencial na Academy (Período integral ou meio período)" },
   { icon: MapPin, text: "In loco (consulte disponibilidade)" },
 ];
 
