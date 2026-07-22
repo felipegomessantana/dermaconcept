@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
-import courseCirurgia from "@/assets/course-cirurgia.jpg?w=480;768;1000&responsive";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { PictureSource } from "./ui/responsive-image";
 
@@ -67,7 +66,7 @@ const courses: CourseData[] = [
       { text: "Hands-On supervisionado por especialistas da área de cirurgia dermatológica, colocando em prática todo conhecimento obtido nas aulas teóricas." },
     ],
     callout: "Esse fellow, ÚNICO em Belo Horizonte, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).",
-    image: courseCirurgia,
+    imageSrc: "/pagina-inicial/cirurgia-dermatologica.webp",
     tag: "Prático",
   },
 ];

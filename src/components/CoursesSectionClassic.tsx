@@ -1,5 +1,4 @@
 import AnimatedSection from "./AnimatedSection";
-import courseCirurgia from "@/assets/course-cirurgia.jpg";
 
 const courses = [
   {
@@ -20,7 +19,7 @@ const courses = [
     title: "Cirurgia Dermatológica Mensal",
     description:
       "Curso prático e teórico com foco em técnicas cirúrgicas dermatológicas: biópsias, exéreses, retalhos, enxertos e cirurgia micrográfica de Mohs.",
-    image: courseCirurgia,
+    image: "/pagina-inicial/cirurgia-dermatologica.webp",
     tag: "Prático",
   },
 ];
