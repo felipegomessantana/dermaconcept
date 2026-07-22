@@ -126,7 +126,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
 
   const imageCol = (
     <motion.div
-      className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5]"
+      className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5] bg-[#F8F5F1]"
       style={{ y: imageY }}
     >
       <motion.div className="block w-full h-full" style={{ scale: imageScale }}>
@@ -136,7 +136,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
             alt={course.title}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         ) : course.image ? (
           <picture className="block w-full h-full">

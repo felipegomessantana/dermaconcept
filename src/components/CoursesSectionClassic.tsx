@@ -43,11 +43,11 @@ const CoursesSectionClassic = () => (
         {courses.map((course, i) => (
           <AnimatedSection key={course.title} delay={i * 0.1}>
             <div className="flex flex-col overflow-hidden rounded-2xl bg-card border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
+              <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden bg-[#F8F5F1]">
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                   width={600}
                   height={400}
