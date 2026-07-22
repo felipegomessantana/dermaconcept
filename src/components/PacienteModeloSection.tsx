@@ -19,8 +19,8 @@ const esteticos = [
 
 const tecnologias = [
   { label: "YouLaser Prime (Laser CO2)", href: "/paciente-modelo/youse-laser-prime" },
-  { label: "Etherea MX", href: "/paciente-modelo/etherea-mx" },
-  { label: "Linear Z", href: "/paciente-modelo/linear-z" },
+  { label: "Etherea MX (Plataforma a Laser e Luz Intensa Pulsada)", href: "/paciente-modelo/etherea-mx" },
+  { label: "Linear Z (Ultrassom Micro e Macrofocado)", href: "/paciente-modelo/linear-z" },
   { label: "Jato de Plasma", href: "/paciente-modelo/jato-de-plasma" },
   { label: "Mesoject Gun", href: "/paciente-modelo/mesoject-gun" },
 ];

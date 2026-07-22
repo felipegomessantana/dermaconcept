@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clock, Users, Video, Building2, MapPin } from "lucide-react";
+import { Clock, Users, Building2, MapPin } from "lucide-react";
 import { BorderBeamButton } from "./ui/border-beam-button";
 
 const taupe = "#7A7168";
@@ -12,7 +12,6 @@ const fadeUp = (delay = 0) => ({
 });
 
 const formats = [
-  { icon: Video, text: "1:1 online (sessões de 60-90min)" },
   { icon: Building2, text: "Presencial na Academy (meio período ou dia inteiro)" },
   { icon: MapPin, text: "In loco (consulte disponibilidade)" },
 ];
