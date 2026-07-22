@@ -37,13 +37,13 @@ const MentoriaSection = () => {
       </div>
 
       <div ref={ref} className="container-narrow relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-3 lg:gap-16">
-          {/* Left — Image (1/3) */}
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left — Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto aspect-[9/16] w-full max-w-[280px] overflow-hidden rounded-2xl bg-[#F8F5F1] shadow-lg lg:mx-0"
+            className="relative mx-auto aspect-[2/3] w-full max-w-[420px] overflow-hidden rounded-2xl bg-[#F8F5F1] shadow-lg lg:mx-0 lg:max-w-none"
           >
             <img
               src="/pagina-inicial/mentoria.webp"
@@ -54,8 +54,8 @@ const MentoriaSection = () => {
             />
           </motion.div>
 
-          {/* Right — Content (2/3) */}
-          <div className="lg:col-span-2">
+          {/* Right — Content */}
+          <div>
             <motion.h2
               {...fadeUp(0.1)}
               animate={inView ? fadeUp(0.1).animate : {}}
