@@ -6,14 +6,25 @@ import logo from "@/assets/logo-derma.webp";
 
 /* ───────────── Dropdown link item ───────────── */
 
-const DropdownLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link
-    to={href}
-    className="block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black"
-  >
-    {children}
-  </Link>
-);
+const navLinkClass =
+  "block rounded-md px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:text-black";
+
+const DropdownLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  // Hash links: use native <a> so /#cursos works from any page (RR Link breaks this)
+  if (href.includes("#")) {
+    return (
+      <a href={href} className={navLinkClass}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={href} className={navLinkClass}>
+      {children}
+    </Link>
+  );
+};
 
 /* ───────────── Tab content components ───────────── */
 
@@ -308,6 +319,15 @@ const MobileSubmenu = ({
                 >
                   {item.label.replace(/—\s?/g, "").replace(/\s?—/g, "")}
                 </p>
+              ) : item.href.includes("#") ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={onNavigate}
+                  className="rounded-lg px-3 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-gray-900"
+                >
+                  {item.label}
+                </a>
               ) : (
                 <Link
                   key={item.label}
