@@ -1,17 +1,30 @@
 import { useState } from "react";
+import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import { BorderBeamButton } from "@/components/ui/border-beam-button";
 import { ContactInfoList } from "@/components/ContactInfoList";
+import { sendContactMessage } from "@/lib/sendContact";
 
 const ContatoPage = () => {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "", mensagem: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-    setForm({ nome: "", email: "", telefone: "", mensagem: "" });
+    if (sending) return;
+
+    setSending(true);
+    try {
+      await sendContactMessage(form);
+      toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+      setForm({ nome: "", email: "", telefone: "", mensagem: "" });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Não foi possível enviar a mensagem.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -95,8 +108,8 @@ const ContatoPage = () => {
                     className="w-full bg-background border border-border px-4 py-3 text-foreground rounded focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none"
                   />
                 </div>
-                <BorderBeamButton type="submit">
-                  Enviar
+                <BorderBeamButton type="submit" disabled={sending}>
+                  {sending ? "Enviando..." : "Enviar"}
                 </BorderBeamButton>
               </form>
             </AnimatedSection>

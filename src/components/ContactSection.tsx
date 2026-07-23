@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { toast } from "sonner";
 import AnimatedSection from "./AnimatedSection";
 import { BorderBeamButton } from "./ui/border-beam-button";
 import { Phone, MessageCircle, Mail, Instagram, MapPin } from "lucide-react";
 import contactImg from "@/assets/contact-ambiente.jpg";
+import { sendContactMessage } from "@/lib/sendContact";
 
 const contactStripRow1 = [
   { icon: Phone, label: "Telefone Fixo", value: "(31) 3564-6953", href: "tel:+553135646953" },
@@ -17,11 +19,22 @@ const contactAddress = {
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "", mensagem: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-    setForm({ nome: "", email: "", telefone: "", mensagem: "" });
+    if (sending) return;
+
+    setSending(true);
+    try {
+      await sendContactMessage(form);
+      toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+      setForm({ nome: "", email: "", telefone: "", mensagem: "" });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Não foi possível enviar a mensagem.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -134,6 +147,7 @@ const ContactSection = () => {
                 className="w-full border border-neutral-200 bg-white px-5 py-3.5 text-sm text-[#1A1A1A] placeholder:text-neutral-400 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#7A7168]/30 transition-all"
               />
               <textarea
+                required
                 placeholder="Sua mensagem"
                 rows={4}
                 value={form.mensagem}
@@ -143,8 +157,9 @@ const ContactSection = () => {
               <BorderBeamButton
                 type="submit"
                 className="w-full"
+                disabled={sending}
               >
-                Enviar Mensagem
+                {sending ? "Enviando..." : "Enviar Mensagem"}
               </BorderBeamButton>
             </form>
           </AnimatedSection>
