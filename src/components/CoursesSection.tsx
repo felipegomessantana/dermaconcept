@@ -56,7 +56,7 @@ const courses: CourseData[] = [
     callout: "O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!",
     imageSrc: "/pagina-inicial/dermatologia-estetica-mensal.webp",
     tag: "Completo",
-    href: "/#cursos",
+    href: "/dermatologia-estetica-mensal",
   },
   {
     title: "Cirurgia Dermatológica",
@@ -72,7 +72,7 @@ const courses: CourseData[] = [
     callout: "Esse fellow, ÚNICO em Belo Horizonte, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).",
     imageSrc: "/pagina-inicial/cirurgia-dermatologica.webp",
     tag: "Prático",
-    href: "/#cursos",
+    href: "/cirurgia-dermatologica",
   },
 ];
 

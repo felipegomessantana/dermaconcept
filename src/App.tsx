@@ -4,10 +4,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import WhatsAppFloat from "./components/WhatsAppFloat.tsx";
 import Index from "./pages/Index.tsx";
 import Index2 from "./pages/Index2.tsx";
 import Contato from "./pages/Contato.tsx";
 import FellowSemanal from "./pages/FellowSemanal.tsx";
+import FellowMensal from "./pages/FellowMensal.tsx";
+import FellowCirurgia from "./pages/FellowCirurgia.tsx";
 import MentoriaIndividual from "./pages/MentoriaIndividual.tsx";
 import QuemSomos from "./pages/QuemSomos.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -37,11 +40,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <WhatsAppFloat />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/v2" element={<Index2 />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/dermatologia-estetica-semanal" element={<FellowSemanal />} />
+          <Route path="/dermatologia-estetica-mensal" element={<FellowMensal />} />
+          <Route path="/cirurgia-dermatologica" element={<FellowCirurgia />} />
           <Route path="/mentoria-individual" element={<MentoriaIndividual />} />
           <Route path="/quem-somos" element={<QuemSomos />} />
 

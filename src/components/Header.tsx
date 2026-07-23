@@ -31,8 +31,8 @@ const DropdownLink = ({ href, children }: { href: string; children: React.ReactN
 function FellowsContent() {
   const items = [
     { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
-    { label: "Dermatologia Estética Mensal", href: "/#cursos" },
-    { label: "Cirurgia Dermatológica", href: "/#cursos" },
+    { label: "Dermatologia Estética Mensal", href: "/dermatologia-estetica-mensal" },
+    { label: "Cirurgia Dermatológica", href: "/cirurgia-dermatologica" },
   ];
 
   return (
@@ -351,8 +351,8 @@ const mobileMenuSections = [
     title: "Fellows",
     items: [
       { label: "Dermatologia Estética Semanal", href: "/dermatologia-estetica-semanal" },
-      { label: "Dermatologia Estética Mensal", href: "/#cursos" },
-      { label: "Cirurgia Dermatológica", href: "/#cursos" },
+      { label: "Dermatologia Estética Mensal", href: "/dermatologia-estetica-mensal" },
+      { label: "Cirurgia Dermatológica", href: "/cirurgia-dermatologica" },
     ],
   },
   {

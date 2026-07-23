@@ -6,9 +6,9 @@ const footerLinks = {
   formacao: {
     title: "Formação",
     items: [
-      { label: "Dermatologia Estética", href: "/#cursos" },
-      { label: "Cirurgia Dermatológica", href: "/#cursos" },
-      { label: "Mentoria Individual", href: "/#cursos" },
+      { label: "Dermatologia Estética", href: "/dermatologia-estetica-semanal" },
+      { label: "Cirurgia Dermatológica", href: "/cirurgia-dermatologica" },
+      { label: "Mentoria Individual", href: "/mentoria-individual" },
     ],
   },
   institucional: {

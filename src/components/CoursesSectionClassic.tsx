@@ -16,7 +16,7 @@ const courses = [
       "Formação completa ao longo de um mês, com módulos aprofundados em harmonização facial, protocolos combinados e acompanhamento de pacientes.",
     image: "/pagina-inicial/dermatologia-estetica-mensal.webp",
     tag: "Completo",
-    href: "/#cursos",
+    href: "/dermatologia-estetica-mensal",
   },
   {
     title: "Cirurgia Dermatológica Mensal",
@@ -24,7 +24,7 @@ const courses = [
       "Curso prático e teórico com foco em técnicas cirúrgicas dermatológicas: biópsias, exéreses, retalhos, enxertos e cirurgia micrográfica de Mohs.",
     image: "/pagina-inicial/cirurgia-dermatologica.webp",
     tag: "Prático",
-    href: "/#cursos",
+    href: "/cirurgia-dermatologica",
   },
 ];
 

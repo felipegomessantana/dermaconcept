@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CalendarDays, Clock, CalendarClock, Users, MapPin, Sparkles } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -7,76 +7,86 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
-const infoItems = [
-  { label: "Duração", value: "6 meses", icon: CalendarDays },
-  { label: "Carga horária", value: "96 horas", icon: Clock },
-  { label: "Frequência", value: "4h por semana", icon: CalendarClock },
-  { label: "Turmas", value: "Manhã ou Tarde", icon: Users },
-  { label: "Local", value: "Belo Horizonte", icon: MapPin },
-  { label: "Diferencial", value: "Acompanhamento de resultados reais", icon: Sparkles },
-];
+export type FellowInfoItem = {
+  label: string;
+  value: string;
+  icon: LucideIcon;
+};
 
-const FellowSemanalHero = () => (
+export type FellowHeroProps = {
+  badge?: string;
+  title: React.ReactNode;
+  description: string;
+  meta?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  infoItems: FellowInfoItem[];
+};
+
+const FellowHero = ({
+  badge = "Exclusivo para Médicos",
+  title,
+  description,
+  meta = "Vagas limitadas",
+  primaryCta = { label: "Quero me Inscrever", href: "https://wa.me/5531982449473" },
+  secondaryCta,
+  infoItems,
+}: FellowHeroProps) => (
   <section className="relative bg-[#F8F5F1] pt-28 pb-16 lg:pt-32 lg:pb-20">
     <div className="container-narrow">
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
-        {/* Left — Text */}
         <div className="flex flex-col justify-center">
           <motion.span
             {...fadeUp(0.1)}
             className="mb-6 inline-block w-fit rounded-full border border-[#B8A99A]/40 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#7A7168]"
           >
-            Exclusivo para Médicos
+            {badge}
           </motion.span>
 
           <motion.h1
             {...fadeUp(0.25)}
             className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-[#1A1A1A] sm:text-5xl lg:text-[3.5rem]"
           >
-            Fellow Semanal de{" "}
-            <span className="italic">Cosmiatria</span> 2026
+            {title}
           </motion.h1>
 
           <motion.p
             {...fadeUp(0.4)}
             className="mt-8 max-w-lg text-base leading-relaxed text-neutral-500 lg:text-lg"
           >
-            Um programa único em Belo Horizonte que ensina toda a dermatologia
-            estética, do básico ao avançado. A prática semanal proporciona muito
-            mais segurança e permite acompanhar o paciente durante todo o
-            tratamento, garantindo uma formação completa e diferenciada.
+            {description}
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
             {...fadeUp(0.55)}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <a
-              href="https://wa.me/5531982449473"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-[#1A1A1A] px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-white transition-all duration-300 hover:bg-[#333] shadow-sm"
+              href={primaryCta.href}
+              target={primaryCta.href.startsWith("http") ? "_blank" : undefined}
+              rel={primaryCta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="inline-flex items-center justify-center rounded-xl bg-[#1A1A1A] px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-white shadow-sm transition-all duration-300 hover:bg-[#333]"
             >
-              Quero me Inscrever
+              {primaryCta.label}
             </a>
-            <a
-              href="#cronograma"
-              className="inline-flex items-center justify-center rounded-xl border border-[#B8A99A]/50 px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-[#7A7168] transition-all duration-300 hover:border-[#7A7168] hover:text-[#1A1A1A]"
-            >
-              Ver cronograma
-            </a>
+            {secondaryCta && (
+              <a
+                href={secondaryCta.href}
+                className="inline-flex items-center justify-center rounded-xl border border-[#B8A99A]/50 px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-[#7A7168] transition-all duration-300 hover:border-[#7A7168] hover:text-[#1A1A1A]"
+              >
+                {secondaryCta.label}
+              </a>
+            )}
           </motion.div>
 
           <motion.p
             {...fadeUp(0.7)}
             className="mt-8 text-xs tracking-wide text-neutral-400"
           >
-            Vagas limitadas · Início: Fevereiro/2026
+            {meta}
           </motion.p>
         </div>
 
-        {/* Right — Info Card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,4 +129,4 @@ const FellowSemanalHero = () => (
   </section>
 );
 
-export default FellowSemanalHero;
+export default FellowHero;
