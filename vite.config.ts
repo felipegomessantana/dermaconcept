@@ -13,14 +13,20 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    // Faster CI builds; gzip size reporting is expensive with many assets
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
+  },
   plugins: [
     react(),
     imagetools({
       defaultDirectives: (url) => {
         // Only auto-process images with the ?responsive marker
         if (url.searchParams.has("responsive")) {
-          const w = url.searchParams.get("w") || "480;768;1200;1920";
-          const formats = url.searchParams.get("format") || "avif;webp;jpg";
+          const w = url.searchParams.get("w") || "480;768;1200";
+          // webp only — avif+jpg triples build time on Vercel (2 cores)
+          const formats = url.searchParams.get("format") || "webp";
           return new URLSearchParams({
             w,
             format: formats,
