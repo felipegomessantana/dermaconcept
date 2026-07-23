@@ -7,6 +7,7 @@ const courses = [
       "Curso intensivo de uma semana com foco em procedimentos estéticos como toxina botulínica, preenchimentos, bioestimuladores e tecnologias.",
     image: "/pagina-inicial/dermatologia-estetica-semanal.jpeg",
     tag: "Intensivo",
+    href: "/dermatologia-estetica-semanal",
   },
   {
     title: "Dermatologia Estética Mensal",
@@ -14,6 +15,7 @@ const courses = [
       "Formação completa ao longo de um mês, com módulos aprofundados em harmonização facial, protocolos combinados e acompanhamento de pacientes.",
     image: "/pagina-inicial/dermatologia-estetica-mensal.webp",
     tag: "Completo",
+    href: "/#cursos",
   },
   {
     title: "Cirurgia Dermatológica Mensal",
@@ -21,6 +23,7 @@ const courses = [
       "Curso prático e teórico com foco em técnicas cirúrgicas dermatológicas: biópsias, exéreses, retalhos, enxertos e cirurgia micrográfica de Mohs.",
     image: "/pagina-inicial/cirurgia-dermatologica.webp",
     tag: "Prático",
+    href: "/#cursos",
   },
 ];
 
@@ -65,7 +68,7 @@ const CoursesSectionClassic = () => (
                   {course.description}
                 </p>
                 <a
-                  href="#contato"
+                  href={course.href}
                   className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-foreground hover:text-primary transition-colors duration-300"
                 >
                   ACESSE O PROGRAMA →

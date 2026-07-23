@@ -20,6 +20,7 @@ interface CourseData {
   image?: PictureSource;
   imageSrc?: string;
   tag: string;
+  href: string;
 }
 
 const courses: CourseData[] = [
@@ -37,6 +38,7 @@ const courses: CourseData[] = [
     callout: "A prática semanal dá uma segurança maior e mais rápida para que o aluno já consiga realizar seus atendimentos particulares.",
     imageSrc: "/pagina-inicial/dermatologia-estetica-semanal.jpeg",
     tag: "Intensivo",
+    href: "/dermatologia-estetica-semanal",
   },
   {
     title: "Dermatologia Estética Mensal",
@@ -53,6 +55,7 @@ const courses: CourseData[] = [
     callout: "O aluno termina o curso tendo muita segurança para atender seus pacientes!! Torne-se uma referência na estética! E saiba como se diferenciar nesse mercado tão concorrido!",
     imageSrc: "/pagina-inicial/dermatologia-estetica-mensal.webp",
     tag: "Completo",
+    href: "/#cursos",
   },
   {
     title: "Cirurgia Dermatológica",
@@ -68,6 +71,7 @@ const courses: CourseData[] = [
     callout: "Esse fellow, ÚNICO em Belo Horizonte, tem duração de 6 meses e ocorre um final de semana por mês (2 dias inteiros).",
     imageSrc: "/pagina-inicial/cirurgia-dermatologica.webp",
     tag: "Prático",
+    href: "/#cursos",
   },
 ];
 
@@ -196,7 +200,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
           {course.callout && <CalloutBox text={course.callout} />}
         </div>
 
-        <BorderBeamButton as="a" href="#contato">
+        <BorderBeamButton as="a" href={course.href}>
           ACESSE O PROGRAMA
         </BorderBeamButton>
       </motion.div>
