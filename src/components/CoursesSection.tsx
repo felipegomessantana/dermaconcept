@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
@@ -130,7 +131,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
 
   const imageCol = (
     <motion.div
-      className="relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5] bg-[#F8F5F1]"
+      className="pointer-events-none relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/5] bg-[#F8F5F1]"
       style={{ y: imageY }}
     >
       <motion.div className="block w-full h-full" style={{ scale: imageScale }}>
@@ -169,7 +170,7 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
   const textCol = (
     <motion.div
       ref={textRef}
-      className="flex flex-col justify-center py-8 md:py-0"
+      className="relative z-10 flex flex-col justify-center py-8 md:py-0"
       style={{ y: textY }}
     >
       <motion.div
@@ -200,15 +201,23 @@ const ParallaxCourse = ({ course, index, total, reversed }: ParallaxCourseProps)
           {course.callout && <CalloutBox text={course.callout} />}
         </div>
 
-        <BorderBeamButton as="a" href={course.href}>
-          ACESSE O PROGRAMA
-        </BorderBeamButton>
+        {course.href.includes("#") ? (
+          <BorderBeamButton as="a" href={course.href}>
+            ACESSE O PROGRAMA
+          </BorderBeamButton>
+        ) : (
+          <Link to={course.href} className="inline-flex">
+            <BorderBeamButton as="span">
+              ACESSE O PROGRAMA
+            </BorderBeamButton>
+          </Link>
+        )}
       </motion.div>
     </motion.div>
   );
 
   return (
-    <div ref={containerRef} className="py-16 md:py-24 lg:py-32">
+    <div ref={containerRef} className="relative isolate py-16 md:py-24 lg:py-32">
       <div className="container-narrow">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
           {reversed && !isMobile ? (

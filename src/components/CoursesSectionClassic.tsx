@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import { Link } from "react-router-dom";
 
 const courses = [
   {
@@ -67,12 +68,21 @@ const CoursesSectionClassic = () => (
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                   {course.description}
                 </p>
-                <a
-                  href={course.href}
-                  className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-foreground hover:text-primary transition-colors duration-300"
-                >
-                  ACESSE O PROGRAMA →
-                </a>
+                {course.href.includes("#") ? (
+                  <a
+                    href={course.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    ACESSE O PROGRAMA →
+                  </a>
+                ) : (
+                  <Link
+                    to={course.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    ACESSE O PROGRAMA →
+                  </Link>
+                )}
               </div>
             </div>
           </AnimatedSection>

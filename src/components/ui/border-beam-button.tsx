@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface BorderBeamButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  as?: "button" | "a";
+  as?: "button" | "a" | "span";
   href?: string;
   target?: string;
   rel?: string;
@@ -13,8 +13,8 @@ interface BorderBeamButtonProps
 const BorderBeamButton = React.forwardRef<
   HTMLElement,
   BorderBeamButtonProps
->(function BorderBeamButton({ className, children, as = "button", href, target, rel, duration = 3.5, style, ...props }, ref) {
-  const Tag = as === "a" ? "a" : "button";
+>(function BorderBeamButton({ className, children, as = "button", href, target, rel, duration = 3.5, style, type, ...props }, ref) {
+  const Tag = as === "a" ? "a" : as === "span" ? "span" : "button";
 
   return (
     <Tag
@@ -22,6 +22,7 @@ const BorderBeamButton = React.forwardRef<
       href={as === "a" ? href : undefined}
       target={as === "a" ? target : undefined}
       rel={as === "a" ? rel : undefined}
+      type={as === "button" ? (type ?? "button") : undefined}
       className={cn(
         "border-beam-btn group relative inline-flex items-center justify-center overflow-hidden rounded-[12px] p-[1.5px] transition-all duration-300",
         className,
@@ -30,7 +31,8 @@ const BorderBeamButton = React.forwardRef<
       {...(props as any)}
     >
       <span
-        className="absolute inset-[-150%] animate-border-beam"
+        aria-hidden
+        className="pointer-events-none absolute inset-[-150%] animate-border-beam"
         style={{
           background:
             "conic-gradient(from 0deg, transparent 0%, transparent 70%, hsl(var(--brand)) 78%, hsl(var(--primary)) 82%, transparent 90%, transparent 100%)",
