@@ -1,4 +1,3 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 
 type ContactBody = {
@@ -6,6 +5,18 @@ type ContactBody = {
   email?: string;
   telefone?: string;
   mensagem?: string;
+};
+
+type VercelRequest = {
+  method?: string;
+  body?: ContactBody | string;
+};
+
+type VercelResponse = {
+  setHeader: (name: string, value: string) => void;
+  status: (code: number) => VercelResponse;
+  json: (body: unknown) => void;
+  end: () => void;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
