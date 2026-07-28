@@ -39,7 +39,7 @@ const HeroSection = () => (
       </motion.p>
       <motion.div {...fadeUp(0.45)} className="mt-10">
         <a
-          href="https://wa.me/5531982449473"
+          href="https://wa.me/5531982449473?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Derma%20Concept%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-xl bg-[#1A1A1A] px-10 py-4 text-sm font-medium tracking-widest uppercase text-white shadow-sm transition-all duration-300 hover:bg-[#333]"
@@ -294,7 +294,7 @@ const CTASection = () => {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="mt-10 flex justify-center"
         >
-          <BorderBeamButton as="a" href="https://wa.me/5531982449473">
+          <BorderBeamButton as="a" href="https://wa.me/5531982449473?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Derma%20Concept%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es.">
             Falar com a Coordenação no WhatsApp
           </BorderBeamButton>
         </motion.div>

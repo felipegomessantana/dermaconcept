@@ -1,4 +1,4 @@
-const WA_URL = "https://wa.me/5531982449473";
+const WA_URL = "https://wa.me/5531982449473?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Derma%20Concept%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es.";
 
 const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
