@@ -2,15 +2,16 @@
   "redirects": [
     {
       "source": "/painel",
-      "destination": "https://lovable.dev/projects/5ce0d434-ae74-4cf1-8586-1f1e93185761",
+      "destination": "https://lovable.dev/login?redirect=%2Fprojects%2F5ce0d434-ae74-4cf1-8586-1f1e93185761",
       "permanent": false
     },
     {
       "source": "/painel/",
-      "destination": "https://lovable.dev/projects/5ce0d434-ae74-4cf1-8586-1f1e93185761",
+      "destination": "https://lovable.dev/login?redirect=%2Fprojects%2F5ce0d434-ae74-4cf1-8586-1f1e93185761",
       "permanent": false
     }
   ],
+
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
