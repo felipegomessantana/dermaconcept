@@ -25,7 +25,7 @@ export const CONTACT_INFO: ContactInfoItem[] = [
     icon: WhatsAppIcon,
     label: "WhatsApp",
     value: "(31) 98244-9473",
-    href: "https://wa.me/5531982449473",
+    href: "https://wa.me/5531982449473?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Derma%20Concept%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es.",
   },
   {
     icon: Instagram,
